@@ -1,0 +1,19 @@
+Listado de rutas de carpetas para el volumen Documentos
+El n£mero de serie del volumen es A328-E5B0
+D:.
+|   .env
+|   backend_folder_tree.txt
+|   README.md
+|   requirements.txt
+|   
+/app
+|   |   config.py
+|   |   database.py
+|   |   main.py
+|   |   __init__.py
+|   |   
+|   /crud
+|   /models
+|   /routers
+|   /schemas
+/venv
