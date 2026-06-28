@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import text
 from app.database import engine, Base, get_db
 from app.models import core
+from app.routers import categories, suppliers, products
 
 # This command tells SQLAlchemy to create the tables if they don't exist.
 # (Since you already created them in Navicat, this just safely verifies them).
@@ -29,3 +30,8 @@ def check_db_health(db: Session = Depends(get_db)):
         return {"status": "success", "message": "Database connection is live and healthy!"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Database connection failed: {str(e)}")
+
+# Connect the routers to the main application    
+app.include_router(categories.router)
+app.include_router(suppliers.router)
+app.include_router(products.router)
