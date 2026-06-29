@@ -1,14 +1,54 @@
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Optional, List
+from enum import Enum
 from datetime import datetime, date
 from decimal import Decimal
 
+# ==========================================
+# ENUMS FOR THE CONSTRAINTS
+# ==========================================
+
+class UnitOfMeasure(str, Enum):
+    UNITS = "Units"
+    KILOGRAMS = "Kilograms"
+    LITERS = "Liters"
+    BOXES = "Boxes"
+    PACK = "Pack"
+
+class UserRole(str, Enum):
+    ADMIN = "admin"
+    EMPLOYEE = "employee"
+
+class TransactionType(str, Enum):
+    IN = "IN"
+    OUT = "OUT"
+    LOSS = "LOSS"
+    ADJUSTMENT = "ADJUSTMENT"
+
+class PaymentMethod(str, Enum):
+    CASH = "Cash"
+    CARD = "Card"
+    TRANSFER = "Transfer"
+    MIXED = "Mixed"
+
+class PaymentStatus(str, Enum):
+    PAID = "Paid"
+    PENDING = "Pending"
+    CANCELLED = "Cancelled"
+
+class LossReason(str, Enum):
+    EXPIRED = "Expired"
+    DAMAGED = "Damaged"
+    THEFT = "Theft"
+    OTHER = "Other"
+    
+    
 # ==========================================
 # 1. USERS
 # ==========================================
 class UserBase(BaseModel):
     username: str = Field(..., max_length=50)
-    role: str = Field(..., max_length=20)
+    role: UserRole
 
 class UserCreate(UserBase):
     password: str = Field(..., min_length=8) # Plain text password to be hashed by your logic
@@ -85,7 +125,7 @@ class ProductBase(BaseModel):
     name: str = Field(..., max_length=150)
     description: Optional[str] = None
     sku_or_barcode: Optional[str] = Field(None, max_length=50)
-    unit_of_measure: str = Field("Units", max_length=20)
+    unit_of_measure: UnitOfMeasure
     base_price: Decimal = Field(default=0.00, decimal_places=2)
     min_stock_threshold: int = 5
     is_active: bool = True
@@ -149,7 +189,8 @@ class SaleItemResponse(SaleItemBase):
 # ==========================================
 class SaleBase(BaseModel):
     customer_id: Optional[int] = None
-    payment_method: str = Field("Cash", max_length=50)
+    payment_method: PaymentMethod
+    payment_status: PaymentStatus
 
 class SaleCreate(SaleBase):
     user_id: int
@@ -159,7 +200,6 @@ class SaleResponse(SaleBase):
     id: int
     user_id: int
     total_amount: Decimal
-    payment_status: str
     sold_at: datetime
     items: List[SaleItemResponse] # Returns the nested items in the JSON response
 
@@ -172,7 +212,7 @@ class SaleResponse(SaleBase):
 class LossLogBase(BaseModel):
     batch_id: int
     quantity_lost: int
-    reason: str = Field(..., max_length=50)
+    reason: LossReason
     notes: Optional[str] = None
 
 class LossLogCreate(LossLogBase):
