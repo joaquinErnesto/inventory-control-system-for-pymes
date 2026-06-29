@@ -169,7 +169,6 @@ class InventoryBatchResponse(InventoryBatchBase):
 # 7. SALE ITEMS
 # ==========================================
 class SaleItemBase(BaseModel):
-    batch_id: int
     product_id: int
     quantity_sold: int
     unit_price: Decimal = Field(..., decimal_places=2)
@@ -180,6 +179,7 @@ class SaleItemCreate(SaleItemBase):
 class SaleItemResponse(SaleItemBase):
     id: int
     sale_id: int
+    batch_id: int  # Added back for the response so the frontend can see the deductions
 
     model_config = ConfigDict(from_attributes=True)
 

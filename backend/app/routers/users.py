@@ -1,4 +1,3 @@
-import hashlib
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from typing import List
@@ -6,6 +5,7 @@ from typing import List
 from app.database import get_db
 from app.models import core as models
 from app.schemas import core as schemas
+from app.security import get_password_hash
 
 router = APIRouter(
     prefix="/users",
@@ -22,8 +22,8 @@ def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
     if existing_user:
         raise HTTPException(status_code=400, detail="Username is already taken.")
     
-    # 2. Hash the password securely using SHA-256
-    hashed_password = hashlib.sha256(user.password.encode()).hexdigest()
+    # 2. Hash the password securely using bcrypt
+    hashed_password = get_password_hash(user.password)
     
     # 3. Create the SQLAlchemy model instance
     new_user = models.User(

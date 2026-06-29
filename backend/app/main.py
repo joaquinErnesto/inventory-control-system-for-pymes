@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import text
 from app.database import engine, Base, get_db
 from app.models import core
-from app.routers import categories, suppliers, products, users, inventory_batches, customers, sales, loss_logs, reports
+from app.routers import categories, suppliers, products, users, inventory_batches, customers, sales, loss_logs, reports, auth
 
 # This command tells SQLAlchemy to create the tables if they don't exist.
 # (Since you already created them in Navicat, this just safely verifies them).
@@ -41,3 +41,4 @@ app.include_router(customers.router)
 app.include_router(sales.router)
 app.include_router(loss_logs.router)
 app.include_router(reports.router)
+app.include_router(auth.router)
