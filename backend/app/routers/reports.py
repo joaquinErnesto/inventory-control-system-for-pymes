@@ -2,11 +2,12 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from sqlalchemy import func
 
-from typing import Optional
-from datetime import datetime
+from typing import Optional, List
+from datetime import date, datetime, timedelta
 
 from app.database import get_db
 from app.models import core as models
+from app.schemas import core as schemas
 
 router = APIRouter(
     prefix="/reports",
@@ -117,3 +118,42 @@ def get_sales_performance(
         "total_revenue": total_revenue,
         "sales_records": sales
     }
+    
+@router.get("/expiring-soon", response_model=List[schemas.ExpiringBatchResponse])
+def get_expiring_soon(days: int = 30, db: Session = Depends(get_db)):
+    """
+    Returns a list of batches nearing expiration, sorted by urgency.
+    Defaults to 30 days if no threshold is provided.
+    """
+    today = date.today()
+    threshold_date = today + timedelta(days=days)
+
+    # 1. Query batches that:
+    # - Have an expiration date
+    # - Are not yet expired (expiration_date >= today)
+    # - Expire within the threshold (expiration_date <= threshold_date)
+    expiring_batches = db.query(models.InventoryBatch).filter(
+        models.InventoryBatch.expiration_date.isnot(None),
+        models.InventoryBatch.expiration_date >= today,
+        models.InventoryBatch.expiration_date <= threshold_date,
+        models.InventoryBatch.current_quantity > 0
+    ).order_by(
+        models.InventoryBatch.expiration_date.asc()
+    ).all()
+
+    # 2. Transform the data into the response format
+    report = []
+    for batch in expiring_batches:
+        remaining = (batch.expiration_date - today).days
+        
+        report.append(
+            schemas.ExpiringBatchResponse(
+                product_name=batch.product.name, # Accessed via SQLAlchemy relationship
+                batch_number=batch.batch_number,
+                current_quantity=batch.current_quantity,
+                expiration_date=batch.expiration_date,
+                days_remaining=remaining
+            )
+        )
+
+    return report

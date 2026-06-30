@@ -163,6 +163,15 @@ class InventoryBatchResponse(InventoryBatchBase):
     received_date: datetime
 
     model_config = ConfigDict(from_attributes=True)
+    
+class ExpiringBatchResponse(BaseModel):
+    product_name: str
+    batch_number: Optional[str] = None
+    current_quantity: int
+    expiration_date: date
+    days_remaining: int
+
+    model_config = ConfigDict(from_attributes=True)
 
 
 # ==========================================
