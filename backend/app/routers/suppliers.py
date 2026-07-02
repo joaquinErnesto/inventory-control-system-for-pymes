@@ -1,52 +1,216 @@
+from typing import List
+
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
-from typing import List
 
 from app.database import get_db
 from app.models import core as models
 from app.schemas import core as schemas
-
-# Initialize the router
-router = APIRouter(
-    prefix="/suppliers",
-    tags=["Suppliers"]
+from app.security import (
+    get_current_admin,
+    get_current_user,
 )
 
-@router.post("/", response_model=schemas.SupplierResponse, status_code=status.HTTP_201_CREATED)
-def create_supplier(supplier: schemas.SupplierCreate, db: Session = Depends(get_db)):
+router = APIRouter(
+    prefix="/suppliers",
+    tags=["Suppliers"],
+)
+
+# ===================================================
+# CREATE SUPPLIER
+# ===================================================
+
+@router.post(
+    "/",
+    response_model=schemas.SupplierResponse,
+    status_code=status.HTTP_201_CREATED,
+)
+def create_supplier(
+    supplier: schemas.SupplierCreate,
+    db: Session = Depends(get_db),
+    current_user=Depends(get_current_admin),
+):
     """
-    Register a new supplier in the system.
+    Register a new supplier.
+
+    Admin only.
     """
-    # 1. Check if a supplier with this name already exists
-    db_supplier = db.query(models.Supplier).filter(models.Supplier.name == supplier.name).first()
-    if db_supplier:
-        raise HTTPException(status_code=400, detail="A supplier with this name already exists.")
-    
-    # 2. Convert Pydantic schema to SQLAlchemy model
-    new_supplier = models.Supplier(**supplier.model_dump())
-    
-    # 3. Save to database
+
+    existing_supplier = (
+        db.query(models.Supplier)
+        .filter(models.Supplier.name == supplier.name)
+        .first()
+    )
+
+    if existing_supplier:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="A supplier with this name already exists.",
+        )
+
+    new_supplier = models.Supplier(
+        **supplier.model_dump()
+    )
+
     db.add(new_supplier)
     db.commit()
     db.refresh(new_supplier)
-    
-    # 4. Return the newly created supplier
+
     return new_supplier
 
-@router.get("/", response_model=List[schemas.SupplierResponse])
-def get_suppliers(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    """
-    Retrieve a list of all suppliers.
-    """
-    suppliers = db.query(models.Supplier).offset(skip).limit(limit).all()
-    return suppliers
 
-@router.get("/{supplier_id}", response_model=schemas.SupplierResponse)
-def get_single_supplier(supplier_id: int, db: Session = Depends(get_db)):
+# ===================================================
+# GET ALL SUPPLIERS
+# ===================================================
+
+@router.get(
+    "/",
+    response_model=List[schemas.SupplierResponse],
+)
+def get_suppliers(
+    skip: int = 0,
+    limit: int = 100,
+    db: Session = Depends(get_db),
+    current_user=Depends(get_current_user),
+):
     """
-    Retrieve a specific supplier by their ID.
+    Retrieve all suppliers.
+
+    Admin and Employee.
     """
-    supplier = db.query(models.Supplier).filter(models.Supplier.id == supplier_id).first()
-    if not supplier:
-        raise HTTPException(status_code=404, detail="Supplier not found.")
+
+    return (
+        db.query(models.Supplier)
+        .offset(skip)
+        .limit(limit)
+        .all()
+    )
+
+
+# ===================================================
+# GET SUPPLIER BY ID
+# ===================================================
+
+@router.get(
+    "/{supplier_id}",
+    response_model=schemas.SupplierResponse,
+)
+def get_supplier(
+    supplier_id: int,
+    db: Session = Depends(get_db),
+    current_user=Depends(get_current_user),
+):
+    """
+    Retrieve one supplier by ID.
+
+    Admin and Employee.
+    """
+
+    supplier = (
+        db.query(models.Supplier)
+        .filter(models.Supplier.id == supplier_id)
+        .first()
+    )
+
+    if supplier is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Supplier not found.",
+        )
+
     return supplier
+
+
+# ===================================================
+# UPDATE SUPPLIER
+# ===================================================
+
+@router.put(
+    "/{supplier_id}",
+    response_model=schemas.SupplierResponse,
+)
+def update_supplier(
+    supplier_id: int,
+    supplier_update: schemas.SupplierUpdate,
+    db: Session = Depends(get_db),
+    current_user=Depends(get_current_admin),
+):
+    """
+    Update an existing supplier.
+
+    Admin only.
+    """
+
+    supplier = (
+        db.query(models.Supplier)
+        .filter(models.Supplier.id == supplier_id)
+        .first()
+    )
+
+    if supplier is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Supplier not found.",
+        )
+
+    duplicate = (
+        db.query(models.Supplier)
+        .filter(
+            models.Supplier.name == supplier_update.name,
+            models.Supplier.id != supplier_id,
+        )
+        .first()
+    )
+
+    if duplicate:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="A supplier with this name already exists.",
+        )
+
+    supplier.name = supplier_update.name
+    supplier.contact_person = supplier_update.contact_person
+    supplier.phone = supplier_update.phone
+    supplier.email = supplier_update.email
+    supplier.address = supplier_update.address
+    supplier.is_active = supplier_update.is_active
+
+    db.commit()
+    db.refresh(supplier)
+
+    return supplier
+
+
+# ===================================================
+# DELETE SUPPLIER
+# ===================================================
+
+@router.delete(
+    "/{supplier_id}",
+    status_code=status.HTTP_204_NO_CONTENT,
+)
+def delete_supplier(
+    supplier_id: int,
+    db: Session = Depends(get_db),
+    current_user=Depends(get_current_admin),
+):
+    """
+    Delete a supplier.
+
+    Admin only.
+    """
+
+    supplier = (
+        db.query(models.Supplier)
+        .filter(models.Supplier.id == supplier_id)
+        .first()
+    )
+
+    if supplier is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Supplier not found.",
+        )
+
+    db.delete(supplier)
+    db.commit()

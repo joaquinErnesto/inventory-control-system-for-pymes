@@ -40,8 +40,7 @@ class LossReason(str, Enum):
     EXPIRED = "Expired"
     DAMAGED = "Damaged"
     THEFT = "Theft"
-    OTHER = "Other"
-    
+    OTHER = "Other"    
     
 # ==========================================
 # 1. USERS
@@ -70,6 +69,9 @@ class CategoryBase(BaseModel):
 class CategoryCreate(CategoryBase):
     pass
 
+class CategoryUpdate(CategoryBase):
+    pass
+
 class CategoryResponse(CategoryBase):
     id: int
 
@@ -88,6 +90,9 @@ class SupplierBase(BaseModel):
     is_active: bool = True
 
 class SupplierCreate(SupplierBase):
+    pass
+
+class SupplierUpdate(SupplierBase):
     pass
 
 class SupplierResponse(SupplierBase):
@@ -254,3 +259,16 @@ class InventoryTransactionResponse(BaseModel):
     performed_at: datetime
 
     model_config = ConfigDict(from_attributes=True)
+    
+
+# ==========================================
+# 11. AUTHENTICATION
+# ==========================================
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+
+class TokenData(BaseModel):
+    username: Optional[str] = None
