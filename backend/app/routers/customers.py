@@ -5,40 +5,220 @@ from typing import List
 from app.database import get_db
 from app.models import core as models
 from app.schemas import core as schemas
+from app.security import (
+    get_current_user,
+    get_current_admin,
+)
 
 router = APIRouter(
     prefix="/customers",
     tags=["Customers"]
 )
 
-@router.post("/", response_model=schemas.CustomerResponse, status_code=status.HTTP_201_CREATED)
-def create_customer(customer: schemas.CustomerCreate, db: Session = Depends(get_db)):
+
+# ==================================================
+# CREATE CUSTOMER
+# ==================================================
+
+@router.post(
+    "/",
+    response_model=schemas.CustomerResponse,
+    status_code=status.HTTP_201_CREATED,
+)
+def create_customer(
+    customer: schemas.CustomerCreate,
+    db: Session = Depends(get_db),
+    current_admin=Depends(get_current_admin),
+):
     """
-    Register a new customer in the system.
+    Register a new customer.
+    Admin only.
     """
-    # 1. Enforce unique identification number if one is provided
+
     if customer.identification_number:
-        existing_customer = db.query(models.Customer).filter(
-            models.Customer.identification_number == customer.identification_number
-        ).first()
+
+        existing_customer = (
+            db.query(models.Customer)
+            .filter(
+                models.Customer.identification_number
+                == customer.identification_number
+            )
+            .first()
+        )
+
         if existing_customer:
             raise HTTPException(
-                status_code=400, 
-                detail="A customer with this identification number already exists."
+                status_code=400,
+                detail="A customer with this identification number already exists.",
             )
 
-    # 2. Save to database
-    new_customer = models.Customer(**customer.model_dump())
+    new_customer = models.Customer(
+        **customer.model_dump()
+    )
+
     db.add(new_customer)
     db.commit()
     db.refresh(new_customer)
-    
+
     return new_customer
 
-@router.get("/", response_model=List[schemas.CustomerResponse])
-def get_all_customers(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+
+# ==================================================
+# GET CUSTOMERS
+# ==================================================
+
+@router.get(
+    "/",
+    response_model=List[schemas.CustomerResponse],
+)
+def get_all_customers(
+    skip: int = 0,
+    limit: int = 100,
+    db: Session = Depends(get_db),
+    current_user=Depends(get_current_user),
+):
     """
-    Retrieve all registered customers.
+    Retrieve all customers.
+    Any authenticated user.
     """
-    customers = db.query(models.Customer).offset(skip).limit(limit).all()
+
+    customers = (
+        db.query(models.Customer)
+        .offset(skip)
+        .limit(limit)
+        .all()
+    )
+
     return customers
+
+
+# ==================================================
+# GET CUSTOMER BY ID
+# ==================================================
+
+@router.get(
+    "/{customer_id}",
+    response_model=schemas.CustomerResponse,
+)
+def get_customer(
+    customer_id: int,
+    db: Session = Depends(get_db),
+    current_user=Depends(get_current_user),
+):
+    """
+    Retrieve a customer by ID.
+    Any authenticated user.
+    """
+
+    customer = (
+        db.query(models.Customer)
+        .filter(models.Customer.id == customer_id)
+        .first()
+    )
+
+    if customer is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Customer not found.",
+        )
+
+    return customer
+
+
+# ==================================================
+# UPDATE CUSTOMER
+# ==================================================
+
+@router.put(
+    "/{customer_id}",
+    response_model=schemas.CustomerResponse,
+)
+def update_customer(
+    customer_id: int,
+    customer_update: schemas.CustomerCreate,
+    db: Session = Depends(get_db),
+    current_admin=Depends(get_current_admin),
+):
+    """
+    Update a customer.
+    Admin only.
+    """
+
+    customer = (
+        db.query(models.Customer)
+        .filter(models.Customer.id == customer_id)
+        .first()
+    )
+
+    if customer is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Customer not found.",
+        )
+
+    if (
+        customer_update.identification_number
+        and customer_update.identification_number
+        != customer.identification_number
+    ):
+
+        existing_customer = (
+            db.query(models.Customer)
+            .filter(
+                models.Customer.identification_number
+                == customer_update.identification_number
+            )
+            .first()
+        )
+
+        if existing_customer:
+            raise HTTPException(
+                status_code=400,
+                detail="A customer with this identification number already exists.",
+            )
+
+    update_data = customer_update.model_dump()
+
+    for key, value in update_data.items():
+        setattr(customer, key, value)
+
+    db.commit()
+    db.refresh(customer)
+
+    return customer
+
+
+# ==================================================
+# DELETE CUSTOMER
+# ==================================================
+
+@router.delete(
+    "/{customer_id}",
+    status_code=status.HTTP_204_NO_CONTENT,
+)
+def delete_customer(
+    customer_id: int,
+    db: Session = Depends(get_db),
+    current_admin=Depends(get_current_admin),
+):
+    """
+    Delete a customer.
+    Admin only.
+    """
+
+    customer = (
+        db.query(models.Customer)
+        .filter(models.Customer.id == customer_id)
+        .first()
+    )
+
+    if customer is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Customer not found.",
+        )
+
+    db.delete(customer)
+    db.commit()
+
+    return

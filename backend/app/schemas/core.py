@@ -159,7 +159,7 @@ class InventoryBatchBase(BaseModel):
     notes: Optional[str] = None
 
 class InventoryBatchCreate(InventoryBatchBase):
-    created_by_user_id: int
+    pass
 
 class InventoryBatchResponse(InventoryBatchBase):
     id: int

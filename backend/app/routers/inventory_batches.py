@@ -48,19 +48,6 @@ def receive_stock_batch(
             detail=f"Product with ID {batch.product_id} does not exist.",
         )
 
-    # Validate user
-    user = (
-        db.query(models.User)
-        .filter(models.User.id == batch.created_by_user_id)
-        .first()
-    )
-
-    if not user:
-        raise HTTPException(
-            status_code=400,
-            detail=f"User with ID {batch.created_by_user_id} does not exist.",
-        )
-
     # Validate supplier
     if batch.supplier_id is not None:
 
@@ -100,6 +87,8 @@ def receive_stock_batch(
 
     batch_data["current_quantity"] = batch.initial_quantity
 
+    batch_data["created_by_user_id"] = current_user.id
+
     new_batch = models.InventoryBatch(**batch_data)
 
     db.add(new_batch)
@@ -109,7 +98,7 @@ def receive_stock_batch(
     transaction = models.InventoryTransaction(
         product_id=new_batch.product_id,
         batch_id=new_batch.id,
-        user_id=new_batch.created_by_user_id,
+        user_id=current_user.id,
         quantity_changed=new_batch.initial_quantity,
         transaction_type=schemas.TransactionType.IN.value,
         notes=f"Initial stock intake. Batch: {new_batch.batch_number or 'N/A'}",
