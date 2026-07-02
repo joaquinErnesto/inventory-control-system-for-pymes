@@ -6,6 +6,7 @@ from decimal import Decimal
 from app.database import get_db
 from app.models import core as models
 from app.schemas import core as schemas
+from app.security import get_current_user
 
 router = APIRouter(
     prefix="/sales",
@@ -13,15 +14,14 @@ router = APIRouter(
 )
 
 @router.post("/", response_model=schemas.SaleResponse, status_code=status.HTTP_201_CREATED)
-def process_sale(sale_request: schemas.SaleCreate, db: Session = Depends(get_db)):
+def process_sale(
+    sale_request: schemas.SaleCreate,
+    db: Session = Depends(get_db),
+    current_user = Depends(get_current_user)
+):
     """
     Process a complex multi-table sale transaction using Automated FEFO/FIFO stock deduction.
     """
-    # 1. Validate the User (Cashier)
-    user = db.query(models.User).filter(models.User.id == sale_request.user_id).first()
-    if not user:
-        raise HTTPException(status_code=400, detail="Invalid user_id.")
-
     # 2. Validate the Customer (If provided)
     if sale_request.customer_id:
         customer = db.query(models.Customer).filter(models.Customer.id == sale_request.customer_id).first()
@@ -30,7 +30,7 @@ def process_sale(sale_request: schemas.SaleCreate, db: Session = Depends(get_db)
 
     # 3. Create the parent Sale record
     new_sale = models.Sale(
-        user_id=sale_request.user_id,
+        user_id=current_user.id,
         customer_id=sale_request.customer_id,
         payment_method=sale_request.payment_method,
         payment_status=sale_request.payment_status,
@@ -53,13 +53,20 @@ def process_sale(sale_request: schemas.SaleCreate, db: Session = Depends(get_db)
         remaining_qty_to_fulfill = item.quantity_sold
 
         # 4a. Fetch active batches. Order by Expiration (FEFO) -> then Received Date (FIFO)
-        available_batches = db.query(models.InventoryBatch).filter(
-            models.InventoryBatch.product_id == item.product_id,
-            models.InventoryBatch.current_quantity > 0
-        ).order_by(
-            models.InventoryBatch.expiration_date.asc().nulls_last(),
-            models.InventoryBatch.received_date.asc()
-        ).with_for_update().all()
+        available_batches = (
+            db.query(models.InventoryBatch)
+            .filter(
+                models.InventoryBatch.product_id == item.product_id,
+                models.InventoryBatch.current_quantity > 0
+            )
+            .order_by(
+                models.InventoryBatch.expiration_date.is_(None),
+                models.InventoryBatch.expiration_date.asc(),
+                models.InventoryBatch.received_date.asc()
+            )
+            .with_for_update()
+            .all()
+        )
 
         # 4b. Pre-calculate if we have enough total stock across all active batches
         total_available_stock = sum(batch.current_quantity for batch in available_batches)
@@ -95,7 +102,7 @@ def process_sale(sale_request: schemas.SaleCreate, db: Session = Depends(get_db)
             inventory_log = models.InventoryTransaction(
                 product_id=item.product_id,
                 batch_id=batch.id,
-                user_id=sale_request.user_id,
+                user_id=current_user.id,
                 quantity_changed=-(qty_to_deduct),
                 transaction_type=schemas.TransactionType.OUT.value, 
                 sale_id=new_sale.id,
@@ -115,8 +122,15 @@ def process_sale(sale_request: schemas.SaleCreate, db: Session = Depends(get_db)
 
     return new_sale
 
+
+
 @router.get("/", response_model=List[schemas.SaleResponse])
-def get_all_sales(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+def get_all_sales(
+    skip: int = 0, 
+    limit: int = 100, 
+    db: Session = Depends(get_db),
+    current_user = Depends(get_current_user)
+):
     """
     Retrieve all sales receipts.
     """

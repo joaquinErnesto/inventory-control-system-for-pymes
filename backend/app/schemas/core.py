@@ -207,7 +207,6 @@ class SaleBase(BaseModel):
     payment_status: PaymentStatus
 
 class SaleCreate(SaleBase):
-    user_id: int
     items: List[SaleItemCreate]  # A single POST request will include the sale AND its items
 
 class SaleResponse(SaleBase):
@@ -230,7 +229,7 @@ class LossLogBase(BaseModel):
     notes: Optional[str] = None
 
 class LossLogCreate(LossLogBase):
-    user_id: int
+    pass
 
 class LossLogResponse(LossLogBase):
     id: int
