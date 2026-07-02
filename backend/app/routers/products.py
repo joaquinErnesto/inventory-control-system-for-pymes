@@ -6,14 +6,28 @@ from app.database import get_db
 from app.models import core as models
 from app.schemas import core as schemas
 
+from app.security import (
+    get_current_user,
+    get_current_admin
+)
+
 # Initialize the router
 router = APIRouter(
     prefix="/products",
     tags=["Products"]
 )
 
+
+# ==================================================
+# CREATE PRODUCT
+# ==================================================
+
 @router.post("/", response_model=schemas.ProductResponse, status_code=status.HTTP_201_CREATED)
-def create_product(product: schemas.ProductCreate, db: Session = Depends(get_db)):
+def create_product(
+    product: schemas.ProductCreate, 
+    db: Session = Depends(get_db),
+    current_user = Depends(get_current_admin)
+):
     """
     Add a new product to the catalog. (Does not add physical stock).
     """
@@ -37,8 +51,17 @@ def create_product(product: schemas.ProductCreate, db: Session = Depends(get_db)
     return new_product
 
 
+# ==================================================
+# GET PRODUCTS 
+# ==================================================
+
 @router.get("/", response_model=List[schemas.ProductResponse])
-def get_products(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+def get_products(
+    skip: int = 0, 
+    limit: int = 100, 
+    db: Session = Depends(get_db),
+    current_user = Depends(get_current_user)
+):
     """
     Retrieve a list of all products in the catalog.
     """
@@ -46,8 +69,16 @@ def get_products(skip: int = 0, limit: int = 100, db: Session = Depends(get_db))
     return products
 
 
+# ==================================================
+# GET PRODUCT BY ID
+# ==================================================
+
 @router.get("/{product_id}", response_model=schemas.ProductResponse)
-def get_single_product(product_id: int, db: Session = Depends(get_db)):
+def get_single_product(
+    product_id: int, 
+    db: Session = Depends(get_db),
+    current_user = Depends(get_current_user)
+):
     """
     Retrieve a specific product by its ID.
     """
@@ -57,8 +88,17 @@ def get_single_product(product_id: int, db: Session = Depends(get_db)):
     return product
 
 
+# ==================================================
+# UPDATE PRODUCT
+# ==================================================
+
 @router.put("/{product_id}", response_model=schemas.ProductResponse)
-def update_product(product_id: int, product_update: schemas.ProductCreate, db: Session = Depends(get_db)):
+def update_product(
+    product_id: int, 
+    product_update: schemas.ProductCreate, 
+    db: Session = Depends(get_db),
+    current_user = Depends(get_current_admin)
+):
     """
     Update a product's metadata (name, base price, category, etc.).
     """
@@ -88,3 +128,49 @@ def update_product(product_id: int, product_update: schemas.ProductCreate, db: S
     db.refresh(db_product)
     
     return db_product
+
+
+# ==================================================
+# DELETE PRODUCT
+# ==================================================
+
+@router.delete("/{product_id}", status_code=status.HTTP_204_NO_CONTENT)
+def delete_product(
+    product_id: int,
+    db: Session = Depends(get_db),
+    current_user=Depends(get_current_admin),
+):
+    """
+    Delete a product from the catalog.
+
+    A product cannot be deleted if it has related inventory,
+    sales or transactions.
+    """
+
+    db_product = (
+        db.query(models.Product)
+        .filter(models.Product.id == product_id)
+        .first()
+    )
+
+    if not db_product:
+        raise HTTPException(
+            status_code=404,
+            detail="Product not found."
+        )
+
+    if (
+        db_product.batches
+        or db_product.sale_items
+        or db_product.transactions
+    ):
+        raise HTTPException(
+            status_code=400,
+            detail=(
+                "This product cannot be deleted because it is "
+                "referenced by inventory, sales or transactions."
+            ),
+        )
+
+    db.delete(db_product)
+    db.commit()
