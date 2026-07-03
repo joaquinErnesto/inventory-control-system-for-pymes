@@ -8,6 +8,7 @@ from datetime import date, datetime, timedelta
 from app.database import get_db
 from app.models import core as models
 from app.schemas import core as schemas
+from app.security import get_current_user
 
 router = APIRouter(
     prefix="/reports",
@@ -15,41 +16,86 @@ router = APIRouter(
 )
 
 @router.get("/low-stock")
-def get_low_stock_report(db: Session = Depends(get_db)):
+def get_low_stock_report(
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(get_current_user)
+):
     """
     Returns a list of products whose total current quantity 
     is less than or equal to their defined minimum stock threshold.
     """
     
-    # We query all active products
-    all_products = db.query(models.Product).filter(models.Product.is_active == True).all()
+    if current_user.role != schemas.UserRole.ADMIN:
+        raise HTTPException(
+            status_code=403,
+            detail="Only administrators can access reports."
+        )
     
-    low_stock_report = []
+    results = (
+        db.query(
+            models.Product.id,
+            models.Product.name,
+            models.Product.min_stock_threshold,
+            func.coalesce(
+                func.sum(models.InventoryBatch.current_quantity),
+                0
+            ).label("current_stock")
+        )
+        .outerjoin(
+            models.InventoryBatch,
+            models.Product.id == models.InventoryBatch.product_id
+        )
+        .filter(models.Product.is_active == True)
+        .group_by(
+            models.Product.id,
+            models.Product.name,
+            models.Product.min_stock_threshold
+        )
+        .all()
+    )
 
-    for product in all_products:
-        # Calculate total current quantity for this product across all batches
-        total_quantity = db.query(func.sum(models.InventoryBatch.current_quantity)).filter(
-            models.InventoryBatch.product_id == product.id
-        ).scalar() or 0
-        
-        # If total is at or below the threshold, add to report
-        if total_quantity <= product.min_stock_threshold:
-            low_stock_report.append({
-                "product_id": product.id,
-                "product_name": product.name,
-                "current_stock": total_quantity,
-                "min_threshold": product.min_stock_threshold,
-                "status": "REORDER_NOW" if total_quantity < product.min_stock_threshold else "AT_THRESHOLD"
+    report = []
+
+    for row in results:
+
+        if row.current_stock <= row.min_stock_threshold:
+
+            report.append({
+
+                "product_id": row.id,
+
+                "product_name": row.name,
+
+                "current_stock": row.current_stock,
+
+                "min_threshold": row.min_stock_threshold,
+
+                "status": (
+                    "REORDER_NOW"
+                    if row.current_stock < row.min_stock_threshold
+                    else "AT_THRESHOLD"
+                )
+
             })
-            
-    return {"low_stock_items": low_stock_report}
+
+    return {"low_stock_items": report}
 
 
 @router.get("/batch-audit/{batch_id}")
-def get_batch_audit(batch_id: int, db: Session = Depends(get_db)):
+def get_batch_audit(
+    batch_id: int, 
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(get_current_user)
+):
     """
     Returns the complete movement history for a specific inventory batch.
     """
+    
+    if current_user.role != schemas.UserRole.ADMIN:
+        raise HTTPException(
+            status_code=403,
+            detail="Only administrators can access reports."
+        )
     
     # 1. Verify the batch exists
     batch = db.query(models.InventoryBatch).filter(models.InventoryBatch.id == batch_id).first()
@@ -89,13 +135,26 @@ def get_sales_performance(
     start_date: datetime, 
     end_date: datetime, 
     customer_id: Optional[int] = None, 
-    db: Session = Depends(get_db)
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(get_current_user)
 ):
     """
     Returns total sales volume and revenue within a date range, 
     optionally filtered by a specific customer.
     """
     
+    if current_user.role != schemas.UserRole.ADMIN:
+        raise HTTPException(
+            status_code=403,
+            detail="Only administrators can access reports."
+        )
+    
+    if start_date > end_date:
+        raise HTTPException(
+            status_code=400,
+            detail="start_date must be earlier than end_date."
+        )
+        
     # Base query for all sales within the date range
     query = db.query(models.Sale).filter(
         models.Sale.sold_at.between(start_date, end_date)
@@ -110,21 +169,44 @@ def get_sales_performance(
     # Calculate metrics
     total_revenue = sum(sale.total_amount for sale in sales)
     total_sales_count = len(sales)
+    average_sale = (
+        total_revenue / total_sales_count
+        if total_sales_count > 0
+        else 0
+    )
     
     return {
         "period": {"start": start_date, "end": end_date},
         "customer_id": customer_id,
         "total_sales_count": total_sales_count,
         "total_revenue": total_revenue,
-        "sales_records": sales
+        "sales_records": sales,
+        "average_sale": average_sale
     }
     
 @router.get("/expiring-soon", response_model=List[schemas.ExpiringBatchResponse])
-def get_expiring_soon(days: int = 30, db: Session = Depends(get_db)):
+def get_expiring_soon(
+    days: int = 30, 
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(get_current_user)
+):
     """
     Returns a list of batches nearing expiration, sorted by urgency.
     Defaults to 30 days if no threshold is provided.
     """
+    
+    if current_user.role != schemas.UserRole.ADMIN:
+        raise HTTPException(
+            status_code=403,
+            detail="Only administrators can access reports."
+        )
+        
+    if days <= 0:
+        raise HTTPException(
+            status_code=400,
+            detail="days must be greater than zero."
+        )
+    
     today = date.today()
     threshold_date = today + timedelta(days=days)
 
