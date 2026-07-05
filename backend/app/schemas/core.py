@@ -259,7 +259,30 @@ class InventoryTransactionResponse(BaseModel):
 
     model_config = ConfigDict(from_attributes=True)
     
+class InventoryTransactionDetailedResponse(BaseModel):
+    id: int
 
+    product_id: int
+    product_name: str
+
+    batch_id: int
+    batch_number: Optional[str]
+
+    user_id: int
+    username: str
+
+    quantity_changed: int
+    transaction_type: str
+
+    sale_id: Optional[int] = None
+    loss_id: Optional[int] = None
+
+    notes: Optional[str] = None
+
+    performed_at: datetime
+
+    model_config = ConfigDict(from_attributes=True)
+    
 # ==========================================
 # 11. AUTHENTICATION
 # ==========================================
