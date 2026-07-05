@@ -218,6 +218,39 @@ class SaleResponse(SaleBase):
 
     model_config = ConfigDict(from_attributes=True)
 
+# ==========================================
+# SALE DETAILS (Receipt View)
+# ==========================================
+
+class SaleItemDetailResponse(BaseModel):
+    product_id: int
+    product_name: str
+    batch_id: int
+    quantity_sold: int
+    unit_price: Decimal
+    subtotal: Decimal
+
+    model_config = ConfigDict(from_attributes=True)
+
+
+class SaleDetailResponse(BaseModel):
+    id: int
+
+    sold_at: datetime
+
+    total_amount: Decimal
+
+    payment_method: PaymentMethod
+
+    payment_status: PaymentStatus
+
+    customer_id: Optional[int]
+    customer_name: Optional[str]
+
+    user_id: int
+    employee_username: str
+
+    items: List[SaleItemDetailResponse]
 
 # ==========================================
 # 9. LOSS LOGS

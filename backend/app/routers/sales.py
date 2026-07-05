@@ -136,3 +136,61 @@ def get_all_sales(
     """
     sales = db.query(models.Sale).offset(skip).limit(limit).all()
     return sales
+
+@router.get("/{sale_id}", response_model=schemas.SaleDetailResponse)
+def get_sale(
+    sale_id: int,
+    db: Session = Depends(get_db),
+    current_user=Depends(get_current_user)
+):
+    """
+    Returns the complete receipt for a single sale.
+    """
+
+    sale = (
+        db.query(models.Sale)
+        .filter(models.Sale.id == sale_id)
+        .first()
+    )
+
+    if sale is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Sale not found."
+        )
+
+    items = []
+
+    for item in sale.items:
+
+        items.append(
+            schemas.SaleItemDetailResponse(
+                product_id=item.product_id,
+                product_name=item.product.name,
+                batch_id=item.batch_id,
+                quantity_sold=item.quantity_sold,
+                unit_price=item.unit_price,
+                subtotal=item.quantity_sold * item.unit_price
+            )
+        )
+
+    return schemas.SaleDetailResponse(
+
+        id=sale.id,
+
+        sold_at=sale.sold_at,
+
+        total_amount=sale.total_amount,
+
+        payment_method=sale.payment_method,
+
+        payment_status=sale.payment_status,
+
+        customer_id=sale.customer.id if sale.customer else None,
+        customer_name=sale.customer.name if sale.customer else None,
+
+        user_id=sale.user.id,
+        employee_username=sale.user.username,
+
+        items=items
+    )
