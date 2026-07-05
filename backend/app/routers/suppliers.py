@@ -1,7 +1,9 @@
 from typing import List
 
 from fastapi import APIRouter, Depends, HTTPException, status
+
 from sqlalchemy.orm import Session
+from sqlalchemy import or_
 
 from app.database import get_db
 from app.models import core as models
@@ -85,6 +87,43 @@ def get_suppliers(
         .limit(limit)
         .all()
     )
+
+
+# ==================================================
+# SEARCH SUPPLIERS
+# ==================================================
+
+@router.get("/search/", response_model=List[schemas.SupplierResponse])
+def search_suppliers(
+    q: str,
+    skip: int = 0,
+    limit: int = 50,
+    db: Session = Depends(get_db),
+    current_user=Depends(get_current_user),
+):
+    """
+    Search suppliers by company name,
+    contact person, phone or email.
+    """
+
+    search = f"%{q}%"
+
+    suppliers = (
+        db.query(models.Supplier)
+        .filter(
+            or_(
+                models.Supplier.name.like(search),
+                models.Supplier.contact_person.like(search),
+                models.Supplier.phone.like(search),
+                models.Supplier.email.like(search),
+            )
+        )
+        .offset(skip)
+        .limit(limit)
+        .all()
+    )
+
+    return suppliers
 
 
 # ==================================================

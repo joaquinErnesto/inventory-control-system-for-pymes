@@ -1,5 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException, status
+
 from sqlalchemy.orm import Session
+from sqlalchemy import or_
+
 from typing import List
 
 from app.database import get_db
@@ -84,6 +87,43 @@ def get_all_customers(
 
     customers = (
         db.query(models.Customer)
+        .offset(skip)
+        .limit(limit)
+        .all()
+    )
+
+    return customers
+
+
+# ==================================================
+# SEARCH CUSTOMERS
+# ==================================================
+
+@router.get("/search/", response_model=List[schemas.CustomerResponse])
+def search_customers(
+    q: str,
+    skip: int = 0,
+    limit: int = 50,
+    db: Session = Depends(get_db),
+    current_user=Depends(get_current_user),
+):
+    """
+    Search customers by name, identification,
+    phone or email.
+    """
+
+    search = f"%{q}%"
+
+    customers = (
+        db.query(models.Customer)
+        .filter(
+            or_(
+                models.Customer.name.like(search),
+                models.Customer.identification_number.like(search),
+                models.Customer.phone.like(search),
+                models.Customer.email.like(search),
+            )
+        )
         .offset(skip)
         .limit(limit)
         .all()

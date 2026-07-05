@@ -1,5 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException, status
+
+from sqlalchemy import or_
 from sqlalchemy.orm import Session
+
 from typing import List
 
 from app.database import get_db
@@ -66,6 +69,42 @@ def get_products(
     Retrieve a list of all products in the catalog.
     """
     products = db.query(models.Product).offset(skip).limit(limit).all()
+    return products
+
+
+# ==================================================
+# SEARCH PRODUCTS
+# ==================================================
+
+@router.get("/search/", response_model=List[schemas.ProductResponse])
+def search_products(
+    q: str,
+    skip: int = 0,
+    limit: int = 50,
+    db: Session = Depends(get_db),
+    current_user=Depends(get_current_user),
+):
+    """
+    Search products by name, SKU/barcode or description.
+    """
+
+    search = f"%{q}%"
+
+    products = (
+        db.query(models.Product)
+        .filter(
+            models.Product.is_active == True,
+            or_(
+                models.Product.name.like(search),
+                models.Product.sku_or_barcode.like(search),
+                models.Product.description.like(search),
+            ),
+        )
+        .offset(skip)
+        .limit(limit)
+        .all()
+    )
+
     return products
 
 
