@@ -9,12 +9,16 @@ from app.database import get_db
 from app.models import core as models
 from app.schemas import core as schemas
 from app.security import get_current_user
+from app.utils.query_sorting import apply_sorting
 
 router = APIRouter(
     prefix="/inventory-transactions",
     tags=["Inventory Transactions"]
 )
 
+# ==================================================
+# GET INVENTORY TRANSACTIONS
+# ==================================================
 
 @router.get("/", response_model=List[schemas.InventoryTransactionResponse])
 def get_inventory_transactions(
@@ -29,7 +33,9 @@ def get_inventory_transactions(
     start_date: Optional[datetime] = None,
     end_date: Optional[datetime] = None,
     db: Session = Depends(get_db),
-    current_user=Depends(get_current_user)
+    current_user=Depends(get_current_user),
+    sort: str = "performed_at",
+    order: str = "desc"
 ):
     """
     Retrieve inventory transactions with optional filters.
@@ -41,6 +47,19 @@ def get_inventory_transactions(
         Can only view transactions created by themselves.
     """
 
+    allowed_sort_fields = {
+        "performed_at": models.InventoryTransaction.performed_at,
+        "transaction_type": models.InventoryTransaction.transaction_type,
+        "quantity_changed": models.InventoryTransaction.quantity_changed,
+    }
+
+    query = apply_sorting(
+        query=query,
+        sort=sort,
+        order=order,
+        allowed_fields=allowed_sort_fields,
+    )
+    
     query = db.query(models.InventoryTransaction)
 
     # Employee restriction

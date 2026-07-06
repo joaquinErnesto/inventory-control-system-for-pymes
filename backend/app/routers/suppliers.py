@@ -13,6 +13,8 @@ from app.security import (
     get_current_user,
 )
 
+from app.utils.query_sorting import apply_sorting
+
 router = APIRouter(
     prefix="/suppliers",
     tags=["Suppliers"],
@@ -74,6 +76,8 @@ def get_suppliers(
     limit: int = 100,
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user),
+    sort: str = "name",
+    order: str = "asc"
 ):
     """
     Retrieve all suppliers.
@@ -81,12 +85,28 @@ def get_suppliers(
     Admin and Employee.
     """
 
-    return (
+    allowed_sort_fields = {
+        "name": models.Supplier.name,
+        "created_at": models.Supplier.created_at
+    }
+
+    query = db.query(models.Supplier)
+
+    query = apply_sorting(
+        query=query,
+        sort=sort,
+        order=order,
+        allowed_fields=allowed_sort_fields,
+    )
+    
+    suppliers = (
         db.query(models.Supplier)
         .offset(skip)
         .limit(limit)
         .all()
     )
+    
+    return suppliers
 
 
 # ==================================================

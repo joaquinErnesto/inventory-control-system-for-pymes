@@ -10,6 +10,8 @@ from app.security import (
     get_current_admin,
 )
 
+from app.utils.query_sorting import apply_sorting
+
 router = APIRouter(
     prefix="/batches",
     tags=["Inventory Batches"]
@@ -126,11 +128,30 @@ def get_all_batches(
     limit: int = 100,
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user),
+    sort: str = "recieved_date",
+    order: str = "desc"
 ):
     """
     Retrieve all inventory batches.
     """
+    
+    allowed_sort_fields = {
+        "received_date": models.InventoryBatch.received_date,
+        "expiration_date": models.InventoryBatch.expiration_date,
+        "current_quantity": models.InventoryBatch.current_quantity,
+        "cost_price": models.InventoryBatch.cost_price,
+        "selling_price": models.InventoryBatch.selling_price,
+    }
 
+    query = db.query(models.InventoryBatch)
+    
+    query = apply_sorting(
+        query=query,
+        sort=sort,
+        order=order,
+        allowed_fields=allowed_sort_fields,
+    )
+    
     batches = (
         db.query(models.InventoryBatch)
         .offset(skip)

@@ -11,10 +11,17 @@ from app.security import (
     get_current_admin
 )
 
+from app.utils.query_sorting import apply_sorting
+
 router = APIRouter(
     prefix="/users",
     tags=["Users"]
 )
+
+
+# ==================================================
+# CREATE USERS
+# ==================================================
 
 @router.post(
     "/",
@@ -57,6 +64,11 @@ def create_user(
 
     return new_user
 
+
+# ==================================================
+# GET USERS
+# ==================================================
+
 @router.get(
     "/",
     response_model=List[schemas.UserResponse]
@@ -65,15 +77,31 @@ def get_users(
     skip: int = 0,
     limit: int = 100,
     db: Session = Depends(get_db),
-    current_user: models.User = Depends(get_current_admin)
+    current_user: models.User = Depends(get_current_admin),
+    sort: str = "created_at",
+    order: str = "desc"
 ):
     """
     Retrieve all registered users.
     Only administrators are allowed to access this endpoint.
     """
 
+    allowed_sort_fields = {
+        "username": models.User.username,
+        "created_at": models.User.created_at,
+    }
+
+    query = db.query(models.User)
+
+    query = apply_sorting(
+        query=query,
+        sort=sort,
+        order=order,
+        allowed_fields=allowed_sort_fields,
+    )
+
     users = (
-        db.query(models.User)
+        query
         .offset(skip)
         .limit(limit)
         .all()

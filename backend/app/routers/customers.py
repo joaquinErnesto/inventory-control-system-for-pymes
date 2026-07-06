@@ -12,6 +12,7 @@ from app.security import (
     get_current_user,
     get_current_admin,
 )
+from app.utils.query_sorting import apply_sorting
 
 router = APIRouter(
     prefix="/customers",
@@ -79,12 +80,28 @@ def get_all_customers(
     limit: int = 100,
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user),
+    sort: str = "name",
+    order: str = "asc"
 ):
     """
     Retrieve all customers.
     Any authenticated user.
     """
 
+    allowed_sort_fields = {
+        "name": models.Customer.name,
+        "created_at": models.Customer.created_at,
+    }
+    
+    query = db.query(models.Customer)
+    
+    query = apply_sorting(
+        query=query,
+        sort=sort,
+        order=order,
+        allowed_fields=allowed_sort_fields,
+    )
+    
     customers = (
         db.query(models.Customer)
         .offset(skip)

@@ -14,6 +14,8 @@ from app.security import (
     get_current_admin
 )
 
+from app.utils.query_sorting import apply_sorting
+
 # Initialize the router
 router = APIRouter(
     prefix="/products",
@@ -63,12 +65,37 @@ def get_products(
     skip: int = 0, 
     limit: int = 100, 
     db: Session = Depends(get_db),
-    current_user = Depends(get_current_user)
+    current_user = Depends(get_current_user),
+    sort: str = "name",
+    order: str = "asc"
 ):
     """
     Retrieve a list of all products in the catalog.
     """
-    products = db.query(models.Product).offset(skip).limit(limit).all()
+    
+    allowed_sort_fields = {
+        "name": models.Product.name,
+        "base_price": models.Product.base_price,
+        "created_at": models.Product.created_at,
+        "min_stock_threshold": models.Product.min_stock_threshold,
+    }
+    
+    query = db.query(models.Product)
+
+    query = apply_sorting(
+        query=query,
+        sort=sort,
+        order=order,
+        allowed_fields=allowed_sort_fields,
+    )
+    
+    products = (
+        db.query(models.Product)
+        .offset(skip)
+        .limit(limit)
+        .all()
+    )
+    
     return products
 
 

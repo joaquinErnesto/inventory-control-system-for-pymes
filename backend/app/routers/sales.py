@@ -7,11 +7,17 @@ from app.database import get_db
 from app.models import core as models
 from app.schemas import core as schemas
 from app.security import get_current_user
+from app.utils.query_sorting import apply_sorting
 
 router = APIRouter(
     prefix="/sales",
     tags=["Sales"]
 )
+
+
+# ==================================================
+# CREATE SALE
+# ==================================================
 
 @router.post("/", response_model=schemas.SaleResponse, status_code=status.HTTP_201_CREATED)
 def process_sale(
@@ -123,18 +129,43 @@ def process_sale(
     return new_sale
 
 
+# ==================================================
+# GET SALES
+# ==================================================
 
 @router.get("/", response_model=List[schemas.SaleResponse])
 def get_all_sales(
     skip: int = 0, 
     limit: int = 100, 
     db: Session = Depends(get_db),
-    current_user = Depends(get_current_user)
+    current_user = Depends(get_current_user),
+    sort: str = "sold_at",
+    order: str = "desc"
 ):
     """
     Retrieve all sales receipts.
     """
-    sales = db.query(models.Sale).offset(skip).limit(limit).all()
+    allowed_sort_fields = {
+        "sold_at": models.Sale.sold_at,
+        "total_amount": models.Sale.total_amount,
+    }
+    
+    query = db.query(models.Sale)
+    
+    query = apply_sorting(
+        query=query,
+        sort=sort,
+        order=order,
+        allowed_fields=allowed_sort_fields,
+    )
+    
+    sales = (
+        db.query(models.Sale)
+        .offset(skip)
+        .limit(limit)
+        .all()
+    )
+
     return sales
 
 @router.get("/{sale_id}", response_model=schemas.SaleDetailResponse)

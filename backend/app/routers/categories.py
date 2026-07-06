@@ -11,14 +11,16 @@ from app.security import (
     get_current_user,
 )
 
+from app.utils.query_sorting import apply_sorting
+
 router = APIRouter(
     prefix="/categories",
     tags=["Categories"],
 )
 
-# ======================================================
+# ===================================================
 # CREATE CATEGORY
-# ======================================================
+# ===================================================
 
 @router.post(
     "/",
@@ -57,9 +59,9 @@ def create_category(
     return new_category
 
 
-# ======================================================
+# ===================================================
 # GET ALL CATEGORIES
-# ======================================================
+# ===================================================
 
 @router.get(
     "/",
@@ -70,24 +72,41 @@ def get_categories(
     limit: int = 100,
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user),
+    sort: str = "name",
+    order: str = "asc"
 ):
     """
     Retrieve all categories.
 
     Admin and Employee.
     """
+    
+    allowed_sort_fields = {
+        "name": models.Category.name,
+    }
 
-    return (
-        db.query(models.Category)
+    query = db.query(models.Category)
+
+    query = apply_sorting(
+        query=query,
+        sort=sort,
+        order=order,
+        allowed_fields=allowed_sort_fields,
+    )
+
+    categories = (
+        query
         .offset(skip)
         .limit(limit)
         .all()
     )
 
+    return categories
 
-# ======================================================
+
+# ===================================================
 # GET CATEGORY BY ID
-# ======================================================
+# ===================================================
 
 @router.get(
     "/{category_id}",

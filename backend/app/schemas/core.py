@@ -52,6 +52,13 @@ class UserBase(BaseModel):
 class UserCreate(UserBase):
     password: str = Field(..., min_length=8) # Plain text password to be hashed by your logic
 
+class UserUpdate(BaseModel):
+    username: str = Field(..., max_length=50)
+    role: UserRole
+
+class UserPasswordUpdate(BaseModel):
+    password: str = Field(..., min_length=8)
+    
 class UserResponse(UserBase):
     id: int
     created_at: datetime
