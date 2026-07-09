@@ -73,7 +73,7 @@ class Product(Base):
     category_id = Column(Integer, ForeignKey("categories.id", ondelete="RESTRICT"), nullable=False)
     name = Column(String(150), nullable=False)
     description = Column(Text, nullable=True)
-    sku_or_barcode = Column(String(50), unique=True, index=True, nullable=True)
+    sku_or_barcode = Column(String(50), unique=True, nullable=True)
     unit_of_measure = Column(String(20), nullable=False, default="Units")
     base_price = Column(Numeric(10, 2), nullable=False, default=0.00)
     min_stock_threshold = Column(Integer, nullable=False, default=5)

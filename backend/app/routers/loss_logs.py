@@ -5,12 +5,21 @@ from typing import List
 from app.database import get_db
 from app.models import core as models
 from app.schemas import core as schemas
-from app.security import get_current_user
+from app.security import (
+    get_current_user,
+    get_current_admin
+)
+from app.logging.logger import logger
 
 router = APIRouter(
     prefix="/losses",
     tags=["Loss Logs"]
 )
+
+
+# ==================================================
+# LOG LOSS (CREATE)
+# ==================================================
 
 @router.post("/", response_model=schemas.LossLogResponse, status_code=status.HTTP_201_CREATED)
 def log_loss(
@@ -72,8 +81,103 @@ def log_loss(
     if batch.current_quantity <= batch.product.min_stock_threshold:
         # In a real app, you might trigger an email here.
         # For now, we will print a message to the logs as a placeholder.
-        print(f"ALERT: Product {batch.product.name} (ID: {batch.product_id}) is below minimum threshold!")
+        logger.warning(
+            f"LOW STOCK ALERT | "
+            f"Product='{batch.product.name}' | "
+            f"Product ID={batch.product_id} | "
+            f"Current Stock={batch.current_quantity} | "
+            f"Minimum={batch.product.min_stock_threshold}"
+        )
 
     db.commit()
     db.refresh(new_loss)
+    
+    logger.info(
+        f"Loss registered | "
+        f"Loss ID={new_loss.id} | "
+        f"Product ID={batch.product_id} | "
+        f"Batch ID={batch.id} | "
+        f"Quantity={loss.quantity_lost} | "
+        f"User ID={current_user.id}"
+    )
+    
     return new_loss
+
+
+# ==================================================
+# GET ALL LOSS LOGS
+# ==================================================
+
+@router.get(
+    "/",
+    response_model=List[schemas.LossLogResponse]
+)
+def get_loss_logs(
+    skip: int = 0,
+    limit: int = 100,
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(get_current_user)
+):
+    """
+    Retrieve all loss logs.
+
+    Administrators can view every record.
+
+    Employees can only view their own records.
+    """
+
+    query = db.query(models.LossLog)
+
+    if current_user.role != schemas.UserRole.ADMIN:
+        query = query.filter(
+            models.LossLog.user_id == current_user.id
+        )
+
+    return (
+        query
+        .order_by(models.LossLog.logged_at.desc())
+        .offset(skip)
+        .limit(limit)
+        .all()
+    )
+
+
+# ==================================================
+# GET LOSS LOG BY ID
+# ==================================================
+
+@router.get(
+    "/{loss_id}",
+    response_model=schemas.LossLogResponse
+)
+def get_loss_log(
+    loss_id: int,
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(get_current_user)
+):
+    """
+    Retrieve one loss log.
+    """
+
+    loss = (
+        db.query(models.LossLog)
+        .filter(models.LossLog.id == loss_id)
+        .first()
+    )
+
+    if loss is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Loss log not found."
+        )
+
+    if (
+        current_user.role != schemas.UserRole.ADMIN
+        and loss.user_id != current_user.id
+    ):
+        raise HTTPException(
+            status_code=403,
+            detail="You are not authorized to view this loss log."
+        )
+
+    return loss

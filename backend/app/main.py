@@ -1,4 +1,5 @@
 from datetime import datetime
+from time import perf_counter
 
 from fastapi import FastAPI, Depends, HTTPException, Request
 from fastapi.responses import JSONResponse
@@ -9,7 +10,6 @@ from sqlalchemy import text
 
 from app.database import engine, Base, get_db
 from app.models import core
-
 from app.routers import (
     auth,
     categories,
@@ -23,6 +23,8 @@ from app.routers import (
     reports,
     inventory_transactions,
 )
+from app.exceptions.handlers import register_exception_handlers
+from app.logging.logger import logger
 
 # ==================================================
 # CREATE DATABASE TABLES
@@ -39,6 +41,33 @@ app = FastAPI(
     description="Backend API for the Baracoa Inventory Control System",
     version="1.0.0",
 )
+
+@app.middleware("http")
+async def log_requests(request: Request, call_next):
+
+    start = perf_counter()
+
+    logger.info(
+        f"Request started | "
+        f"{request.method} "
+        f"{request.url.path}"
+    )
+
+    response = await call_next(request)
+
+    elapsed = perf_counter() - start
+
+    logger.info(
+        f"Request finished | "
+        f"{request.method} "
+        f"{request.url.path} | "
+        f"Status {response.status_code} | "
+        f"{elapsed:.3f}s"
+    )
+
+    return response
+
+register_exception_handlers(app)
 
 # ==================================================
 # GLOBAL EXCEPTION HANDLERS

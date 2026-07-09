@@ -138,7 +138,7 @@ class ProductBase(BaseModel):
     description: Optional[str] = None
     sku_or_barcode: Optional[str] = Field(None, max_length=50)
     unit_of_measure: UnitOfMeasure
-    base_price: Decimal = Field(default=0.00, decimal_places=2)
+    base_price: Decimal = Field(default=0.00, decimal_places=2, gt=0)
     min_stock_threshold: int = 5
     is_active: bool = True
 
@@ -160,8 +160,8 @@ class InventoryBatchBase(BaseModel):
     supplier_id: Optional[int] = None
     batch_number: Optional[str] = Field(None, max_length=50)
     initial_quantity: int
-    cost_price: Decimal = Field(..., decimal_places=2)
-    selling_price: Decimal = Field(..., decimal_places=2)
+    cost_price: Decimal = Field(..., decimal_places=2, gt=0)
+    selling_price: Decimal = Field(..., decimal_places=2, gt=0)
     expiration_date: Optional[date] = None
     notes: Optional[str] = None
 
@@ -170,7 +170,7 @@ class InventoryBatchCreate(InventoryBatchBase):
 
 class InventoryBatchResponse(InventoryBatchBase):
     id: int
-    current_quantity: int
+    current_quantity: int = Field(ge=0)
     created_by_user_id: int
     received_date: datetime
 
@@ -179,7 +179,7 @@ class InventoryBatchResponse(InventoryBatchBase):
 class ExpiringBatchResponse(BaseModel):
     product_name: str
     batch_number: Optional[str] = None
-    current_quantity: int
+    current_quantity: int = Field(ge=0)
     expiration_date: date
     days_remaining: int
 
@@ -191,8 +191,8 @@ class ExpiringBatchResponse(BaseModel):
 # ==========================================
 class SaleItemBase(BaseModel):
     product_id: int
-    quantity_sold: int
-    unit_price: Decimal = Field(..., decimal_places=2)
+    quantity_sold: int = Field(gt=0)
+    unit_price: Decimal = Field(..., decimal_places=2, gt=0)
 
 class SaleItemCreate(SaleItemBase):
     pass
@@ -219,7 +219,7 @@ class SaleCreate(SaleBase):
 class SaleResponse(SaleBase):
     id: int
     user_id: int
-    total_amount: Decimal
+    total_amount: Decimal = Field(gt=0)
     sold_at: datetime
     items: List[SaleItemResponse] # Returns the nested items in the JSON response
 
@@ -233,9 +233,9 @@ class SaleItemDetailResponse(BaseModel):
     product_id: int
     product_name: str
     batch_id: int
-    quantity_sold: int
-    unit_price: Decimal
-    subtotal: Decimal
+    quantity_sold: int = Field(gt=0)
+    unit_price: Decimal = Field(gt=0)
+    subtotal: Decimal = Field(gt=0)
 
     model_config = ConfigDict(from_attributes=True)
 
@@ -264,7 +264,7 @@ class SaleDetailResponse(BaseModel):
 # ==========================================
 class LossLogBase(BaseModel):
     batch_id: int
-    quantity_lost: int
+    quantity_lost: int = Field(gt=0)
     reason: LossReason
     notes: Optional[str] = None
 
@@ -311,7 +311,7 @@ class InventoryTransactionDetailedResponse(BaseModel):
     user_id: int
     username: str
 
-    quantity_changed: int
+    quantity_changed: int = Field(gt=0)
     transaction_type: str
 
     sale_id: Optional[int] = None

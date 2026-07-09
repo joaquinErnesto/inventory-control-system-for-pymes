@@ -2,9 +2,11 @@ Listado de rutas de carpetas para el volumen Documentos
 El n£mero de serie del volumen es A328-E5B0
 D:.
 ³   .env
-³   backend_folder_tree.txt
+³   project_structure.txt
 ³   README.md
 ³   requirements.txt
+³   test_bcrypt.py
+³   test_passlib.py
 ³   
 ÃÄÄÄapp
 ³   ³   config.py
@@ -15,6 +17,10 @@ D:.
 ³   ³   __init__.py
 ³   ³   
 ³   ÃÄÄÄcrud
+³   ÃÄÄÄexceptions
+³   ³       handlers.py
+³   ³       __init__.py
+³   ³       
 ³   ÃÄÄÄmodels
 ³   ³   ³   core.py
 ³   ³   ³   __init__.py
@@ -28,6 +34,7 @@ D:.
 ³   ³   ³   categories.py
 ³   ³   ³   customers.py
 ³   ³   ³   inventory_batches.py
+³   ³   ³   inventory_transactions.py
 ³   ³   ³   loss_logs.py
 ³   ³   ³   products.py
 ³   ³   ³   reports.py
@@ -41,6 +48,7 @@ D:.
 ³   ³           categories.cpython-313.pyc
 ³   ³           customers.cpython-313.pyc
 ³   ³           inventory_batches.cpython-313.pyc
+³   ³           inventory_transactions.cpython-313.pyc
 ³   ³           loss_logs.cpython-313.pyc
 ³   ³           products.cpython-313.pyc
 ³   ³           reports.cpython-313.pyc
@@ -56,6 +64,12 @@ D:.
 ³   ³   ÀÄÄÄ__pycache__
 ³   ³           core.cpython-313.pyc
 ³   ³           __init__.cpython-313.pyc
+³   ³           
+³   ÃÄÄÄutils
+³   ³   ³   query_sorting.py
+³   ³   ³   
+³   ³   ÀÄÄÄ__pycache__
+³   ³           query_sorting.cpython-313.pyc
 ³   ³           
 ³   ÀÄÄÄ__pycache__
 ³           config.cpython-313.pyc
@@ -76,7 +90,10 @@ D:.
     ³                   
     ÃÄÄÄLib
     ³   ÀÄÄÄsite-packages
+    ³       ³   jose.py
+    ³       ³   six.py
     ³       ³   typing_extensions.py
+    ³       ³   _cffi_backend.cp313-win_amd64.pyd
     ³       ³   
     ³       ÃÄÄÄannotated_doc
     ³       ³   ³   main.py
@@ -235,6 +252,82 @@ D:.
     ³       ³   ÀÄÄÄlicenses
     ³       ³           LICENSE
     ³       ³           
+    ³       ÃÄÄÄbcrypt
+    ³       ³   ³   py.typed
+    ³       ³   ³   _bcrypt.pyd
+    ³       ³   ³   _bcrypt.pyi
+    ³       ³   ³   __about__.py
+    ³       ³   ³   __init__.py
+    ³       ³   ³   
+    ³       ³   ÀÄÄÄ__pycache__
+    ³       ³           __about__.cpython-313.pyc
+    ³       ³           __init__.cpython-313.pyc
+    ³       ³           
+    ³       ÃÄÄÄbcrypt-4.0.1.dist-info
+    ³       ³       INSTALLER
+    ³       ³       LICENSE
+    ³       ³       METADATA
+    ³       ³       RECORD
+    ³       ³       REQUESTED
+    ³       ³       top_level.txt
+    ³       ³       WHEEL
+    ³       ³       
+    ³       ÃÄÄÄcffi
+    ³       ³   ³   api.py
+    ³       ³   ³   backend_ctypes.py
+    ³       ³   ³   cffi_opcode.py
+    ³       ³   ³   commontypes.py
+    ³       ³   ³   cparser.py
+    ³       ³   ³   error.py
+    ³       ³   ³   ffiplatform.py
+    ³       ³   ³   lock.py
+    ³       ³   ³   model.py
+    ³       ³   ³   parse_c_type.h
+    ³       ³   ³   pkgconfig.py
+    ³       ³   ³   recompiler.py
+    ³       ³   ³   setuptools_ext.py
+    ³       ³   ³   vengine_cpy.py
+    ³       ³   ³   vengine_gen.py
+    ³       ³   ³   verifier.py
+    ³       ³   ³   _cffi_errors.h
+    ³       ³   ³   _cffi_include.h
+    ³       ³   ³   _embedding.h
+    ³       ³   ³   _imp_emulation.py
+    ³       ³   ³   _shimmed_dist_utils.py
+    ³       ³   ³   __init__.py
+    ³       ³   ³   
+    ³       ³   ÀÄÄÄ__pycache__
+    ³       ³           api.cpython-313.pyc
+    ³       ³           backend_ctypes.cpython-313.pyc
+    ³       ³           cffi_opcode.cpython-313.pyc
+    ³       ³           commontypes.cpython-313.pyc
+    ³       ³           cparser.cpython-313.pyc
+    ³       ³           error.cpython-313.pyc
+    ³       ³           ffiplatform.cpython-313.pyc
+    ³       ³           lock.cpython-313.pyc
+    ³       ³           model.cpython-313.pyc
+    ³       ³           pkgconfig.cpython-313.pyc
+    ³       ³           recompiler.cpython-313.pyc
+    ³       ³           setuptools_ext.cpython-313.pyc
+    ³       ³           vengine_cpy.cpython-313.pyc
+    ³       ³           vengine_gen.cpython-313.pyc
+    ³       ³           verifier.cpython-313.pyc
+    ³       ³           _imp_emulation.cpython-313.pyc
+    ³       ³           _shimmed_dist_utils.cpython-313.pyc
+    ³       ³           __init__.cpython-313.pyc
+    ³       ³           
+    ³       ÃÄÄÄcffi-2.0.0.dist-info
+    ³       ³   ³   entry_points.txt
+    ³       ³   ³   INSTALLER
+    ³       ³   ³   METADATA
+    ³       ³   ³   RECORD
+    ³       ³   ³   top_level.txt
+    ³       ³   ³   WHEEL
+    ³       ³   ³   
+    ³       ³   ÀÄÄÄlicenses
+    ³       ³           AUTHORS
+    ³       ³           LICENSE
+    ³       ³           
     ³       ÃÄÄÄclick
     ³       ³   ³   core.py
     ³       ³   ³   decorators.py
@@ -326,6 +419,275 @@ D:.
     ³       ³   ÀÄÄÄlicenses
     ³       ³           LICENSE.txt
     ³       ³           
+    ³       ÃÄÄÄcryptography
+    ³       ³   ³   exceptions.py
+    ³       ³   ³   fernet.py
+    ³       ³   ³   py.typed
+    ³       ³   ³   utils.py
+    ³       ³   ³   __about__.py
+    ³       ³   ³   __init__.py
+    ³       ³   ³   
+    ³       ³   ÃÄÄÄhazmat
+    ³       ³   ³   ³   _oid.py
+    ³       ³   ³   ³   __init__.py
+    ³       ³   ³   ³   
+    ³       ³   ³   ÃÄÄÄasn1
+    ³       ³   ³   ³   ³   asn1.py
+    ³       ³   ³   ³   ³   __init__.py
+    ³       ³   ³   ³   ³   
+    ³       ³   ³   ³   ÀÄÄÄ__pycache__
+    ³       ³   ³   ³           asn1.cpython-313.pyc
+    ³       ³   ³   ³           __init__.cpython-313.pyc
+    ³       ³   ³   ³           
+    ³       ³   ³   ÃÄÄÄbackends
+    ³       ³   ³   ³   ³   __init__.py
+    ³       ³   ³   ³   ³   
+    ³       ³   ³   ³   ÃÄÄÄopenssl
+    ³       ³   ³   ³   ³   ³   backend.py
+    ³       ³   ³   ³   ³   ³   __init__.py
+    ³       ³   ³   ³   ³   ³   
+    ³       ³   ³   ³   ³   ÀÄÄÄ__pycache__
+    ³       ³   ³   ³   ³           backend.cpython-313.pyc
+    ³       ³   ³   ³   ³           __init__.cpython-313.pyc
+    ³       ³   ³   ³   ³           
+    ³       ³   ³   ³   ÀÄÄÄ__pycache__
+    ³       ³   ³   ³           __init__.cpython-313.pyc
+    ³       ³   ³   ³           
+    ³       ³   ³   ÃÄÄÄbindings
+    ³       ³   ³   ³   ³   _rust.pyd
+    ³       ³   ³   ³   ³   __init__.py
+    ³       ³   ³   ³   ³   
+    ³       ³   ³   ³   ÃÄÄÄopenssl
+    ³       ³   ³   ³   ³   ³   binding.py
+    ³       ³   ³   ³   ³   ³   _conditional.py
+    ³       ³   ³   ³   ³   ³   __init__.py
+    ³       ³   ³   ³   ³   ³   
+    ³       ³   ³   ³   ³   ÀÄÄÄ__pycache__
+    ³       ³   ³   ³   ³           binding.cpython-313.pyc
+    ³       ³   ³   ³   ³           _conditional.cpython-313.pyc
+    ³       ³   ³   ³   ³           __init__.cpython-313.pyc
+    ³       ³   ³   ³   ³           
+    ³       ³   ³   ³   ÃÄÄÄ_rust
+    ³       ³   ³   ³   ³   ³   asn1.pyi
+    ³       ³   ³   ³   ³   ³   declarative_asn1.pyi
+    ³       ³   ³   ³   ³   ³   exceptions.pyi
+    ³       ³   ³   ³   ³   ³   ocsp.pyi
+    ³       ³   ³   ³   ³   ³   pkcs12.pyi
+    ³       ³   ³   ³   ³   ³   pkcs7.pyi
+    ³       ³   ³   ³   ³   ³   test_support.pyi
+    ³       ³   ³   ³   ³   ³   x509.pyi
+    ³       ³   ³   ³   ³   ³   _openssl.pyi
+    ³       ³   ³   ³   ³   ³   __init__.pyi
+    ³       ³   ³   ³   ³   ³   
+    ³       ³   ³   ³   ³   ÀÄÄÄopenssl
+    ³       ³   ³   ³   ³           aead.pyi
+    ³       ³   ³   ³   ³           ciphers.pyi
+    ³       ³   ³   ³   ³           cmac.pyi
+    ³       ³   ³   ³   ³           dh.pyi
+    ³       ³   ³   ³   ³           dsa.pyi
+    ³       ³   ³   ³   ³           ec.pyi
+    ³       ³   ³   ³   ³           ed25519.pyi
+    ³       ³   ³   ³   ³           ed448.pyi
+    ³       ³   ³   ³   ³           hashes.pyi
+    ³       ³   ³   ³   ³           hmac.pyi
+    ³       ³   ³   ³   ³           hpke.pyi
+    ³       ³   ³   ³   ³           kdf.pyi
+    ³       ³   ³   ³   ³           keys.pyi
+    ³       ³   ³   ³   ³           mldsa.pyi
+    ³       ³   ³   ³   ³           mlkem.pyi
+    ³       ³   ³   ³   ³           poly1305.pyi
+    ³       ³   ³   ³   ³           rsa.pyi
+    ³       ³   ³   ³   ³           x25519.pyi
+    ³       ³   ³   ³   ³           x448.pyi
+    ³       ³   ³   ³   ³           __init__.pyi
+    ³       ³   ³   ³   ³           
+    ³       ³   ³   ³   ÀÄÄÄ__pycache__
+    ³       ³   ³   ³           __init__.cpython-313.pyc
+    ³       ³   ³   ³           
+    ³       ³   ³   ÃÄÄÄdecrepit
+    ³       ³   ³   ³   ³   __init__.py
+    ³       ³   ³   ³   ³   
+    ³       ³   ³   ³   ÃÄÄÄciphers
+    ³       ³   ³   ³   ³   ³   algorithms.py
+    ³       ³   ³   ³   ³   ³   modes.py
+    ³       ³   ³   ³   ³   ³   __init__.py
+    ³       ³   ³   ³   ³   ³   
+    ³       ³   ³   ³   ³   ÀÄÄÄ__pycache__
+    ³       ³   ³   ³   ³           algorithms.cpython-313.pyc
+    ³       ³   ³   ³   ³           modes.cpython-313.pyc
+    ³       ³   ³   ³   ³           __init__.cpython-313.pyc
+    ³       ³   ³   ³   ³           
+    ³       ³   ³   ³   ÀÄÄÄ__pycache__
+    ³       ³   ³   ³           __init__.cpython-313.pyc
+    ³       ³   ³   ³           
+    ³       ³   ³   ÃÄÄÄprimitives
+    ³       ³   ³   ³   ³   cmac.py
+    ³       ³   ³   ³   ³   constant_time.py
+    ³       ³   ³   ³   ³   hashes.py
+    ³       ³   ³   ³   ³   hmac.py
+    ³       ³   ³   ³   ³   hpke.py
+    ³       ³   ³   ³   ³   keywrap.py
+    ³       ³   ³   ³   ³   padding.py
+    ³       ³   ³   ³   ³   poly1305.py
+    ³       ³   ³   ³   ³   _asymmetric.py
+    ³       ³   ³   ³   ³   _cipheralgorithm.py
+    ³       ³   ³   ³   ³   _modes.py
+    ³       ³   ³   ³   ³   _serialization.py
+    ³       ³   ³   ³   ³   __init__.py
+    ³       ³   ³   ³   ³   
+    ³       ³   ³   ³   ÃÄÄÄasymmetric
+    ³       ³   ³   ³   ³   ³   dh.py
+    ³       ³   ³   ³   ³   ³   dsa.py
+    ³       ³   ³   ³   ³   ³   ec.py
+    ³       ³   ³   ³   ³   ³   ed25519.py
+    ³       ³   ³   ³   ³   ³   ed448.py
+    ³       ³   ³   ³   ³   ³   mldsa.py
+    ³       ³   ³   ³   ³   ³   mlkem.py
+    ³       ³   ³   ³   ³   ³   padding.py
+    ³       ³   ³   ³   ³   ³   rsa.py
+    ³       ³   ³   ³   ³   ³   types.py
+    ³       ³   ³   ³   ³   ³   utils.py
+    ³       ³   ³   ³   ³   ³   x25519.py
+    ³       ³   ³   ³   ³   ³   x448.py
+    ³       ³   ³   ³   ³   ³   __init__.py
+    ³       ³   ³   ³   ³   ³   
+    ³       ³   ³   ³   ³   ÀÄÄÄ__pycache__
+    ³       ³   ³   ³   ³           dh.cpython-313.pyc
+    ³       ³   ³   ³   ³           dsa.cpython-313.pyc
+    ³       ³   ³   ³   ³           ec.cpython-313.pyc
+    ³       ³   ³   ³   ³           ed25519.cpython-313.pyc
+    ³       ³   ³   ³   ³           ed448.cpython-313.pyc
+    ³       ³   ³   ³   ³           mldsa.cpython-313.pyc
+    ³       ³   ³   ³   ³           mlkem.cpython-313.pyc
+    ³       ³   ³   ³   ³           padding.cpython-313.pyc
+    ³       ³   ³   ³   ³           rsa.cpython-313.pyc
+    ³       ³   ³   ³   ³           types.cpython-313.pyc
+    ³       ³   ³   ³   ³           utils.cpython-313.pyc
+    ³       ³   ³   ³   ³           x25519.cpython-313.pyc
+    ³       ³   ³   ³   ³           x448.cpython-313.pyc
+    ³       ³   ³   ³   ³           __init__.cpython-313.pyc
+    ³       ³   ³   ³   ³           
+    ³       ³   ³   ³   ÃÄÄÄciphers
+    ³       ³   ³   ³   ³   ³   aead.py
+    ³       ³   ³   ³   ³   ³   algorithms.py
+    ³       ³   ³   ³   ³   ³   base.py
+    ³       ³   ³   ³   ³   ³   modes.py
+    ³       ³   ³   ³   ³   ³   __init__.py
+    ³       ³   ³   ³   ³   ³   
+    ³       ³   ³   ³   ³   ÀÄÄÄ__pycache__
+    ³       ³   ³   ³   ³           aead.cpython-313.pyc
+    ³       ³   ³   ³   ³           algorithms.cpython-313.pyc
+    ³       ³   ³   ³   ³           base.cpython-313.pyc
+    ³       ³   ³   ³   ³           modes.cpython-313.pyc
+    ³       ³   ³   ³   ³           __init__.cpython-313.pyc
+    ³       ³   ³   ³   ³           
+    ³       ³   ³   ³   ÃÄÄÄkdf
+    ³       ³   ³   ³   ³   ³   argon2.py
+    ³       ³   ³   ³   ³   ³   concatkdf.py
+    ³       ³   ³   ³   ³   ³   hkdf.py
+    ³       ³   ³   ³   ³   ³   kbkdf.py
+    ³       ³   ³   ³   ³   ³   pbkdf2.py
+    ³       ³   ³   ³   ³   ³   scrypt.py
+    ³       ³   ³   ³   ³   ³   x963kdf.py
+    ³       ³   ³   ³   ³   ³   __init__.py
+    ³       ³   ³   ³   ³   ³   
+    ³       ³   ³   ³   ³   ÀÄÄÄ__pycache__
+    ³       ³   ³   ³   ³           argon2.cpython-313.pyc
+    ³       ³   ³   ³   ³           concatkdf.cpython-313.pyc
+    ³       ³   ³   ³   ³           hkdf.cpython-313.pyc
+    ³       ³   ³   ³   ³           kbkdf.cpython-313.pyc
+    ³       ³   ³   ³   ³           pbkdf2.cpython-313.pyc
+    ³       ³   ³   ³   ³           scrypt.cpython-313.pyc
+    ³       ³   ³   ³   ³           x963kdf.cpython-313.pyc
+    ³       ³   ³   ³   ³           __init__.cpython-313.pyc
+    ³       ³   ³   ³   ³           
+    ³       ³   ³   ³   ÃÄÄÄserialization
+    ³       ³   ³   ³   ³   ³   base.py
+    ³       ³   ³   ³   ³   ³   pkcs12.py
+    ³       ³   ³   ³   ³   ³   pkcs7.py
+    ³       ³   ³   ³   ³   ³   ssh.py
+    ³       ³   ³   ³   ³   ³   __init__.py
+    ³       ³   ³   ³   ³   ³   
+    ³       ³   ³   ³   ³   ÀÄÄÄ__pycache__
+    ³       ³   ³   ³   ³           base.cpython-313.pyc
+    ³       ³   ³   ³   ³           pkcs12.cpython-313.pyc
+    ³       ³   ³   ³   ³           pkcs7.cpython-313.pyc
+    ³       ³   ³   ³   ³           ssh.cpython-313.pyc
+    ³       ³   ³   ³   ³           __init__.cpython-313.pyc
+    ³       ³   ³   ³   ³           
+    ³       ³   ³   ³   ÃÄÄÄtwofactor
+    ³       ³   ³   ³   ³   ³   hotp.py
+    ³       ³   ³   ³   ³   ³   totp.py
+    ³       ³   ³   ³   ³   ³   __init__.py
+    ³       ³   ³   ³   ³   ³   
+    ³       ³   ³   ³   ³   ÀÄÄÄ__pycache__
+    ³       ³   ³   ³   ³           hotp.cpython-313.pyc
+    ³       ³   ³   ³   ³           totp.cpython-313.pyc
+    ³       ³   ³   ³   ³           __init__.cpython-313.pyc
+    ³       ³   ³   ³   ³           
+    ³       ³   ³   ³   ÀÄÄÄ__pycache__
+    ³       ³   ³   ³           cmac.cpython-313.pyc
+    ³       ³   ³   ³           constant_time.cpython-313.pyc
+    ³       ³   ³   ³           hashes.cpython-313.pyc
+    ³       ³   ³   ³           hmac.cpython-313.pyc
+    ³       ³   ³   ³           hpke.cpython-313.pyc
+    ³       ³   ³   ³           keywrap.cpython-313.pyc
+    ³       ³   ³   ³           padding.cpython-313.pyc
+    ³       ³   ³   ³           poly1305.cpython-313.pyc
+    ³       ³   ³   ³           _asymmetric.cpython-313.pyc
+    ³       ³   ³   ³           _cipheralgorithm.cpython-313.pyc
+    ³       ³   ³   ³           _modes.cpython-313.pyc
+    ³       ³   ³   ³           _serialization.cpython-313.pyc
+    ³       ³   ³   ³           __init__.cpython-313.pyc
+    ³       ³   ³   ³           
+    ³       ³   ³   ÀÄÄÄ__pycache__
+    ³       ³   ³           _oid.cpython-313.pyc
+    ³       ³   ³           __init__.cpython-313.pyc
+    ³       ³   ³           
+    ³       ³   ÃÄÄÄx509
+    ³       ³   ³   ³   base.py
+    ³       ³   ³   ³   certificate_transparency.py
+    ³       ³   ³   ³   extensions.py
+    ³       ³   ³   ³   general_name.py
+    ³       ³   ³   ³   name.py
+    ³       ³   ³   ³   ocsp.py
+    ³       ³   ³   ³   oid.py
+    ³       ³   ³   ³   verification.py
+    ³       ³   ³   ³   __init__.py
+    ³       ³   ³   ³   
+    ³       ³   ³   ÀÄÄÄ__pycache__
+    ³       ³   ³           base.cpython-313.pyc
+    ³       ³   ³           certificate_transparency.cpython-313.pyc
+    ³       ³   ³           extensions.cpython-313.pyc
+    ³       ³   ³           general_name.cpython-313.pyc
+    ³       ³   ³           name.cpython-313.pyc
+    ³       ³   ³           ocsp.cpython-313.pyc
+    ³       ³   ³           oid.cpython-313.pyc
+    ³       ³   ³           verification.cpython-313.pyc
+    ³       ³   ³           __init__.cpython-313.pyc
+    ³       ³   ³           
+    ³       ³   ÀÄÄÄ__pycache__
+    ³       ³           exceptions.cpython-313.pyc
+    ³       ³           fernet.cpython-313.pyc
+    ³       ³           utils.cpython-313.pyc
+    ³       ³           __about__.cpython-313.pyc
+    ³       ³           __init__.cpython-313.pyc
+    ³       ³           
+    ³       ÃÄÄÄcryptography-49.0.0.dist-info
+    ³       ³   ³   INSTALLER
+    ³       ³   ³   METADATA
+    ³       ³   ³   RECORD
+    ³       ³   ³   WHEEL
+    ³       ³   ³   
+    ³       ³   ÃÄÄÄlicenses
+    ³       ³   ³       LICENSE
+    ³       ³   ³       LICENSE.APACHE
+    ³       ³   ³       LICENSE.BSD
+    ³       ³   ³       
+    ³       ³   ÀÄÄÄsboms
+    ³       ³           cryptography-rust.cyclonedx.json
+    ³       ³           sbom.json
+    ³       ³           
     ³       ÃÄÄÄdotenv
     ³       ³   ³   cli.py
     ³       ³   ³   ipython.py
@@ -347,6 +709,78 @@ D:.
     ³       ³           __init__.cpython-313.pyc
     ³       ³           __main__.cpython-313.pyc
     ³       ³           
+    ³       ÃÄÄÄecdsa
+    ³       ³   ³   curves.py
+    ³       ³   ³   der.py
+    ³       ³   ³   ecdh.py
+    ³       ³   ³   ecdsa.py
+    ³       ³   ³   eddsa.py
+    ³       ³   ³   ellipticcurve.py
+    ³       ³   ³   errors.py
+    ³       ³   ³   keys.py
+    ³       ³   ³   numbertheory.py
+    ³       ³   ³   rfc6979.py
+    ³       ³   ³   ssh.py
+    ³       ³   ³   test_curves.py
+    ³       ³   ³   test_der.py
+    ³       ³   ³   test_ecdh.py
+    ³       ³   ³   test_ecdsa.py
+    ³       ³   ³   test_eddsa.py
+    ³       ³   ³   test_ellipticcurve.py
+    ³       ³   ³   test_jacobi.py
+    ³       ³   ³   test_keys.py
+    ³       ³   ³   test_malformed_sigs.py
+    ³       ³   ³   test_numbertheory.py
+    ³       ³   ³   test_pyecdsa.py
+    ³       ³   ³   test_rw_lock.py
+    ³       ³   ³   test_sha3.py
+    ³       ³   ³   util.py
+    ³       ³   ³   _compat.py
+    ³       ³   ³   _rwlock.py
+    ³       ³   ³   _sha3.py
+    ³       ³   ³   _version.py
+    ³       ³   ³   __init__.py
+    ³       ³   ³   
+    ³       ³   ÀÄÄÄ__pycache__
+    ³       ³           curves.cpython-313.pyc
+    ³       ³           der.cpython-313.pyc
+    ³       ³           ecdh.cpython-313.pyc
+    ³       ³           ecdsa.cpython-313.pyc
+    ³       ³           eddsa.cpython-313.pyc
+    ³       ³           ellipticcurve.cpython-313.pyc
+    ³       ³           errors.cpython-313.pyc
+    ³       ³           keys.cpython-313.pyc
+    ³       ³           numbertheory.cpython-313.pyc
+    ³       ³           rfc6979.cpython-313.pyc
+    ³       ³           ssh.cpython-313.pyc
+    ³       ³           test_curves.cpython-313.pyc
+    ³       ³           test_der.cpython-313.pyc
+    ³       ³           test_ecdh.cpython-313.pyc
+    ³       ³           test_ecdsa.cpython-313.pyc
+    ³       ³           test_eddsa.cpython-313.pyc
+    ³       ³           test_ellipticcurve.cpython-313.pyc
+    ³       ³           test_jacobi.cpython-313.pyc
+    ³       ³           test_keys.cpython-313.pyc
+    ³       ³           test_malformed_sigs.cpython-313.pyc
+    ³       ³           test_numbertheory.cpython-313.pyc
+    ³       ³           test_pyecdsa.cpython-313.pyc
+    ³       ³           test_rw_lock.cpython-313.pyc
+    ³       ³           test_sha3.cpython-313.pyc
+    ³       ³           util.cpython-313.pyc
+    ³       ³           _compat.cpython-313.pyc
+    ³       ³           _rwlock.cpython-313.pyc
+    ³       ³           _sha3.cpython-313.pyc
+    ³       ³           _version.cpython-313.pyc
+    ³       ³           __init__.cpython-313.pyc
+    ³       ³           
+    ³       ÃÄÄÄecdsa-0.19.2.dist-info
+    ³       ³       INSTALLER
+    ³       ³       LICENSE
+    ³       ³       METADATA
+    ³       ³       RECORD
+    ³       ³       top_level.txt
+    ³       ³       WHEEL
+    ³       ³       
     ³       ÃÄÄÄfastapi
     ³       ³   ³   applications.py
     ³       ³   ³   background.py
@@ -701,6 +1135,56 @@ D:.
     ³       ³   ³   
     ³       ³   ÀÄÄÄlicenses
     ³       ³           LICENSE.md
+    ³       ³           
+    ³       ÃÄÄÄjose
+    ³       ³   ³   constants.py
+    ³       ³   ³   exceptions.py
+    ³       ³   ³   jwe.py
+    ³       ³   ³   jwk.py
+    ³       ³   ³   jws.py
+    ³       ³   ³   jwt.py
+    ³       ³   ³   utils.py
+    ³       ³   ³   __init__.py
+    ³       ³   ³   
+    ³       ³   ÃÄÄÄbackends
+    ³       ³   ³   ³   base.py
+    ³       ³   ³   ³   cryptography_backend.py
+    ³       ³   ³   ³   ecdsa_backend.py
+    ³       ³   ³   ³   native.py
+    ³       ³   ³   ³   rsa_backend.py
+    ³       ³   ³   ³   _asn1.py
+    ³       ³   ³   ³   __init__.py
+    ³       ³   ³   ³   
+    ³       ³   ³   ÀÄÄÄ__pycache__
+    ³       ³   ³           base.cpython-313.pyc
+    ³       ³   ³           cryptography_backend.cpython-313.pyc
+    ³       ³   ³           ecdsa_backend.cpython-313.pyc
+    ³       ³   ³           native.cpython-313.pyc
+    ³       ³   ³           rsa_backend.cpython-313.pyc
+    ³       ³   ³           _asn1.cpython-313.pyc
+    ³       ³   ³           __init__.cpython-313.pyc
+    ³       ³   ³           
+    ³       ³   ÀÄÄÄ__pycache__
+    ³       ³           constants.cpython-313.pyc
+    ³       ³           exceptions.cpython-313.pyc
+    ³       ³           jwe.cpython-313.pyc
+    ³       ³           jwk.cpython-313.pyc
+    ³       ³           jws.cpython-313.pyc
+    ³       ³           jwt.cpython-313.pyc
+    ³       ³           utils.cpython-313.pyc
+    ³       ³           __init__.cpython-313.pyc
+    ³       ³           
+    ³       ÃÄÄÄjose-1.0.0.dist-info
+    ³       ³   ³   entry_points.txt
+    ³       ³   ³   INSTALLER
+    ³       ³   ³   METADATA
+    ³       ³   ³   RECORD
+    ³       ³   ³   REQUESTED
+    ³       ³   ³   top_level.txt
+    ³       ³   ³   WHEEL
+    ³       ³   ³   
+    ³       ³   ÀÄÄÄlicenses
+    ³       ³           LICENSE
     ³       ³           
     ³       ÃÄÄÄjwt
     ³       ³   ³   algorithms.py
@@ -2042,6 +2526,142 @@ D:.
     ³       ³       top_level.txt
     ³       ³       WHEEL
     ³       ³       
+    ³       ÃÄÄÄpyasn1
+    ³       ³   ³   debug.py
+    ³       ³   ³   error.py
+    ³       ³   ³   __init__.py
+    ³       ³   ³   
+    ³       ³   ÃÄÄÄcodec
+    ³       ³   ³   ³   streaming.py
+    ³       ³   ³   ³   __init__.py
+    ³       ³   ³   ³   
+    ³       ³   ³   ÃÄÄÄber
+    ³       ³   ³   ³   ³   decoder.py
+    ³       ³   ³   ³   ³   encoder.py
+    ³       ³   ³   ³   ³   eoo.py
+    ³       ³   ³   ³   ³   __init__.py
+    ³       ³   ³   ³   ³   
+    ³       ³   ³   ³   ÀÄÄÄ__pycache__
+    ³       ³   ³   ³           decoder.cpython-313.pyc
+    ³       ³   ³   ³           encoder.cpython-313.pyc
+    ³       ³   ³   ³           eoo.cpython-313.pyc
+    ³       ³   ³   ³           __init__.cpython-313.pyc
+    ³       ³   ³   ³           
+    ³       ³   ³   ÃÄÄÄcer
+    ³       ³   ³   ³   ³   decoder.py
+    ³       ³   ³   ³   ³   encoder.py
+    ³       ³   ³   ³   ³   __init__.py
+    ³       ³   ³   ³   ³   
+    ³       ³   ³   ³   ÀÄÄÄ__pycache__
+    ³       ³   ³   ³           decoder.cpython-313.pyc
+    ³       ³   ³   ³           encoder.cpython-313.pyc
+    ³       ³   ³   ³           __init__.cpython-313.pyc
+    ³       ³   ³   ³           
+    ³       ³   ³   ÃÄÄÄder
+    ³       ³   ³   ³   ³   decoder.py
+    ³       ³   ³   ³   ³   encoder.py
+    ³       ³   ³   ³   ³   __init__.py
+    ³       ³   ³   ³   ³   
+    ³       ³   ³   ³   ÀÄÄÄ__pycache__
+    ³       ³   ³   ³           decoder.cpython-313.pyc
+    ³       ³   ³   ³           encoder.cpython-313.pyc
+    ³       ³   ³   ³           __init__.cpython-313.pyc
+    ³       ³   ³   ³           
+    ³       ³   ³   ÃÄÄÄnative
+    ³       ³   ³   ³   ³   decoder.py
+    ³       ³   ³   ³   ³   encoder.py
+    ³       ³   ³   ³   ³   __init__.py
+    ³       ³   ³   ³   ³   
+    ³       ³   ³   ³   ÀÄÄÄ__pycache__
+    ³       ³   ³   ³           decoder.cpython-313.pyc
+    ³       ³   ³   ³           encoder.cpython-313.pyc
+    ³       ³   ³   ³           __init__.cpython-313.pyc
+    ³       ³   ³   ³           
+    ³       ³   ³   ÀÄÄÄ__pycache__
+    ³       ³   ³           streaming.cpython-313.pyc
+    ³       ³   ³           __init__.cpython-313.pyc
+    ³       ³   ³           
+    ³       ³   ÃÄÄÄcompat
+    ³       ³   ³   ³   integer.py
+    ³       ³   ³   ³   __init__.py
+    ³       ³   ³   ³   
+    ³       ³   ³   ÀÄÄÄ__pycache__
+    ³       ³   ³           integer.cpython-313.pyc
+    ³       ³   ³           __init__.cpython-313.pyc
+    ³       ³   ³           
+    ³       ³   ÃÄÄÄtype
+    ³       ³   ³   ³   base.py
+    ³       ³   ³   ³   char.py
+    ³       ³   ³   ³   constraint.py
+    ³       ³   ³   ³   error.py
+    ³       ³   ³   ³   namedtype.py
+    ³       ³   ³   ³   namedval.py
+    ³       ³   ³   ³   opentype.py
+    ³       ³   ³   ³   tag.py
+    ³       ³   ³   ³   tagmap.py
+    ³       ³   ³   ³   univ.py
+    ³       ³   ³   ³   useful.py
+    ³       ³   ³   ³   __init__.py
+    ³       ³   ³   ³   
+    ³       ³   ³   ÀÄÄÄ__pycache__
+    ³       ³   ³           base.cpython-313.pyc
+    ³       ³   ³           char.cpython-313.pyc
+    ³       ³   ³           constraint.cpython-313.pyc
+    ³       ³   ³           error.cpython-313.pyc
+    ³       ³   ³           namedtype.cpython-313.pyc
+    ³       ³   ³           namedval.cpython-313.pyc
+    ³       ³   ³           opentype.cpython-313.pyc
+    ³       ³   ³           tag.cpython-313.pyc
+    ³       ³   ³           tagmap.cpython-313.pyc
+    ³       ³   ³           univ.cpython-313.pyc
+    ³       ³   ³           useful.cpython-313.pyc
+    ³       ³   ³           __init__.cpython-313.pyc
+    ³       ³   ³           
+    ³       ³   ÀÄÄÄ__pycache__
+    ³       ³           debug.cpython-313.pyc
+    ³       ³           error.cpython-313.pyc
+    ³       ³           __init__.cpython-313.pyc
+    ³       ³           
+    ³       ÃÄÄÄpyasn1-0.6.3.dist-info
+    ³       ³   ³   INSTALLER
+    ³       ³   ³   METADATA
+    ³       ³   ³   RECORD
+    ³       ³   ³   top_level.txt
+    ³       ³   ³   WHEEL
+    ³       ³   ³   zip-safe
+    ³       ³   ³   
+    ³       ³   ÀÄÄÄlicenses
+    ³       ³           LICENSE.rst
+    ³       ³           
+    ³       ÃÄÄÄpycparser
+    ³       ³   ³   ast_transforms.py
+    ³       ³   ³   c_ast.py
+    ³       ³   ³   c_generator.py
+    ³       ³   ³   c_lexer.py
+    ³       ³   ³   c_parser.py
+    ³       ³   ³   _ast_gen.py
+    ³       ³   ³   _c_ast.cfg
+    ³       ³   ³   __init__.py
+    ³       ³   ³   
+    ³       ³   ÀÄÄÄ__pycache__
+    ³       ³           ast_transforms.cpython-313.pyc
+    ³       ³           c_ast.cpython-313.pyc
+    ³       ³           c_generator.cpython-313.pyc
+    ³       ³           c_lexer.cpython-313.pyc
+    ³       ³           c_parser.cpython-313.pyc
+    ³       ³           _ast_gen.cpython-313.pyc
+    ³       ³           __init__.cpython-313.pyc
+    ³       ³           
+    ³       ÃÄÄÄpycparser-3.0.dist-info
+    ³       ³   ³   INSTALLER
+    ³       ³   ³   METADATA
+    ³       ³   ³   RECORD
+    ³       ³   ³   top_level.txt
+    ³       ³   ³   WHEEL
+    ³       ³   ³   
+    ³       ³   ÀÄÄÄlicenses
+    ³       ³           LICENSE
+    ³       ³           
     ³       ÃÄÄÄpydantic
     ³       ³   ³   aliases.py
     ³       ³   ³   alias_generators.py
@@ -2389,6 +3009,17 @@ D:.
     ³       ³   ÀÄÄÄlicenses
     ³       ³           LICENSE
     ³       ³           
+    ³       ÃÄÄÄpython_jose-3.5.0.dist-info
+    ³       ³   ³   INSTALLER
+    ³       ³   ³   METADATA
+    ³       ³   ³   RECORD
+    ³       ³   ³   REQUESTED
+    ³       ³   ³   top_level.txt
+    ³       ³   ³   WHEEL
+    ³       ³   ³   
+    ³       ³   ÀÄÄÄlicenses
+    ³       ³           LICENSE
+    ³       ³           
     ³       ÃÄÄÄpython_multipart
     ³       ³   ³   decoders.py
     ³       ³   ³   exceptions.py
@@ -2412,6 +3043,55 @@ D:.
     ³       ³   ÀÄÄÄlicenses
     ³       ³           LICENSE.txt
     ³       ³           
+    ³       ÃÄÄÄrsa
+    ³       ³   ³   asn1.py
+    ³       ³   ³   cli.py
+    ³       ³   ³   common.py
+    ³       ³   ³   core.py
+    ³       ³   ³   key.py
+    ³       ³   ³   parallel.py
+    ³       ³   ³   pem.py
+    ³       ³   ³   pkcs1.py
+    ³       ³   ³   pkcs1_v2.py
+    ³       ³   ³   prime.py
+    ³       ³   ³   py.typed
+    ³       ³   ³   randnum.py
+    ³       ³   ³   transform.py
+    ³       ³   ³   util.py
+    ³       ³   ³   __init__.py
+    ³       ³   ³   
+    ³       ³   ÀÄÄÄ__pycache__
+    ³       ³           asn1.cpython-313.pyc
+    ³       ³           cli.cpython-313.pyc
+    ³       ³           common.cpython-313.pyc
+    ³       ³           core.cpython-313.pyc
+    ³       ³           key.cpython-313.pyc
+    ³       ³           parallel.cpython-313.pyc
+    ³       ³           pem.cpython-313.pyc
+    ³       ³           pkcs1.cpython-313.pyc
+    ³       ³           pkcs1_v2.cpython-313.pyc
+    ³       ³           prime.cpython-313.pyc
+    ³       ³           randnum.cpython-313.pyc
+    ³       ³           transform.cpython-313.pyc
+    ³       ³           util.cpython-313.pyc
+    ³       ³           __init__.cpython-313.pyc
+    ³       ³           
+    ³       ÃÄÄÄrsa-4.9.1.dist-info
+    ³       ³       entry_points.txt
+    ³       ³       INSTALLER
+    ³       ³       LICENSE
+    ³       ³       METADATA
+    ³       ³       RECORD
+    ³       ³       WHEEL
+    ³       ³       
+    ³       ÃÄÄÄsix-1.17.0.dist-info
+    ³       ³       INSTALLER
+    ³       ³       LICENSE
+    ³       ³       METADATA
+    ³       ³       RECORD
+    ³       ³       top_level.txt
+    ³       ³       WHEEL
+    ³       ³       
     ³       ÃÄÄÄsqlalchemy
     ³       ³   ³   events.py
     ³       ³   ³   exc.py
@@ -3285,6 +3965,7 @@ D:.
     ³       ³           LICENSE.md
     ³       ³           
     ³       ÀÄÄÄ__pycache__
+    ³               six.cpython-313.pyc
     ³               typing_extensions.cpython-313.pyc
     ³               
     ÀÄÄÄScripts
@@ -3296,9 +3977,16 @@ D:.
             dotenv.exe
             fastapi.exe
             idna.exe
+            jose.exe
             pip.exe
             pip3.13.exe
             pip3.exe
+            pyrsa-decrypt.exe
+            pyrsa-encrypt.exe
+            pyrsa-keygen.exe
+            pyrsa-priv2pub.exe
+            pyrsa-sign.exe
+            pyrsa-verify.exe
             python.exe
             pythonw.exe
             uvicorn.exe
