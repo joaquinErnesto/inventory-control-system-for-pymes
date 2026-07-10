@@ -10,6 +10,7 @@ from app.security import (
     get_current_admin
 )
 from app.logging.logger import logger
+from app.utils.query_sorting import apply_sorting
 
 router = APIRouter(
     prefix="/losses",
@@ -115,6 +116,8 @@ def log_loss(
 def get_loss_logs(
     skip: int = 0,
     limit: int = 100,
+    sort: str = "logged_at",
+    order: str = "desc",
     db: Session = Depends(get_db),
     current_user: models.User = Depends(get_current_user)
 ):
@@ -128,18 +131,32 @@ def get_loss_logs(
 
     query = db.query(models.LossLog)
 
+    allowed_sort_fields = {
+        "logged_at": models.LossLog.logged_at,
+        "quantity_lost": models.LossLog.quantity_lost,
+        "reason": models.LossLog.reason,
+    }
+    
+    query = apply_sorting(
+        query=query,
+        sort=sort,
+        order=order,
+        allowed_fields=allowed_sort_fields,
+    )
+    
     if current_user.role != schemas.UserRole.ADMIN:
         query = query.filter(
             models.LossLog.user_id == current_user.id
         )
-
-    return (
+    
+    loss_logs = (
         query
-        .order_by(models.LossLog.logged_at.desc())
         .offset(skip)
         .limit(limit)
         .all()
     )
+    
+    return loss_logs
 
 
 # ==================================================

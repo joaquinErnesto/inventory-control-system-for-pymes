@@ -53,14 +53,14 @@ def get_inventory_transactions(
         "quantity_changed": models.InventoryTransaction.quantity_changed,
     }
 
+    query = db.query(models.InventoryTransaction)
+    
     query = apply_sorting(
         query=query,
         sort=sort,
         order=order,
         allowed_fields=allowed_sort_fields,
     )
-    
-    query = db.query(models.InventoryTransaction)
 
     # Employee restriction
     if current_user.role != "admin":
@@ -109,7 +109,7 @@ def get_inventory_transactions(
         )
 
     transactions = (
-        query.order_by(models.InventoryTransaction.performed_at.desc())
+        query
         .offset(skip)
         .limit(limit)
         .all()
