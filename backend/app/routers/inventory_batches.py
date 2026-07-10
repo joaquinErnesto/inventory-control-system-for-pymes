@@ -9,7 +9,6 @@ from app.security import (
     get_current_user,
     get_current_admin,
 )
-
 from app.utils.query_sorting import apply_sorting
 
 router = APIRouter(

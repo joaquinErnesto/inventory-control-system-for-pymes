@@ -8,12 +8,10 @@ from typing import List
 from app.database import get_db
 from app.models import core as models
 from app.schemas import core as schemas
-
 from app.security import (
     get_current_user,
     get_current_admin
 )
-
 from app.utils.query_sorting import apply_sorting
 
 # Initialize the router
