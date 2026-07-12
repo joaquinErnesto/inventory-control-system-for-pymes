@@ -8,6 +8,7 @@ from sqlalchemy import or_
 from app.database import get_db
 from app.models import core as models
 from app.schemas import core as schemas
+from app.schemas import responses
 from app.security import (
     get_current_admin,
     get_current_user,
@@ -25,7 +26,7 @@ router = APIRouter(
 
 @router.post(
     "/",
-    response_model=schemas.SupplierResponse,
+    response_model=responses.SuccessMessageResponse[schemas.SupplierResponse],
     status_code=status.HTTP_201_CREATED,
 )
 def create_supplier(
@@ -59,7 +60,10 @@ def create_supplier(
     db.commit()
     db.refresh(new_supplier)
 
-    return new_supplier
+    return responses.SuccessMessageResponse(
+        message="Supplier created successfully",
+        data=new_supplier
+    )
 
 
 # ==================================================
@@ -68,7 +72,7 @@ def create_supplier(
 
 @router.get(
     "/",
-    response_model=List[schemas.SupplierResponse],
+    response_model=responses.SuccessResponse[List[schemas.SupplierResponse]]
 )
 def get_suppliers(
     skip: int = 0,
@@ -99,20 +103,25 @@ def get_suppliers(
     )
     
     suppliers = (
-        db.query(models.Supplier)
+        query
         .offset(skip)
         .limit(limit)
         .all()
     )
     
-    return suppliers
+    return responses.SuccessResponse(
+        data=suppliers
+    )
 
 
 # ==================================================
 # SEARCH SUPPLIERS
 # ==================================================
 
-@router.get("/search/", response_model=List[schemas.SupplierResponse])
+@router.get(
+    "/search/", 
+    response_model=responses.SuccessResponse[List[schemas.SupplierResponse]]
+)
 def search_suppliers(
     q: str,
     skip: int = 0,
@@ -142,7 +151,9 @@ def search_suppliers(
         .all()
     )
 
-    return suppliers
+    return responses.SuccessResponse(
+        data=suppliers
+    )
 
 
 # ==================================================
@@ -151,7 +162,7 @@ def search_suppliers(
 
 @router.get(
     "/{supplier_id}",
-    response_model=schemas.SupplierResponse,
+    response_model=responses.SuccessResponse[schemas.SupplierResponse]
 )
 def get_supplier(
     supplier_id: int,
@@ -176,7 +187,9 @@ def get_supplier(
             detail="Supplier not found.",
         )
 
-    return supplier
+    return responses.SuccessResponse(
+        data=supplier
+    )
 
 
 # ==================================================
@@ -185,7 +198,7 @@ def get_supplier(
 
 @router.put(
     "/{supplier_id}",
-    response_model=schemas.SupplierResponse,
+    response_model=responses.SuccessMessageResponse[schemas.SupplierResponse]
 )
 def update_supplier(
     supplier_id: int,
@@ -236,7 +249,10 @@ def update_supplier(
     db.commit()
     db.refresh(supplier)
 
-    return supplier
+    return responses.SuccessMessageResponse(
+        message="Supplier updated successfully",
+        data=supplier
+    )
 
 
 # ==================================================
@@ -245,7 +261,8 @@ def update_supplier(
 
 @router.delete(
     "/{supplier_id}",
-    status_code=status.HTTP_204_NO_CONTENT,
+    response_model=responses.MessageResponse,
+    status_code=status.HTTP_200_OK
 )
 def delete_supplier(
     supplier_id: int,
@@ -272,3 +289,7 @@ def delete_supplier(
 
     db.delete(supplier)
     db.commit()
+    
+    return responses.MessageResponse(
+        message="Supplier deleted successfully"
+    )
