@@ -8,6 +8,7 @@ from typing import List
 from app.database import get_db
 from app.models import core as models
 from app.schemas import core as schemas
+from app.schemas import responses
 from app.security import (
     get_current_user,
     get_current_admin,
@@ -26,8 +27,8 @@ router = APIRouter(
 
 @router.post(
     "/",
-    response_model=schemas.CustomerResponse,
-    status_code=status.HTTP_201_CREATED,
+    response_model=responses.SuccessMessageResponse[schemas.CustomerResponse],
+    status_code=status.HTTP_201_CREATED
 )
 def create_customer(
     customer: schemas.CustomerCreate,
@@ -64,7 +65,10 @@ def create_customer(
     db.commit()
     db.refresh(new_customer)
 
-    return new_customer
+    return responses.SuccessMessageResponse(
+        message="Customer created successfully",
+        data=new_customer
+    )
 
 
 # ==================================================
@@ -73,7 +77,7 @@ def create_customer(
 
 @router.get(
     "/",
-    response_model=List[schemas.CustomerResponse],
+    response_model=responses.SuccessResponse[List[schemas.CustomerResponse]]
 )
 def get_all_customers(
     skip: int = 0,
@@ -103,20 +107,25 @@ def get_all_customers(
     )
     
     customers = (
-        db.query(models.Customer)
+        query
         .offset(skip)
         .limit(limit)
         .all()
     )
 
-    return customers
+    return responses.SuccessResponse(
+        data=customers
+    )
 
 
 # ==================================================
 # SEARCH CUSTOMERS
 # ==================================================
 
-@router.get("/search/", response_model=List[schemas.CustomerResponse])
+@router.get(
+    "/search/", 
+    response_model=responses.SuccessResponse[List[schemas.CustomerResponse]]
+)
 def search_customers(
     q: str,
     skip: int = 0,
@@ -146,7 +155,9 @@ def search_customers(
         .all()
     )
 
-    return customers
+    return responses.SuccessResponse(
+        data=customers
+    )
 
 
 # ==================================================
@@ -155,7 +166,7 @@ def search_customers(
 
 @router.get(
     "/{customer_id}",
-    response_model=schemas.CustomerResponse,
+    response_model=responses.SuccessResponse[schemas.CustomerResponse]
 )
 def get_customer(
     customer_id: int,
@@ -179,7 +190,9 @@ def get_customer(
             detail="Customer not found.",
         )
 
-    return customer
+    return responses.SuccessResponse(
+        data=customer
+    )
 
 
 # ==================================================
@@ -188,11 +201,11 @@ def get_customer(
 
 @router.put(
     "/{customer_id}",
-    response_model=schemas.CustomerResponse,
+    response_model=responses.SuccessMessageResponse[schemas.CustomerResponse]
 )
 def update_customer(
     customer_id: int,
-    customer_update: schemas.CustomerCreate,
+    customer_update: schemas.CustomerUpdate,
     db: Session = Depends(get_db),
     current_admin=Depends(get_current_admin),
 ):
@@ -242,7 +255,10 @@ def update_customer(
     db.commit()
     db.refresh(customer)
 
-    return customer
+    return responses.SuccessMessageResponse(
+        message="Customer updated successfully",
+        data=customer
+    )
 
 
 # ==================================================
@@ -251,7 +267,8 @@ def update_customer(
 
 @router.delete(
     "/{customer_id}",
-    status_code=status.HTTP_204_NO_CONTENT,
+    response_model=responses.MessageResponse,
+    status_code=status.HTTP_200_OK
 )
 def delete_customer(
     customer_id: int,
@@ -278,4 +295,6 @@ def delete_customer(
     db.delete(customer)
     db.commit()
 
-    return
+    return responses.MessageResponse(
+        message="Customer deleted successfully"
+    )

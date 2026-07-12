@@ -122,6 +122,9 @@ class CustomerBase(BaseModel):
 class CustomerCreate(CustomerBase):
     pass
 
+class CustomerUpdate(CustomerBase):
+    pass
+
 class CustomerResponse(CustomerBase):
     id: int = Field(gt=0)
     created_at: datetime
