@@ -1,13 +1,13 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 
 from sqlalchemy.orm import Session
-from sqlalchemy import or_
 
 from typing import List
 
 from app.database import get_db
 from app.models import core as models
 from app.schemas import core as schemas
+from app.schemas import responses
 from app.security import (
     get_password_hash,
     get_current_admin,
@@ -27,7 +27,7 @@ router = APIRouter(
 
 @router.post(
     "/",
-    response_model=schemas.UserResponse,
+    response_model=responses.SuccessMessageResponse[schemas.UserResponse],
     status_code=status.HTTP_201_CREATED
 )
 def create_user(
@@ -64,7 +64,10 @@ def create_user(
     db.commit()
     db.refresh(new_user)
 
-    return new_user
+    return responses.SuccessMessageResponse(
+        message="User created successfully",
+        data=new_user
+    )
 
 
 # ==================================================
@@ -73,7 +76,7 @@ def create_user(
 
 @router.get(
     "/",
-    response_model=List[schemas.UserResponse]
+    response_model=responses.SuccessResponse[List[schemas.UserResponse]]
 )
 def get_users(
     skip: int = 0,
@@ -109,7 +112,9 @@ def get_users(
         .all()
     )
 
-    return users
+    return responses.SuccessResponse(
+        data=users
+    )
 
 
 # ==================================================
@@ -118,7 +123,7 @@ def get_users(
 
 @router.get(
     "/me",
-    response_model=schemas.UserResponse,
+    response_model=responses.SuccessResponse[schemas.UserResponse]
 )
 def get_current_authenticated_user(
     current_user: models.User = Depends(get_current_user),
@@ -130,7 +135,9 @@ def get_current_authenticated_user(
     to identify the logged-in user.
     """
 
-    return current_user
+    return responses.SuccessResponse(
+        data=current_user
+    )
 
 
 # ==================================================
@@ -139,7 +146,7 @@ def get_current_authenticated_user(
 
 @router.get(
     "/{user_id}",
-    response_model=schemas.UserResponse
+    response_model=responses.SuccessResponse[schemas.UserResponse]
 )
 def get_user(
     user_id: int,
@@ -162,7 +169,9 @@ def get_user(
             detail="User not found."
         )
 
-    return user
+    return responses.SuccessResponse(
+        data=user
+    )
 
 
 # ==================================================
@@ -171,7 +180,7 @@ def get_user(
 
 @router.get(
     "/search",
-    response_model=List[schemas.UserResponse]
+    response_model=responses.SuccessResponse[List[schemas.UserResponse]]
 )
 def search_users(
     q: str,
@@ -194,7 +203,9 @@ def search_users(
         .all()
     )
 
-    return users
+    return responses.SuccessResponse(
+        data=users
+    )
 
 
 # ==================================================
@@ -203,7 +214,7 @@ def search_users(
 
 @router.put(
     "/{user_id}",
-    response_model=schemas.UserResponse
+    response_model=responses.SuccessMessageResponse[schemas.UserResponse]
 )
 def update_user(
     user_id: int,
@@ -248,7 +259,10 @@ def update_user(
     db.commit()
     db.refresh(user)
 
-    return user
+    return responses.SuccessMessageResponse(
+        message="User updated successfully",
+        data=user
+    )
 
 
 # ==================================================
@@ -257,6 +271,7 @@ def update_user(
 
 @router.put(
     "/{user_id}/password",
+    response_model=responses.MessageResponse,
     status_code=status.HTTP_200_OK
 )
 def change_password(
@@ -287,9 +302,9 @@ def change_password(
 
     db.commit()
 
-    return {
-        "message": "Password updated successfully."
-    }
+    return responses.MessageResponse(
+        message="Password updated successfully"
+    )
     
 
 # ==================================================
@@ -298,7 +313,8 @@ def change_password(
 
 @router.delete(
     "/{user_id}",
-    status_code=status.HTTP_204_NO_CONTENT
+    response_model=responses.MessageResponse,
+    status_code=status.HTTP_200_OK
 )
 def delete_user(
     user_id: int,
@@ -348,3 +364,7 @@ def delete_user(
     db.delete(user)
 
     db.commit()
+    
+    return responses.MessageResponse(
+        message="User deleted successfully"
+    )
