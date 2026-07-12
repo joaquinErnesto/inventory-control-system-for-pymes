@@ -5,6 +5,7 @@ from typing import List
 from app.database import get_db
 from app.models import core as models
 from app.schemas import core as schemas
+from app.schemas import responses
 from app.security import (
     get_current_user,
     get_current_admin
@@ -22,7 +23,11 @@ router = APIRouter(
 # LOG LOSS (CREATE)
 # ==================================================
 
-@router.post("/", response_model=schemas.LossLogResponse, status_code=status.HTTP_201_CREATED)
+@router.post(
+    "/", 
+    response_model=responses.SuccessMessageResponse[schemas.LossLogResponse],
+    status_code=status.HTTP_201_CREATED
+)
 def log_loss(
     loss: schemas.LossLogCreate, 
     db: Session = Depends(get_db),
@@ -36,14 +41,17 @@ def log_loss(
         .first()
     )
     
+    if not batch:
+        raise HTTPException(
+            status_code=404, 
+            detail="Batch not found."
+        )
+    
     if not batch.product.is_active:
         raise HTTPException(
             status_code=400,
             detail="Cannot register losses for an inactive product."
         )
-    
-    if not batch:
-        raise HTTPException(status_code=404, detail="Batch not found.")
         
     # 2. Check stock
     if loss.quantity_lost <= 0:
@@ -74,7 +82,7 @@ def log_loss(
         quantity_changed=-(loss.quantity_lost),
         transaction_type=schemas.TransactionType.LOSS.value,
         loss_id=new_loss.id,
-        notes=f"Loss Logged: {loss.reason}"
+        notes=f"Loss Logged: {loss.reason.value}"
     )
     db.add(transaction)
     
@@ -102,7 +110,10 @@ def log_loss(
         f"User ID={current_user.id}"
     )
     
-    return new_loss
+    return responses.SuccessMessageResponse(
+        message="Loss registered successfully",
+        data=new_loss
+    )
 
 
 # ==================================================
@@ -111,7 +122,7 @@ def log_loss(
 
 @router.get(
     "/",
-    response_model=List[schemas.LossLogResponse]
+    response_model=responses.SuccessResponse[List[schemas.LossLogResponse]]
 )
 def get_loss_logs(
     skip: int = 0,
@@ -156,7 +167,9 @@ def get_loss_logs(
         .all()
     )
     
-    return loss_logs
+    return responses.SuccessResponse(
+        data=loss_logs
+    )
 
 
 # ==================================================
@@ -165,7 +178,7 @@ def get_loss_logs(
 
 @router.get(
     "/{loss_id}",
-    response_model=schemas.LossLogResponse
+    response_model=responses.SuccessResponse[schemas.LossLogResponse]
 )
 def get_loss_log(
     loss_id: int,
@@ -197,4 +210,6 @@ def get_loss_log(
             detail="You are not authorized to view this loss log."
         )
 
-    return loss
+    return responses.SuccessResponse(
+        data=loss
+    )
