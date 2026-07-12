@@ -5,14 +5,19 @@ from sqlalchemy.orm import Session
 from app.database import get_db
 from app.models import core as models
 from app.schemas import core as schemas
+from app.schemas import responses
 from app.security import verify_password, create_access_token
 
 router = APIRouter(tags=["Authentication"])
 
 
+# ==================================================
+# LOGIN AND TOKEN GENERATION
+# ==================================================
+
 @router.post(
     "/token",
-    response_model=schemas.Token
+    response_model=responses.SuccessResponse[schemas.Token]
 )
 def login_for_access_token(
     form_data: OAuth2PasswordRequestForm = Depends(),
@@ -49,7 +54,10 @@ def login_for_access_token(
         }
     )
 
-    return {
-        "access_token": access_token,
-        "token_type": "bearer"
-    }
+    return responses.SuccessResponse(
+        message="Authentication successful",
+        data=schemas.Token(
+            access_token=access_token, 
+            token_type="bearer"
+        )
+    )

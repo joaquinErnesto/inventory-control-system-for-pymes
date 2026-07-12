@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 from app.database import get_db
 from app.models import core as models
 from app.schemas import core as schemas
+from app.schemas import responses
 from app.security import (
     get_current_admin,
     get_current_user,
@@ -23,7 +24,7 @@ router = APIRouter(
 
 @router.post(
     "/",
-    response_model=schemas.CategoryResponse,
+    response_model=responses.SuccessMessageResponse[schemas.CategoryResponse],
     status_code=status.HTTP_201_CREATED,
 )
 def create_category(
@@ -55,7 +56,10 @@ def create_category(
     db.commit()
     db.refresh(new_category)
 
-    return new_category
+    return responses.SuccessMessageResponse(
+        message="Category created successfully",
+        data=new_category
+    )
 
 
 # ===================================================
@@ -64,7 +68,7 @@ def create_category(
 
 @router.get(
     "/",
-    response_model=List[schemas.CategoryResponse],
+    response_model=responses.SuccessResponse[List[schemas.CategoryResponse]],
 )
 def get_categories(
     skip: int = 0,
@@ -100,7 +104,9 @@ def get_categories(
         .all()
     )
 
-    return categories
+    return responses.SuccessResponse(
+        data=categories
+    )
 
 
 # ===================================================
@@ -109,7 +115,7 @@ def get_categories(
 
 @router.get(
     "/{category_id}",
-    response_model=schemas.CategoryResponse,
+    response_model=responses.SuccessResponse[schemas.CategoryResponse]
 )
 def get_category(
     category_id: int,
@@ -134,16 +140,18 @@ def get_category(
             detail="Category not found.",
         )
 
-    return category
+    return responses.SuccessResponse(
+        data=category
+    )
 
 
-# ======================================================
+# ====================================================
 # UPDATE CATEGORY
-# ======================================================
+# ====================================================
 
 @router.put(
     "/{category_id}",
-    response_model=schemas.CategoryResponse,
+    response_model=responses.SuccessMessageResponse[schemas.CategoryResponse]
 )
 def update_category(
     category_id: int,
@@ -190,16 +198,20 @@ def update_category(
     db.commit()
     db.refresh(category)
 
-    return category
+    return responses.SuccessMessageResponse(
+        message="Category updated successfully",
+        data=category
+    )
 
 
-# ======================================================
+# ====================================================
 # DELETE CATEGORY
-# ======================================================
+# ====================================================
 
 @router.delete(
     "/{category_id}",
-    status_code=status.HTTP_204_NO_CONTENT,
+    response_model=responses.MessageResponse,
+    status_code=status.HTTP_200_OK
 )
 def delete_category(
     category_id: int,
@@ -226,3 +238,7 @@ def delete_category(
 
     db.delete(category)
     db.commit()
+    
+    return responses.MessageResponse(
+        message="Category deleted successfully"
+    )
