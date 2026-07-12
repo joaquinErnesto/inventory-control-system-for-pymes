@@ -8,6 +8,7 @@ from typing import List
 from app.database import get_db
 from app.models import core as models
 from app.schemas import core as schemas
+from app.schemas import responses
 from app.security import (
     get_current_user,
     get_current_admin
@@ -25,7 +26,11 @@ router = APIRouter(
 # CREATE PRODUCT
 # ==================================================
 
-@router.post("/", response_model=schemas.ProductResponse, status_code=status.HTTP_201_CREATED)
+@router.post(
+    "/", 
+    response_model=responses.SuccessMessageResponse[schemas.ProductResponse], 
+    status_code=status.HTTP_201_CREATED
+)
 def create_product(
     product: schemas.ProductCreate, 
     db: Session = Depends(get_db),
@@ -35,13 +40,28 @@ def create_product(
     Add a new product to the catalog. (Does not add physical stock).
     """
     # 1. Verify the category actually exists
-    category = db.query(models.Category).filter(models.Category.id == product.category_id).first()
+    category = (
+        db.query(models.Category)
+        .filter(
+            models.Category.id == product.category_id
+        )
+        .first()
+    )
+    
     if not category:
         raise HTTPException(status_code=400, detail=f"Category with ID {product.category_id} does not exist.")
         
     # 2. Check for duplicate SKU/Barcode if one was provided
+    
     if product.sku_or_barcode:
-        existing_product = db.query(models.Product).filter(models.Product.sku_or_barcode == product.sku_or_barcode).first()
+        existing_product = (
+            db.query(models.Product)
+            .filter(
+                models.Product.sku_or_barcode == product.sku_or_barcode
+            )
+            .first()
+        )
+        
         if existing_product:
             raise HTTPException(status_code=400, detail="A product with this SKU or barcode already exists.")
 
@@ -51,14 +71,20 @@ def create_product(
     db.commit()
     db.refresh(new_product)
     
-    return new_product
+    return responses.SuccessMessageResponse(
+        message="Product created successfully",
+        data=new_product
+    )
 
 
 # ==================================================
 # GET PRODUCTS 
 # ==================================================
 
-@router.get("/", response_model=List[schemas.ProductResponse])
+@router.get(
+    "/", 
+    response_model=responses.SuccessResponse[List[schemas.ProductResponse]]
+)
 def get_products(
     skip: int = 0, 
     limit: int = 100, 
@@ -88,20 +114,25 @@ def get_products(
     )
     
     products = (
-        db.query(models.Product)
+        query
         .offset(skip)
         .limit(limit)
         .all()
     )
     
-    return products
+    return responses.SuccessResponse(
+        data=products
+    )
 
 
 # ==================================================
 # SEARCH PRODUCTS
 # ==================================================
 
-@router.get("/search/", response_model=List[schemas.ProductResponse])
+@router.get(
+    "/search/", 
+    response_model=responses.SuccessResponse[List[schemas.ProductResponse]]
+)
 def search_products(
     q: str,
     skip: int = 0,
@@ -130,14 +161,19 @@ def search_products(
         .all()
     )
 
-    return products
+    return responses.SuccessResponse(
+        data=products
+    )
 
 
 # ==================================================
 # GET PRODUCT BY ID
 # ==================================================
 
-@router.get("/{product_id}", response_model=schemas.ProductResponse)
+@router.get(
+    "/{product_id}", 
+    response_model=responses.SuccessResponse[schemas.ProductResponse]
+)
 def get_single_product(
     product_id: int, 
     db: Session = Depends(get_db),
@@ -146,17 +182,30 @@ def get_single_product(
     """
     Retrieve a specific product by its ID.
     """
-    product = db.query(models.Product).filter(models.Product.id == product_id).first()
+    product = (
+        db.query(models.Product)
+        .filter(
+            models.Product.id == product_id
+        )
+        .first()
+    )
+    
     if not product:
         raise HTTPException(status_code=404, detail="Product not found.")
-    return product
+    
+    return responses.SuccessResponse(
+        data=product
+    )
 
 
 # ==================================================
 # UPDATE PRODUCT
 # ==================================================
 
-@router.put("/{product_id}", response_model=schemas.ProductResponse)
+@router.put(
+    "/{product_id}", 
+    response_model=responses.SuccessMessageResponse[schemas.ProductResponse]
+)
 def update_product(
     product_id: int, 
     product_update: schemas.ProductCreate, 
@@ -167,19 +216,40 @@ def update_product(
     Update a product's metadata (name, base price, category, etc.).
     """
     # 1. Find the existing product
-    db_product = db.query(models.Product).filter(models.Product.id == product_id).first()
+    db_product = (
+        db.query(models.Product)
+        .filter(
+            models.Product.id == product_id
+        )
+        .first()    
+    )
+    
     if not db_product:
         raise HTTPException(status_code=404, detail="Product not found.")
         
     # 2. If the category is being changed, verify the new one exists
     if db_product.category_id != product_update.category_id:
-        category = db.query(models.Category).filter(models.Category.id == product_update.category_id).first()
+        category = (
+            db.query(models.Category)
+            .filter(
+                models.Category.id == product_update.category_id
+            )
+            .first()    
+        )
+        
         if not category:
             raise HTTPException(status_code=400, detail=f"Category with ID {product_update.category_id} does not exist.")
 
     # 3. If the SKU is being changed, verify it doesn't collide with another product
     if product_update.sku_or_barcode and product_update.sku_or_barcode != db_product.sku_or_barcode:
-        existing_product = db.query(models.Product).filter(models.Product.sku_or_barcode == product_update.sku_or_barcode).first()
+        existing_product = (
+            db.query(models.Product)
+            .filter(
+                models.Product.sku_or_barcode == product_update.sku_or_barcode
+            )
+            .first()
+        )
+        
         if existing_product:
             raise HTTPException(status_code=400, detail="A product with this SKU or barcode already exists.")
 
@@ -191,14 +261,21 @@ def update_product(
     db.commit()
     db.refresh(db_product)
     
-    return db_product
+    return responses.SuccessMessageResponse(
+        message="Product updated successfully",
+        data=db_product
+    )
 
 
 # ==================================================
 # DELETE PRODUCT
 # ==================================================
 
-@router.delete("/{product_id}", status_code=status.HTTP_204_NO_CONTENT)
+@router.delete(
+    "/{product_id}", 
+    status_code=status.HTTP_200_OK,
+    response_model=responses.MessageResponse
+)
 def delete_product(
     product_id: int,
     db: Session = Depends(get_db),
@@ -238,3 +315,7 @@ def delete_product(
 
     db.delete(db_product)
     db.commit()
+    
+    return responses.MessageResponse(
+        message="Product deleted succesfully"
+    )
