@@ -5,6 +5,7 @@ from typing import List
 from app.database import get_db
 from app.models import core as models
 from app.schemas import core as schemas
+from app.schemas import responses
 from app.security import (
     get_current_user,
     get_current_admin,
@@ -23,8 +24,8 @@ router = APIRouter(
 
 @router.post(
     "/",
-    response_model=schemas.InventoryBatchResponse,
-    status_code=status.HTTP_201_CREATED,
+    response_model=responses.SuccessMessageResponse[schemas.InventoryBatchResponse],
+    status_code=status.HTTP_201_CREATED
 )
 def receive_stock_batch(
     batch: schemas.InventoryBatchCreate,
@@ -111,7 +112,10 @@ def receive_stock_batch(
 
     db.refresh(new_batch)
 
-    return new_batch
+    return responses.SuccessMessageResponse(
+        message="Inventory batch created successfully",
+        data=new_batch
+    )
 
 
 # ==================================================
@@ -120,7 +124,7 @@ def receive_stock_batch(
 
 @router.get(
     "/",
-    response_model=List[schemas.InventoryBatchResponse],
+    response_model=responses.SuccessResponse[List[schemas.InventoryBatchResponse]]
 )
 def get_all_batches(
     skip: int = 0,
@@ -135,7 +139,7 @@ def get_all_batches(
     """
     
     allowed_sort_fields = {
-        "received_date": models.InventoryBatch.received_date,
+        "recieved_date": models.InventoryBatch.received_date,
         "expiration_date": models.InventoryBatch.expiration_date,
         "current_quantity": models.InventoryBatch.current_quantity,
         "cost_price": models.InventoryBatch.cost_price,
@@ -152,13 +156,15 @@ def get_all_batches(
     )
     
     batches = (
-        db.query(models.InventoryBatch)
+        query
         .offset(skip)
         .limit(limit)
         .all()
     )
 
-    return batches
+    return responses.SuccessResponse(
+        data=batches
+    )
 
 
 # ==================================================
@@ -167,7 +173,7 @@ def get_all_batches(
 
 @router.get(
     "/{batch_id}",
-    response_model=schemas.InventoryBatchResponse,
+    response_model=responses.SuccessResponse[schemas.InventoryBatchResponse]
 )
 def get_batch(
     batch_id: int,
@@ -190,7 +196,9 @@ def get_batch(
             detail="Inventory batch not found.",
         )
 
-    return batch
+    return responses.SuccessResponse(
+        data=batch
+    )
 
 
 # ==================================================
@@ -199,7 +207,8 @@ def get_batch(
 
 @router.delete(
     "/{batch_id}",
-    status_code=status.HTTP_204_NO_CONTENT,
+    response_model=responses.MessageResponse,
+    status_code=status.HTTP_200_OK
 )
 def delete_batch(
     batch_id: int,
@@ -243,3 +252,7 @@ def delete_batch(
     db.delete(batch)
 
     db.commit()
+    
+    return responses.MessageResponse(
+        message="Inventory batch deleted successfully"
+    )
