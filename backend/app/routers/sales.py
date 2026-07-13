@@ -6,6 +6,7 @@ from decimal import Decimal
 from app.database import get_db
 from app.models import core as models
 from app.schemas import core as schemas
+from app.schemas import responses
 from app.security import get_current_user
 from app.utils.query_sorting import apply_sorting
 
@@ -19,7 +20,11 @@ router = APIRouter(
 # CREATE SALE
 # ==================================================
 
-@router.post("/", response_model=schemas.SaleResponse, status_code=status.HTTP_201_CREATED)
+@router.post(
+    "/", 
+    response_model=responses.SuccessMessageResponse[schemas.SaleResponse], 
+    status_code=status.HTTP_201_CREATED
+)
 def process_sale(
     sale_request: schemas.SaleCreate,
     db: Session = Depends(get_db),
@@ -40,13 +45,13 @@ def process_sale(
         customer_id=sale_request.customer_id,
         payment_method=sale_request.payment_method,
         payment_status=sale_request.payment_status,
-        total_amount=Decimal('0.00')
+        total_amount=Decimal("0.00")
     )
     
     db.add(new_sale)
     db.flush() 
 
-    calculated_total = Decimal('0.00')
+    calculated_total = Decimal("0.00")
 
     # 4. Loop through every product requested in the cart
     for item in sale_request.items:
@@ -117,7 +122,7 @@ def process_sale(
             db.add(inventory_log)
 
             # Add to the running total math
-            calculated_total += (Decimal(qty_to_deduct) * item.unit_price)
+            calculated_total += (Decimal(str(qty_to_deduct)) * item.unit_price)
 
     # 5. Finalize the total price on the parent receipt
     new_sale.total_amount = calculated_total
@@ -126,14 +131,20 @@ def process_sale(
     db.commit()
     db.refresh(new_sale)
 
-    return new_sale
+    return responses.SuccessMessageResponse(
+        message="Sale processed successfully",
+        data=new_sale
+    )
 
 
 # ==================================================
 # GET SALES
 # ==================================================
 
-@router.get("/", response_model=List[schemas.SaleResponse])
+@router.get(
+    "/", 
+    response_model=responses.SuccessResponse[List[schemas.SaleResponse]]
+)
 def get_all_sales(
     skip: int = 0, 
     limit: int = 100, 
@@ -160,15 +171,25 @@ def get_all_sales(
     )
     
     sales = (
-        db.query(models.Sale)
+        query
         .offset(skip)
         .limit(limit)
         .all()
     )
 
-    return sales
+    return responses.SuccessResponse(
+        data=sales  
+    )
 
-@router.get("/{sale_id}", response_model=schemas.SaleDetailResponse)
+
+# ==================================================
+# GET SALE
+# ==================================================
+
+@router.get(
+    "/{sale_id}", 
+    response_model=responses.SuccessResponse[schemas.SaleDetailResponse]
+)
 def get_sale(
     sale_id: int,
     db: Session = Depends(get_db),
@@ -205,7 +226,7 @@ def get_sale(
             )
         )
 
-    return schemas.SaleDetailResponse(
+    sale_detail = schemas.SaleDetailResponse(
 
         id=sale.id,
 
@@ -224,4 +245,8 @@ def get_sale(
         employee_username=sale.user.username,
 
         items=items
+    )
+    
+    return responses.SuccessResponse(
+        data=sale_detail
     )
