@@ -325,6 +325,13 @@ class InventoryTransactionDetailedResponse(BaseModel):
     performed_at: datetime
 
     model_config = ConfigDict(from_attributes=True)
+
+class InventoryTransactionSummaryResponse(BaseModel):
+    total_transactions: int
+    incoming_transactions: int
+    outgoing_transactions: int
+    loss_transactions: int
+    adjustment_transactions: int
     
 # ==========================================
 # 11. AUTHENTICATION

@@ -8,6 +8,7 @@ from sqlalchemy import func
 from app.database import get_db
 from app.models import core as models
 from app.schemas import core as schemas
+from app.schemas import responses
 from app.security import get_current_user
 from app.utils.query_sorting import apply_sorting
 
@@ -16,11 +17,15 @@ router = APIRouter(
     tags=["Inventory Transactions"]
 )
 
+
 # ==================================================
 # GET INVENTORY TRANSACTIONS
 # ==================================================
 
-@router.get("/", response_model=List[schemas.InventoryTransactionResponse])
+@router.get(
+    "/", 
+    response_model=responses.SuccessResponse[List[schemas.InventoryTransactionResponse]]
+)
 def get_inventory_transactions(
     skip: int = 0,
     limit: int = 100,
@@ -63,7 +68,7 @@ def get_inventory_transactions(
     )
 
     # Employee restriction
-    if current_user.role != "admin":
+    if current_user.role != schemas.UserRole.ADMIN:
         query = query.filter(
             models.InventoryTransaction.user_id == current_user.id
         )
@@ -115,10 +120,19 @@ def get_inventory_transactions(
         .all()
     )
 
-    return transactions
+    return responses.SuccessResponse(
+        data=transactions
+    )
 
 
-@router.get("/{transaction_id}", response_model=schemas.InventoryTransactionResponse)
+# ==================================================
+# GET INVENTORY TRANSACTION
+# ==================================================
+
+@router.get(
+    "/{transaction_id}", 
+    response_model=responses.SuccessResponse[schemas.InventoryTransactionResponse]
+)
 def get_inventory_transaction(
     transaction_id: int,
     db: Session = Depends(get_db),
@@ -141,7 +155,7 @@ def get_inventory_transaction(
         )
 
     if (
-        current_user.role != "admin"
+        current_user.role != schemas.UserRole.ADMIN
         and transaction.user_id != current_user.id
     ):
         raise HTTPException(
@@ -149,10 +163,19 @@ def get_inventory_transaction(
             detail="You are not authorized to view this transaction."
         )
 
-    return transaction
+    return responses.SuccessResponse(
+        data=transaction
+    )
 
 
-@router.get("/summary/overview")
+# ==================================================
+# GET TRANSACTION SUMMARY
+# ==================================================
+
+@router.get(
+    "/summary/overview",
+    response_model=responses.SuccessResponse[schemas.InventoryTransactionSummaryResponse]
+)
 def get_transaction_summary(
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user)
@@ -163,7 +186,7 @@ def get_transaction_summary(
 
     query = db.query(models.InventoryTransaction)
 
-    if current_user.role != "admin":
+    if current_user.role != schemas.UserRole.ADMIN:
         query = query.filter(
             models.InventoryTransaction.user_id == current_user.id
         )
@@ -186,16 +209,23 @@ def get_transaction_summary(
         models.InventoryTransaction.transaction_type == schemas.TransactionType.ADJUSTMENT.value
     ).count()
 
-    return {
-        "total_transactions": total_transactions,
-        "incoming_transactions": incoming,
-        "outgoing_transactions": outgoing,
-        "loss_transactions": losses,
-        "adjustment_transactions": adjustments
-    }
+    summary = schemas.InventoryTransactionSummaryResponse(
+        total_transactions=total_transactions,
+        incoming_transactions=incoming,
+        outgoing_transactions=outgoing,
+        loss_transactions=losses,
+        adjustment_transactions=adjustments
+    )
+    
+    return responses.SuccessResponse(
+        data=summary
+    )
 
 
-@router.get("/today/activity", response_model=List[schemas.InventoryTransactionResponse])
+@router.get(
+    "/today/activity", 
+    response_model=responses.SuccessResponse[List[schemas.InventoryTransactionResponse]]
+)
 def get_today_activity(
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user)
@@ -214,13 +244,18 @@ def get_today_activity(
         models.InventoryTransaction.performed_at <= end_of_day
     )
 
-    if current_user.role != "admin":
+    if current_user.role != schemas.UserRole.ADMIN:
         query = query.filter(
             models.InventoryTransaction.user_id == current_user.id
         )
 
-    return (
+    transactions = (
         query.order_by(
             models.InventoryTransaction.performed_at.desc()
-        ).all()
+        )
+        .all()
+    )
+
+    return responses.SuccessResponse(
+        data=transactions
     )
