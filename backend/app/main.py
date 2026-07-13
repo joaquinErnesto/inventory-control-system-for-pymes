@@ -1,6 +1,6 @@
 from time import perf_counter
 
-from fastapi import FastAPI, Depends, HTTPException, Request
+from fastapi import FastAPI, Depends, HTTPException, Request, APIRouter
 
 from sqlalchemy.orm import Session
 from sqlalchemy import text
@@ -115,14 +115,18 @@ def check_db_health(
 # ROUTERS
 # ==================================================
 
-app.include_router(auth.router, prefix="/api/v1")
-app.include_router(categories.router, prefix="/api/v1")
-app.include_router(products.router, prefix="/api/v1")
-app.include_router(suppliers.router, prefix="/api/v1")
-app.include_router(users.router, prefix="/api/v1")
-app.include_router(inventory_batches.router, prefix="/api/v1")
-app.include_router(customers.router, prefix="/api/v1")
-app.include_router(sales.router, prefix="/api/v1")
-app.include_router(loss_logs.router, prefix="/api/v1")
-app.include_router(reports.router, prefix="/api/v1")
-app.include_router(inventory_transactions.router, prefix="/api/v1")
+api_router = APIRouter(prefix="/api/v1")
+
+api_router.include_router(auth.router)
+api_router.include_router(categories.router)
+api_router.include_router(products.router)
+api_router.include_router(suppliers.router)
+api_router.include_router(users.router)
+api_router.include_router(inventory_batches.router)
+api_router.include_router(customers.router)
+api_router.include_router(sales.router)
+api_router.include_router(loss_logs.router)
+api_router.include_router(reports.router)
+api_router.include_router(inventory_transactions.router)
+
+app.include_router(api_router)
