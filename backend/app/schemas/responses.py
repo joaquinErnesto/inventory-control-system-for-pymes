@@ -1,6 +1,7 @@
 from typing import Generic, Optional, TypeVar
 
 from pydantic import BaseModel
+from pydantic.generics import GenericModel
 
 # ==========================================
 # GENERIC TYPE
@@ -13,7 +14,7 @@ T = TypeVar("T")
 # SUCCESS RESPONSE (WITHOUT MESSAGE)
 # ==========================================
 
-class SuccessResponse(BaseModel, Generic[T]):
+class SuccessResponse(GenericModel, Generic[T]):
     success: bool = True
     data: T
 
@@ -22,7 +23,7 @@ class SuccessResponse(BaseModel, Generic[T]):
 # SUCCESS RESPONSE (WITH MESSAGE)
 # ==========================================
 
-class SuccessMessageResponse(BaseModel, Generic[T]):
+class SuccessMessageResponse(GenericModel, Generic[T]):
     success: bool = True
     message: str
     data: T
@@ -35,6 +36,32 @@ class SuccessMessageResponse(BaseModel, Generic[T]):
 class MessageResponse(BaseModel):
     success: bool = True
     message: str
+
+
+# ==========================================
+# ERROR DETAIL
+# ==========================================
+
+class ValidationErrorDetail(BaseModel):
+    field: str
+    message: str
+
+
+# ==========================================
+# ERROR RESPONSE
+# ==========================================
+
+class ErrorResponse(BaseModel):
+    success: bool = False
+    message: str
+
+
+# ==========================================
+# VALIDATION ERROR RESPONSE
+# ==========================================
+
+class ValidationErrorResponse(ErrorResponse):
+    errors: list[ValidationErrorDetail]
 
 
 # ==========================================
@@ -56,7 +83,7 @@ class PaginationMeta(BaseModel):
 # (Reserved for future implementation)
 # ==========================================
 
-class PaginatedResponse(BaseModel, Generic[T]):
+class PaginatedResponse(GenericModel, Generic[T]):
     success: bool = True
     data: T
     pagination: PaginationMeta

@@ -1,15 +1,11 @@
-from datetime import datetime
 from time import perf_counter
 
 from fastapi import FastAPI, Depends, HTTPException, Request
-from fastapi.responses import JSONResponse
-from fastapi.exceptions import RequestValidationError
 
 from sqlalchemy.orm import Session
 from sqlalchemy import text
 
 from app.database import engine, Base, get_db
-from app.models import core
 from app.routers import (
     auth,
     categories,
@@ -25,6 +21,7 @@ from app.routers import (
 )
 from app.exceptions.handlers import register_exception_handlers
 from app.logging.logger import logger
+from app.schemas import responses
 
 # ==================================================
 # CREATE DATABASE TABLES
@@ -69,89 +66,29 @@ async def log_requests(request: Request, call_next):
 
 register_exception_handlers(app)
 
-# ==================================================
-# GLOBAL EXCEPTION HANDLERS
-# ==================================================
-
-@app.exception_handler(HTTPException)
-async def http_exception_handler(
-    request: Request,
-    exc: HTTPException,
-):
-    return JSONResponse(
-        status_code=exc.status_code,
-        content={
-            "success": False,
-            "message": exc.detail,
-            "status_code": exc.status_code,
-            "path": request.url.path,
-            "timestamp": datetime.utcnow().isoformat(),
-        },
-    )
-
-
-@app.exception_handler(RequestValidationError)
-async def validation_exception_handler(
-    request: Request,
-    exc: RequestValidationError,
-):
-    errors = []
-
-    for error in exc.errors():
-
-        field = " -> ".join(str(item) for item in error["loc"])
-
-        errors.append(
-            {
-                "field": field,
-                "message": error["msg"],
-            }
-        )
-
-    return JSONResponse(
-        status_code=422,
-        content={
-            "success": False,
-            "message": "Validation failed.",
-            "status_code": 422,
-            "path": request.url.path,
-            "errors": errors,
-            "timestamp": datetime.utcnow().isoformat(),
-        },
-    )
-
-
-@app.exception_handler(Exception)
-async def generic_exception_handler(
-    request: Request,
-    exc: Exception,
-):
-    return JSONResponse(
-        status_code=500,
-        content={
-            "success": False,
-            "message": "Internal server error.",
-            "status_code": 500,
-            "path": request.url.path,
-            "timestamp": datetime.utcnow().isoformat(),
-        },
-    )
 
 # ==================================================
 # ROOT
 # ==================================================
 
-@app.get("/")
+@app.get(
+    "/",
+    response_model=responses.MessageResponse
+)
 def read_root():
-    return {
-        "message": "Welcome to the Inventory Control API"
-    }
+    return responses.MessageResponse(
+        message="Welcome to the Inventory Control API"
+    )
+
 
 # ==================================================
 # DATABASE HEALTH
 # ==================================================
 
-@app.get("/health/db")
+@app.get(
+    "/health/db",
+    response_model=responses.MessageResponse
+)
 def check_db_health(
     db: Session = Depends(get_db)
 ):
@@ -163,10 +100,9 @@ def check_db_health(
 
         db.execute(text("SELECT 1"))
 
-        return {
-            "status": "success",
-            "message": "Database connection is live and healthy!"
-        }
+        return responses.MessageResponse(
+            message="Database connection is live and healthy!"
+        )
 
     except Exception as e:
 

@@ -16,7 +16,15 @@ router = APIRouter(
     tags=["Reports"]
 )
 
-@router.get("/low-stock")
+
+# ==================================================
+# GET LOW STOCK
+# ==================================================
+
+@router.get(
+    "/low-stock",
+    response_model=responses.SuccessResponse[List[schemas.LowStockItemResponse]]
+)
 def get_low_stock_report(
     db: Session = Depends(get_db),
     current_user: models.User = Depends(get_current_user)
@@ -46,7 +54,7 @@ def get_low_stock_report(
             models.InventoryBatch,
             models.Product.id == models.InventoryBatch.product_id
         )
-        .filter(models.Product.is_active == True)
+        .filter(models.Product.is_active.is_(True))
         .group_by(
             models.Product.id,
             models.Product.name,
@@ -61,28 +69,33 @@ def get_low_stock_report(
 
         if row.current_stock <= row.min_stock_threshold:
 
-            report.append({
-
-                "product_id": row.id,
-
-                "product_name": row.name,
-
-                "current_stock": row.current_stock,
-
-                "min_threshold": row.min_stock_threshold,
-
-                "status": (
-                    "REORDER_NOW"
-                    if row.current_stock < row.min_stock_threshold
-                    else "AT_THRESHOLD"
+            report.append(
+                schemas.LowStockItemResponse(
+                    product_id=row.id,
+                    product_name=row.name,
+                    current_stock=row.current_stock,
+                    min_threshold=row.min_stock_threshold,
+                    status=(
+                        "REORDER_NOW"
+                        if row.current_stock < row.min_stock_threshold
+                        else "AT_THRESHOLD"
+                    ),
                 )
+            )
 
-            })
+    return responses.SuccessResponse(
+        data=report
+    )
 
-    return {"low_stock_items": report}
 
+# ==================================================
+# GET BATCH AUDIT
+# ==================================================
 
-@router.get("/batch-audit/{batch_id}")
+@router.get(
+    "/batch-audit/{batch_id}",
+    response_model=responses.SuccessResponse[schemas.BatchAuditResponse]
+)
 def get_batch_audit(
     batch_id: int, 
     db: Session = Depends(get_db),
@@ -99,7 +112,12 @@ def get_batch_audit(
         )
     
     # 1. Verify the batch exists
-    batch = db.query(models.InventoryBatch).filter(models.InventoryBatch.id == batch_id).first()
+    batch = (
+        db.query(models.InventoryBatch)
+        .filter(models.InventoryBatch.id == batch_id)
+        .first()
+    )
+    
     if not batch:
         raise HTTPException(status_code=404, detail="Batch not found.")
 
@@ -111,27 +129,40 @@ def get_batch_audit(
     # 3. Format the audit trail
     audit_trail = []
     for tx in transactions:
-        audit_trail.append({
-            "performed_at": tx.performed_at,
-            "type": tx.transaction_type,
-            "quantity_change": tx.quantity_changed,
-            "user_id": tx.user_id,
-            "sale_id": tx.sale_id,
-            "loss_id": tx.loss_id,
-            "notes": tx.notes
-        })
-            
-    return {
-        "batch_id": batch.id,
-        "product_name": batch.product.name,
-        "batch_number": batch.batch_number,
-        "initial_quantity": batch.initial_quantity,
-        "current_quantity": batch.current_quantity,
-        "audit_trail": audit_trail
-    }
+        audit_trail.append(
+            schemas.BatchAuditTransactionResponse(
+                performed_at=tx.performed_at,
+                type=tx.transaction_type,
+                quantity_change=tx.quantity_changed,
+                user_id=tx.user_id,
+                sale_id=tx.sale_id,
+                loss_id=tx.loss_id,
+                notes=tx.notes,
+            )
+        )
+    
+    report = schemas.BatchAuditResponse(
+        batch_id=batch.id,
+        product_name=batch.product.name,
+        batch_number=batch.batch_number,
+        initial_quantity=batch.initial_quantity,
+        current_quantity=batch.current_quantity,
+        audit_trail=audit_trail,
+    )
+      
+    return responses.SuccessResponse(
+        data=report
+    )
 
 
-@router.get("/sales-performance")
+# ==================================================
+# GET SALES PERFORMANCE
+# ==================================================
+
+@router.get(
+    "/sales-performance",
+    response_model=responses.SuccessResponse[schemas.SalesPerformanceResponse]
+)
 def get_sales_performance(
     start_date: datetime, 
     end_date: datetime, 
@@ -176,16 +207,29 @@ def get_sales_performance(
         else 0
     )
     
-    return {
-        "period": {"start": start_date, "end": end_date},
-        "customer_id": customer_id,
-        "total_sales_count": total_sales_count,
-        "total_revenue": total_revenue,
-        "sales_records": sales,
-        "average_sale": average_sale
-    }
+    report = schemas.SalesPerformanceResponse(
+        start_date=start_date,
+        end_date=end_date,
+        customer_id=customer_id,
+        total_sales_count=total_sales_count,
+        total_revenue=total_revenue,
+        average_sale=average_sale,
+        sales_records=sales,
+    )
     
-@router.get("/expiring-soon", response_model=List[schemas.ExpiringBatchResponse])
+    return responses.SuccessResponse(
+        data=report
+    )
+ 
+ 
+# =================================================
+# GET EXPIRING SOON
+# =================================================
+   
+@router.get(
+    "/expiring-soon", 
+    response_model=responses.SuccessResponse[List[schemas.ExpiringBatchResponse]]
+)
 def get_expiring_soon(
     days: int = 30, 
     db: Session = Depends(get_db),
@@ -239,4 +283,6 @@ def get_expiring_soon(
             )
         )
 
-    return report
+    return responses.SuccessMessageResponse(
+        data=report
+    )

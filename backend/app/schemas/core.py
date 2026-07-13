@@ -332,6 +332,7 @@ class InventoryTransactionSummaryResponse(BaseModel):
     outgoing_transactions: int
     loss_transactions: int
     adjustment_transactions: int
+ 
     
 # ==========================================
 # 11. AUTHENTICATION
@@ -344,3 +345,41 @@ class Token(BaseModel):
 
 class TokenData(BaseModel):
     username: Optional[str] = None
+    
+
+# ==========================================
+# 12. AUTHENTICATION
+# ==========================================
+
+class LowStockItemResponse(BaseModel):
+    product_id: int = Field(gt=0)
+    product_name: str
+    current_stock: int = Field(ge=0)
+    min_threshold: int = Field(ge=0)
+    status: str
+    
+class BatchAuditTransactionResponse(BaseModel):
+    performed_at: datetime
+    type: str
+    quantity_change: int
+    user_id: int = Field(gt=0)
+    sale_id: Optional[int] = Field(default=None, gt=0)
+    loss_id: Optional[int] = Field(default=None, gt=0)
+    notes: Optional[str] = None
+    
+class BatchAuditResponse(BaseModel):
+    batch_id: int = Field(gt=0)
+    product_name: str
+    batch_number: Optional[str]
+    initial_quantity: int
+    current_quantity: int
+    audit_trail: List[BatchAuditTransactionResponse]
+    
+class SalesPerformanceResponse(BaseModel):
+    start_date: datetime
+    end_date: datetime
+    customer_id: Optional[int] = Field(default=None, gt=0)
+    total_sales_count: int
+    total_revenue: Decimal
+    average_sale: Decimal
+    sales_records: List[SaleResponse]

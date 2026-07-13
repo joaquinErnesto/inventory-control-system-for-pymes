@@ -7,6 +7,7 @@ from jose import JWTError
 from sqlalchemy.exc import SQLAlchemyError
 
 from app.logging.logger import logger
+from app.schemas import responses
 
 def register_exception_handlers(app: FastAPI):
     """
@@ -30,10 +31,9 @@ def register_exception_handlers(app: FastAPI):
 
         return JSONResponse(
             status_code=exc.status_code,
-            content={
-                "success": False,
-                "message": exc.detail
-            }
+            content=responses.ErrorResponse(
+                message=str(exc.detail)
+            ).model_dump()
         )
 
     # ==========================================
@@ -49,13 +49,28 @@ def register_exception_handlers(app: FastAPI):
             f"{request.method} {request.url.path} | Validation Error | {exc.errors()}"
         )
 
+        errors = []
+
+        for error in exc.errors():
+
+            field = " -> ".join(
+                str(item)
+                for item in error["loc"]
+            )
+
+            errors.append(
+                responses.ValidationErrorDetail(
+                    field=field,
+                    message=error["msg"]
+                )
+            )
+            
         return JSONResponse(
             status_code=422,
-            content={
-                "success": False,
-                "message": "Validation error.",
-                "errors": exc.errors()
-            }
+            content=responses.ValidationErrorResponse(
+                message="Validation error.",
+                errors=errors
+            ).model_dump()
         )
 
     # ==========================================
@@ -73,10 +88,9 @@ def register_exception_handlers(app: FastAPI):
 
         return JSONResponse(
             status_code=401,
-            content={
-                "success": False,
-                "message": "Invalid authentication token."
-            }
+            content=responses.ErrorResponse(
+                message="Invalid authentication token."
+            ).model_dump()
         )
 
     # ==========================================
@@ -94,10 +108,9 @@ def register_exception_handlers(app: FastAPI):
 
         return JSONResponse(
             status_code=500,
-            content={
-                "success": False,
-                "message": "A database error occurred."
-            }
+            content=responses.ErrorResponse(
+                message="A database error occurred."
+            ).model_dump()
         )
 
     # ==========================================
@@ -115,8 +128,7 @@ def register_exception_handlers(app: FastAPI):
 
         return JSONResponse(
             status_code=500,
-            content={
-                "success": False,
-                "message": "Internal server error."
-            }
+            content=responses.ErrorResponse(
+                message="Internal server error."
+            ).model_dump()
         )
