@@ -13,7 +13,9 @@ from app.security import (
     get_current_user,
     get_current_admin,
 )
+
 from app.utils.query_sorting import apply_sorting
+from app.utils.pagination import paginate
 
 router = APIRouter(
     prefix="/customers",
@@ -77,7 +79,7 @@ def create_customer(
 
 @router.get(
     "/",
-    response_model=responses.SuccessResponse[List[schemas.CustomerResponse]]
+    response_model=responses.PaginatedResponse[List[schemas.CustomerResponse]]
 )
 def get_all_customers(
     skip: int = 0,
@@ -106,15 +108,15 @@ def get_all_customers(
         allowed_fields=allowed_sort_fields,
     )
     
-    customers = (
-        query
-        .offset(skip)
-        .limit(limit)
-        .all()
+    customers, pagination = paginate(
+        query=query,
+        skip=skip,
+        limit=limit
     )
 
-    return responses.SuccessResponse(
-        data=customers
+    return responses.PaginatedResponse(
+        data=customers,
+        pagination=pagination
     )
 
 
@@ -124,7 +126,7 @@ def get_all_customers(
 
 @router.get(
     "/search/", 
-    response_model=responses.SuccessResponse[List[schemas.CustomerResponse]]
+    response_model=responses.PaginatedResponse[List[schemas.CustomerResponse]]
 )
 def search_customers(
     q: str,
@@ -140,7 +142,7 @@ def search_customers(
 
     search = f"%{q}%"
 
-    customers = (
+    query = (
         db.query(models.Customer)
         .filter(
             or_(
@@ -150,13 +152,17 @@ def search_customers(
                 models.Customer.email.like(search),
             )
         )
-        .offset(skip)
-        .limit(limit)
-        .all()
+    )
+    
+    customers, pagination = paginate(
+        query=query,
+        skip=skip,
+        limit=limit
     )
 
-    return responses.SuccessResponse(
-        data=customers
+    return responses.PaginatedResponse(
+        data=customers,
+        pagination=pagination
     )
 
 

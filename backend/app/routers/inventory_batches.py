@@ -10,7 +10,9 @@ from app.security import (
     get_current_user,
     get_current_admin,
 )
+
 from app.utils.query_sorting import apply_sorting
+from app.utils.pagination import paginate
 
 router = APIRouter(
     prefix="/batches",
@@ -124,7 +126,7 @@ def receive_stock_batch(
 
 @router.get(
     "/",
-    response_model=responses.SuccessResponse[List[schemas.InventoryBatchResponse]]
+    response_model=responses.PaginatedResponse[List[schemas.InventoryBatchResponse]]
 )
 def get_all_batches(
     skip: int = 0,
@@ -155,15 +157,15 @@ def get_all_batches(
         allowed_fields=allowed_sort_fields,
     )
     
-    batches = (
-        query
-        .offset(skip)
-        .limit(limit)
-        .all()
+    batches, pagination = paginate(
+        query=query,
+        skip=skip,
+        limit=limit
     )
 
-    return responses.SuccessResponse(
-        data=batches
+    return responses.PaginatedResponse(
+        data=batches,
+        pagination=pagination
     )
 
 

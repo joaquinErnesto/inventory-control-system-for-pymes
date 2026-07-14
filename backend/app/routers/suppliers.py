@@ -13,7 +13,9 @@ from app.security import (
     get_current_admin,
     get_current_user,
 )
+
 from app.utils.query_sorting import apply_sorting
+from app.utils.pagination import paginate
 
 router = APIRouter(
     prefix="/suppliers",
@@ -72,7 +74,7 @@ def create_supplier(
 
 @router.get(
     "/",
-    response_model=responses.SuccessResponse[List[schemas.SupplierResponse]]
+    response_model=responses.PaginatedResponse[List[schemas.SupplierResponse]]
 )
 def get_suppliers(
     skip: int = 0,
@@ -102,15 +104,15 @@ def get_suppliers(
         allowed_fields=allowed_sort_fields,
     )
     
-    suppliers = (
-        query
-        .offset(skip)
-        .limit(limit)
-        .all()
+    suppliers, pagination = paginate(
+        query=query,
+        skip=skip,
+        limit=limit
     )
     
-    return responses.SuccessResponse(
-        data=suppliers
+    return responses.PaginatedResponse(
+        data=suppliers,
+        pagination=pagination
     )
 
 
@@ -120,7 +122,7 @@ def get_suppliers(
 
 @router.get(
     "/search/", 
-    response_model=responses.SuccessResponse[List[schemas.SupplierResponse]]
+    response_model=responses.PaginatedResponse[List[schemas.SupplierResponse]]
 )
 def search_suppliers(
     q: str,
@@ -136,7 +138,7 @@ def search_suppliers(
 
     search = f"%{q}%"
 
-    suppliers = (
+    query = (
         db.query(models.Supplier)
         .filter(
             or_(
@@ -146,13 +148,17 @@ def search_suppliers(
                 models.Supplier.email.like(search),
             )
         )
-        .offset(skip)
-        .limit(limit)
-        .all()
     )
 
-    return responses.SuccessResponse(
-        data=suppliers
+    suppliers, pagination = paginate(
+        query=query,
+        skip=skip,
+        limit=limit
+    )
+    
+    return responses.PaginatedResponse(
+        data=suppliers,
+        pagination=pagination
     )
 
 

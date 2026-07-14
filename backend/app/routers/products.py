@@ -13,7 +13,9 @@ from app.security import (
     get_current_user,
     get_current_admin
 )
+
 from app.utils.query_sorting import apply_sorting
+from app.utils.pagination import paginate
 
 # Initialize the router
 router = APIRouter(
@@ -83,7 +85,7 @@ def create_product(
 
 @router.get(
     "/", 
-    response_model=responses.SuccessResponse[List[schemas.ProductResponse]]
+    response_model=responses.PaginatedResponse[List[schemas.ProductResponse]]
 )
 def get_products(
     skip: int = 0, 
@@ -113,15 +115,15 @@ def get_products(
         allowed_fields=allowed_sort_fields,
     )
     
-    products = (
-        query
-        .offset(skip)
-        .limit(limit)
-        .all()
+    products, pagination = paginate(
+        query=query,
+        skip=skip,
+        limit=limit
     )
     
-    return responses.SuccessResponse(
-        data=products
+    return responses.PaginatedResponse(
+        data=products,
+        pagination=pagination
     )
 
 
@@ -131,7 +133,7 @@ def get_products(
 
 @router.get(
     "/search/", 
-    response_model=responses.SuccessResponse[List[schemas.ProductResponse]]
+    response_model=responses.PaginatedResponse[List[schemas.ProductResponse]]
 )
 def search_products(
     q: str,
@@ -146,7 +148,7 @@ def search_products(
 
     search = f"%{q}%"
 
-    products = (
+    query = (
         db.query(models.Product)
         .filter(
             models.Product.is_active == True,
@@ -156,13 +158,17 @@ def search_products(
                 models.Product.description.like(search),
             ),
         )
-        .offset(skip)
-        .limit(limit)
-        .all()
+    )
+    
+    products, pagination = paginate(
+        query=query,
+        skip=skip,
+        limit=limit
     )
 
-    return responses.SuccessResponse(
-        data=products
+    return responses.PaginatedResponse(
+        data=products,
+        pagination=pagination
     )
 
 

@@ -10,8 +10,11 @@ from app.security import (
     get_current_user,
     get_current_admin
 )
+
 from app.logging.logger import logger
+
 from app.utils.query_sorting import apply_sorting
+from app.utils.pagination import paginate
 
 router = APIRouter(
     prefix="/losses",
@@ -122,7 +125,7 @@ def log_loss(
 
 @router.get(
     "/",
-    response_model=responses.SuccessResponse[List[schemas.LossLogResponse]]
+    response_model=responses.PaginatedResponse[List[schemas.LossLogResponse]]
 )
 def get_loss_logs(
     skip: int = 0,
@@ -160,15 +163,15 @@ def get_loss_logs(
             models.LossLog.user_id == current_user.id
         )
     
-    loss_logs = (
-        query
-        .offset(skip)
-        .limit(limit)
-        .all()
+    loss_logs, pagination = paginate(
+        query=query,
+        skip=skip,
+        limit=limit
     )
     
-    return responses.SuccessResponse(
-        data=loss_logs
+    return responses.PaginatedResponse(
+        data=loss_logs,
+        pagination=pagination
     )
 
 

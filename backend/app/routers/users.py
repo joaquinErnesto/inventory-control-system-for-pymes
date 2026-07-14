@@ -13,7 +13,9 @@ from app.security import (
     get_current_admin,
     get_current_user
 )
+
 from app.utils.query_sorting import apply_sorting
+from app.utils.pagination import paginate
 
 router = APIRouter(
     prefix="/users",
@@ -76,7 +78,7 @@ def create_user(
 
 @router.get(
     "/",
-    response_model=responses.SuccessResponse[List[schemas.UserResponse]]
+    response_model=responses.PaginatedResponse[List[schemas.UserResponse]]
 )
 def get_users(
     skip: int = 0,
@@ -105,15 +107,15 @@ def get_users(
         allowed_fields=allowed_sort_fields,
     )
 
-    users = (
-        query
-        .offset(skip)
-        .limit(limit)
-        .all()
+    users, pagination = paginate(
+        query=query,
+        skip=skip,
+        limit=limit
     )
 
-    return responses.SuccessResponse(
-        data=users
+    return responses.PaginatedResponse(
+        data=users,
+        pagination=pagination
     )
 
 
@@ -180,7 +182,7 @@ def get_user(
 
 @router.get(
     "/search",
-    response_model=responses.SuccessResponse[List[schemas.UserResponse]]
+    response_model=responses.PaginatedResponse[List[schemas.UserResponse]]
 )
 def search_users(
     q: str,
@@ -193,18 +195,22 @@ def search_users(
     Search users by username.
     """
 
-    users = (
+    query = (
         db.query(models.User)
         .filter(
             models.User.username.ilike(f"%{q}%")
         )
-        .offset(skip)
-        .limit(limit)
-        .all()
+    )
+    
+    users, pagination = paginate(
+        query=query,
+        skip=skip,
+        limit=limit
     )
 
-    return responses.SuccessResponse(
-        data=users
+    return responses.PaginatedResponse(
+        data=users,
+        pagination=pagination
     )
 
 

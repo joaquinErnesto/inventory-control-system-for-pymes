@@ -8,7 +8,9 @@ from app.models import core as models
 from app.schemas import core as schemas
 from app.schemas import responses
 from app.security import get_current_user
+
 from app.utils.query_sorting import apply_sorting
+from app.utils.pagination import paginate
 
 router = APIRouter(
     prefix="/sales",
@@ -143,7 +145,7 @@ def process_sale(
 
 @router.get(
     "/", 
-    response_model=responses.SuccessResponse[List[schemas.SaleResponse]]
+    response_model=responses.PaginatedResponse[List[schemas.SaleResponse]]
 )
 def get_all_sales(
     skip: int = 0, 
@@ -170,15 +172,15 @@ def get_all_sales(
         allowed_fields=allowed_sort_fields,
     )
     
-    sales = (
-        query
-        .offset(skip)
-        .limit(limit)
-        .all()
+    sales, pagination = paginate(
+        query=query,
+        skip=skip,
+        limit=limit
     )
 
-    return responses.SuccessResponse(
-        data=sales  
+    return responses.PaginatedResponse(
+        data=sales,
+        pagination=pagination
     )
 
 

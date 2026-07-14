@@ -10,7 +10,9 @@ from app.models import core as models
 from app.schemas import core as schemas
 from app.schemas import responses
 from app.security import get_current_user
+
 from app.utils.query_sorting import apply_sorting
+from app.utils.pagination import paginate
 
 router = APIRouter(
     prefix="/inventory-transactions",
@@ -24,7 +26,7 @@ router = APIRouter(
 
 @router.get(
     "/", 
-    response_model=responses.SuccessResponse[List[schemas.InventoryTransactionResponse]]
+    response_model=responses.PaginatedResponse[List[schemas.InventoryTransactionResponse]]
 )
 def get_inventory_transactions(
     skip: int = 0,
@@ -113,15 +115,15 @@ def get_inventory_transactions(
             models.InventoryTransaction.performed_at <= end_date
         )
 
-    transactions = (
-        query
-        .offset(skip)
-        .limit(limit)
-        .all()
+    transactions, pagination = paginate(
+        query=query,
+        skip=skip,
+        limit=limit
     )
 
-    return responses.SuccessResponse(
-        data=transactions
+    return responses.PaginatedResponse(
+        data=transactions,
+        pagination=pagination
     )
 
 
@@ -222,9 +224,13 @@ def get_transaction_summary(
     )
 
 
+# ==================================================
+# GET TODAY ACTIVITY
+# ==================================================
+
 @router.get(
     "/today/activity", 
-    response_model=responses.SuccessResponse[List[schemas.InventoryTransactionResponse]]
+    response_model=responses.PaginatedResponse[List[schemas.InventoryTransactionResponse]]
 )
 def get_today_activity(
     db: Session = Depends(get_db),

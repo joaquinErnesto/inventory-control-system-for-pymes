@@ -9,13 +9,11 @@ def paginate(
     limit: int,
 ):
     """
-    Apply pagination to a SQLAlchemy query and return both the
-    paginated items and the pagination metadata.
+    Apply pagination to a SQLAlchemy query and return both the paginated items and the pagination metadata.
 
     Args:
         query:
-            SQLAlchemy query after all filters and sorting
-            have already been applied.
+            SQLAlchemy query after all filters and sorting have already been applied.
 
         skip:
             Number of records to skip.
@@ -30,6 +28,12 @@ def paginate(
                 PaginationMeta
             )
     """
+
+    if limit <= 0:
+        raise ValueError("limit must be greater than zero.")
+
+    if skip < 0:
+        raise ValueError("skip cannot be negative.")
 
     total_items = query.count()
 
