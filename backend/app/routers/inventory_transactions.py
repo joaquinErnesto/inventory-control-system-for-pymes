@@ -44,7 +44,7 @@ def get_inventory_transactions(
     product_id: Optional[int] = None,
     batch_id: Optional[int] = None,
     user_id: Optional[int] = None,
-    transaction_type: Optional[str] = None,
+    transaction_type: Optional[schemas.TransactionType] = None,
     sale_id: Optional[int] = None,
     loss_id: Optional[int] = None,
     start_date: Optional[datetime] = None,
