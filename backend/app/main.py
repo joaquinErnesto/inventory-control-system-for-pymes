@@ -1,6 +1,7 @@
 from time import perf_counter
 
 from fastapi import FastAPI, Depends, HTTPException, Request, APIRouter
+from fastapi.middleware.cors import CORSMiddleware
 
 from sqlalchemy.orm import Session
 from sqlalchemy import text
@@ -22,6 +23,7 @@ from app.routers import (
 from app.exceptions.handlers import register_exception_handlers
 from app.logging.logger import logger
 from app.schemas import responses
+from app.config import settings
 
 # ==================================================
 # CREATE DATABASE TABLES
@@ -37,6 +39,14 @@ app = FastAPI(
     title="Inventory Control MVP API",
     description="Backend API for the Baracoa Inventory Control System",
     version="1.0.0",
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=settings.CORS_ORIGINS,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 @app.middleware("http")
