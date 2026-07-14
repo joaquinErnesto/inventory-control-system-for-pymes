@@ -1,7 +1,15 @@
 from datetime import datetime, date, time
 from typing import Optional, List
 
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import (
+    APIRouter, 
+    Depends, 
+    HTTPException, 
+    status,
+    Path,
+    Query
+)
+
 from sqlalchemy.orm import Session
 
 from app.database import get_db
@@ -39,20 +47,65 @@ router = APIRouter(
     },
 )
 def get_inventory_transactions(
-    skip: int = 0,
-    limit: int = 100,
-    product_id: Optional[int] = None,
-    batch_id: Optional[int] = None,
-    user_id: Optional[int] = None,
-    transaction_type: Optional[schemas.TransactionType] = None,
-    sale_id: Optional[int] = None,
-    loss_id: Optional[int] = None,
-    start_date: Optional[datetime] = None,
-    end_date: Optional[datetime] = None,
+    skip: int = Query(
+        default=0,
+        ge=0,
+        description="Number of transactions to skip."
+    ),
+    limit: int = Query(
+        default=100,
+        ge=1,
+        le=100,
+        description="Maximum number of transactions to return."
+    ),
+    product_id: Optional[int] = Query(
+        default=None,
+        gt=0,
+        description="Filter by product ID."
+    ),
+    batch_id: Optional[int] = Query(
+        default=None,
+        gt=0,
+        description="Filter by inventory batch ID."
+    ),
+    user_id: Optional[int] = Query(
+        default=None,
+        gt=0,
+        description="Filter by user ID (administrators only)."
+    ),
+    transaction_type: Optional[schemas.TransactionType] = Query(
+        default=None,
+        description="Filter by transaction type."
+    ),
+    sale_id: Optional[int] = Query(
+        default=None,
+        gt=0,
+        description="Filter by sale ID."
+    ),
+    loss_id: Optional[int] = Query(
+        default=None,
+        gt=0,
+        description="Filter by loss record ID."
+    ),
+    start_date: Optional[datetime] = Query(
+        default=None,
+        description="Return transactions performed on or after this date."
+    ),
+    end_date: Optional[datetime] = Query(
+        default=None,
+        description="Return transactions performed on or before this date."
+    ),
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user),
-    sort: str = "performed_at",
-    order: str = "desc"
+    sort: str = Query(
+        default="performed_at",
+        description="Field used for sorting."
+    ),
+    order: str = Query(
+        default="desc",
+        pattern="^(asc|desc)$",
+        description="Sorting direction: asc or desc."
+    )
 ):
     """
     Retrieve inventory transactions with optional filters.
@@ -71,6 +124,16 @@ def get_inventory_transactions(
     }
 
     query = db.query(models.InventoryTransaction)
+    
+    if (
+        start_date is not None
+        and end_date is not None
+        and start_date > end_date
+    ):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="start_date must be earlier than or equal to end_date."
+        )
     
     query = apply_sorting(
         query=query,
@@ -158,7 +221,11 @@ def get_inventory_transactions(
     },
 )
 def get_inventory_transaction(
-    transaction_id: int,
+    transaction_id: int = Path(
+        ...,
+        gt=0,
+        description="Inventory transaction ID."
+    ),
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user)
 ):
@@ -277,12 +344,28 @@ def get_transaction_summary(
     },
 )
 def get_today_activity(
-    skip: int = 0,
-    limit: int = 100,
+    skip: int = Query(
+        default=0,
+        ge=0,
+        description="Number of transactions to skip."
+    ),
+    limit: int = Query(
+        default=100,
+        ge=1,
+        le=100,
+        description="Maximum number of transactions to return."
+    ),
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user),
-    sort: str = "performed_at",
-    order: str = "desc",
+    sort: str = Query(
+        default="performed_at",
+        description="Field used for sorting."
+    ),
+    order: str = Query(
+        default="desc",
+        pattern="^(asc|desc)$",
+        description="Sorting direction: asc or desc."
+    ),
 ):
     """
     Returns today's inventory activity.

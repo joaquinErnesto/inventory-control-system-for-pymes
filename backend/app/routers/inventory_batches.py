@@ -1,4 +1,12 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import (
+    APIRouter, 
+    Depends, 
+    HTTPException, 
+    status,
+    Query,
+    Path
+)
+
 from sqlalchemy.orm import Session
 from typing import List
 
@@ -167,12 +175,31 @@ def receive_stock_batch(
     },
 )
 def get_all_batches(
-    skip: int = 0,
-    limit: int = 100,
+    skip: int = Query(
+        default=0,
+        ge=0,
+        description="Number of records to skip."
+    ),
+    limit: int = Query(
+        default=100,
+        ge=1,
+        le=100,
+        description="Maximum number of records to return."
+    ),
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user),
-    sort: str = "received_date",
-    order: str = "desc"
+    sort: str = Query(
+        default="received_date",
+        description=(
+            "Field used for sorting. "
+            "Allowed values: received_date, expiration_date, "
+            "current_quantity, cost_price, selling_price."
+        ),
+    ),
+    order: schemas.SortOrder = Query(
+        default=schemas.SortOrder.DESC,
+        description="Sort direction."
+    )
 ):
     """
     Retrieve all inventory batches.
@@ -231,7 +258,11 @@ def get_all_batches(
     },
 )
 def get_batch(
-    batch_id: int,
+    batch_id: int = Path(
+        ...,
+        gt=0,
+        description="Unique identifier of the inventory batch."
+    ),
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user),
 ):
@@ -292,7 +323,11 @@ def get_batch(
     },
 )
 def delete_batch(
-    batch_id: int,
+    batch_id: int = Path(
+        ...,
+        gt=0,
+        description="Unique identifier of the inventory batch."
+    ),
     db: Session = Depends(get_db),
     current_user=Depends(get_current_admin),
 ):

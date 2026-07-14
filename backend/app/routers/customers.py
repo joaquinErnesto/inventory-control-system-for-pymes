@@ -1,4 +1,11 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import (
+    APIRouter, 
+    Depends, 
+    HTTPException, 
+    status,
+    Query,
+    Path
+)
 
 from sqlalchemy.orm import Session
 from sqlalchemy import or_
@@ -115,12 +122,28 @@ def create_customer(
     },
 )
 def get_all_customers(
-    skip: int = 0,
-    limit: int = 100,
+    skip: int = Query(
+        default=0,
+        ge=0,
+        description="Number of records to skip."
+    ),
+    limit: int = Query(
+        default=100,
+        ge=1,
+        le=100,
+        description="Maximum number of customers to return."
+    ),
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user),
-    sort: str = "name",
-    order: str = "asc"
+    sort: str = Query(
+        default="name",
+        description="Field used for sorting."
+    ),
+    order: str = Query(
+        default="asc",
+        pattern="^(asc|desc)$",
+        description="Sorting direction: asc or desc."
+    ),
 ):
     """
     Retrieve all customers.
@@ -176,9 +199,23 @@ def get_all_customers(
     },
 )
 def search_customers(
-    q: str,
-    skip: int = 0,
-    limit: int = 50,
+    q: str = Query(
+        ...,
+        min_length=1,
+        max_length=100,
+        description="Customer search text."
+    ),
+    skip: int = Query(
+        default=0,
+        ge=0,
+        description="Number of matching customers to skip."
+    ),
+    limit: int = Query(
+        default=50,
+        ge=1,
+        le=100,
+        description="Maximum number of matching customers to return."
+    ),
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user),
 ):
@@ -237,7 +274,11 @@ def search_customers(
     },
 )
 def get_customer(
-    customer_id: int,
+    customer_id: int = Path(
+        ...,
+        gt=0,
+        description="Customer ID."
+    ),
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user),
 ):
@@ -295,8 +336,12 @@ def get_customer(
     },
 )
 def update_customer(
-    customer_id: int,
     customer_update: schemas.CustomerUpdate,
+    customer_id: int = Path(
+        ...,
+        gt=0,
+        description="Customer ID."
+    ),
     db: Session = Depends(get_db),
     current_admin=Depends(get_current_admin),
 ):
@@ -381,7 +426,11 @@ def update_customer(
     },
 )
 def delete_customer(
-    customer_id: int,
+    customer_id: int = Path(
+        ...,
+        gt=0,
+        description="Customer ID."
+    ),
     db: Session = Depends(get_db),
     current_admin=Depends(get_current_admin),
 ):

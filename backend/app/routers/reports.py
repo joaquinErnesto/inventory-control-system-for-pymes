@@ -1,4 +1,11 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import (
+    APIRouter, 
+    Depends, 
+    HTTPException,
+    Path,
+    Query
+)
+
 from sqlalchemy.orm import Session
 from sqlalchemy import func
 
@@ -120,7 +127,11 @@ def get_low_stock_report(
     },
 )
 def get_batch_audit(
-    batch_id: int, 
+    batch_id: int = Path(
+        ...,
+        gt=0,
+        description="Inventory batch ID."
+    ), 
     db: Session = Depends(get_db),
     current_user: models.User = Depends(get_current_user)
 ):
@@ -200,9 +211,19 @@ def get_batch_audit(
     },
 )
 def get_sales_performance(
-    start_date: datetime, 
-    end_date: datetime, 
-    customer_id: Optional[int] = None, 
+    start_date: datetime = Query(
+        ...,
+        description="Start of the reporting period."
+    ), 
+    end_date: datetime = Query(
+        ...,
+        description="End of the reporting period."
+    ), 
+    customer_id: Optional[int] = Query(
+        default=None,
+        gt=0,
+        description="Filter report by customer ID."
+    ), 
     db: Session = Depends(get_db),
     current_user: models.User = Depends(get_current_user)
 ):
@@ -229,7 +250,7 @@ def get_sales_performance(
     )
     
     # Apply optional customer filter
-    if customer_id:
+    if customer_id is not None:
         query = query.filter(models.Sale.customer_id == customer_id)
         
     sales = query.all()
@@ -279,7 +300,12 @@ def get_sales_performance(
     },
 )
 def get_expiring_soon(
-    days: int = 30, 
+    days: int = Query(
+        default=30,
+        ge=1,
+        le=365,
+        description="Number of days ahead to search for expiring inventory."
+    ), 
     db: Session = Depends(get_db),
     current_user: models.User = Depends(get_current_user)
 ):
@@ -292,12 +318,6 @@ def get_expiring_soon(
         raise HTTPException(
             status_code=403,
             detail="Only administrators can access reports."
-        )
-        
-    if days <= 0:
-        raise HTTPException(
-            status_code=400,
-            detail="days must be greater than zero."
         )
     
     today = date.today()

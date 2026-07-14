@@ -1,4 +1,12 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import (
+    APIRouter, 
+    Depends, 
+    HTTPException, 
+    status,
+    Query,
+    Path
+)
+
 from sqlalchemy.orm import Session
 from typing import List
 
@@ -7,8 +15,7 @@ from app.models import core as models
 from app.schemas import core as schemas
 from app.schemas import responses
 from app.security import (
-    get_current_user,
-    get_current_admin
+    get_current_user
 )
 
 from app.logging.logger import logger
@@ -155,10 +162,26 @@ def log_loss(
     },
 )
 def get_all_loss_logs(
-    skip: int = 0,
-    limit: int = 100,
-    sort: str = "logged_at",
-    order: str = "desc",
+    skip: int = Query(
+        default=0,
+        ge=0,
+        description="Number of loss records to skip."
+    ),
+    limit: int = Query(
+        default=100,
+        ge=1,
+        le=100,
+        description="Maximum number of loss records to return."
+    ),
+    sort: str = Query(
+        default="logged_at",
+        description="Field used for sorting."
+    ),
+    order: str = Query(
+        default="desc",
+        pattern="^(asc|desc)$",
+        description="Sorting direction: asc or desc."
+    ),
     db: Session = Depends(get_db),
     current_user: models.User = Depends(get_current_user)
 ):
@@ -222,7 +245,11 @@ def get_all_loss_logs(
     },
 )
 def get_loss_log(
-    loss_id: int,
+    loss_id: int = Path(
+        ...,
+        gt=0,
+        description="Loss record ID."
+    ),
     db: Session = Depends(get_db),
     current_user: models.User = Depends(get_current_user)
 ):

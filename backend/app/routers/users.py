@@ -1,8 +1,15 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import (
+    APIRouter, 
+    Depends, 
+    HTTPException, 
+    status,
+    Query,
+    Path
+)
 
 from sqlalchemy.orm import Session
 
-from typing import List
+from typing import List, Annotated
 
 from app.database import get_db
 from app.models import core as models
@@ -96,12 +103,36 @@ def create_user(
     },
 )
 def get_users(
-    skip: int = 0,
-    limit: int = 100,
+    skip: Annotated[
+        int,
+        Query(
+            ge=0,
+            description="Number of records to skip."
+        )
+    ] = 0,
+    limit: Annotated[
+        int,
+        Query(
+            ge=1,
+            le=100,
+            description="Maximum number of records to return."
+        )
+    ] = 100,
     db: Session = Depends(get_db),
     current_user: models.User = Depends(get_current_admin),
-    sort: str = "created_at",
-    order: str = "desc"
+    sort: Annotated[
+        str,
+        Query(
+            description="Field used for sorting."
+        )
+    ] = "created_at",
+    order: Annotated[
+        str,
+        Query(
+            pattern="^(asc|desc)$",
+            description="Sort order: asc or desc."
+        )
+    ] = "desc",
 ):
     """
     Retrieve all registered users.
@@ -180,7 +211,13 @@ def get_current_authenticated_user(
     },
 )
 def get_user(
-    user_id: int,
+    user_id: Annotated[
+        int,
+        Path(
+            gt=0,
+            description="User ID"
+        )
+    ],
     db: Session = Depends(get_db),
     current_user: models.User = Depends(get_current_admin)
 ):
@@ -210,7 +247,7 @@ def get_user(
 # ==================================================
 
 @router.get(
-    "/search",
+    "/search/",
     summary="Search users",
     description="Searches users by username. Results are returned using pagination. Only administrators can access this endpoint.",
     response_model=responses.PaginatedResponse[List[schemas.UserResponse]],
@@ -221,9 +258,29 @@ def get_user(
     },
 )
 def search_users(
-    q: str,
-    skip: int = 0,
-    limit: int = 100,
+    q: Annotated[
+        str,
+        Query(
+            min_length=1,
+            max_length=100,
+            description="Search term."
+        )
+    ],
+    skip: Annotated[
+        int,
+        Query(
+            ge=0,
+            description="Number of records to skip."
+        )
+    ] = 0,
+    limit: Annotated[
+        int,
+        Query(
+            ge=1,
+            le=100,
+            description="Maximum number of records to return."
+        )
+    ] = 100,
     db: Session = Depends(get_db),
     current_user: models.User = Depends(get_current_admin),
 ):
@@ -268,7 +325,13 @@ def search_users(
     },
 )
 def update_user(
-    user_id: int,
+    user_id: Annotated[
+        int,
+        Path(
+            gt=0,
+            description="User ID"
+        )
+    ],
     user_update: schemas.UserUpdate,
     db: Session = Depends(get_db),
     current_user: models.User = Depends(get_current_admin)
@@ -334,7 +397,13 @@ def update_user(
     },
 )
 def change_password(
-    user_id: int,
+    user_id: Annotated[
+        int,
+        Path(
+            gt=0,
+            description="User ID"
+        )
+    ],
     password_update: schemas.UserPasswordUpdate,
     db: Session = Depends(get_db),
     current_user: models.User = Depends(get_current_admin)
@@ -385,7 +454,13 @@ def change_password(
     },
 )
 def delete_user(
-    user_id: int,
+    user_id: Annotated[
+        int,
+        Path(
+            gt=0,
+            description="User ID"
+        )
+    ],
     db: Session = Depends(get_db),
     current_user: models.User = Depends(get_current_admin)
 ):

@@ -1,9 +1,16 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import (
+    APIRouter, 
+    Depends, 
+    HTTPException, 
+    status,
+    Path,
+    Query
+)
 
 from sqlalchemy import or_
 from sqlalchemy.orm import Session
 
-from typing import List
+from typing import List, Annotated
 
 from app.database import get_db
 from app.models import core as models
@@ -102,12 +109,36 @@ def create_product(
     },
 )
 def get_products(
-    skip: int = 0, 
-    limit: int = 100, 
+    skip: Annotated[
+        int,
+        Query(
+            ge=0,
+            description="Number of records to skip."
+        )
+    ] = 0, 
+    limit: Annotated[
+        int,
+        Query(
+            ge=1,
+            le=100,
+            description="Maximum number of records to return."
+        )
+    ] = 100, 
     db: Session = Depends(get_db),
     current_user = Depends(get_current_user),
-    sort: str = "name",
-    order: str = "asc"
+    sort: Annotated[
+        str,
+        Query(
+            description="Field used for sorting."
+        )
+    ] = "name",
+    order: Annotated[
+        str,
+        Query(
+            pattern="^(asc|desc)$",
+            description="Sort order: asc or desc."
+        )
+    ] = "asc",
 ):
     """
     Retrieve a list of all products in the catalog.
@@ -156,9 +187,29 @@ def get_products(
     },
 )
 def search_products(
-    q: str,
-    skip: int = 0,
-    limit: int = 50,
+    q: Annotated[
+        str,
+        Query(
+            min_length=1,
+            max_length=100,
+            description="Search term."
+        )
+    ],
+    skip: Annotated[
+        int,
+        Query(
+            ge=0,
+            description="Number of records to skip."
+        )
+    ] = 0,
+    limit: Annotated[
+        int,
+        Query(
+            ge=1,
+            le=50,
+            description="Maximum number of records to return."
+        )
+    ] = 50,
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user),
 ):
@@ -171,7 +222,7 @@ def search_products(
     query = (
         db.query(models.Product)
         .filter(
-            models.Product.is_active == True,
+            models.Product.is_active.is_(True),
             or_(
                 models.Product.name.like(search),
                 models.Product.sku_or_barcode.like(search),
@@ -208,7 +259,13 @@ def search_products(
     },
 )
 def get_single_product(
-    product_id: int, 
+    product_id: Annotated[
+        int,
+        Path(
+            gt=0,
+            description="Product ID"
+        )
+    ], 
     db: Session = Depends(get_db),
     current_user = Depends(get_current_user)
 ):
@@ -249,7 +306,13 @@ def get_single_product(
     },
 )
 def update_product(
-    product_id: int, 
+    product_id: Annotated[
+        int,
+        Path(
+            gt=0,
+            description="Product ID"
+        )
+    ], 
     product_update: schemas.ProductCreate, 
     db: Session = Depends(get_db),
     current_user = Depends(get_current_admin)
@@ -328,7 +391,13 @@ def update_product(
     },
 )
 def delete_product(
-    product_id: int,
+    product_id: Annotated[
+        int,
+        Path(
+            gt=0,
+            description="Product ID"
+        )
+    ],
     db: Session = Depends(get_db),
     current_user=Depends(get_current_admin),
 ):

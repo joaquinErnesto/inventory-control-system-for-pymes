@@ -1,6 +1,14 @@
-from typing import List
+from typing import List, Annotated
 
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import (
+    APIRouter, 
+    Depends, 
+    status,
+    Path,
+    Query,
+    HTTPException
+)
+
 from sqlalchemy.orm import Session
 
 from app.database import get_db
@@ -87,12 +95,37 @@ def create_category(
     },
 )
 def get_categories(
-    skip: int = 0,
-    limit: int = 100,
+    skip: Annotated[
+        int,
+        Query(
+            ge=0,
+            description="Number of records to skip."
+        )
+    ] = 0,
+
+    limit: Annotated[
+        int,
+        Query(
+            ge=1,
+            le=100,
+            description="Maximum number of records to return."
+        )
+    ] = 100,
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user),
-    sort: str = "name",
-    order: str = "asc"
+    sort: Annotated[
+        str,
+        Query(
+            description="Field used for sorting."
+        )
+    ] = "name",
+    order: Annotated[
+        str,
+        Query(
+            pattern="^(asc|desc)$",
+            description="Sort order: asc or desc."
+        )
+    ] = "asc",
 ):
     """
     Retrieve all categories.
@@ -141,7 +174,13 @@ def get_categories(
     },
 )
 def get_category(
-    category_id: int,
+    category_id: Annotated[
+        int,
+        Path(
+            gt=0,
+            description="Unique identifier of the category"
+        )
+    ],
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user),
 ):
@@ -186,7 +225,13 @@ def get_category(
     },
 )
 def update_category(
-    category_id: int,
+    category_id: Annotated[
+        int,
+        Path(
+            gt=0,
+            description="Unique identifier of the category to update."
+        )
+    ],
     category_update: schemas.CategoryUpdate,
     db: Session = Depends(get_db),
     current_user=Depends(get_current_admin),
@@ -254,7 +299,13 @@ def update_category(
     },
 )
 def delete_category(
-    category_id: int,
+    category_id: Annotated[
+        int,
+        Path(
+            gt=0,
+            description="Unique identifier of the category to delete."
+        )
+    ],
     db: Session = Depends(get_db),
     current_user=Depends(get_current_admin),
 ):

@@ -1,4 +1,12 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import (
+    APIRouter, 
+    Depends, 
+    HTTPException, 
+    status,
+    Query,
+    Path
+)
+
 from sqlalchemy.orm import Session
 from typing import List
 from decimal import Decimal
@@ -173,12 +181,28 @@ def process_sale(
     },
 )
 def get_all_sales(
-    skip: int = 0, 
-    limit: int = 100, 
+    skip: int = Query(
+        default=0,
+        ge=0,
+        description="Number of sales to skip."
+    ),
+    limit: int = Query(
+        default=100,
+        ge=1,
+        le=100,
+        description="Maximum number of sales to return."
+    ), 
     db: Session = Depends(get_db),
     current_user = Depends(get_current_user),
-    sort: str = "sold_at",
-    order: str = "desc"
+    sort: str = Query(
+        default="sold_at",
+        description="Field used for sorting."
+    ),
+    order: str = Query(
+        default="desc",
+        pattern="^(asc|desc)$",
+        description="Sorting direction."
+    ),
 ):
     """
     Retrieve all sales receipts.
@@ -228,7 +252,11 @@ def get_all_sales(
     },
 )
 def get_sale(
-    sale_id: int,
+    sale_id: int = Path(
+        ...,
+        gt=0,
+        description="Sale ID."
+    ),
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user)
 ):

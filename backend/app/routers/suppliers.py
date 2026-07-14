@@ -1,6 +1,13 @@
-from typing import List
+from typing import List, Annotated
 
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import (
+    APIRouter, 
+    Depends, 
+    HTTPException, 
+    Path,
+    Query,
+    status
+)
 
 from sqlalchemy.orm import Session
 from sqlalchemy import or_
@@ -90,13 +97,38 @@ def create_supplier(
         401: {"description": "Authentication required"},
     },
 )
-def get_suppliers(
-    skip: int = 0,
-    limit: int = 100,
+def get_all_suppliers(
+    skip: Annotated[
+        int,
+        Query(
+            ge=0,
+            description="Number of records to skip."
+        )
+    ] = 0,
+
+    limit: Annotated[
+        int,
+        Query(
+            ge=1,
+            le=100,
+            description="Maximum number of records to return."
+        )
+    ] = 100,
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user),
-    sort: str = "name",
-    order: str = "asc"
+    sort: Annotated[
+        str,
+        Query(
+            description="Field used for sorting."
+        )
+    ] = "name",
+    order: Annotated[
+        str,
+        Query(
+            pattern="^(asc|desc)$",
+            description="Sort order: asc or desc."
+        )
+    ] = "asc"
 ):
     """
     Retrieve all suppliers.
@@ -145,9 +177,30 @@ def get_suppliers(
     },
 )
 def search_suppliers(
-    q: str,
-    skip: int = 0,
-    limit: int = 50,
+    q: Annotated[
+        str,
+        Query(
+            min_length=1,
+            max_length=100,
+            description="Search term."
+        )
+    ],
+    skip: Annotated[
+        int,
+        Query(
+            ge=0,
+            description="Number of records to skip."
+        )
+    ] = 0,
+
+    limit: Annotated[
+        int,
+        Query(
+            ge=1,
+            le=100,
+            description="Maximum number of records to return."
+        )
+    ] = 100,
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user),
 ):
@@ -198,7 +251,13 @@ def search_suppliers(
     },
 )
 def get_supplier(
-    supplier_id: int,
+    supplier_id: Annotated[
+        int,
+        Path(
+            gt=0,
+            description="Supplier ID"
+        )
+    ],
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user),
 ):
@@ -243,7 +302,13 @@ def get_supplier(
     },
 )
 def update_supplier(
-    supplier_id: int,
+    supplier_id: Annotated[
+        int,
+        Path(
+            gt=0,
+            description="Supplier ID"
+        )
+    ],
     supplier_update: schemas.SupplierUpdate,
     db: Session = Depends(get_db),
     current_user=Depends(get_current_admin),
@@ -315,7 +380,13 @@ def update_supplier(
     },
 )
 def delete_supplier(
-    supplier_id: int,
+    supplier_id: Annotated[
+        int,
+        Path(
+            gt=0,
+            description="Supplier ID"
+        )
+    ],
     db: Session = Depends(get_db),
     current_user=Depends(get_current_admin),
 ):
