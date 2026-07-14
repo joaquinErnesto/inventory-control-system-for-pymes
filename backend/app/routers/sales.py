@@ -23,9 +23,25 @@ router = APIRouter(
 # ==================================================
 
 @router.post(
-    "/", 
-    response_model=responses.SuccessMessageResponse[schemas.SaleResponse], 
-    status_code=status.HTTP_201_CREATED
+    "/",
+    response_model=responses.SuccessMessageResponse[schemas.SaleResponse],
+    status_code=status.HTTP_201_CREATED,
+    summary="Process a sale",
+    description=(
+        "Creates a new sale, deducts inventory using the FEFO/FIFO strategy, "
+        "creates sale items, records inventory transactions, and calculates "
+        "the total amount."
+    ),
+    responses={
+        201: {"description": "Sale processed successfully."},
+        400: {
+            "description": (
+                "Invalid customer, invalid product, insufficient stock, "
+                "or invalid sale data."
+            )
+        },
+        401: {"description": "Authentication required."},
+    },
 )
 def process_sale(
     sale_request: schemas.SaleCreate,
@@ -144,8 +160,17 @@ def process_sale(
 # ==================================================
 
 @router.get(
-    "/", 
-    response_model=responses.PaginatedResponse[List[schemas.SaleResponse]]
+    "/",
+    response_model=responses.PaginatedResponse[List[schemas.SaleResponse]],
+    summary="List sales",
+    description=(
+        "Returns a paginated list of sales. "
+        "Supports sorting by sale date and total amount."
+    ),
+    responses={
+        200: {"description": "Sales retrieved successfully."},
+        401: {"description": "Authentication required."},
+    },
 )
 def get_all_sales(
     skip: int = 0, 
@@ -189,8 +214,18 @@ def get_all_sales(
 # ==================================================
 
 @router.get(
-    "/{sale_id}", 
-    response_model=responses.SuccessResponse[schemas.SaleDetailResponse]
+    "/{sale_id}",
+    response_model=responses.SuccessResponse[schemas.SaleDetailResponse],
+    summary="Get sale by ID",
+    description=(
+        "Returns the complete details of a sale, including customer, "
+        "employee, payment information, and purchased items."
+    ),
+    responses={
+        200: {"description": "Sale retrieved successfully."},
+        401: {"description": "Authentication required."},
+        404: {"description": "Sale not found."},
+    },
 )
 def get_sale(
     sale_id: int,

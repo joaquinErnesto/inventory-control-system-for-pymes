@@ -26,8 +26,32 @@ router = APIRouter(
 
 @router.post(
     "/",
+    summary="Receive inventory batch",
+    description=(
+        "Registers a new inventory batch for an existing product. "
+        "The batch's current quantity is initialized with the received quantity, "
+        "and an inventory transaction of type 'IN' is automatically recorded. "
+        "Only administrators can receive inventory."
+    ),
     response_model=responses.SuccessMessageResponse[schemas.InventoryBatchResponse],
-    status_code=status.HTTP_201_CREATED
+    status_code=status.HTTP_201_CREATED,
+    responses={
+        201: {
+            "description": "Inventory batch created successfully."
+        },
+        400: {
+            "description": (
+                "Invalid product or supplier, duplicate business rule, "
+                "or invalid quantity/pricing values."
+            )
+        },
+        401: {
+            "description": "Authentication required."
+        },
+        403: {
+            "description": "Administrator privileges required."
+        },
+    },
 )
 def receive_stock_batch(
     batch: schemas.InventoryBatchCreate,
@@ -126,14 +150,28 @@ def receive_stock_batch(
 
 @router.get(
     "/",
-    response_model=responses.PaginatedResponse[List[schemas.InventoryBatchResponse]]
+    summary="List inventory batches",
+    description=(
+        "Returns a paginated list of inventory batches. "
+        "Results can be sorted by received date, expiration date, "
+        "quantity, cost price, or selling price."
+    ),
+    response_model=responses.PaginatedResponse[List[schemas.InventoryBatchResponse]],
+    responses={
+        200: {
+            "description": "Inventory batches retrieved successfully."
+        },
+        401: {
+            "description": "Authentication required."
+        },
+    },
 )
 def get_all_batches(
     skip: int = 0,
     limit: int = 100,
     db: Session = Depends(get_db),
     current_user=Depends(get_current_user),
-    sort: str = "recieved_date",
+    sort: str = "received_date",
     order: str = "desc"
 ):
     """
@@ -141,7 +179,7 @@ def get_all_batches(
     """
     
     allowed_sort_fields = {
-        "recieved_date": models.InventoryBatch.received_date,
+        "received_date": models.InventoryBatch.received_date,
         "expiration_date": models.InventoryBatch.expiration_date,
         "current_quantity": models.InventoryBatch.current_quantity,
         "cost_price": models.InventoryBatch.cost_price,
@@ -175,7 +213,22 @@ def get_all_batches(
 
 @router.get(
     "/{batch_id}",
-    response_model=responses.SuccessResponse[schemas.InventoryBatchResponse]
+    summary="Get inventory batch by ID",
+    description=(
+        "Returns detailed information for a specific inventory batch."
+    ),
+    response_model=responses.SuccessResponse[schemas.InventoryBatchResponse],
+    responses={
+        200: {
+            "description": "Inventory batch retrieved successfully."
+        },
+        401: {
+            "description": "Authentication required."
+        },
+        404: {
+            "description": "Inventory batch not found."
+        },
+    },
 )
 def get_batch(
     batch_id: int,
@@ -209,8 +262,34 @@ def get_batch(
 
 @router.delete(
     "/{batch_id}",
+    summary="Delete inventory batch",
+    description=(
+        "Deletes an inventory batch only if it has never been used in sales, "
+        "loss records, or inventory transactions. "
+        "Only administrators can perform this operation."
+    ),
     response_model=responses.MessageResponse,
-    status_code=status.HTTP_200_OK
+    status_code=status.HTTP_200_OK,
+    responses={
+        200: {
+            "description": "Inventory batch deleted successfully."
+        },
+        400: {
+            "description": (
+                "The batch has related sales, losses, or inventory transactions "
+                "and cannot be deleted."
+            )
+        },
+        401: {
+            "description": "Authentication required."
+        },
+        403: {
+            "description": "Administrator privileges required."
+        },
+        404: {
+            "description": "Inventory batch not found."
+        },
+    },
 )
 def delete_batch(
     batch_id: int,

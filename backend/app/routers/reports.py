@@ -23,7 +23,18 @@ router = APIRouter(
 
 @router.get(
     "/low-stock",
-    response_model=responses.SuccessResponse[List[schemas.LowStockItemResponse]]
+    response_model=responses.SuccessResponse[List[schemas.LowStockItemResponse]],
+    summary="Generate low stock report",
+    description=(
+        "Returns all active products whose total available stock is "
+        "less than or equal to their configured minimum stock threshold. "
+        "This report helps identify products that should be reordered."
+    ),
+    responses={
+        200: {"description": "Low stock report generated successfully"},
+        401: {"description": "Authentication required"},
+        403: {"description": "Administrator privileges required"},
+    },
 )
 def get_low_stock_report(
     db: Session = Depends(get_db),
@@ -94,7 +105,19 @@ def get_low_stock_report(
 
 @router.get(
     "/batch-audit/{batch_id}",
-    response_model=responses.SuccessResponse[schemas.BatchAuditResponse]
+    response_model=responses.SuccessResponse[schemas.BatchAuditResponse],
+    summary="Retrieve batch audit trail",
+    description=(
+        "Returns the complete inventory movement history for a specific "
+        "inventory batch, including stock entries, sales, losses, and "
+        "other recorded inventory transactions."
+    ),
+    responses={
+        200: {"description": "Batch audit report retrieved successfully"},
+        401: {"description": "Authentication required"},
+        403: {"description": "Administrator privileges required"},
+        404: {"description": "Inventory batch not found"},
+    },
 )
 def get_batch_audit(
     batch_id: int, 
@@ -161,7 +184,20 @@ def get_batch_audit(
 
 @router.get(
     "/sales-performance",
-    response_model=responses.SuccessResponse[schemas.SalesPerformanceResponse]
+    response_model=responses.SuccessResponse[schemas.SalesPerformanceResponse],
+    summary="Generate sales performance report",
+    description=(
+        "Calculates sales performance metrics within a specified date range. "
+        "Optionally filters results for a specific customer and returns "
+        "sales count, total revenue, average sale value, and the matching "
+        "sales records."
+    ),
+    responses={
+        200: {"description": "Sales performance report generated successfully"},
+        400: {"description": "Invalid date range"},
+        401: {"description": "Authentication required"},
+        403: {"description": "Administrator privileges required"},
+    },
 )
 def get_sales_performance(
     start_date: datetime, 
@@ -227,8 +263,20 @@ def get_sales_performance(
 # =================================================
    
 @router.get(
-    "/expiring-soon", 
-    response_model=responses.SuccessResponse[List[schemas.ExpiringBatchResponse]]
+    "/expiring-soon",
+    response_model=responses.SuccessResponse[List[schemas.ExpiringBatchResponse]],
+    summary="Generate expiring inventory report",
+    description=(
+        "Returns inventory batches that will expire within the specified "
+        "number of days. Results are ordered by expiration date so the "
+        "most urgent batches appear first."
+    ),
+    responses={
+        200: {"description": "Expiring inventory report generated successfully"},
+        400: {"description": "Invalid number of days"},
+        401: {"description": "Authentication required"},
+        403: {"description": "Administrator privileges required"},
+    },
 )
 def get_expiring_soon(
     days: int = 30, 
@@ -283,6 +331,6 @@ def get_expiring_soon(
             )
         )
 
-    return responses.SuccessMessageResponse(
+    return responses.SuccessResponse(
         data=report
     )

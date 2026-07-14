@@ -17,7 +17,25 @@ router = APIRouter(tags=["Authentication"])
 
 @router.post(
     "/token",
-    response_model=responses.SuccessResponse[schemas.Token]
+    summary="Authenticate user",
+    description=(
+        "Authenticates a user using a username and password. "
+        "If the credentials are valid, a JWT access token is returned. "
+        "The token must be included in the Authorization header "
+        "using the Bearer scheme when accessing protected endpoints."
+    ),
+    response_model=responses.SuccessMessageResponse[schemas.Token],
+    responses={
+        200: {
+            "description": "Authentication successful. JWT access token generated."
+        },
+        401: {
+            "description": "Invalid username or password."
+        },
+        422: {
+            "description": "Validation error. Required form fields are missing or invalid."
+        },
+    },
 )
 def login_for_access_token(
     form_data: OAuth2PasswordRequestForm = Depends(),
@@ -54,7 +72,7 @@ def login_for_access_token(
         }
     )
 
-    return responses.SuccessResponse(
+    return responses.SuccessMessageResponse(
         message="Authentication successful",
         data=schemas.Token(
             access_token=access_token, 

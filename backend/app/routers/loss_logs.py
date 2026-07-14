@@ -27,9 +27,26 @@ router = APIRouter(
 # ==================================================
 
 @router.post(
-    "/", 
+    "/",
     response_model=responses.SuccessMessageResponse[schemas.LossLogResponse],
-    status_code=status.HTTP_201_CREATED
+    status_code=status.HTTP_201_CREATED,
+    summary="Register inventory loss",
+    description=(
+        "Registers an inventory loss, deducts stock from the selected batch, "
+        "creates an inventory transaction record, and triggers a low-stock "
+        "warning when the remaining stock reaches the configured threshold."
+    ),
+    responses={
+        201: {"description": "Loss registered successfully"},
+        400: {
+            "description": (
+                "Invalid batch, inactive product, insufficient stock, "
+                "or invalid quantity."
+            )
+        },
+        401: {"description": "Authentication required"},
+        404: {"description": "Batch not found"},
+    },
 )
 def log_loss(
     loss: schemas.LossLogCreate, 
@@ -125,9 +142,19 @@ def log_loss(
 
 @router.get(
     "/",
-    response_model=responses.PaginatedResponse[List[schemas.LossLogResponse]]
+    response_model=responses.PaginatedResponse[List[schemas.LossLogResponse]],
+    summary="List inventory loss records",
+    description=(
+        "Returns a paginated list of inventory loss records. "
+        "Administrators can view all losses, while employees "
+        "can only view the losses they registered."
+    ),
+    responses={
+        200: {"description": "Loss records retrieved successfully"},
+        401: {"description": "Authentication required"},
+    },
 )
-def get_loss_logs(
+def get_all_loss_logs(
     skip: int = 0,
     limit: int = 100,
     sort: str = "logged_at",
@@ -181,7 +208,18 @@ def get_loss_logs(
 
 @router.get(
     "/{loss_id}",
-    response_model=responses.SuccessResponse[schemas.LossLogResponse]
+    response_model=responses.SuccessResponse[schemas.LossLogResponse],
+    summary="Retrieve a loss record",
+    description=(
+        "Returns the details of a specific inventory loss record "
+        "by its identifier."
+    ),
+    responses={
+        200: {"description": "Loss record retrieved successfully"},
+        401: {"description": "Authentication required"},
+        403: {"description": "Not authorized to access this loss record"},
+        404: {"description": "Loss record not found"},
+    },
 )
 def get_loss_log(
     loss_id: int,

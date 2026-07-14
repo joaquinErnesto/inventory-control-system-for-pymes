@@ -29,8 +29,16 @@ router = APIRouter(
 
 @router.post(
     "/",
+    summary="Create user",
+    description="Creates a new system user with a securely hashed password. Only administrators can create user accounts.",
     response_model=responses.SuccessMessageResponse[schemas.UserResponse],
-    status_code=status.HTTP_201_CREATED
+    status_code=status.HTTP_201_CREATED,
+    responses={
+        201: {"description": "User created successfully"},
+        400: {"description": "Username already exists"},
+        401: {"description": "Authentication required"},
+        403: {"description": "Administrator privileges required"},
+    },
 )
 def create_user(
     user: schemas.UserCreate,
@@ -78,7 +86,14 @@ def create_user(
 
 @router.get(
     "/",
-    response_model=responses.PaginatedResponse[List[schemas.UserResponse]]
+    summary="List users",
+    description="Returns a paginated list of all registered users with optional sorting. Only administrators can access this endpoint.",
+    response_model=responses.PaginatedResponse[List[schemas.UserResponse]],
+    responses={
+        200: {"description": "Users retrieved successfully"},
+        401: {"description": "Authentication required"},
+        403: {"description": "Administrator privileges required"},
+    },
 )
 def get_users(
     skip: int = 0,
@@ -125,7 +140,13 @@ def get_users(
 
 @router.get(
     "/me",
-    response_model=responses.SuccessResponse[schemas.UserResponse]
+    summary="Get current user",
+    description="Returns the currently authenticated user's profile. This endpoint is typically used by the frontend immediately after login to restore the user session.",
+    response_model=responses.SuccessResponse[schemas.UserResponse],
+    responses={
+        200: {"description": "Current user retrieved successfully"},
+        401: {"description": "Authentication required"},
+    },
 )
 def get_current_authenticated_user(
     current_user: models.User = Depends(get_current_user),
@@ -148,7 +169,15 @@ def get_current_authenticated_user(
 
 @router.get(
     "/{user_id}",
-    response_model=responses.SuccessResponse[schemas.UserResponse]
+    summary="Get user by ID",
+    description="Returns the information of a specific user. Only administrators can access this endpoint.",
+    response_model=responses.SuccessResponse[schemas.UserResponse],
+    responses={
+        200: {"description": "User retrieved successfully"},
+        401: {"description": "Authentication required"},
+        403: {"description": "Administrator privileges required"},
+        404: {"description": "User not found"},
+    },
 )
 def get_user(
     user_id: int,
@@ -182,7 +211,14 @@ def get_user(
 
 @router.get(
     "/search",
-    response_model=responses.PaginatedResponse[List[schemas.UserResponse]]
+    summary="Search users",
+    description="Searches users by username. Results are returned using pagination. Only administrators can access this endpoint.",
+    response_model=responses.PaginatedResponse[List[schemas.UserResponse]],
+    responses={
+        200: {"description": "Search completed successfully"},
+        401: {"description": "Authentication required"},
+        403: {"description": "Administrator privileges required"},
+    },
 )
 def search_users(
     q: str,
@@ -220,7 +256,16 @@ def search_users(
 
 @router.put(
     "/{user_id}",
-    response_model=responses.SuccessMessageResponse[schemas.UserResponse]
+    summary="Update user",
+    description="Updates a user's username and role. Usernames must remain unique. Only administrators can perform this operation.",
+    response_model=responses.SuccessMessageResponse[schemas.UserResponse],
+    responses={
+        200: {"description": "User updated successfully"},
+        400: {"description": "Username already exists"},
+        401: {"description": "Authentication required"},
+        403: {"description": "Administrator privileges required"},
+        404: {"description": "User not found"},
+    },
 )
 def update_user(
     user_id: int,
@@ -277,8 +322,16 @@ def update_user(
 
 @router.put(
     "/{user_id}/password",
+    summary="Change user password",
+    description="Updates a user's password using secure password hashing. Only administrators can change another user's password.",
     response_model=responses.MessageResponse,
-    status_code=status.HTTP_200_OK
+    status_code=status.HTTP_200_OK,
+    responses={
+        200: {"description": "Password updated successfully"},
+        401: {"description": "Authentication required"},
+        403: {"description": "Administrator privileges required"},
+        404: {"description": "User not found"},
+    },
 )
 def change_password(
     user_id: int,
@@ -319,8 +372,17 @@ def change_password(
 
 @router.delete(
     "/{user_id}",
+    summary="Delete user",
+    description="Deletes a user account. Users that have related sales, inventory batches, loss logs, or inventory transactions cannot be deleted. Only administrators can perform this operation.",
     response_model=responses.MessageResponse,
-    status_code=status.HTTP_200_OK
+    status_code=status.HTTP_200_OK,
+    responses={
+        200: {"description": "User deleted successfully"},
+        400: {"description": "User has related records and cannot be deleted"},
+        401: {"description": "Authentication required"},
+        403: {"description": "Administrator privileges required"},
+        404: {"description": "User not found"},
+    },
 )
 def delete_user(
     user_id: int,

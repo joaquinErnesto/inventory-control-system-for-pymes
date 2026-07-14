@@ -26,8 +26,16 @@ router = APIRouter(
 
 @router.post(
     "/",
+    summary="Create category",
+    description="Creates a new product category. Only administrators can perform this operation.",
     response_model=responses.SuccessMessageResponse[schemas.CategoryResponse],
     status_code=status.HTTP_201_CREATED,
+    responses={
+        201: {"description": "Category created successfully"},
+        400: {"description": "Category already exists"},
+        401: {"description": "Authentication required"},
+        403: {"description": "Administrator privileges required"},
+    },
 )
 def create_category(
     category: schemas.CategoryCreate,
@@ -70,7 +78,13 @@ def create_category(
 
 @router.get(
     "/",
+    summary="List categories",
+    description="Returns a paginated list of all product categories with optional sorting.",
     response_model=responses.PaginatedResponse[List[schemas.CategoryResponse]],
+    responses={
+        200: {"description": "Categories retrieved successfully"},
+        401: {"description": "Authentication required"},
+    },
 )
 def get_categories(
     skip: int = 0,
@@ -117,7 +131,14 @@ def get_categories(
 
 @router.get(
     "/{category_id}",
-    response_model=responses.SuccessResponse[schemas.CategoryResponse]
+    summary="Get category by ID",
+    description="Returns the details of a specific category.",
+    response_model=responses.SuccessResponse[schemas.CategoryResponse],
+    responses={
+        200: {"description": "Category retrieved successfully"},
+        401: {"description": "Authentication required"},
+        404: {"description": "Category not found"},
+    },
 )
 def get_category(
     category_id: int,
@@ -153,7 +174,16 @@ def get_category(
 
 @router.put(
     "/{category_id}",
-    response_model=responses.SuccessMessageResponse[schemas.CategoryResponse]
+    summary="Update category",
+    description="Updates an existing category. Only administrators can perform this operation.",
+    response_model=responses.SuccessMessageResponse[schemas.CategoryResponse],
+    responses={
+        200: {"description": "Category updated successfully"},
+        400: {"description": "Duplicate category name"},
+        401: {"description": "Authentication required"},
+        403: {"description": "Administrator privileges required"},
+        404: {"description": "Category not found"},
+    },
 )
 def update_category(
     category_id: int,
@@ -212,8 +242,16 @@ def update_category(
 
 @router.delete(
     "/{category_id}",
+    summary="Delete category",
+    description="Deletes a category. Only administrators can perform this operation.",
     response_model=responses.MessageResponse,
-    status_code=status.HTTP_200_OK
+    status_code=status.HTTP_200_OK,
+    responses={
+        200: {"description": "Category deleted successfully"},
+        401: {"description": "Authentication required"},
+        403: {"description": "Administrator privileges required"},
+        404: {"description": "Category not found"},
+    },
 )
 def delete_category(
     category_id: int,

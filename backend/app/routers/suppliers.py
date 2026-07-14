@@ -28,8 +28,16 @@ router = APIRouter(
 
 @router.post(
     "/",
+    summary="Create supplier",
+    description="Registers a new supplier. Only administrators can perform this operation.",
     response_model=responses.SuccessMessageResponse[schemas.SupplierResponse],
     status_code=status.HTTP_201_CREATED,
+    responses={
+        201: {"description": "Supplier created successfully"},
+        400: {"description": "Supplier already exists"},
+        401: {"description": "Authentication required"},
+        403: {"description": "Administrator privileges required"},
+    },
 )
 def create_supplier(
     supplier: schemas.SupplierCreate,
@@ -74,7 +82,13 @@ def create_supplier(
 
 @router.get(
     "/",
-    response_model=responses.PaginatedResponse[List[schemas.SupplierResponse]]
+    summary="List suppliers",
+    description="Returns a paginated list of all suppliers with optional sorting.",
+    response_model=responses.PaginatedResponse[List[schemas.SupplierResponse]],
+    responses={
+        200: {"description": "Suppliers retrieved successfully"},
+        401: {"description": "Authentication required"},
+    },
 )
 def get_suppliers(
     skip: int = 0,
@@ -121,8 +135,14 @@ def get_suppliers(
 # ==================================================
 
 @router.get(
-    "/search/", 
-    response_model=responses.PaginatedResponse[List[schemas.SupplierResponse]]
+    "/search/",
+    summary="Search suppliers",
+    description="Search suppliers by company name, contact person, phone number, or email address.",
+    response_model=responses.PaginatedResponse[List[schemas.SupplierResponse]],
+    responses={
+        200: {"description": "Search completed successfully"},
+        401: {"description": "Authentication required"},
+    },
 )
 def search_suppliers(
     q: str,
@@ -168,7 +188,14 @@ def search_suppliers(
 
 @router.get(
     "/{supplier_id}",
-    response_model=responses.SuccessResponse[schemas.SupplierResponse]
+    summary="Get supplier by ID",
+    description="Returns the details of a specific supplier.",
+    response_model=responses.SuccessResponse[schemas.SupplierResponse],
+    responses={
+        200: {"description": "Supplier retrieved successfully"},
+        401: {"description": "Authentication required"},
+        404: {"description": "Supplier not found"},
+    },
 )
 def get_supplier(
     supplier_id: int,
@@ -204,7 +231,16 @@ def get_supplier(
 
 @router.put(
     "/{supplier_id}",
-    response_model=responses.SuccessMessageResponse[schemas.SupplierResponse]
+    summary="Update supplier",
+    description="Updates an existing supplier. Only administrators can perform this operation.",
+    response_model=responses.SuccessMessageResponse[schemas.SupplierResponse],
+    responses={
+        200: {"description": "Supplier updated successfully"},
+        400: {"description": "Supplier already exists"},
+        401: {"description": "Authentication required"},
+        403: {"description": "Administrator privileges required"},
+        404: {"description": "Supplier not found"},
+    },
 )
 def update_supplier(
     supplier_id: int,
@@ -267,8 +303,16 @@ def update_supplier(
 
 @router.delete(
     "/{supplier_id}",
+    summary="Delete supplier",
+    description="Deletes a supplier. Only administrators can perform this operation.",
     response_model=responses.MessageResponse,
-    status_code=status.HTTP_200_OK
+    status_code=status.HTTP_200_OK,
+    responses={
+        200: {"description": "Supplier deleted successfully"},
+        401: {"description": "Authentication required"},
+        403: {"description": "Administrator privileges required"},
+        404: {"description": "Supplier not found"},
+    },
 )
 def delete_supplier(
     supplier_id: int,

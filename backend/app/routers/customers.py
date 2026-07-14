@@ -29,8 +29,28 @@ router = APIRouter(
 
 @router.post(
     "/",
+    summary="Create customer",
+    description=(
+        "Registers a new customer in the system. "
+        "If an identification number is provided, it must be unique. "
+        "Only administrators can create customers."
+    ),
     response_model=responses.SuccessMessageResponse[schemas.CustomerResponse],
-    status_code=status.HTTP_201_CREATED
+    status_code=status.HTTP_201_CREATED,
+    responses={
+        201: {
+            "description": "Customer created successfully."
+        },
+        400: {
+            "description": "A customer with the provided identification number already exists."
+        },
+        401: {
+            "description": "Authentication required."
+        },
+        403: {
+            "description": "Administrator privileges required."
+        },
+    },
 )
 def create_customer(
     customer: schemas.CustomerCreate,
@@ -79,7 +99,20 @@ def create_customer(
 
 @router.get(
     "/",
-    response_model=responses.PaginatedResponse[List[schemas.CustomerResponse]]
+    summary="List customers",
+    description=(
+        "Returns a paginated list of registered customers. "
+        "Results can be sorted by customer name or creation date."
+    ),
+    response_model=responses.PaginatedResponse[List[schemas.CustomerResponse]],
+    responses={
+        200: {
+            "description": "Customers retrieved successfully."
+        },
+        401: {
+            "description": "Authentication required."
+        },
+    },
 )
 def get_all_customers(
     skip: int = 0,
@@ -125,8 +158,22 @@ def get_all_customers(
 # ==================================================
 
 @router.get(
-    "/search/", 
-    response_model=responses.PaginatedResponse[List[schemas.CustomerResponse]]
+    "/search/",
+    summary="Search customers",
+    description=(
+        "Searches customers by name, identification number, "
+        "phone number, or email address. "
+        "Results are returned using pagination."
+    ),
+    response_model=responses.PaginatedResponse[List[schemas.CustomerResponse]],
+    responses={
+        200: {
+            "description": "Search completed successfully."
+        },
+        401: {
+            "description": "Authentication required."
+        },
+    },
 )
 def search_customers(
     q: str,
@@ -172,7 +219,22 @@ def search_customers(
 
 @router.get(
     "/{customer_id}",
-    response_model=responses.SuccessResponse[schemas.CustomerResponse]
+    summary="Get customer by ID",
+    description=(
+        "Returns the complete information of a specific customer."
+    ),
+    response_model=responses.SuccessResponse[schemas.CustomerResponse],
+    responses={
+        200: {
+            "description": "Customer retrieved successfully."
+        },
+        401: {
+            "description": "Authentication required."
+        },
+        404: {
+            "description": "Customer not found."
+        },
+    },
 )
 def get_customer(
     customer_id: int,
@@ -207,7 +269,30 @@ def get_customer(
 
 @router.put(
     "/{customer_id}",
-    response_model=responses.SuccessMessageResponse[schemas.CustomerResponse]
+    summary="Update customer",
+    description=(
+        "Updates an existing customer's information. "
+        "If the identification number is modified, it must remain unique. "
+        "Only administrators can update customer records."
+    ),
+    response_model=responses.SuccessMessageResponse[schemas.CustomerResponse],
+    responses={
+        200: {
+            "description": "Customer updated successfully."
+        },
+        400: {
+            "description": "The identification number already belongs to another customer."
+        },
+        401: {
+            "description": "Authentication required."
+        },
+        403: {
+            "description": "Administrator privileges required."
+        },
+        404: {
+            "description": "Customer not found."
+        },
+    },
 )
 def update_customer(
     customer_id: int,
@@ -273,8 +358,27 @@ def update_customer(
 
 @router.delete(
     "/{customer_id}",
+    summary="Delete customer",
+    description=(
+        "Deletes a customer from the system. "
+        "Only administrators can perform this operation."
+    ),
     response_model=responses.MessageResponse,
-    status_code=status.HTTP_200_OK
+    status_code=status.HTTP_200_OK,
+    responses={
+        200: {
+            "description": "Customer deleted successfully."
+        },
+        401: {
+            "description": "Authentication required."
+        },
+        403: {
+            "description": "Administrator privileges required."
+        },
+        404: {
+            "description": "Customer not found."
+        },
+    },
 )
 def delete_customer(
     customer_id: int,

@@ -29,9 +29,17 @@ router = APIRouter(
 # ==================================================
 
 @router.post(
-    "/", 
-    response_model=responses.SuccessMessageResponse[schemas.ProductResponse], 
-    status_code=status.HTTP_201_CREATED
+    "/",
+    summary="Create product",
+    description="Creates a new product in the catalog. This operation only registers the product metadata and does not add physical inventory. Only administrators can perform this operation.",
+    response_model=responses.SuccessMessageResponse[schemas.ProductResponse],
+    status_code=status.HTTP_201_CREATED,
+    responses={
+        201: {"description": "Product created successfully"},
+        400: {"description": "Invalid category or duplicate SKU/barcode"},
+        401: {"description": "Authentication required"},
+        403: {"description": "Administrator privileges required"},
+    },
 )
 def create_product(
     product: schemas.ProductCreate, 
@@ -84,8 +92,14 @@ def create_product(
 # ==================================================
 
 @router.get(
-    "/", 
-    response_model=responses.PaginatedResponse[List[schemas.ProductResponse]]
+    "/",
+    summary="List products",
+    description="Returns a paginated list of products with optional sorting.",
+    response_model=responses.PaginatedResponse[List[schemas.ProductResponse]],
+    responses={
+        200: {"description": "Products retrieved successfully"},
+        401: {"description": "Authentication required"},
+    },
 )
 def get_products(
     skip: int = 0, 
@@ -132,8 +146,14 @@ def get_products(
 # ==================================================
 
 @router.get(
-    "/search/", 
-    response_model=responses.PaginatedResponse[List[schemas.ProductResponse]]
+    "/search/",
+    summary="Search products",
+    description="Searches active products by name, SKU/barcode, or description.",
+    response_model=responses.PaginatedResponse[List[schemas.ProductResponse]],
+    responses={
+        200: {"description": "Search completed successfully"},
+        401: {"description": "Authentication required"},
+    },
 )
 def search_products(
     q: str,
@@ -177,8 +197,15 @@ def search_products(
 # ==================================================
 
 @router.get(
-    "/{product_id}", 
-    response_model=responses.SuccessResponse[schemas.ProductResponse]
+    "/{product_id}",
+    summary="Get product by ID",
+    description="Returns the details of a specific product.",
+    response_model=responses.SuccessResponse[schemas.ProductResponse],
+    responses={
+        200: {"description": "Product retrieved successfully"},
+        401: {"description": "Authentication required"},
+        404: {"description": "Product not found"},
+    },
 )
 def get_single_product(
     product_id: int, 
@@ -209,8 +236,17 @@ def get_single_product(
 # ==================================================
 
 @router.put(
-    "/{product_id}", 
-    response_model=responses.SuccessMessageResponse[schemas.ProductResponse]
+    "/{product_id}",
+    summary="Update product",
+    description="Updates an existing product, including its category, pricing, stock threshold, and metadata. Only administrators can perform this operation.",
+    response_model=responses.SuccessMessageResponse[schemas.ProductResponse],
+    responses={
+        200: {"description": "Product updated successfully"},
+        400: {"description": "Invalid category or duplicate SKU/barcode"},
+        401: {"description": "Authentication required"},
+        403: {"description": "Administrator privileges required"},
+        404: {"description": "Product not found"},
+    },
 )
 def update_product(
     product_id: int, 
@@ -278,9 +314,18 @@ def update_product(
 # ==================================================
 
 @router.delete(
-    "/{product_id}", 
+    "/{product_id}",
+    summary="Delete product",
+    description="Deletes a product from the catalog. Products that are referenced by inventory batches, sales, or inventory transactions cannot be deleted. Only administrators can perform this operation.",
     status_code=status.HTTP_200_OK,
-    response_model=responses.MessageResponse
+    response_model=responses.MessageResponse,
+    responses={
+        200: {"description": "Product deleted successfully"},
+        400: {"description": "Product is referenced by inventory, sales, or transactions"},
+        401: {"description": "Authentication required"},
+        403: {"description": "Administrator privileges required"},
+        404: {"description": "Product not found"},
+    },
 )
 def delete_product(
     product_id: int,

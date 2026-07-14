@@ -3,7 +3,6 @@ from typing import Optional, List
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
-from sqlalchemy import func
 
 from app.database import get_db
 from app.models import core as models
@@ -25,8 +24,19 @@ router = APIRouter(
 # ==================================================
 
 @router.get(
-    "/", 
-    response_model=responses.PaginatedResponse[List[schemas.InventoryTransactionResponse]]
+    "/",
+    response_model=responses.PaginatedResponse[List[schemas.InventoryTransactionResponse]],
+    summary="List inventory transactions",
+    description=(
+        "Returns inventory transaction records with optional filtering by "
+        "product, batch, user, transaction type, sale, loss, and date range. "
+        "Administrators can view all transactions, while employees can only "
+        "view transactions they created."
+    ),
+    responses={
+        200: {"description": "Inventory transactions retrieved successfully"},
+        401: {"description": "Authentication required"},
+    },
 )
 def get_inventory_transactions(
     skip: int = 0,
@@ -132,8 +142,20 @@ def get_inventory_transactions(
 # ==================================================
 
 @router.get(
-    "/{transaction_id}", 
-    response_model=responses.SuccessResponse[schemas.InventoryTransactionResponse]
+    "/{transaction_id}",
+    response_model=responses.SuccessResponse[schemas.InventoryTransactionResponse],
+    summary="Retrieve inventory transaction",
+    description=(
+        "Returns the details of a specific inventory transaction. "
+        "Employees may only access their own transactions, while "
+        "administrators can access any transaction."
+    ),
+    responses={
+        200: {"description": "Inventory transaction retrieved successfully"},
+        401: {"description": "Authentication required"},
+        403: {"description": "Not authorized to access this transaction"},
+        404: {"description": "Inventory transaction not found"},
+    },
 )
 def get_inventory_transaction(
     transaction_id: int,
@@ -176,7 +198,19 @@ def get_inventory_transaction(
 
 @router.get(
     "/summary/overview",
-    response_model=responses.SuccessResponse[schemas.InventoryTransactionSummaryResponse]
+    response_model=responses.SuccessResponse[schemas.InventoryTransactionSummaryResponse],
+    summary="Retrieve transaction summary",
+    description=(
+        "Returns an overview of inventory transaction activity, including "
+        "the total number of transactions and the number of incoming, "
+        "outgoing, loss, and adjustment operations. Administrators receive "
+        "system-wide statistics, while employees receive statistics only "
+        "for their own transactions."
+    ),
+    responses={
+        200: {"description": "Transaction summary generated successfully"},
+        401: {"description": "Authentication required"},
+    },
 )
 def get_transaction_summary(
     db: Session = Depends(get_db),
@@ -229,12 +263,26 @@ def get_transaction_summary(
 # ==================================================
 
 @router.get(
-    "/today/activity", 
-    response_model=responses.PaginatedResponse[List[schemas.InventoryTransactionResponse]]
+    "/today/activity",
+    response_model=responses.PaginatedResponse[List[schemas.InventoryTransactionResponse]],
+    summary="Retrieve today's inventory activity",
+    description=(
+        "Returns inventory transactions performed during the current day. "
+        "Administrators can view all activity, while employees only see "
+        "their own transactions."
+    ),
+    responses={
+        200: {"description": "Today's inventory activity retrieved successfully"},
+        401: {"description": "Authentication required"},
+    },
 )
 def get_today_activity(
+    skip: int = 0,
+    limit: int = 100,
     db: Session = Depends(get_db),
-    current_user=Depends(get_current_user)
+    current_user=Depends(get_current_user),
+    sort: str = "performed_at",
+    order: str = "desc",
 ):
     """
     Returns today's inventory activity.
@@ -255,13 +303,26 @@ def get_today_activity(
             models.InventoryTransaction.user_id == current_user.id
         )
 
-    transactions = (
-        query.order_by(
-            models.InventoryTransaction.performed_at.desc()
-        )
-        .all()
+    allowed_sort_fields = {
+        "performed_at": models.InventoryTransaction.performed_at,
+        "transaction_type": models.InventoryTransaction.transaction_type,
+        "quantity_changed": models.InventoryTransaction.quantity_changed,
+    }
+
+    query = apply_sorting(
+        query=query,
+        sort=sort,
+        order=order,
+        allowed_fields=allowed_sort_fields,
     )
 
-    return responses.SuccessResponse(
-        data=transactions
+    transactions, pagination = paginate(
+        query=query,
+        skip=skip,
+        limit=limit
+    )
+
+    return responses.PaginatedResponse(
+        data=transactions,
+        pagination=pagination
     )
