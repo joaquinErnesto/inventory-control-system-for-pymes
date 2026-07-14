@@ -1,0 +1,8 @@
+2026-07-13 20:36:09,576 | INFO | inventory-api | Request started | GET /
+2026-07-13 20:36:09,581 | INFO | inventory-api | Request finished | GET / | Status 200 | 0.004s
+2026-07-13 20:36:09,769 | INFO | inventory-api | Request started | GET /favicon.ico
+2026-07-13 20:36:09,860 | INFO | inventory-api | Request finished | GET /favicon.ico | Status 404 | 0.091s
+2026-07-13 20:36:15,864 | INFO | inventory-api | Request started | GET /docs
+2026-07-13 20:36:15,869 | INFO | inventory-api | Request finished | GET /docs | Status 200 | 0.005s
+2026-07-13 20:36:32,290 | INFO | inventory-api | Request started | GET /openapi.json
+2026-07-13 20:36:32,460 | INFO | inventory-api | Request finished | GET /openapi.json | Status 200 | 0.170s

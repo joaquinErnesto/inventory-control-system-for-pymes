@@ -68,7 +68,7 @@ def create_category(
 
 @router.get(
     "/",
-    response_model=responses.SuccessResponse[List[schemas.CategoryResponse]],
+    response_model=responses.PaginatedResponse[List[schemas.CategoryResponse]],
 )
 def get_categories(
     skip: int = 0,
@@ -90,6 +90,8 @@ def get_categories(
 
     query = db.query(models.Category)
 
+    total_items = query.count()
+
     query = apply_sorting(
         query=query,
         sort=sort,
@@ -104,8 +106,29 @@ def get_categories(
         .all()
     )
 
-    return responses.SuccessResponse(
-        data=categories
+    page_size = limit
+
+    page = (skip // limit) + 1
+
+    total_pages = (
+        (total_items + limit - 1)
+        // limit
+    )
+
+    has_next = page < total_pages
+
+    has_previous = page > 1
+    
+    return responses.PaginatedResponse(
+        data=categories,
+        pagination=responses.PaginationMeta(
+            page=page,
+            page_size=page_size,
+            total_items=total_items,
+            total_pages=total_pages,
+            has_next=has_next,
+            has_previous=has_previous,
+        ),
     )
 
 
