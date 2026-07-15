@@ -6,3 +6,9 @@
 2026-07-13 20:36:15,869 | INFO | inventory-api | Request finished | GET /docs | Status 200 | 0.005s
 2026-07-13 20:36:32,290 | INFO | inventory-api | Request started | GET /openapi.json
 2026-07-13 20:36:32,460 | INFO | inventory-api | Request finished | GET /openapi.json | Status 200 | 0.170s
+2026-07-14 12:14:19,947 | INFO | inventory-api | Request started | GET /
+2026-07-14 12:14:20,027 | INFO | inventory-api | Request finished | GET / | Status 200 | 0.080s
+2026-07-14 12:14:23,199 | INFO | inventory-api | Request started | GET /docs
+2026-07-14 12:14:23,200 | INFO | inventory-api | Request finished | GET /docs | Status 200 | 0.001s
+2026-07-14 12:14:23,307 | INFO | inventory-api | Request started | GET /openapi.json
+2026-07-14 12:14:23,518 | INFO | inventory-api | Request finished | GET /openapi.json | Status 200 | 0.212s

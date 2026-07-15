@@ -91,33 +91,6 @@ def decode_access_token(
     token: str
 ) -> TokenData:
 
-    payload = jwt.decode(
-        token,
-        settings.SECRET_KEY,
-        algorithms=[settings.ALGORITHM]
-    )
-
-    username = payload.get("sub")
-
-    return TokenData(
-        username=username
-    )
-    
-# ===================================================
-# Current Authenticated User
-# ===================================================
-
-def get_current_user(
-    token: str = Depends(oauth2_scheme),
-    db: Session = Depends(get_db)
-):
-
-    credentials_exception = HTTPException(
-        status_code=status.HTTP_401_UNAUTHORIZED,
-        detail="Could not validate credentials.",
-        headers={"WWW-Authenticate": "Bearer"},
-    )
-
     try:
 
         payload = jwt.decode(
@@ -127,21 +100,56 @@ def get_current_user(
         )
 
         username = payload.get("sub")
+        user_id = payload.get("user_id")
+        role = payload.get("role")
 
-        if username is None:
-            raise credentials_exception
+        if (
+            username is None 
+            or user_id is None 
+            or role is None
+        ):
+            raise JWTError()
+
+        return TokenData(
+            username=username,
+            user_id=user_id,
+            role=role
+        )
 
     except JWTError:
-        raise credentials_exception
 
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Could not validate credentials.",
+            headers={
+                "WWW-Authenticate": "Bearer"
+            },
+        )
+    
+# ===================================================
+# Current Authenticated User
+# ===================================================
+
+def get_current_user(
+    token: str = Depends(oauth2_scheme),
+    db: Session = Depends(get_db)
+):
+    
+    token_data = decode_access_token(token)
+    
     user = (
         db.query(models.User)
-        .filter(models.User.username == username)
+        .filter(models.User.id == token_data.user_id)
         .first()
     )
 
     if user is None:
-        raise credentials_exception
+        
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Could not validate credentials.",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
 
     return user
 
@@ -150,7 +158,7 @@ def get_current_user(
 # ===================================================
 
 def get_current_admin(
-    current_user=Depends(get_current_user)
+    current_user: models.User = Depends(get_current_user)
 ):
 
     if current_user.role != "admin":
