@@ -18,6 +18,10 @@ class UnitOfMeasure(str, Enum):
 class UserRole(str, Enum):
     ADMIN = "admin"
     EMPLOYEE = "employee"
+    
+class SortOrder(str, Enum):
+    ASC = "asc"
+    DESC = "desc"
 
 class TransactionType(str, Enum):
     IN = "IN"
