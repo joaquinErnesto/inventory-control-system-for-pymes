@@ -12,3 +12,794 @@
 2026-07-14 12:14:23,200 | INFO | inventory-api | Request finished | GET /docs | Status 200 | 0.001s
 2026-07-14 12:14:23,307 | INFO | inventory-api | Request started | GET /openapi.json
 2026-07-14 12:14:23,518 | INFO | inventory-api | Request finished | GET /openapi.json | Status 200 | 0.212s
+2026-07-15 18:59:49,779 | INFO | inventory-api | Request started | GET /
+2026-07-15 18:59:49,787 | INFO | inventory-api | Request finished | GET / | Status 200 | 0.008s
+2026-07-15 18:59:49,900 | INFO | inventory-api | Request started | GET /
+2026-07-15 18:59:49,905 | INFO | inventory-api | Request finished | GET / | Status 200 | 0.005s
+2026-07-15 18:59:50,065 | INFO | inventory-api | Request started | GET /favicon.ico
+2026-07-15 18:59:50,214 | INFO | inventory-api | Request finished | GET /favicon.ico | Status 404 | 0.149s
+2026-07-15 18:59:50,218 | INFO | inventory-api | Request started | GET /favicon.ico
+2026-07-15 18:59:50,219 | INFO | inventory-api | Request finished | GET /favicon.ico | Status 404 | 0.002s
+2026-07-15 18:59:53,154 | INFO | inventory-api | Request started | GET /docs
+2026-07-15 18:59:53,156 | INFO | inventory-api | Request finished | GET /docs | Status 200 | 0.001s
+2026-07-15 18:59:53,331 | INFO | inventory-api | Request started | GET /openapi.json
+2026-07-15 18:59:53,636 | INFO | inventory-api | Request finished | GET /openapi.json | Status 200 | 0.306s
+2026-07-15 19:01:31,233 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-15 19:01:31,695 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.462s
+2026-07-15 19:14:29,708 | INFO | inventory-api | Request started | POST /token
+2026-07-15 19:14:29,711 | INFO | inventory-api | Request finished | POST /token | Status 404 | 0.003s
+2026-07-15 19:14:54,729 | INFO | inventory-api | Request started | POST /token
+2026-07-15 19:14:54,731 | INFO | inventory-api | Request finished | POST /token | Status 404 | 0.002s
+2026-07-15 19:16:11,326 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-15 19:16:11,566 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.240s
+2026-07-15 19:16:37,344 | INFO | inventory-api | Request started | POST /token
+2026-07-15 19:16:37,345 | INFO | inventory-api | Request finished | POST /token | Status 404 | 0.001s
+2026-07-15 20:27:31,864 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-15 20:27:31,944 | ERROR | inventory-api | POST /api/v1/token | Database Error
+Traceback (most recent call last):
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\pymysql\connections.py", line 834, in _write_bytes
+    self._sock.sendall(data)
+    ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Administrador\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 1263, in sendall
+    v = self.send(byte_view[count:])
+  File "C:\Users\Administrador\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 1232, in send
+    return self._sslobj.write(data)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+ConnectionAbortedError: [WinError 10053] Se ha anulado una conexión establecida por el software en su equipo host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\pymysql\cursors.py", line 159, in execute
+    result = self._query(query)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\pymysql\cursors.py", line 330, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\pymysql\connections.py", line 581, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\pymysql\connections.py", line 886, in _execute_command
+    self._write_bytes(packet)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\pymysql\connections.py", line 837, in _write_bytes
+    raise err.OperationalError(
+        CR.CR_SERVER_GONE_ERROR, f"MySQL server has gone away ({e!r})"
+    )
+pymysql.err.OperationalError: (2006, "MySQL server has gone away (ConnectionAbortedError(10053, 'Se ha anulado una conexión establecida por el software en su equipo host', None, 10053, None))")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\app\routers\auth.py", line 52, in login_for_access_token
+    .first()
+     ~~~~~^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2766, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2864, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+        params,
+        ^^^^^^^
+        execution_options={"_sa_orm_load_options": self.load_options},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2373, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2271, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<4 lines>...
+        conn,
+        ^^^^^
+    )
+    ^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+        statement, params or {}, execution_options=execution_options
+    )
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\pymysql\cursors.py", line 159, in execute
+    result = self._query(query)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\pymysql\cursors.py", line 330, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\pymysql\connections.py", line 581, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\pymysql\connections.py", line 886, in _execute_command
+    self._write_bytes(packet)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\pymysql\connections.py", line 837, in _write_bytes
+    raise err.OperationalError(
+        CR.CR_SERVER_GONE_ERROR, f"MySQL server has gone away ({e!r})"
+    )
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2006, "MySQL server has gone away (ConnectionAbortedError(10053, 'Se ha anulado una conexión establecida por el software en su equipo host', None, 10053, None))")
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.password_hash AS users_password_hash, users.`role` AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'username_1': 'admin_user', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-07-15 20:27:32,226 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 500 | 0.362s
+2026-07-15 20:28:17,430 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-15 20:28:17,722 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.292s
+2026-07-15 20:28:37,938 | INFO | inventory-api | Request started | POST /token
+2026-07-15 20:28:37,939 | INFO | inventory-api | Request finished | POST /token | Status 404 | 0.001s
+2026-07-15 21:00:02,635 | INFO | inventory-api | Request started | GET /
+2026-07-15 21:00:02,641 | INFO | inventory-api | Request finished | GET / | Status 200 | 0.005s
+2026-07-15 21:00:02,803 | INFO | inventory-api | Request started | GET /favicon.ico
+2026-07-15 21:00:02,867 | INFO | inventory-api | Request finished | GET /favicon.ico | Status 404 | 0.064s
+2026-07-15 21:00:06,380 | INFO | inventory-api | Request started | GET /docs
+2026-07-15 21:00:06,382 | INFO | inventory-api | Request finished | GET /docs | Status 200 | 0.002s
+2026-07-15 21:00:06,522 | INFO | inventory-api | Request started | GET /openapi.json
+2026-07-15 21:00:06,752 | INFO | inventory-api | Request finished | GET /openapi.json | Status 200 | 0.231s
+2026-07-15 21:00:31,801 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-15 21:00:32,108 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.308s
+2026-07-15 21:00:50,390 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-15 21:00:50,620 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.229s
+2026-07-16 12:36:52,625 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-16 12:36:52,651 | ERROR | inventory-api | POST /api/v1/token | Database Error
+Traceback (most recent call last):
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\pymysql\connections.py", line 834, in _write_bytes
+    self._sock.sendall(data)
+    ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Administrador\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 1263, in sendall
+    v = self.send(byte_view[count:])
+  File "C:\Users\Administrador\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 1232, in send
+    return self._sslobj.write(data)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+ConnectionAbortedError: [WinError 10053] Se ha anulado una conexión establecida por el software en su equipo host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\pymysql\cursors.py", line 159, in execute
+    result = self._query(query)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\pymysql\cursors.py", line 330, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\pymysql\connections.py", line 581, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\pymysql\connections.py", line 886, in _execute_command
+    self._write_bytes(packet)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\pymysql\connections.py", line 837, in _write_bytes
+    raise err.OperationalError(
+        CR.CR_SERVER_GONE_ERROR, f"MySQL server has gone away ({e!r})"
+    )
+pymysql.err.OperationalError: (2006, "MySQL server has gone away (ConnectionAbortedError(10053, 'Se ha anulado una conexión establecida por el software en su equipo host', None, 10053, None))")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\app\routers\auth.py", line 52, in login_for_access_token
+    .first()
+     ~~~~~^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2766, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2864, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+        params,
+        ^^^^^^^
+        execution_options={"_sa_orm_load_options": self.load_options},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2373, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2271, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<4 lines>...
+        conn,
+        ^^^^^
+    )
+    ^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+        statement, params or {}, execution_options=execution_options
+    )
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\pymysql\cursors.py", line 159, in execute
+    result = self._query(query)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\pymysql\cursors.py", line 330, in _query
+    conn.query(q)
+    ~~~~~~~~~~^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\pymysql\connections.py", line 581, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\pymysql\connections.py", line 886, in _execute_command
+    self._write_bytes(packet)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\pymysql\connections.py", line 837, in _write_bytes
+    raise err.OperationalError(
+        CR.CR_SERVER_GONE_ERROR, f"MySQL server has gone away ({e!r})"
+    )
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2006, "MySQL server has gone away (ConnectionAbortedError(10053, 'Se ha anulado una conexión establecida por el software en su equipo host', None, 10053, None))")
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.password_hash AS users_password_hash, users.`role` AS users_role, users.created_at AS users_created_at 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'username_1': 'admin_user', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-07-16 12:36:52,696 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 500 | 0.071s
+2026-07-16 12:37:21,366 | INFO | inventory-api | Request started | GET /
+2026-07-16 12:37:21,369 | INFO | inventory-api | Request finished | GET / | Status 200 | 0.004s
+2026-07-16 12:37:21,543 | INFO | inventory-api | Request started | GET /favicon.ico
+2026-07-16 12:37:21,670 | INFO | inventory-api | Request finished | GET /favicon.ico | Status 404 | 0.127s
+2026-07-16 12:37:28,226 | INFO | inventory-api | Request started | GET /docs
+2026-07-16 12:37:28,227 | INFO | inventory-api | Request finished | GET /docs | Status 200 | 0.002s
+2026-07-16 12:37:28,349 | INFO | inventory-api | Request started | GET /openapi.json
+2026-07-16 12:37:28,622 | INFO | inventory-api | Request finished | GET /openapi.json | Status 200 | 0.273s
+2026-07-16 12:37:51,976 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-16 12:37:52,283 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.307s
+2026-07-16 12:38:48,917 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-16 12:38:49,159 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.242s
+2026-07-17 07:13:59,731 | INFO | inventory-api | Request started | GET /
+2026-07-17 07:13:59,735 | INFO | inventory-api | Request finished | GET / | Status 200 | 0.005s
+2026-07-17 07:13:59,857 | INFO | inventory-api | Request started | GET /favicon.ico
+2026-07-17 07:13:59,913 | INFO | inventory-api | Request finished | GET /favicon.ico | Status 404 | 0.055s
+2026-07-17 07:16:56,554 | INFO | inventory-api | Request started | GET /docs
+2026-07-17 07:16:56,557 | INFO | inventory-api | Request finished | GET /docs | Status 200 | 0.003s
+2026-07-17 07:16:56,687 | INFO | inventory-api | Request started | GET /openapi.json
+2026-07-17 07:16:56,837 | INFO | inventory-api | Request finished | GET /openapi.json | Status 200 | 0.150s
+2026-07-17 07:17:18,500 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-17 07:17:18,772 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.272s
+2026-07-17 07:17:33,058 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-17 07:17:33,267 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.208s
+2026-07-17 07:28:15,571 | INFO | inventory-api | Request started | POST /api/v1/categories/
+2026-07-17 07:28:15,599 | WARNING | inventory-api | POST /api/v1/categories/ | 401 | Could not validate credentials.
+2026-07-17 07:28:15,600 | INFO | inventory-api | Request finished | POST /api/v1/categories/ | Status 401 | 0.029s
+2026-07-17 07:28:48,389 | INFO | inventory-api | Request started | POST /api/v1/categories/
+2026-07-17 07:28:48,391 | WARNING | inventory-api | POST /api/v1/categories/ | 401 | Could not validate credentials.
+2026-07-17 07:28:48,391 | INFO | inventory-api | Request finished | POST /api/v1/categories/ | Status 401 | 0.002s
+2026-07-17 07:29:13,631 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-17 07:29:13,843 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.213s
+2026-07-17 07:29:34,610 | INFO | inventory-api | Request started | POST /api/v1/categories/
+2026-07-17 07:29:34,612 | WARNING | inventory-api | POST /api/v1/categories/ | 401 | Could not validate credentials.
+2026-07-17 07:29:34,613 | INFO | inventory-api | Request finished | POST /api/v1/categories/ | Status 401 | 0.003s
+2026-07-17 07:44:05,194 | INFO | inventory-api | Request started | POST /api/v1/users/
+2026-07-17 07:44:05,213 | WARNING | inventory-api | POST /api/v1/users/ | 401 | Could not validate credentials.
+2026-07-17 07:44:05,214 | INFO | inventory-api | Request finished | POST /api/v1/users/ | Status 401 | 0.020s
+2026-07-17 08:11:45,992 | INFO | inventory-api | Request started | GET /
+2026-07-17 08:11:45,995 | INFO | inventory-api | Request finished | GET / | Status 200 | 0.003s
+2026-07-17 08:11:46,115 | INFO | inventory-api | Request started | GET /favicon.ico
+2026-07-17 08:11:46,174 | INFO | inventory-api | Request finished | GET /favicon.ico | Status 404 | 0.059s
+2026-07-17 08:11:48,996 | INFO | inventory-api | Request started | GET /docs
+2026-07-17 08:11:48,997 | INFO | inventory-api | Request finished | GET /docs | Status 200 | 0.001s
+2026-07-17 08:11:49,160 | INFO | inventory-api | Request started | GET /openapi.json
+2026-07-17 08:11:49,352 | INFO | inventory-api | Request finished | GET /openapi.json | Status 200 | 0.192s
+2026-07-17 08:13:10,756 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-17 08:13:11,030 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.274s
+2026-07-17 08:13:24,158 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-17 08:13:24,362 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.204s
+2026-07-17 08:15:33,008 | INFO | inventory-api | Request started | POST /api/v1/users/
+2026-07-17 08:15:33,011 | WARNING | inventory-api | POST /api/v1/users/ | 401 | Could not validate credentials.
+2026-07-17 08:15:33,011 | INFO | inventory-api | Request finished | POST /api/v1/users/ | Status 401 | 0.003s
+2026-07-17 08:25:12,882 | INFO | inventory-api | Request started | GET /
+2026-07-17 08:25:12,884 | INFO | inventory-api | Request finished | GET / | Status 200 | 0.003s
+2026-07-17 08:25:12,991 | INFO | inventory-api | Request started | GET /favicon.ico
+2026-07-17 08:25:13,055 | INFO | inventory-api | Request finished | GET /favicon.ico | Status 404 | 0.064s
+2026-07-17 08:25:15,959 | INFO | inventory-api | Request started | GET /docs
+2026-07-17 08:25:15,960 | INFO | inventory-api | Request finished | GET /docs | Status 200 | 0.001s
+2026-07-17 08:25:16,118 | INFO | inventory-api | Request started | GET /openapi.json
+2026-07-17 08:25:16,346 | INFO | inventory-api | Request finished | GET /openapi.json | Status 200 | 0.229s
+2026-07-17 08:25:47,552 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-17 08:25:47,814 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.262s
+2026-07-17 08:26:22,746 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-17 08:26:22,960 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.214s
+2026-07-17 15:12:13,078 | INFO | inventory-api | Request started | GET /
+2026-07-17 15:12:13,083 | INFO | inventory-api | Request finished | GET / | Status 200 | 0.004s
+2026-07-17 15:12:19,613 | INFO | inventory-api | Request started | GET /docs
+2026-07-17 15:12:19,615 | INFO | inventory-api | Request finished | GET /docs | Status 200 | 0.003s
+2026-07-17 15:12:19,713 | INFO | inventory-api | Request started | GET /openapi.json
+2026-07-17 15:12:19,922 | INFO | inventory-api | Request finished | GET /openapi.json | Status 200 | 0.209s
+2026-07-17 15:14:19,969 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-17 15:14:20,244 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.275s
+2026-07-17 15:14:39,510 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-17 15:14:39,723 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.213s
+2026-07-17 15:15:09,710 | INFO | inventory-api | Request started | POST /api/v1/categories/
+2026-07-17 15:15:09,748 | INFO | inventory-api | Request finished | POST /api/v1/categories/ | Status 201 | 0.038s
+2026-07-17 15:17:58,876 | INFO | inventory-api | Request started | POST /api/v1/categories/
+2026-07-17 15:17:58,909 | INFO | inventory-api | Request finished | POST /api/v1/categories/ | Status 201 | 0.033s
+2026-07-17 15:18:43,584 | INFO | inventory-api | Request started | POST /api/v1/categories/
+2026-07-17 15:18:43,621 | INFO | inventory-api | Request finished | POST /api/v1/categories/ | Status 201 | 0.036s
+2026-07-17 15:19:10,073 | INFO | inventory-api | Request started | POST /api/v1/categories/
+2026-07-17 15:19:10,107 | INFO | inventory-api | Request finished | POST /api/v1/categories/ | Status 201 | 0.033s
+2026-07-17 15:19:30,563 | INFO | inventory-api | Request started | POST /api/v1/categories/
+2026-07-17 15:19:30,591 | INFO | inventory-api | Request finished | POST /api/v1/categories/ | Status 201 | 0.028s
+2026-07-17 15:21:19,852 | INFO | inventory-api | Request started | GET /api/v1/categories/
+2026-07-17 15:21:19,870 | INFO | inventory-api | Request finished | GET /api/v1/categories/ | Status 200 | 0.019s
+2026-07-17 15:22:24,785 | INFO | inventory-api | Request started | GET /api/v1/categories/5
+2026-07-17 15:22:24,791 | INFO | inventory-api | Request finished | GET /api/v1/categories/5 | Status 200 | 0.006s
+2026-07-17 15:23:27,335 | INFO | inventory-api | Request started | PUT /api/v1/categories/5
+2026-07-17 15:23:27,380 | INFO | inventory-api | Request finished | PUT /api/v1/categories/5 | Status 200 | 0.045s
+2026-07-17 15:23:42,655 | INFO | inventory-api | Request started | DELETE /api/v1/categories/7
+2026-07-17 15:23:42,686 | INFO | inventory-api | Request finished | DELETE /api/v1/categories/7 | Status 200 | 0.031s
+2026-07-17 15:24:08,944 | INFO | inventory-api | Request started | GET /api/v1/categories/
+2026-07-17 15:24:08,955 | INFO | inventory-api | Request finished | GET /api/v1/categories/ | Status 200 | 0.011s
+2026-07-17 15:46:10,212 | INFO | inventory-api | Request started | POST /api/v1/products/
+2026-07-17 15:46:10,219 | WARNING | inventory-api | POST /api/v1/products/ | 401 | Could not validate credentials.
+2026-07-17 15:46:10,222 | INFO | inventory-api | Request finished | POST /api/v1/products/ | Status 401 | 0.010s
+2026-07-17 15:46:58,389 | INFO | inventory-api | Request started | GET /api/v1/products/
+2026-07-17 15:46:58,392 | WARNING | inventory-api | GET /api/v1/products/ | 401 | Could not validate credentials.
+2026-07-17 15:46:58,393 | INFO | inventory-api | Request finished | GET /api/v1/products/ | Status 401 | 0.004s
+2026-07-17 15:47:25,137 | INFO | inventory-api | Request started | POST /api/v1/products/
+2026-07-17 15:47:25,145 | WARNING | inventory-api | POST /api/v1/products/ | 401 | Could not validate credentials.
+2026-07-17 15:47:25,146 | INFO | inventory-api | Request finished | POST /api/v1/products/ | Status 401 | 0.009s
+2026-07-17 16:15:31,347 | INFO | inventory-api | Request started | GET /api/v1/products/
+2026-07-17 16:15:31,349 | WARNING | inventory-api | GET /api/v1/products/ | 401 | Could not validate credentials.
+2026-07-17 16:15:31,349 | INFO | inventory-api | Request finished | GET /api/v1/products/ | Status 401 | 0.003s
+2026-07-17 16:15:55,378 | INFO | inventory-api | Request started | GET /api/v1/products/search/
+2026-07-17 16:15:55,381 | WARNING | inventory-api | GET /api/v1/products/search/ | 401 | Could not validate credentials.
+2026-07-17 16:15:55,381 | INFO | inventory-api | Request finished | GET /api/v1/products/search/ | Status 401 | 0.003s
+2026-07-17 16:16:19,559 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-17 16:16:19,768 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.209s
+2026-07-17 16:16:30,581 | INFO | inventory-api | Request started | POST /api/v1/products/
+2026-07-17 16:16:30,616 | INFO | inventory-api | Request finished | POST /api/v1/products/ | Status 201 | 0.035s
+2026-07-17 16:17:14,215 | INFO | inventory-api | Request started | GET /api/v1/products/
+2026-07-17 16:17:14,234 | ERROR | inventory-api | GET /api/v1/products/ | Unexpected Error
+Traceback (most recent call last):
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\app\main.py", line 63, in log_requests
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 2531, in app
+    await route.handle(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 2586, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 2586, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 711, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 316, in serialize_response
+    raise ResponseValidationError(
+    ...<3 lines>...
+    )
+fastapi.exceptions.ResponseValidationError: 1 validation error:
+  {'type': 'greater_than', 'loc': ('response', 'data', 2, 'base_price'), 'msg': 'Input should be greater than 0', 'input': Decimal('0.00'), 'ctx': {'gt': Decimal('0')}}
+
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\app\routers\products.py", line 101, in get_products
+    GET /api/v1/products/
+2026-07-17 16:18:28,925 | INFO | inventory-api | Request started | POST /api/v1/products/
+2026-07-17 16:18:28,960 | INFO | inventory-api | Request finished | POST /api/v1/products/ | Status 201 | 0.035s
+2026-07-17 16:18:42,034 | INFO | inventory-api | Request started | POST /api/v1/products/
+2026-07-17 16:18:42,066 | INFO | inventory-api | Request finished | POST /api/v1/products/ | Status 201 | 0.031s
+2026-07-17 16:18:59,288 | INFO | inventory-api | Request started | POST /api/v1/products/
+2026-07-17 16:18:59,320 | INFO | inventory-api | Request finished | POST /api/v1/products/ | Status 201 | 0.032s
+2026-07-17 16:19:17,333 | INFO | inventory-api | Request started | POST /api/v1/products/
+2026-07-17 16:19:17,361 | INFO | inventory-api | Request finished | POST /api/v1/products/ | Status 201 | 0.028s
+2026-07-17 16:20:08,026 | INFO | inventory-api | Request started | GET /api/v1/products/
+2026-07-17 16:20:08,034 | WARNING | inventory-api | GET /api/v1/products/ | 400 | Invalid sort field. Allowed values: name, base_price, created_at, min_stock_threshold
+2026-07-17 16:20:08,037 | INFO | inventory-api | Request finished | GET /api/v1/products/ | Status 400 | 0.010s
+2026-07-17 16:21:02,962 | INFO | inventory-api | Request started | GET /api/v1/products/
+2026-07-17 16:21:02,970 | WARNING | inventory-api | GET /api/v1/products/ | 400 | Invalid sort field. Allowed values: name, base_price, created_at, min_stock_threshold
+2026-07-17 16:21:02,971 | INFO | inventory-api | Request finished | GET /api/v1/products/ | Status 400 | 0.010s
+2026-07-17 16:21:07,077 | INFO | inventory-api | Request started | GET /api/v1/products/
+2026-07-17 16:21:07,087 | WARNING | inventory-api | GET /api/v1/products/ | 400 | Invalid sort field. Allowed values: name, base_price, created_at, min_stock_threshold
+2026-07-17 16:21:07,088 | INFO | inventory-api | Request finished | GET /api/v1/products/ | Status 400 | 0.010s
+2026-07-17 16:21:14,481 | INFO | inventory-api | Request started | GET /api/v1/products/
+2026-07-17 16:21:14,498 | ERROR | inventory-api | GET /api/v1/products/ | Unexpected Error
+Traceback (most recent call last):
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\app\main.py", line 63, in log_requests
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 2531, in app
+    await route.handle(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 2586, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 2586, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 711, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 316, in serialize_response
+    raise ResponseValidationError(
+    ...<3 lines>...
+    )
+fastapi.exceptions.ResponseValidationError: 1 validation error:
+  {'type': 'greater_than', 'loc': ('response', 'data', 6, 'base_price'), 'msg': 'Input should be greater than 0', 'input': Decimal('0.00'), 'ctx': {'gt': Decimal('0')}}
+
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\app\routers\products.py", line 101, in get_products
+    GET /api/v1/products/
+2026-07-17 16:27:26,332 | INFO | inventory-api | Request started | GET /api/v1/products/search/
+2026-07-17 16:27:26,350 | INFO | inventory-api | Request finished | GET /api/v1/products/search/ | Status 200 | 0.019s
+2026-07-17 16:27:54,559 | INFO | inventory-api | Request started | GET /api/v1/products/
+2026-07-17 16:27:54,566 | WARNING | inventory-api | GET /api/v1/products/ | 400 | Invalid sort field. Allowed values: name, base_price, created_at, min_stock_threshold
+2026-07-17 16:27:54,569 | INFO | inventory-api | Request finished | GET /api/v1/products/ | Status 400 | 0.010s
+2026-07-17 16:28:05,803 | INFO | inventory-api | Request started | GET /api/v1/products/
+2026-07-17 16:28:05,810 | WARNING | inventory-api | GET /api/v1/products/ | 400 | Invalid sort field. Allowed values: name, base_price, created_at, min_stock_threshold
+2026-07-17 16:28:05,813 | INFO | inventory-api | Request finished | GET /api/v1/products/ | Status 400 | 0.010s
+2026-07-17 16:28:47,718 | INFO | inventory-api | Request started | GET /api/v1/products/3
+2026-07-17 16:28:47,727 | ERROR | inventory-api | GET /api/v1/products/3 | Unexpected Error
+Traceback (most recent call last):
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\app\main.py", line 63, in log_requests
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 2531, in app
+    await route.handle(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 2586, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 2586, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 711, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 316, in serialize_response
+    raise ResponseValidationError(
+    ...<3 lines>...
+    )
+fastapi.exceptions.ResponseValidationError: 1 validation error:
+  {'type': 'greater_than', 'loc': ('response', 'data', 'base_price'), 'msg': 'Input should be greater than 0', 'input': Decimal('0.00'), 'ctx': {'gt': Decimal('0')}}
+
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\app\routers\products.py", line 250, in get_single_product
+    GET /api/v1/products/{product_id}
+2026-07-17 16:28:56,107 | INFO | inventory-api | Request started | GET /api/v1/products/1
+2026-07-17 16:28:56,115 | INFO | inventory-api | Request finished | GET /api/v1/products/1 | Status 200 | 0.008s
+2026-07-17 16:29:02,953 | INFO | inventory-api | Request started | GET /api/v1/products/4
+2026-07-17 16:29:02,960 | INFO | inventory-api | Request finished | GET /api/v1/products/4 | Status 200 | 0.006s
+2026-07-17 16:30:00,133 | INFO | inventory-api | Request started | PUT /api/v1/products/4
+2026-07-17 16:30:00,151 | WARNING | inventory-api | PUT /api/v1/products/4 | 400 | A product with this SKU or barcode already exists.
+2026-07-17 16:30:00,152 | INFO | inventory-api | Request finished | PUT /api/v1/products/4 | Status 400 | 0.019s
+2026-07-17 16:30:25,428 | INFO | inventory-api | Request started | GET /api/v1/products/4
+2026-07-17 16:30:25,437 | INFO | inventory-api | Request finished | GET /api/v1/products/4 | Status 200 | 0.009s
+2026-07-17 16:35:37,493 | INFO | inventory-api | Request started | PUT /api/v1/products/4
+2026-07-17 16:35:37,521 | INFO | inventory-api | Request finished | PUT /api/v1/products/4 | Status 200 | 0.028s
+2026-07-17 16:35:51,253 | INFO | inventory-api | Request started | DELETE /api/v1/products/4
+2026-07-17 16:35:51,272 | WARNING | inventory-api | DELETE /api/v1/products/4 | 400 | This product cannot be deleted because it is referenced by inventory, sales or transactions.
+2026-07-17 16:35:51,272 | INFO | inventory-api | Request finished | DELETE /api/v1/products/4 | Status 400 | 0.019s
+2026-07-17 16:40:49,768 | INFO | inventory-api | Request started | DELETE /api/v1/products/3
+2026-07-17 16:40:49,816 | INFO | inventory-api | Request finished | DELETE /api/v1/products/3 | Status 200 | 0.049s
+2026-07-17 16:41:02,779 | INFO | inventory-api | Request started | GET /api/v1/products/
+2026-07-17 16:41:02,792 | INFO | inventory-api | Request finished | GET /api/v1/products/ | Status 200 | 0.013s
+2026-07-17 16:50:10,292 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-17 16:50:10,295 | WARNING | inventory-api | POST /api/v1/suppliers/ | 401 | Could not validate credentials.
+2026-07-17 16:50:10,298 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 401 | 0.006s
+2026-07-17 16:50:35,473 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-17 16:50:35,710 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.238s
+2026-07-17 16:50:42,747 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-17 16:50:42,792 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 201 | 0.045s
+2026-07-17 16:51:02,384 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-17 16:51:02,420 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 201 | 0.036s
+2026-07-17 16:51:15,283 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-17 16:51:15,310 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 201 | 0.027s
+2026-07-17 16:51:28,885 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-17 16:51:28,917 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 201 | 0.032s
+2026-07-17 16:51:41,233 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-17 16:51:41,262 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 201 | 0.029s
+2026-07-17 16:51:58,366 | INFO | inventory-api | Request started | GET /api/v1/suppliers/
+2026-07-17 16:51:58,379 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/ | Status 200 | 0.013s
+2026-07-17 16:52:12,531 | INFO | inventory-api | Request started | GET /api/v1/suppliers/search/
+2026-07-17 16:52:12,549 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/search/ | Status 200 | 0.018s
+2026-07-17 16:52:25,782 | INFO | inventory-api | Request started | GET /api/v1/suppliers/5
+2026-07-17 16:52:25,797 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/5 | Status 200 | 0.015s
+2026-07-17 16:53:45,672 | INFO | inventory-api | Request started | PUT /api/v1/suppliers/5
+2026-07-17 16:53:45,709 | INFO | inventory-api | Request finished | PUT /api/v1/suppliers/5 | Status 200 | 0.038s
+2026-07-17 16:54:02,016 | INFO | inventory-api | Request started | GET /api/v1/suppliers/
+2026-07-17 16:54:02,027 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/ | Status 200 | 0.012s
+2026-07-17 16:54:32,034 | INFO | inventory-api | Request started | DELETE /api/v1/suppliers/6
+2026-07-17 16:54:32,130 | INFO | inventory-api | Request finished | DELETE /api/v1/suppliers/6 | Status 200 | 0.096s

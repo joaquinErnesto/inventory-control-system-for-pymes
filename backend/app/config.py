@@ -6,6 +6,9 @@ from typing import Final
 load_dotenv()
 
 class Settings:
+    
+    API_PREFIX: Final[str] = "/api/v1"
+    
     DATABASE_URL: str = os.getenv("DATABASE_URL")
     
     SECRET_KEY: str = os.getenv("SECRET_KEY", "your-fallback-super-secret-key-for-dev")

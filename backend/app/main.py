@@ -125,7 +125,7 @@ def check_db_health(
 # ROUTERS
 # ==================================================
 
-api_router = APIRouter(prefix="/api/v1")
+api_router = APIRouter(prefix=settings.API_PREFIX)
 
 api_router.include_router(auth.router)
 api_router.include_router(categories.router)

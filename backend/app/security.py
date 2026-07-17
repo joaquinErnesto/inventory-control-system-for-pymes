@@ -10,6 +10,8 @@ from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy.orm import Session
 
 from app.config import settings
+
+from app.config import settings
 from app.database import get_db
 from app.models import core as models
 from app.schemas.core import TokenData
@@ -28,7 +30,7 @@ pwd_context = CryptContext(
 # ===================================================
 
 oauth2_scheme = OAuth2PasswordBearer(
-    tokenUrl="token"
+    tokenUrl=f"{settings.API_PREFIX}/token"
 )
 
 # ===================================================

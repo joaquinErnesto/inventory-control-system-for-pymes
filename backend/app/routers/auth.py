@@ -24,7 +24,7 @@ router = APIRouter(tags=["Authentication"])
         "The token must be included in the Authorization header "
         "using the Bearer scheme when accessing protected endpoints."
     ),
-    response_model=responses.SuccessMessageResponse[schemas.Token],
+    response_model=schemas.Token,
     responses={
         200: {
             "description": "Authentication successful. JWT access token generated."
@@ -72,10 +72,7 @@ def login_for_access_token(
         }
     )
 
-    return responses.SuccessMessageResponse(
-        message="Authentication successful",
-        data=schemas.Token(
-            access_token=access_token, 
-            token_type="bearer"
-        )
+    return schemas.Token(
+        access_token=access_token,
+        token_type="bearer"
     )

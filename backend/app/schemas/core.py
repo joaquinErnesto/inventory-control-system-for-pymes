@@ -350,11 +350,10 @@ class Token(BaseModel):
 class TokenData(BaseModel):
     username: str
     user_id: int
-    role: UserRole
     
 
 # ==========================================
-# 12. AUTHENTICATION
+# 12. REPORTS
 # ==========================================
 
 class LowStockItemResponse(BaseModel):
