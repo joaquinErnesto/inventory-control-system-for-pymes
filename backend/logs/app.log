@@ -803,3 +803,152 @@ fastapi.exceptions.ResponseValidationError: 1 validation error:
 2026-07-17 16:54:02,027 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/ | Status 200 | 0.012s
 2026-07-17 16:54:32,034 | INFO | inventory-api | Request started | DELETE /api/v1/suppliers/6
 2026-07-17 16:54:32,130 | INFO | inventory-api | Request finished | DELETE /api/v1/suppliers/6 | Status 200 | 0.096s
+2026-07-19 06:07:33,068 | INFO | inventory-api | Request started | GET /
+2026-07-19 06:07:33,071 | INFO | inventory-api | Request finished | GET / | Status 200 | 0.003s
+2026-07-19 06:07:33,164 | INFO | inventory-api | Request started | GET /favicon.ico
+2026-07-19 06:07:33,232 | INFO | inventory-api | Request finished | GET /favicon.ico | Status 404 | 0.068s
+2026-07-19 06:07:58,394 | INFO | inventory-api | Request started | GET /docs
+2026-07-19 06:07:58,396 | INFO | inventory-api | Request finished | GET /docs | Status 200 | 0.003s
+2026-07-19 06:07:58,506 | INFO | inventory-api | Request started | GET /openapi.json
+2026-07-19 06:07:58,655 | INFO | inventory-api | Request finished | GET /openapi.json | Status 200 | 0.149s
+2026-07-19 06:08:23,790 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-19 06:08:24,057 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.266s
+2026-07-19 06:09:30,146 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-19 06:09:30,357 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.212s
+2026-07-19 06:12:10,037 | INFO | inventory-api | Request started | POST /api/v1/users/
+2026-07-19 06:12:10,261 | INFO | inventory-api | Request finished | POST /api/v1/users/ | Status 201 | 0.224s
+2026-07-19 06:12:30,990 | INFO | inventory-api | Request started | GET /api/v1/users/
+2026-07-19 06:12:31,003 | INFO | inventory-api | Request finished | GET /api/v1/users/ | Status 200 | 0.013s
+2026-07-19 06:13:31,212 | INFO | inventory-api | Request started | GET /api/v1/users/me
+2026-07-19 06:13:31,219 | INFO | inventory-api | Request finished | GET /api/v1/users/me | Status 200 | 0.006s
+2026-07-19 06:13:55,501 | INFO | inventory-api | Request started | GET /api/v1/users/
+2026-07-19 06:13:55,512 | INFO | inventory-api | Request finished | GET /api/v1/users/ | Status 200 | 0.010s
+2026-07-19 06:14:14,002 | INFO | inventory-api | Request started | GET /api/v1/users/3
+2026-07-19 06:14:14,011 | INFO | inventory-api | Request finished | GET /api/v1/users/3 | Status 200 | 0.009s
+2026-07-19 06:14:58,350 | INFO | inventory-api | Request started | PUT /api/v1/users/3
+2026-07-19 06:14:58,388 | INFO | inventory-api | Request finished | PUT /api/v1/users/3 | Status 200 | 0.039s
+2026-07-19 06:15:08,567 | INFO | inventory-api | Request started | GET /api/v1/users/3
+2026-07-19 06:15:08,576 | INFO | inventory-api | Request finished | GET /api/v1/users/3 | Status 200 | 0.010s
+2026-07-19 06:15:23,147 | INFO | inventory-api | Request started | DELETE /api/v1/users/3
+2026-07-19 06:15:23,194 | INFO | inventory-api | Request finished | DELETE /api/v1/users/3 | Status 200 | 0.047s
+2026-07-19 06:15:32,249 | INFO | inventory-api | Request started | GET /api/v1/users/
+2026-07-19 06:15:32,260 | INFO | inventory-api | Request finished | GET /api/v1/users/ | Status 200 | 0.011s
+2026-07-19 06:15:55,524 | INFO | inventory-api | Request started | GET /api/v1/users/search/
+2026-07-19 06:15:55,544 | INFO | inventory-api | Request finished | GET /api/v1/users/search/ | Status 200 | 0.019s
+2026-07-19 06:16:24,926 | INFO | inventory-api | Request started | PUT /api/v1/users/1/password
+2026-07-19 06:16:25,150 | INFO | inventory-api | Request finished | PUT /api/v1/users/1/password | Status 200 | 0.224s
+2026-07-19 06:16:45,784 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-19 06:16:45,992 | WARNING | inventory-api | POST /api/v1/token | 401 | Incorrect username or password
+2026-07-19 06:16:45,992 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 401 | 0.208s
+2026-07-19 06:16:51,316 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-19 06:16:51,518 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.202s
+2026-07-19 06:24:21,673 | INFO | inventory-api | Request started | POST /api/v1/customers/
+2026-07-19 06:24:21,708 | INFO | inventory-api | Request finished | POST /api/v1/customers/ | Status 201 | 0.035s
+2026-07-19 06:24:43,222 | INFO | inventory-api | Request started | POST /api/v1/customers/
+2026-07-19 06:24:43,257 | INFO | inventory-api | Request finished | POST /api/v1/customers/ | Status 201 | 0.035s
+2026-07-19 06:24:57,315 | INFO | inventory-api | Request started | POST /api/v1/customers/
+2026-07-19 06:24:57,348 | INFO | inventory-api | Request finished | POST /api/v1/customers/ | Status 201 | 0.033s
+2026-07-19 06:25:12,895 | INFO | inventory-api | Request started | POST /api/v1/customers/
+2026-07-19 06:25:12,930 | INFO | inventory-api | Request finished | POST /api/v1/customers/ | Status 201 | 0.035s
+2026-07-19 06:26:00,305 | INFO | inventory-api | Request started | POST /api/v1/customers/
+2026-07-19 06:26:00,333 | INFO | inventory-api | Request finished | POST /api/v1/customers/ | Status 201 | 0.027s
+2026-07-19 06:26:13,396 | INFO | inventory-api | Request started | GET /api/v1/customers/
+2026-07-19 06:26:13,410 | INFO | inventory-api | Request finished | GET /api/v1/customers/ | Status 200 | 0.014s
+2026-07-19 06:27:05,142 | INFO | inventory-api | Request started | GET /api/v1/customers/search/
+2026-07-19 06:27:05,152 | INFO | inventory-api | Request finished | GET /api/v1/customers/search/ | Status 200 | 0.010s
+2026-07-19 06:27:14,596 | INFO | inventory-api | Request started | GET /api/v1/customers/search/
+2026-07-19 06:27:14,608 | INFO | inventory-api | Request finished | GET /api/v1/customers/search/ | Status 200 | 0.012s
+2026-07-19 06:27:41,251 | INFO | inventory-api | Request started | GET /api/v1/customers/8
+2026-07-19 06:27:41,259 | INFO | inventory-api | Request finished | GET /api/v1/customers/8 | Status 200 | 0.008s
+2026-07-19 06:29:28,438 | INFO | inventory-api | Request started | GET /api/v1/customers/9
+2026-07-19 06:29:28,445 | INFO | inventory-api | Request finished | GET /api/v1/customers/9 | Status 200 | 0.007s
+2026-07-19 06:30:47,393 | INFO | inventory-api | Request started | PUT /api/v1/customers/9
+2026-07-19 06:30:47,424 | INFO | inventory-api | Request finished | PUT /api/v1/customers/9 | Status 200 | 0.031s
+2026-07-19 06:30:56,913 | INFO | inventory-api | Request started | GET /api/v1/customers/9
+2026-07-19 06:30:56,921 | INFO | inventory-api | Request finished | GET /api/v1/customers/9 | Status 200 | 0.008s
+2026-07-19 06:36:21,680 | INFO | inventory-api | Request started | POST /api/v1/sales/
+2026-07-19 06:36:21,733 | INFO | inventory-api | Request finished | POST /api/v1/sales/ | Status 201 | 0.053s
+2026-07-19 06:36:51,863 | INFO | inventory-api | Request started | GET /api/v1/sales/
+2026-07-19 06:36:51,890 | INFO | inventory-api | Request finished | GET /api/v1/sales/ | Status 200 | 0.027s
+2026-07-19 06:37:19,147 | INFO | inventory-api | Request started | GET /api/v1/sales/11
+2026-07-19 06:37:19,161 | INFO | inventory-api | Request finished | GET /api/v1/sales/11 | Status 200 | 0.014s
+2026-07-19 07:31:35,167 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-19 07:31:35,404 | WARNING | inventory-api | POST /api/v1/token | 401 | Incorrect username or password
+2026-07-19 07:31:35,405 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 401 | 0.237s
+2026-07-19 07:31:46,338 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-19 07:31:46,570 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.232s
+2026-07-19 07:32:04,259 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-19 07:32:04,497 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.238s
+2026-07-19 07:39:36,327 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-19 07:39:36,366 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 201 | 0.039s
+2026-07-19 07:39:55,744 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-19 07:39:55,761 | WARNING | inventory-api | POST /api/v1/batches/ | 400 | Supplier with ID 2 does not exist.
+2026-07-19 07:39:55,762 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 400 | 0.019s
+2026-07-19 07:40:25,183 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-19 07:40:25,225 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 201 | 0.042s
+2026-07-19 07:40:46,413 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-19 07:40:46,448 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 201 | 0.035s
+2026-07-19 07:41:06,412 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-19 07:41:06,423 | WARNING | inventory-api | POST /api/v1/batches/ | 400 | Product with ID 5 does not exist.
+2026-07-19 07:41:06,423 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 400 | 0.011s
+2026-07-19 07:43:45,112 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-19 07:43:45,150 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 201 | 0.037s
+2026-07-19 07:44:05,085 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-19 07:44:05,119 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 201 | 0.034s
+2026-07-19 07:44:33,374 | INFO | inventory-api | Request started | GET /api/v1/batches/
+2026-07-19 07:44:33,391 | INFO | inventory-api | Request finished | GET /api/v1/batches/ | Status 200 | 0.017s
+2026-07-19 07:45:06,343 | INFO | inventory-api | Request started | GET /api/v1/batches/7
+2026-07-19 07:45:06,350 | INFO | inventory-api | Request finished | GET /api/v1/batches/7 | Status 200 | 0.007s
+2026-07-19 07:48:27,480 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-19 07:48:27,520 | INFO | inventory-api | Loss registered | Loss ID=3 | Product ID=6 | Batch ID=10 | Quantity=10 | User ID=1
+2026-07-19 07:48:27,521 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 201 | 0.041s
+2026-07-19 07:49:17,283 | INFO | inventory-api | Request started | GET /api/v1/losses/
+2026-07-19 07:49:17,300 | INFO | inventory-api | Request finished | GET /api/v1/losses/ | Status 200 | 0.017s
+2026-07-19 07:49:35,204 | INFO | inventory-api | Request started | GET /api/v1/losses/3
+2026-07-19 07:49:35,213 | INFO | inventory-api | Request finished | GET /api/v1/losses/3 | Status 200 | 0.009s
+2026-07-19 07:50:11,237 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-19 07:50:11,251 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 200 | 0.015s
+2026-07-19 07:52:12,505 | INFO | inventory-api | Request started | GET /api/v1/reports/batch-audit/10
+2026-07-19 07:52:12,517 | INFO | inventory-api | Request finished | GET /api/v1/reports/batch-audit/10 | Status 200 | 0.011s
+2026-07-19 07:55:41,646 | INFO | inventory-api | Request started | GET /api/v1/reports/sales-performance
+2026-07-19 07:55:41,658 | INFO | inventory-api | Request finished | GET /api/v1/reports/sales-performance | Status 200 | 0.012s
+2026-07-19 07:56:42,894 | INFO | inventory-api | Request started | GET /api/v1/reports/expiring-soon
+2026-07-19 07:56:42,917 | INFO | inventory-api | Request finished | GET /api/v1/reports/expiring-soon | Status 200 | 0.023s
+2026-07-19 07:57:13,961 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-19 07:57:13,981 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.020s
+2026-07-19 07:57:32,473 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-19 07:57:32,484 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.011s
+2026-07-19 07:57:45,802 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-19 07:57:45,811 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.009s
+2026-07-19 07:58:09,268 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-19 07:58:09,277 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.009s
+2026-07-19 07:59:32,062 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-19 07:59:32,079 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.017s
+2026-07-19 07:59:47,456 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-19 07:59:47,472 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.016s
+2026-07-19 08:00:03,843 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-19 08:00:03,856 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.013s
+2026-07-19 08:00:15,440 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-19 08:00:15,449 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.008s
+2026-07-19 08:01:11,469 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-19 08:01:11,485 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.016s
+2026-07-19 08:01:18,745 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-19 08:01:18,755 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.010s
+2026-07-19 08:01:25,785 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-19 08:01:25,795 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.009s
+2026-07-19 08:01:55,969 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-19 08:01:55,978 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.009s
+2026-07-19 08:02:32,368 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/10
+2026-07-19 08:02:32,370 | WARNING | inventory-api | GET /api/v1/inventory-transactions/10 | 401 | Could not validate credentials.
+2026-07-19 08:02:32,371 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/10 | Status 401 | 0.003s
+2026-07-19 08:02:39,751 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/1
+2026-07-19 08:02:39,753 | WARNING | inventory-api | GET /api/v1/inventory-transactions/1 | 401 | Could not validate credentials.
+2026-07-19 08:02:39,754 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/1 | Status 401 | 0.003s
+2026-07-19 08:03:10,767 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-19 08:03:10,976 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.210s
+2026-07-19 08:03:49,098 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/1
+2026-07-19 08:03:49,108 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/1 | Status 200 | 0.010s
+2026-07-19 08:03:59,276 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/summary/overview
+2026-07-19 08:03:59,296 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/summary/overview | Status 200 | 0.020s
+2026-07-19 08:05:18,409 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/today/activity
+2026-07-19 08:05:18,426 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/today/activity | Status 200 | 0.016s

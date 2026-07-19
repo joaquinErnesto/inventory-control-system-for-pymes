@@ -1,0 +1,106 @@
+|   folder_structure.txt
+|   
+/backend
+|   |   .env
+|   |   project_structure.txt
+|   |   README.md
+|   |   requirements.txt
+|   |   test_bcrypt.py
+|   |   test_passlib.py
+|   |   
+|   /app
+|   |   |   config.py
+|   |   |   database.py
+|   |   |   main.py
+|   |   |   security.py
+|   |   |   __init__.py
+|   |   |   
+|   |   /crud
+|   |   /exceptions
+|   |   |   |   handlers.py
+|   |   |   |   __init__.py
+|   |   |   |   
+|   |   |   /__pycache__
+|   |   |           handlers.cpython-313.pyc
+|   |   |           __init__.cpython-313.pyc
+|   |   |           
+|   |   /logging
+|   |   |   |   logger.py
+|   |   |   |   __init__.py
+|   |   |   |   
+|   |   |   /__pycache__
+|   |   |           logger.cpython-313.pyc
+|   |   |           __init__.cpython-313.pyc
+|   |   |           
+|   |   /models
+|   |   |   |   core.py
+|   |   |   |   __init__.py
+|   |   |   |   
+|   |   |   /__pycache__
+|   |   |           core.cpython-313.pyc
+|   |   |           __init__.cpython-313.pyc
+|   |   |           
+|   |   /routers
+|   |   |   |   auth.py
+|   |   |   |   categories.py
+|   |   |   |   customers.py
+|   |   |   |   inventory_batches.py
+|   |   |   |   inventory_transactions.py
+|   |   |   |   loss_logs.py
+|   |   |   |   products.py
+|   |   |   |   reports.py
+|   |   |   |   sales.py
+|   |   |   |   suppliers.py
+|   |   |   |   users.py
+|   |   |   |   __init__.py
+|   |   |   |   
+|   |   |   /__pycache__
+|   |   |           auth.cpython-313.pyc
+|   |   |           categories.cpython-313.pyc
+|   |   |           customers.cpython-313.pyc
+|   |   |           inventory_batches.cpython-313.pyc
+|   |   |           inventory_transactions.cpython-313.pyc
+|   |   |           loss_logs.cpython-313.pyc
+|   |   |           products.cpython-313.pyc
+|   |   |           reports.cpython-313.pyc
+|   |   |           sales.cpython-313.pyc
+|   |   |           suppliers.cpython-313.pyc
+|   |   |           users.cpython-313.pyc
+|   |   |           __init__.cpython-313.pyc
+|   |   |           
+|   |   /schemas
+|   |   |   |   core.py
+|   |   |   |   responses.py
+|   |   |   |   __init__.py
+|   |   |   |   
+|   |   |   /__pycache__
+|   |   |           core.cpython-313.pyc
+|   |   |           responses.cpython-313.pyc
+|   |   |           __init__.cpython-313.pyc
+|   |   |           
+|   |   /utils
+|   |   |   |   pagination.py
+|   |   |   |   query_sorting.py
+|   |   |   |   __init__.py
+|   |   |   |   
+|   |   |   /__pycache__
+|   |   |           pagination.cpython-313.pyc
+|   |   |           query_sorting.cpython-313.pyc
+|   |   |           __init__.cpython-313.pyc
+|   |   |           
+|   |   /__pycache__
+|   |           config.cpython-313.pyc
+|   |           database.cpython-313.pyc
+|   |           main.cpython-313.pyc
+|   |           security.cpython-313.pyc
+|   |           __init__.cpython-313.pyc
+|   |           
+|   /logs
+|   |       app.log
+|   |       
+|   /scripts
+|   /tests
+|   /venv
+|
+|               
+/frontend
