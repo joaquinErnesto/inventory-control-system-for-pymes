@@ -45,7 +45,7 @@ router = APIRouter(
         201: {"description": "Product created successfully"},
         400: {"description": "Invalid category or duplicate SKU/barcode"},
         401: {"description": "Authentication required"},
-        403: {"description": "Administrator privileges required"},
+        403: {"devscription": "Administrator privileges required"},
     },
 )
 def create_product(
