@@ -15,7 +15,9 @@ from app.database import SessionLocal
 from scripts.seeders.user_seeder import seed_users
 from scripts.seeders.category_seeder import seed_categories
 from scripts.seeders.supplier_seeder import seed_suppliers
-
+from scripts.seeders.customer_seeder import seed_customers
+from scripts.seeders.product_seeder import seed_products
+from scripts.seeders.inventory_batch_seeder import seed_inventory_batches
 
 def seed_database() -> None:
     db = SessionLocal()
@@ -33,9 +35,9 @@ def seed_database() -> None:
         seed_users(db)
         seed_categories(db)
         seed_suppliers(db)
-        # seed_customers(db)
-        # seed_products(db)
-        # seed_inventory_batches(db)
+        seed_customers(db)
+        seed_products(db)
+        seed_inventory_batches(db)
         # seed_sales(db)
         # seed_loss_logs(db)
         # seed_inventory_transactions(db)
