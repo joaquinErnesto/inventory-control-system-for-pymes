@@ -6,13 +6,12 @@ from sqlalchemy.orm import Session
 
 from app.models import core as models
 from app.schemas import core as schemas
-from app.schemas import responses
 
-def process_sale(
-    sale_request: schemas.SaleCreate,
+def create_sale(
     db: Session,
+    sale_request: schemas.SaleCreate,
     current_user: models.User
-) -> responses.SuccessMessageResponse[schemas.SaleResponse]:
+) -> models.Sale:
     """
     Process a complex multi-table sale transaction using Automated FEFO/FIFO stock deduction.
     """
@@ -119,7 +118,4 @@ def process_sale(
         db.rollback()
         raise
 
-    return responses.SuccessMessageResponse(
-        message="Sale processed successfully",
-        data=new_sale
-    )
+    return new_sale

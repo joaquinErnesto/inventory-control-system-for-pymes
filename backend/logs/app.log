@@ -952,3 +952,7 @@ fastapi.exceptions.ResponseValidationError: 1 validation error:
 2026-07-19 08:03:59,296 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/summary/overview | Status 200 | 0.020s
 2026-07-19 08:05:18,409 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/today/activity
 2026-07-19 08:05:18,426 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/today/activity | Status 200 | 0.016s
+2026-07-20 15:50:34,164 | INFO | inventory-api | Loss registered | Loss ID=4 | Product ID=11 | Batch ID=11 | Quantity=3 | User ID=4
+2026-07-20 15:50:34,194 | INFO | inventory-api | Loss registered | Loss ID=5 | Product ID=12 | Batch ID=12 | Quantity=2 | User ID=4
+2026-07-20 15:50:34,217 | INFO | inventory-api | Loss registered | Loss ID=6 | Product ID=19 | Batch ID=19 | Quantity=1 | User ID=4
+2026-07-20 15:50:34,246 | INFO | inventory-api | Loss registered | Loss ID=7 | Product ID=21 | Batch ID=21 | Quantity=5 | User ID=4

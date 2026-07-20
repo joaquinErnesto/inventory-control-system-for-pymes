@@ -9,7 +9,6 @@ from fastapi import (
 
 from sqlalchemy.orm import Session
 from typing import List
-from decimal import Decimal
 
 from app.database import get_db
 from app.models import core as models
@@ -61,10 +60,15 @@ def process_sale(
     """
     Process a complex multi-table sale transaction using Automated FEFO/FIFO stock deduction.
     """
-    return sales_service.process_sale(
+    sale = sales_service.create_sale(
         db=db,
         sale_request=sale_request,
         current_user=current_user
+    )
+    
+    return responses.SuccessMessageResponse(
+        message="Sale processed successfully",
+        data= sale
     )
 
 
