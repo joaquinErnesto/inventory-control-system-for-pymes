@@ -11,7 +11,10 @@ class Settings:
     
     DATABASE_URL: str = os.getenv("DATABASE_URL")
     
-    SECRET_KEY: str = os.getenv("SECRET_KEY", "your-fallback-super-secret-key-for-dev")
+    SECRET_KEY: str = os.getenv(
+        "SECRET_KEY", 
+        "your-fallback-super-secret-key-for-dev"
+    )
     
     CORS_ORIGINS: list[str] = [
         origin.strip()
