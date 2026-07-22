@@ -5,46 +5,77 @@ from app.security import get_password_hash
 
 
 # ==================================================
-# ADMIN USER
+# USER FACTORY
 # ==================================================
 
 @pytest.fixture
-def admin_user(db):
+def user_factory(db):
     """
-    Creates an administrator user.
+    Factory fixture for creating users.
+
+    Examples:
+
+        admin = user_factory(
+            username="admin",
+            role="admin"
+        )
+
+        employee = user_factory(
+            username="employee",
+            role="employee"
+        )
     """
 
-    user = User(
+    def factory(
+        username: str = "test_user",
+        password: str = "password123",
+        role: str = "employee",
+    ) -> User:
+
+        user = User(
+            username=username,
+            password_hash=get_password_hash(password),
+            role=role,
+        )
+
+        db.add(user)
+        db.commit()
+        db.refresh(user)
+
+        return user
+
+    return factory
+
+
+# ==================================================
+# DEFAULT ADMIN USER
+# ==================================================
+
+@pytest.fixture
+def admin_user(user_factory):
+    """
+    Creates a default administrator.
+    """
+
+    return user_factory(
         username="admin_test",
-        password_hash=get_password_hash("admin123"),
+        password="admin123",
         role="admin",
     )
 
-    db.add(user)
-    db.commit()
-    db.refresh(user)
-
-    return user
-
 
 # ==================================================
-# EMPLOYEE USER
+# DEFAULT EMPLOYEE USER
 # ==================================================
 
 @pytest.fixture
-def employee_user(db):
+def employee_user(user_factory):
     """
-    Creates a regular employee.
+    Creates a default employee.
     """
 
-    user = User(
+    return user_factory(
         username="employee_test",
-        password_hash=get_password_hash("employee123"),
+        password="employee123",
         role="employee",
     )
-
-    db.add(user)
-    db.commit()
-    db.refresh(user)
-
-    return user
