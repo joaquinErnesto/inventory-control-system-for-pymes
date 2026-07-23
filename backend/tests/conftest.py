@@ -10,6 +10,19 @@ from sqlalchemy.orm import sessionmaker
 from app.config import settings
 from app.database import Base
 
+# ==================================================
+# FIXTURE IMPORTATION
+# ==================================================
+
+from tests.fixtures.user_fixtures import *
+from tests.fixtures.category_fixtures import *
+from tests.fixtures.product_fixtures import *
+from tests.fixtures.customer_fixtures import *
+from tests.fixtures.supplier_fixtures import *
+from tests.fixtures.inventory_batch_fixtures import *
+from tests.fixtures.loss_log_fixtures import *
+from tests.fixtures.loss_log_fixtures import *
+
 
 # ==================================================
 # TEST DATABASE ENGINE
