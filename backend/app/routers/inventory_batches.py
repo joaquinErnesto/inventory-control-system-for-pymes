@@ -1,7 +1,6 @@
 from fastapi import (
     APIRouter, 
-    Depends, 
-    HTTPException, 
+    Depends,  
     status,
     Query,
     Path
@@ -11,7 +10,6 @@ from sqlalchemy.orm import Session
 from typing import List
 
 from app.database import get_db
-from app.models import core as models
 from app.schemas import core as schemas
 from app.schemas import responses
 from app.security import (
@@ -19,10 +17,12 @@ from app.security import (
     get_current_admin,
 )
 
-from app.utils.query_sorting import apply_sorting
-from app.utils.pagination import paginate
-
-from app.services.inventory_batch_service import receive_inventory_batch
+from app.services.inventory_batch_service import (
+    receive_inventory_batch,
+    delete_inventory_batch,
+    get_inventory_batch_by_id,
+    list_inventory_batches
+)
 
 router = APIRouter(
     prefix="/batches",
@@ -63,7 +63,7 @@ router = APIRouter(
         },
     },
 )
-def receive_stock_batch(
+def create_stock_batch(
     batch: schemas.InventoryBatchCreate,
     db: Session = Depends(get_db),
     current_user=Depends(get_current_admin),
@@ -137,32 +137,17 @@ def get_all_batches(
     Retrieve all inventory batches.
     """
     
-    allowed_sort_fields = {
-        "received_date": models.InventoryBatch.received_date,
-        "expiration_date": models.InventoryBatch.expiration_date,
-        "current_quantity": models.InventoryBatch.current_quantity,
-        "cost_price": models.InventoryBatch.cost_price,
-        "selling_price": models.InventoryBatch.selling_price,
-    }
-
-    query = db.query(models.InventoryBatch)
-    
-    query = apply_sorting(
-        query=query,
+    batches, pagination = list_inventory_batches(
+        db=db,
+        skip=skip,
+        limit=limit,
         sort=sort,
         order=order,
-        allowed_fields=allowed_sort_fields,
-    )
-    
-    batches, pagination = paginate(
-        query=query,
-        skip=skip,
-        limit=limit
     )
 
     return responses.PaginatedResponse(
         data=batches,
-        pagination=pagination
+        pagination=pagination,
     )
 
 
@@ -201,18 +186,11 @@ def get_batch(
     """
     Retrieve one inventory batch.
     """
-
-    batch = (
-        db.query(models.InventoryBatch)
-        .filter(models.InventoryBatch.id == batch_id)
-        .first()
+    
+    batch = get_inventory_batch_by_id(
+        db=db,
+        batch_id=batch_id,
     )
-
-    if not batch:
-        raise HTTPException(
-            status_code=404,
-            detail="Inventory batch not found.",
-        )
 
     return responses.SuccessResponse(
         data=batch
@@ -267,40 +245,11 @@ def delete_batch(
     Delete an inventory batch only if it has never been used.
     """
 
-    batch = (
-        db.query(models.InventoryBatch)
-        .filter(models.InventoryBatch.id == batch_id)
-        .first()
+    delete_inventory_batch(
+        db=db,
+        batch_id=batch_id,
     )
 
-    if not batch:
-        raise HTTPException(
-            status_code=404,
-            detail="Inventory batch not found.",
-        )
-
-    if batch.sale_items:
-        raise HTTPException(
-            status_code=400,
-            detail="Cannot delete a batch used in sales.",
-        )
-
-    if batch.loss_logs:
-        raise HTTPException(
-            status_code=400,
-            detail="Cannot delete a batch that has registered losses.",
-        )
-
-    if batch.transactions:
-        raise HTTPException(
-            status_code=400,
-            detail="Cannot delete a batch because inventory transactions exist.",
-        )
-
-    db.delete(batch)
-
-    db.commit()
-    
     return responses.MessageResponse(
         message="Inventory batch deleted successfully"
-    )
+    )    

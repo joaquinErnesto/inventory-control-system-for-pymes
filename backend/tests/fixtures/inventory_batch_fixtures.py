@@ -4,7 +4,12 @@ import uuid
 
 import pytest
 
-from app.models.core import InventoryBatch
+from app.models.core import (
+    InventoryBatch,
+    InventoryTransaction
+)
+
+from app.schemas.core import TransactionType
 
 
 # ==================================================
@@ -49,6 +54,7 @@ def inventory_batch_factory(
         selling_price: Decimal = Decimal("15.00"),
         expiration_date: date | None = None,
         notes: str = "Test inventory batch.",
+        create_initial_transaction: bool = False
     ) -> InventoryBatch:
 
         if product is None:
@@ -85,6 +91,21 @@ def inventory_batch_factory(
         db.add(batch)
         db.commit()
         db.refresh(batch)
+
+        if create_initial_transaction:
+
+            transaction = InventoryTransaction(
+                product_id=batch.product_id,
+                batch_id=batch.id,
+                user_id=batch.created_by_user_id,
+                quantity_changed=batch.initial_quantity,
+                transaction_type=TransactionType.IN.value,
+                notes=f"Initial stock intake. Batch: {batch.batch_number}",
+            )
+
+            db.add(transaction)
+            db.commit()
+            db.refresh(transaction)
 
         return batch
 
