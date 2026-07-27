@@ -956,3 +956,340 @@ fastapi.exceptions.ResponseValidationError: 1 validation error:
 2026-07-20 15:50:34,194 | INFO | inventory-api | Loss registered | Loss ID=5 | Product ID=12 | Batch ID=12 | Quantity=2 | User ID=4
 2026-07-20 15:50:34,217 | INFO | inventory-api | Loss registered | Loss ID=6 | Product ID=19 | Batch ID=19 | Quantity=1 | User ID=4
 2026-07-20 15:50:34,246 | INFO | inventory-api | Loss registered | Loss ID=7 | Product ID=21 | Batch ID=21 | Quantity=5 | User ID=4
+2026-07-27 13:51:55,102 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 13:51:55,320 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.218s
+2026-07-27 13:51:55,321 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 13:51:55,322 | INFO | inventory-api | Request started | GET /
+2026-07-27 13:51:55,332 | INFO | inventory-api | Request finished | GET / | Status 200 | 0.011s
+2026-07-27 13:51:55,333 | INFO | httpx | HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-07-27 15:09:48,514 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:09:48,750 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.236s
+2026-07-27 15:09:48,751 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:09:48,836 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:09:48,925 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 201 | 0.088s
+2026-07-27 15:09:48,925 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 201 Created"
+2026-07-27 15:09:51,861 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:09:52,064 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.204s
+2026-07-27 15:09:52,065 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:09:52,122 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:09:52,156 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 201 | 0.033s
+2026-07-27 15:09:52,158 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 201 Created"
+2026-07-27 15:09:54,776 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:09:54,778 | WARNING | inventory-api | POST /api/v1/batches/ | 401 | Not authenticated
+2026-07-27 15:09:54,778 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 401 | 0.002s
+2026-07-27 15:09:54,779 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 401 Unauthorized"
+2026-07-27 15:09:57,557 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:09:57,753 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.196s
+2026-07-27 15:09:57,754 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:09:57,808 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:09:57,811 | WARNING | inventory-api | POST /api/v1/batches/ | 403 | Administrator privileges required.
+2026-07-27 15:09:57,811 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 403 | 0.003s
+2026-07-27 15:09:57,811 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 403 Forbidden"
+2026-07-27 15:10:00,689 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:10:00,886 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.196s
+2026-07-27 15:10:00,886 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:10:00,905 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:10:00,912 | WARNING | inventory-api | POST /api/v1/batches/ | 400 | Product with ID 999999 does not exist.
+2026-07-27 15:10:00,912 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 400 | 0.007s
+2026-07-27 15:10:00,912 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 400 Bad Request"
+2026-07-27 15:10:03,880 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:10:04,077 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.197s
+2026-07-27 15:10:04,078 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:10:04,123 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:10:04,131 | WARNING | inventory-api | POST /api/v1/batches/ | 400 | Supplier with ID 999999 does not exist.
+2026-07-27 15:10:04,131 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 400 | 0.008s
+2026-07-27 15:10:04,132 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 400 Bad Request"
+2026-07-27 15:10:06,970 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:10:07,168 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.199s
+2026-07-27 15:10:07,169 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:10:07,199 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:10:07,202 | WARNING | inventory-api | POST /api/v1/batches/ | Validation Error | [{'type': 'greater_than', 'loc': ('body', 'initial_quantity'), 'msg': 'Input should be greater than 0', 'input': -5, 'ctx': {'gt': 0}}, {'type': 'greater_than', 'loc': ('body', 'cost_price'), 'msg': 'Input should be greater than 0', 'input': '-1.00', 'ctx': {'gt': Decimal('0')}}]
+2026-07-27 15:10:07,203 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 422 | 0.004s
+2026-07-27 15:10:07,203 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 422 Unprocessable Entity"
+2026-07-27 15:20:07,076 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:20:07,294 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.218s
+2026-07-27 15:20:07,295 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:20:07,355 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:20:07,409 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 201 | 0.055s
+2026-07-27 15:20:07,410 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 201 Created"
+2026-07-27 15:20:10,139 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:20:10,341 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.202s
+2026-07-27 15:20:10,342 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:20:10,389 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:20:10,411 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 201 | 0.022s
+2026-07-27 15:20:10,412 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 201 Created"
+2026-07-27 15:20:13,280 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:20:13,282 | WARNING | inventory-api | POST /api/v1/batches/ | 401 | Not authenticated
+2026-07-27 15:20:13,283 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 401 | 0.002s
+2026-07-27 15:20:13,283 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 401 Unauthorized"
+2026-07-27 15:20:16,106 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:20:16,302 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.196s
+2026-07-27 15:20:16,303 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:20:16,374 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:20:16,378 | WARNING | inventory-api | POST /api/v1/batches/ | 403 | Administrator privileges required.
+2026-07-27 15:20:16,379 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 403 | 0.004s
+2026-07-27 15:20:16,379 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 403 Forbidden"
+2026-07-27 15:20:19,124 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:20:19,325 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.201s
+2026-07-27 15:20:19,325 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:20:19,342 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:20:19,347 | WARNING | inventory-api | POST /api/v1/batches/ | 400 | Product with ID 999999 does not exist.
+2026-07-27 15:20:19,347 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 400 | 0.005s
+2026-07-27 15:20:19,347 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 400 Bad Request"
+2026-07-27 15:20:22,297 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:20:22,505 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.208s
+2026-07-27 15:20:22,506 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:20:22,543 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:20:22,549 | WARNING | inventory-api | POST /api/v1/batches/ | 400 | Supplier with ID 999999 does not exist.
+2026-07-27 15:20:22,549 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 400 | 0.006s
+2026-07-27 15:20:22,549 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 400 Bad Request"
+2026-07-27 15:20:25,448 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:20:25,656 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-07-27 15:20:25,656 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:20:25,686 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:20:25,689 | WARNING | inventory-api | POST /api/v1/batches/ | Validation Error | [{'type': 'greater_than', 'loc': ('body', 'initial_quantity'), 'msg': 'Input should be greater than 0', 'input': -5, 'ctx': {'gt': 0}}, {'type': 'greater_than', 'loc': ('body', 'cost_price'), 'msg': 'Input should be greater than 0', 'input': '-1.00', 'ctx': {'gt': Decimal('0')}}]
+2026-07-27 15:20:25,690 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 422 | 0.003s
+2026-07-27 15:20:25,690 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 422 Unprocessable Entity"
+2026-07-27 15:20:28,380 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:20:28,584 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.204s
+2026-07-27 15:20:28,585 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:20:29,457 | INFO | inventory-api | Request started | GET /api/v1/batches/
+2026-07-27 15:20:29,467 | INFO | inventory-api | Request finished | GET /api/v1/batches/ | Status 200 | 0.010s
+2026-07-27 15:20:29,467 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/ "HTTP/1.1 200 OK"
+2026-07-27 15:20:32,464 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:20:32,669 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.205s
+2026-07-27 15:20:32,670 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:20:34,071 | INFO | inventory-api | Request started | GET /api/v1/batches/
+2026-07-27 15:20:34,079 | INFO | inventory-api | Request finished | GET /api/v1/batches/ | Status 200 | 0.007s
+2026-07-27 15:20:34,079 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/?skip=2&limit=2 "HTTP/1.1 200 OK"
+2026-07-27 15:20:37,044 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:20:37,254 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.210s
+2026-07-27 15:20:37,255 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:20:38,136 | INFO | inventory-api | Request started | GET /api/v1/batches/
+2026-07-27 15:20:38,145 | INFO | inventory-api | Request finished | GET /api/v1/batches/ | Status 200 | 0.009s
+2026-07-27 15:20:38,146 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/?sort=cost_price&order=asc "HTTP/1.1 200 OK"
+2026-07-27 15:20:41,138 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:20:41,350 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.212s
+2026-07-27 15:20:41,351 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:20:41,352 | INFO | inventory-api | Request started | GET /api/v1/batches/
+2026-07-27 15:20:41,356 | WARNING | inventory-api | GET /api/v1/batches/ | 400 | Invalid sort field. Allowed values: received_date, expiration_date, current_quantity, cost_price, selling_price
+2026-07-27 15:20:41,356 | INFO | inventory-api | Request finished | GET /api/v1/batches/ | Status 400 | 0.004s
+2026-07-27 15:20:41,357 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/?sort=invalid_field "HTTP/1.1 400 Bad Request"
+2026-07-27 15:20:44,076 | INFO | inventory-api | Request started | GET /api/v1/batches/
+2026-07-27 15:20:44,078 | WARNING | inventory-api | GET /api/v1/batches/ | 401 | Not authenticated
+2026-07-27 15:20:44,079 | INFO | inventory-api | Request finished | GET /api/v1/batches/ | Status 401 | 0.002s
+2026-07-27 15:20:44,079 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/ "HTTP/1.1 401 Unauthorized"
+2026-07-27 15:24:41,304 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:24:41,523 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.219s
+2026-07-27 15:24:41,524 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:24:41,571 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:24:41,624 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 201 | 0.052s
+2026-07-27 15:24:41,624 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 201 Created"
+2026-07-27 15:24:44,500 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:24:44,702 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.201s
+2026-07-27 15:24:44,702 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:24:44,752 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:24:44,775 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 201 | 0.023s
+2026-07-27 15:24:44,776 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 201 Created"
+2026-07-27 15:24:47,780 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:24:47,781 | WARNING | inventory-api | POST /api/v1/batches/ | 401 | Not authenticated
+2026-07-27 15:24:47,782 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 401 | 0.002s
+2026-07-27 15:24:47,782 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 401 Unauthorized"
+2026-07-27 15:24:50,645 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:24:50,852 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-07-27 15:24:50,852 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:24:50,900 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:24:50,903 | WARNING | inventory-api | POST /api/v1/batches/ | 403 | Administrator privileges required.
+2026-07-27 15:24:50,903 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 403 | 0.003s
+2026-07-27 15:24:50,904 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 403 Forbidden"
+2026-07-27 15:24:53,809 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:24:54,005 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.196s
+2026-07-27 15:24:54,006 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:24:54,024 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:24:54,030 | WARNING | inventory-api | POST /api/v1/batches/ | 400 | Product with ID 999999 does not exist.
+2026-07-27 15:24:54,030 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 400 | 0.006s
+2026-07-27 15:24:54,030 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 400 Bad Request"
+2026-07-27 15:24:56,897 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:24:57,099 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.202s
+2026-07-27 15:24:57,100 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:24:57,132 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:24:57,138 | WARNING | inventory-api | POST /api/v1/batches/ | 400 | Supplier with ID 999999 does not exist.
+2026-07-27 15:24:57,138 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 400 | 0.006s
+2026-07-27 15:24:57,139 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 400 Bad Request"
+2026-07-27 15:24:59,965 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:25:00,183 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.218s
+2026-07-27 15:25:00,184 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:25:00,216 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:25:00,219 | WARNING | inventory-api | POST /api/v1/batches/ | Validation Error | [{'type': 'greater_than', 'loc': ('body', 'initial_quantity'), 'msg': 'Input should be greater than 0', 'input': -5, 'ctx': {'gt': 0}}, {'type': 'greater_than', 'loc': ('body', 'cost_price'), 'msg': 'Input should be greater than 0', 'input': '-1.00', 'ctx': {'gt': Decimal('0')}}]
+2026-07-27 15:25:00,220 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 422 | 0.004s
+2026-07-27 15:25:00,220 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 422 Unprocessable Entity"
+2026-07-27 15:25:03,130 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:25:03,326 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.196s
+2026-07-27 15:25:03,327 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:25:04,185 | INFO | inventory-api | Request started | GET /api/v1/batches/
+2026-07-27 15:25:04,193 | INFO | inventory-api | Request finished | GET /api/v1/batches/ | Status 200 | 0.009s
+2026-07-27 15:25:04,194 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/ "HTTP/1.1 200 OK"
+2026-07-27 15:25:07,196 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:25:07,400 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.203s
+2026-07-27 15:25:07,400 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:25:08,772 | INFO | inventory-api | Request started | GET /api/v1/batches/
+2026-07-27 15:25:08,779 | INFO | inventory-api | Request finished | GET /api/v1/batches/ | Status 200 | 0.007s
+2026-07-27 15:25:08,780 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/?skip=2&limit=2 "HTTP/1.1 200 OK"
+2026-07-27 15:25:11,483 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:25:11,692 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.209s
+2026-07-27 15:25:11,692 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:25:12,547 | INFO | inventory-api | Request started | GET /api/v1/batches/
+2026-07-27 15:25:12,555 | INFO | inventory-api | Request finished | GET /api/v1/batches/ | Status 200 | 0.008s
+2026-07-27 15:25:12,555 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/?sort=cost_price&order=asc "HTTP/1.1 200 OK"
+2026-07-27 15:25:15,732 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:25:15,936 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.204s
+2026-07-27 15:25:15,937 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:25:15,939 | INFO | inventory-api | Request started | GET /api/v1/batches/
+2026-07-27 15:25:15,944 | WARNING | inventory-api | GET /api/v1/batches/ | 400 | Invalid sort field. Allowed values: received_date, expiration_date, current_quantity, cost_price, selling_price
+2026-07-27 15:25:15,944 | INFO | inventory-api | Request finished | GET /api/v1/batches/ | Status 400 | 0.005s
+2026-07-27 15:25:15,945 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/?sort=invalid_field "HTTP/1.1 400 Bad Request"
+2026-07-27 15:25:18,835 | INFO | inventory-api | Request started | GET /api/v1/batches/
+2026-07-27 15:25:18,836 | WARNING | inventory-api | GET /api/v1/batches/ | 401 | Not authenticated
+2026-07-27 15:25:18,837 | INFO | inventory-api | Request finished | GET /api/v1/batches/ | Status 401 | 0.002s
+2026-07-27 15:25:18,837 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/ "HTTP/1.1 401 Unauthorized"
+2026-07-27 15:25:21,741 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:25:21,936 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.195s
+2026-07-27 15:25:21,937 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:25:22,219 | INFO | inventory-api | Request started | GET /api/v1/batches/1
+2026-07-27 15:25:22,224 | INFO | inventory-api | Request finished | GET /api/v1/batches/1 | Status 200 | 0.005s
+2026-07-27 15:25:22,225 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/1 "HTTP/1.1 200 OK"
+2026-07-27 15:25:25,244 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:25:25,445 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.201s
+2026-07-27 15:25:25,446 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:25:25,447 | INFO | inventory-api | Request started | GET /api/v1/batches/999999
+2026-07-27 15:25:25,451 | WARNING | inventory-api | GET /api/v1/batches/999999 | 404 | Inventory batch not found.
+2026-07-27 15:25:25,452 | INFO | inventory-api | Request finished | GET /api/v1/batches/999999 | Status 404 | 0.005s
+2026-07-27 15:25:25,452 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/999999 "HTTP/1.1 404 Not Found"
+2026-07-27 15:25:28,333 | INFO | inventory-api | Request started | GET /api/v1/batches/1
+2026-07-27 15:25:28,336 | WARNING | inventory-api | GET /api/v1/batches/1 | 401 | Not authenticated
+2026-07-27 15:25:28,336 | INFO | inventory-api | Request finished | GET /api/v1/batches/1 | Status 401 | 0.002s
+2026-07-27 15:25:28,336 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/1 "HTTP/1.1 401 Unauthorized"
+2026-07-27 15:29:59,582 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:29:59,789 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-07-27 15:29:59,790 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:29:59,839 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:29:59,887 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 201 | 0.048s
+2026-07-27 15:29:59,888 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 201 Created"
+2026-07-27 15:30:02,703 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:30:02,901 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.199s
+2026-07-27 15:30:02,902 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:30:02,959 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:30:02,980 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 201 | 0.021s
+2026-07-27 15:30:02,981 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 201 Created"
+2026-07-27 15:30:05,805 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:30:05,807 | WARNING | inventory-api | POST /api/v1/batches/ | 401 | Not authenticated
+2026-07-27 15:30:05,807 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 401 | 0.002s
+2026-07-27 15:30:05,808 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 401 Unauthorized"
+2026-07-27 15:30:08,753 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:30:08,961 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.208s
+2026-07-27 15:30:08,962 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:30:09,015 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:30:09,019 | WARNING | inventory-api | POST /api/v1/batches/ | 403 | Administrator privileges required.
+2026-07-27 15:30:09,019 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 403 | 0.004s
+2026-07-27 15:30:09,020 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 403 Forbidden"
+2026-07-27 15:30:11,971 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:30:12,170 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.199s
+2026-07-27 15:30:12,171 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:30:12,189 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:30:12,195 | WARNING | inventory-api | POST /api/v1/batches/ | 400 | Product with ID 999999 does not exist.
+2026-07-27 15:30:12,195 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 400 | 0.006s
+2026-07-27 15:30:12,195 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 400 Bad Request"
+2026-07-27 15:30:15,210 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:30:15,416 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.206s
+2026-07-27 15:30:15,417 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:30:15,457 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:30:15,464 | WARNING | inventory-api | POST /api/v1/batches/ | 400 | Supplier with ID 999999 does not exist.
+2026-07-27 15:30:15,464 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 400 | 0.007s
+2026-07-27 15:30:15,464 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 400 Bad Request"
+2026-07-27 15:30:18,375 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:30:18,591 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.216s
+2026-07-27 15:30:18,591 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:30:18,625 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:30:18,628 | WARNING | inventory-api | POST /api/v1/batches/ | Validation Error | [{'type': 'greater_than', 'loc': ('body', 'initial_quantity'), 'msg': 'Input should be greater than 0', 'input': -5, 'ctx': {'gt': 0}}, {'type': 'greater_than', 'loc': ('body', 'cost_price'), 'msg': 'Input should be greater than 0', 'input': '-1.00', 'ctx': {'gt': Decimal('0')}}]
+2026-07-27 15:30:18,629 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 422 | 0.004s
+2026-07-27 15:30:18,629 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 422 Unprocessable Entity"
+2026-07-27 15:30:21,365 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:30:21,593 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.228s
+2026-07-27 15:30:21,593 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:30:22,455 | INFO | inventory-api | Request started | GET /api/v1/batches/
+2026-07-27 15:30:22,464 | INFO | inventory-api | Request finished | GET /api/v1/batches/ | Status 200 | 0.009s
+2026-07-27 15:30:22,465 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/ "HTTP/1.1 200 OK"
+2026-07-27 15:30:25,188 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:30:25,386 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.198s
+2026-07-27 15:30:25,387 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:30:26,805 | INFO | inventory-api | Request started | GET /api/v1/batches/
+2026-07-27 15:30:26,811 | INFO | inventory-api | Request finished | GET /api/v1/batches/ | Status 200 | 0.007s
+2026-07-27 15:30:26,812 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/?skip=2&limit=2 "HTTP/1.1 200 OK"
+2026-07-27 15:30:29,615 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:30:29,871 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.256s
+2026-07-27 15:30:29,872 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:30:30,793 | INFO | inventory-api | Request started | GET /api/v1/batches/
+2026-07-27 15:30:30,802 | INFO | inventory-api | Request finished | GET /api/v1/batches/ | Status 200 | 0.009s
+2026-07-27 15:30:30,803 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/?sort=cost_price&order=asc "HTTP/1.1 200 OK"
+2026-07-27 15:30:33,877 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:30:34,076 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.199s
+2026-07-27 15:30:34,077 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:30:34,079 | INFO | inventory-api | Request started | GET /api/v1/batches/
+2026-07-27 15:30:34,083 | WARNING | inventory-api | GET /api/v1/batches/ | 400 | Invalid sort field. Allowed values: received_date, expiration_date, current_quantity, cost_price, selling_price
+2026-07-27 15:30:34,084 | INFO | inventory-api | Request finished | GET /api/v1/batches/ | Status 400 | 0.004s
+2026-07-27 15:30:34,084 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/?sort=invalid_field "HTTP/1.1 400 Bad Request"
+2026-07-27 15:30:36,902 | INFO | inventory-api | Request started | GET /api/v1/batches/
+2026-07-27 15:30:36,904 | WARNING | inventory-api | GET /api/v1/batches/ | 401 | Not authenticated
+2026-07-27 15:30:36,904 | INFO | inventory-api | Request finished | GET /api/v1/batches/ | Status 401 | 0.002s
+2026-07-27 15:30:36,904 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/ "HTTP/1.1 401 Unauthorized"
+2026-07-27 15:30:39,741 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:30:39,942 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.201s
+2026-07-27 15:30:39,943 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:30:40,225 | INFO | inventory-api | Request started | GET /api/v1/batches/1
+2026-07-27 15:30:40,231 | INFO | inventory-api | Request finished | GET /api/v1/batches/1 | Status 200 | 0.006s
+2026-07-27 15:30:40,232 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/1 "HTTP/1.1 200 OK"
+2026-07-27 15:30:43,303 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:30:43,500 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.197s
+2026-07-27 15:30:43,501 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:30:43,502 | INFO | inventory-api | Request started | GET /api/v1/batches/999999
+2026-07-27 15:30:43,508 | WARNING | inventory-api | GET /api/v1/batches/999999 | 404 | Inventory batch not found.
+2026-07-27 15:30:43,508 | INFO | inventory-api | Request finished | GET /api/v1/batches/999999 | Status 404 | 0.006s
+2026-07-27 15:30:43,508 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/999999 "HTTP/1.1 404 Not Found"
+2026-07-27 15:30:46,558 | INFO | inventory-api | Request started | GET /api/v1/batches/1
+2026-07-27 15:30:46,559 | WARNING | inventory-api | GET /api/v1/batches/1 | 401 | Not authenticated
+2026-07-27 15:30:46,560 | INFO | inventory-api | Request finished | GET /api/v1/batches/1 | Status 401 | 0.002s
+2026-07-27 15:30:46,560 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/1 "HTTP/1.1 401 Unauthorized"
+2026-07-27 15:30:49,763 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:30:49,971 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.208s
+2026-07-27 15:30:49,972 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:30:50,019 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-27 15:30:50,041 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 201 | 0.022s
+2026-07-27 15:30:50,042 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 201 Created"
+2026-07-27 15:30:50,042 | INFO | inventory-api | Request started | DELETE /api/v1/batches/1
+2026-07-27 15:30:50,069 | INFO | inventory-api | Request finished | DELETE /api/v1/batches/1 | Status 200 | 0.027s
+2026-07-27 15:30:50,069 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/batches/1 "HTTP/1.1 200 OK"
+2026-07-27 15:30:52,750 | INFO | inventory-api | Request started | DELETE /api/v1/batches/1
+2026-07-27 15:30:52,752 | WARNING | inventory-api | DELETE /api/v1/batches/1 | 401 | Not authenticated
+2026-07-27 15:30:52,753 | INFO | inventory-api | Request finished | DELETE /api/v1/batches/1 | Status 401 | 0.002s
+2026-07-27 15:30:52,753 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/batches/1 "HTTP/1.1 401 Unauthorized"
+2026-07-27 15:30:55,619 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:30:55,825 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-07-27 15:30:55,826 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:30:55,828 | INFO | inventory-api | Request started | DELETE /api/v1/batches/1
+2026-07-27 15:30:55,832 | WARNING | inventory-api | DELETE /api/v1/batches/1 | 403 | Administrator privileges required.
+2026-07-27 15:30:55,833 | INFO | inventory-api | Request finished | DELETE /api/v1/batches/1 | Status 403 | 0.005s
+2026-07-27 15:30:55,833 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/batches/1 "HTTP/1.1 403 Forbidden"
+2026-07-27 15:30:58,831 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:30:59,035 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.205s
+2026-07-27 15:30:59,036 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:30:59,037 | INFO | inventory-api | Request started | DELETE /api/v1/batches/999999
+2026-07-27 15:30:59,043 | WARNING | inventory-api | DELETE /api/v1/batches/999999 | 404 | Inventory batch not found.
+2026-07-27 15:30:59,044 | INFO | inventory-api | Request finished | DELETE /api/v1/batches/999999 | Status 404 | 0.006s
+2026-07-27 15:30:59,044 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/batches/999999 "HTTP/1.1 404 Not Found"
+2026-07-27 15:31:01,904 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-27 15:31:02,101 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.197s
+2026-07-27 15:31:02,102 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-27 15:31:02,104 | INFO | inventory-api | Request started | DELETE /api/v1/batches/0
+2026-07-27 15:31:02,108 | WARNING | inventory-api | DELETE /api/v1/batches/0 | Validation Error | [{'type': 'greater_than', 'loc': ('path', 'batch_id'), 'msg': 'Input should be greater than 0', 'input': '0', 'ctx': {'gt': 0}}]
+2026-07-27 15:31:02,108 | INFO | inventory-api | Request finished | DELETE /api/v1/batches/0 | Status 422 | 0.004s
+2026-07-27 15:31:02,108 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/batches/0 "HTTP/1.1 422 Unprocessable Entity"
