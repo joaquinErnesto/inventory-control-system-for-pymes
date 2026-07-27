@@ -110,7 +110,7 @@ class InventoryBatch(Base):
     created_by_user = relationship("User", back_populates="batches_created")
     sale_items = relationship("SaleItem", back_populates="batch")
     loss_logs = relationship("LossLog", back_populates="batch")
-    transactions = relationship("InventoryTransaction", back_populates="batch")
+    transactions = relationship("InventoryTransaction", back_populates="batch", cascade="all, delete-orphan", passive_deletes=True)
 
 
 # 7. Sales Table
@@ -173,7 +173,7 @@ class InventoryTransaction(Base):
 
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     product_id = Column(Integer, ForeignKey("products.id", ondelete="RESTRICT"), nullable=False)
-    batch_id = Column(Integer, ForeignKey("inventory_batches.id", ondelete="RESTRICT"), nullable=False)
+    batch_id = Column(Integer, ForeignKey("inventory_batches.id", ondelete="CASCADE"), nullable=False)
     user_id = Column(Integer, ForeignKey("users.id", ondelete="RESTRICT"), nullable=False)
     quantity_changed = Column(Integer, nullable=False)
     transaction_type = Column(String(20), nullable=False) # 'IN', 'OUT', 'LOSS', 'ADJUSTMENT'

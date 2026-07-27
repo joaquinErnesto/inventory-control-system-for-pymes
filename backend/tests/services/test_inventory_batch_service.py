@@ -8,12 +8,13 @@ from fastapi import HTTPException
 
 from app.models.core import (
     InventoryTransaction,
-    InventoryBatch,
-    Product
+    InventoryBatch
 )
-from app.schemas.core import InventoryBatchCreate, TransactionType
+from app.schemas.core import InventoryBatchCreate, TransactionType, SortOrder
 from app.services.inventory_batch_service import (
     receive_inventory_batch,
+    get_inventory_batch_by_id,
+    list_inventory_batches
 )
 
 
@@ -219,3 +220,320 @@ def test_receive_inventory_batch_invalid_supplier(
         db.query(InventoryTransaction).count()
         == 0
     )
+    
+
+# ==================================================
+# GET INVENTORY BATCH BY ID SUCCESS
+# ==================================================
+
+def test_get_inventory_batch_by_id_success(
+    db,
+    inventory_batch_factory,
+):
+    """
+    Should return the requested inventory batch.
+    """
+
+    #
+    # Arrange
+    #
+
+    batch = inventory_batch_factory()
+
+    #
+    # Act
+    #
+
+    result = get_inventory_batch_by_id(
+        db=db,
+        batch_id=batch.id,
+    )
+
+    #
+    # Assert
+    #
+
+    assert result.id == batch.id
+
+    assert result.product_id == batch.product_id
+
+    assert result.supplier_id == batch.supplier_id
+
+    assert result.batch_number == batch.batch_number
+
+    assert result.initial_quantity == batch.initial_quantity
+
+    assert result.current_quantity == batch.current_quantity
+
+    assert result.cost_price == batch.cost_price
+
+    assert result.selling_price == batch.selling_price
+
+
+# ==================================================
+# GET INVENTORY BATCH BY ID NOT FOUND
+# ==================================================
+
+def test_get_inventory_batch_by_id_not_found(
+    db,
+):
+    """
+    Should raise an HTTPException when
+    the inventory batch does not exist.
+    """
+
+    #
+    # Arrange
+    #
+
+    NON_EXISTENT_BATCH_ID = 999999
+
+    #
+    # Act / Assert
+    #
+
+    with pytest.raises(HTTPException) as exc:
+
+        get_inventory_batch_by_id(
+            db=db,
+            batch_id=NON_EXISTENT_BATCH_ID,
+        )
+
+    #
+    # Assert
+    #
+
+    assert exc.value.status_code == 404
+
+    assert (
+        exc.value.detail
+        == "Inventory batch not found."
+    )
+    
+
+# ==================================================
+# LIST INVENTORY BATCHES SORT BY COST PRICE
+# ==================================================
+
+def test_list_inventory_batches_sort_by_cost_price(
+    db,
+    inventory_batch_factory,
+):
+    """
+    Should return batches ordered by cost price ascending.
+    """
+
+    #
+    # Arrange
+    #
+
+    inventory_batch_factory(
+        cost_price=Decimal("30.00"),
+    )
+
+    inventory_batch_factory(
+        cost_price=Decimal("10.00"),
+    )
+
+    inventory_batch_factory(
+        cost_price=Decimal("20.00"),
+    )
+
+    #
+    # Act
+    #
+
+    batches, pagination = list_inventory_batches(
+        db=db,
+        skip=0,
+        limit=10,
+        sort="cost_price",
+        order=SortOrder.ASC,
+    )
+
+    #
+    # Assert
+    #
+
+    assert len(batches) == 3
+
+    assert batches[0].cost_price == Decimal("10.00")
+    assert batches[1].cost_price == Decimal("20.00")
+    assert batches[2].cost_price == Decimal("30.00")
+
+
+# ==================================================
+# LIST INVENTORY BATCHES SORT DESCENDING
+# ==================================================
+
+def test_list_inventory_batches_sort_desc(
+    db,
+    inventory_batch_factory,
+):
+    """
+    Should return batches ordered by cost price descending.
+    """
+
+    #
+    # Arrange
+    #
+
+    inventory_batch_factory(
+        cost_price=Decimal("30.00"),
+    )
+
+    inventory_batch_factory(
+        cost_price=Decimal("10.00"),
+    )
+
+    inventory_batch_factory(
+        cost_price=Decimal("20.00"),
+    )
+
+    #
+    # Act
+    #
+
+    batches, pagination = list_inventory_batches(
+        db=db,
+        skip=0,
+        limit=10,
+        sort="cost_price",
+        order=SortOrder.DESC,
+    )
+
+    #
+    # Assert
+    #
+
+    assert len(batches) == 3
+
+    assert batches[0].cost_price == Decimal("30.00")
+    assert batches[1].cost_price == Decimal("20.00")
+    assert batches[2].cost_price == Decimal("10.00")
+
+
+# ==================================================
+# LIST INVENTORY BATCHES PAGINATION
+# ==================================================
+
+def test_list_inventory_batches_pagination(
+    db,
+    inventory_batch_factory,
+):
+    """
+    Should paginate inventory batches correctly.
+    """
+
+    #
+    # Arrange
+    #
+
+    for _ in range(5):
+        inventory_batch_factory()
+
+    #
+    # Act
+    #
+
+    batches, pagination = list_inventory_batches(
+        db=db,
+        skip=2,
+        limit=2,
+        sort="received_date",
+        order=SortOrder.DESC,
+    )
+
+    #
+    # Assert
+    #
+
+    assert len(batches) == 2
+
+    assert pagination.total_items == 5
+    assert pagination.page == 2
+    assert pagination.page_size == 2
+    assert pagination.total_pages == 3
+    assert pagination.has_previous is True
+    assert pagination.has_next is True
+        
+
+# ==================================================
+# LIST INVENTORY BATCHES INVALID SORT FIELD
+# ==================================================
+
+def test_list_inventory_batches_invalid_sort_field(
+    db,
+):
+    """
+    Should raise an HTTPException when
+    an invalid sort field is requested.
+    """
+
+    #
+    # Act / Assert
+    #
+
+    with pytest.raises(HTTPException) as exc:
+
+        list_inventory_batches(
+            db=db,
+            skip=0,
+            limit=10,
+            sort="invalid_field",
+            order=SortOrder.ASC,
+        )
+
+    #
+    # Assert
+    #
+
+    assert exc.value.status_code == 400
+
+    assert "Invalid sort field." in exc.value.detail
+    
+    
+# ==================================================
+# LIST INVENTORY BATCHES DEFAULT ORDER
+# ==================================================
+
+def test_list_inventory_batches_default_order(
+    db,
+    inventory_batch_factory,
+):
+    """
+    Should return batches ordered by received_date descending.
+    """
+
+    #
+    # Arrange
+    #
+
+    inventory_batch_factory()
+    inventory_batch_factory()
+    inventory_batch_factory()
+
+    #
+    # Act
+    #
+
+    batches, pagination = list_inventory_batches(
+        db=db,
+        skip=0,
+        limit=10,
+        sort="received_date",
+        order=SortOrder.DESC,
+    )
+
+    #
+    # Assert
+    #
+
+    assert len(batches) == 3
+
+    assert pagination.total_items == 3
+    assert pagination.page == 1
+    assert pagination.page_size == 10
+    assert pagination.total_pages == 1
+    assert pagination.has_previous is False
+    assert pagination.has_next is False

@@ -290,3 +290,87 @@ def test_delete_inventory_batch_with_extra_transaction(
         exc.value.detail
         == "Cannot delete a batch because inventory transactions exist."
     )
+    
+
+# ====================================================
+# DELETE INVENTORY BATCH WITH ONLY INITIAL TRANSACTION
+# ====================================================
+
+def test_delete_inventory_batch_only_initial_transaction(
+    db,
+    user_factory,
+    product_factory,
+    supplier_factory,
+):
+    """
+    Should allow deleting a batch when the only
+    inventory transaction is the automatically
+    created initial IN transaction.
+    """
+
+    #
+    # Arrange
+    #
+
+    admin = user_factory(role="admin")
+
+    product = product_factory()
+
+    supplier = supplier_factory()
+
+    batch = receive_inventory_batch(
+        db=db,
+        current_user=admin,
+        batch=InventoryBatchCreate(
+            product_id=product.id,
+            supplier_id=supplier.id,
+            batch_number="INITIAL-001",
+            initial_quantity=100,
+            cost_price=Decimal("5.00"),
+            selling_price=Decimal("8.00"),
+        ),
+    )
+
+    #
+    # Verify exactly one transaction exists
+    #
+
+    assert len(batch.transactions) == 1
+
+    transaction = batch.transactions[0]
+
+    assert transaction.transaction_type == TransactionType.IN.value
+    assert transaction.quantity_changed == 100
+
+    #
+    # Act
+    #
+
+    delete_inventory_batch(
+        db=db,
+        batch_id=batch.id,
+    )
+
+    #
+    # Assert
+    #
+
+    assert (
+        db.query(InventoryBatch)
+        .filter(InventoryBatch.id == batch.id)
+        .first()
+        is None
+    )
+
+    #
+    # Cascade should delete the initial transaction
+    #
+
+    assert (
+        db.query(InventoryTransaction)
+        .filter(
+            InventoryTransaction.batch_id == batch.id
+        )
+        .count()
+        == 0
+    )

@@ -1,3 +1,5 @@
+import uuid
+
 import pytest
 
 from app.models.core import Category
@@ -22,10 +24,13 @@ def category_factory(db):
     created_categories = []
 
     def factory(
-        name: str = "Test Category",
+        name: str | None = None,
         description: str | None = "Category created for testing.",
     ) -> Category:
 
+        if name is None :
+            name = f"Test Category {uuid.uuid4().hex[:8]}"
+        
         category = Category(
             name=name,
             description=description,

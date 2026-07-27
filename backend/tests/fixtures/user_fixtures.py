@@ -1,3 +1,5 @@
+import uuid
+
 import pytest
 
 from app.models.core import User
@@ -27,11 +29,14 @@ def user_factory(db):
     """
 
     def factory(
-        username: str = "test_user",
+        username: str | None = None,
         password: str = "password123",
         role: str = "employee",
     ) -> User:
 
+        if username is None :
+            username = f"test_user_{uuid.uuid4().hex}"
+            
         user = User(
             username=username,
             password_hash=get_password_hash(password),

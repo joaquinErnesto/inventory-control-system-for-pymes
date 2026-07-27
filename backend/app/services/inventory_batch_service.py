@@ -3,7 +3,9 @@ from sqlalchemy.orm import Session, Query
 from fastapi import HTTPException
 
 from app.models import core as models
+
 from app.schemas import core as schemas
+from app.schemas.responses import PaginationMeta
 
 from app.utils.query_sorting import apply_sorting
 from app.utils.pagination import paginate
@@ -127,7 +129,7 @@ def list_inventory_batches(
     limit: int,
     sort: str,
     order: schemas.SortOrder,
-):
+) -> tuple[list[models.InventoryBatch], PaginationMeta]:
     allowed_sort_fields = {
         "received_date": models.InventoryBatch.received_date,
         "expiration_date": models.InventoryBatch.expiration_date,
