@@ -40,7 +40,7 @@ def inventory_transaction_factory(
         batch=None,
         user=None,
         quantity_changed: int = 100,
-        transaction_type: str = TransactionType.IN.value,
+        transaction_type: TransactionType | str = TransactionType.IN.value,
         sale=None,
         loss=None,
         notes: str = "Test inventory transaction.",

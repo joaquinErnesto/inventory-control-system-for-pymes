@@ -25,6 +25,7 @@ from tests.fixtures.inventory_transaction_fixtures import *
 from tests.fixtures.sale_fixtures import *
 from tests.fixtures.sale_item_fixtures import *
 from tests.fixtures.api_fixtures import *
+from tests.fixtures.report_fixtures import *
 
 
 # ==================================================

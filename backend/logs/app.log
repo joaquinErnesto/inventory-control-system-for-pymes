@@ -2151,3 +2151,358 @@ fastapi.exceptions.ResponseValidationError: 1 validation error:
 2026-07-28 21:44:43,114 | WARNING | inventory-api | GET /api/v1/losses/1 | 401 | Could not validate credentials.
 2026-07-28 21:44:43,114 | INFO | inventory-api | Request finished | GET /api/v1/losses/1 | Status 401 | 0.041s
 2026-07-28 21:44:43,115 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/1 "HTTP/1.1 401 Unauthorized"
+2026-07-29 08:06:59,991 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 08:07:00,226 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.235s
+2026-07-29 08:07:00,227 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 08:07:00,831 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 08:07:00,876 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 200 | 0.045s
+2026-07-29 08:07:00,877 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 200 OK"
+2026-07-29 08:07:03,470 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 08:07:03,472 | WARNING | inventory-api | GET /api/v1/reports/low-stock | 401 | Not authenticated
+2026-07-29 08:07:03,473 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 401 | 0.005s
+2026-07-29 08:07:03,473 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 401 Unauthorized"
+2026-07-29 08:07:06,192 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 08:07:06,397 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.205s
+2026-07-29 08:07:06,398 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 08:07:06,400 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 08:07:06,404 | WARNING | inventory-api | GET /api/v1/reports/low-stock | 403 | Only administrators can access reports.
+2026-07-29 08:07:06,404 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 403 | 0.005s
+2026-07-29 08:07:06,405 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 403 Forbidden"
+2026-07-29 08:07:09,291 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 08:07:09,498 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-07-29 08:07:09,499 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 08:07:09,500 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 08:07:09,508 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 200 | 0.007s
+2026-07-29 08:07:09,508 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 200 OK"
+2026-07-29 08:07:12,488 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 08:07:12,700 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.211s
+2026-07-29 08:07:12,700 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 08:07:13,281 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 08:07:13,285 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 200 | 0.004s
+2026-07-29 08:07:13,286 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 200 OK"
+2026-07-29 08:17:22,253 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 08:17:22,475 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.223s
+2026-07-29 08:17:22,477 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 08:17:23,017 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 08:17:23,069 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 200 | 0.053s
+2026-07-29 08:17:23,070 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 200 OK"
+2026-07-29 08:17:25,694 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 08:17:25,696 | WARNING | inventory-api | GET /api/v1/reports/low-stock | 401 | Not authenticated
+2026-07-29 08:17:25,696 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 401 | 0.002s
+2026-07-29 08:17:25,697 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 401 Unauthorized"
+2026-07-29 08:17:28,397 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 08:17:28,599 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.203s
+2026-07-29 08:17:28,600 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 08:17:28,601 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 08:17:28,605 | WARNING | inventory-api | GET /api/v1/reports/low-stock | 403 | Only administrators can access reports.
+2026-07-29 08:17:28,605 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 403 | 0.004s
+2026-07-29 08:17:28,606 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 403 Forbidden"
+2026-07-29 08:17:31,522 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 08:17:31,741 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.218s
+2026-07-29 08:17:31,741 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 08:17:31,743 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 08:17:31,752 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 200 | 0.009s
+2026-07-29 08:17:31,753 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 200 OK"
+2026-07-29 08:17:34,464 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 08:17:34,679 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.215s
+2026-07-29 08:17:34,680 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 08:17:35,272 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 08:17:35,279 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 200 | 0.006s
+2026-07-29 08:17:35,279 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 200 OK"
+2026-07-29 08:18:36,881 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 08:18:37,099 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.218s
+2026-07-29 08:18:37,100 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 08:18:37,671 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 08:18:37,714 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 200 | 0.043s
+2026-07-29 08:18:37,714 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 200 OK"
+2026-07-29 08:44:03,450 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 08:44:03,696 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.246s
+2026-07-29 08:44:03,697 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 08:44:04,359 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 08:44:04,421 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 200 | 0.062s
+2026-07-29 08:44:04,422 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 200 OK"
+2026-07-29 09:03:11,303 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 09:03:11,544 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.240s
+2026-07-29 09:03:11,545 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 09:03:12,213 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 09:03:12,262 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 200 | 0.049s
+2026-07-29 09:03:12,263 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 200 OK"
+2026-07-29 09:10:47,179 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 09:10:47,420 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.242s
+2026-07-29 09:10:47,422 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 09:10:48,099 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 09:10:48,155 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 200 | 0.056s
+2026-07-29 09:10:48,156 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 200 OK"
+2026-07-29 09:15:17,287 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 09:15:17,505 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.218s
+2026-07-29 09:15:17,506 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 09:15:18,082 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 09:15:18,129 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 200 | 0.047s
+2026-07-29 09:15:18,130 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 200 OK"
+2026-07-29 09:15:20,505 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 09:15:20,507 | WARNING | inventory-api | GET /api/v1/reports/low-stock | 401 | Not authenticated
+2026-07-29 09:15:20,507 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 401 | 0.002s
+2026-07-29 09:15:20,507 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 401 Unauthorized"
+2026-07-29 09:15:23,376 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 09:15:23,590 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.214s
+2026-07-29 09:15:23,591 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 09:15:23,592 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 09:15:23,596 | WARNING | inventory-api | GET /api/v1/reports/low-stock | 403 | Only administrators can access reports.
+2026-07-29 09:15:23,596 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 403 | 0.004s
+2026-07-29 09:15:23,597 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 403 Forbidden"
+2026-07-29 09:15:26,400 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 09:15:26,596 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.196s
+2026-07-29 09:15:26,597 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 09:15:26,599 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 09:15:26,606 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 200 | 0.007s
+2026-07-29 09:15:26,606 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 200 OK"
+2026-07-29 09:15:29,518 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 09:15:29,714 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.196s
+2026-07-29 09:15:29,715 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 09:15:30,287 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 09:15:30,291 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 200 | 0.004s
+2026-07-29 09:15:30,292 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 200 OK"
+2026-07-29 09:15:33,280 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 09:15:33,478 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.198s
+2026-07-29 09:15:33,479 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 09:15:34,002 | INFO | inventory-api | Request started | GET /api/v1/reports/batch-audit/1
+2026-07-29 09:15:34,014 | INFO | inventory-api | Request finished | GET /api/v1/reports/batch-audit/1 | Status 200 | 0.012s
+2026-07-29 09:15:34,014 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/batch-audit/1 "HTTP/1.1 200 OK"
+2026-07-29 09:15:37,103 | INFO | inventory-api | Request started | GET /api/v1/reports/batch-audit/1
+2026-07-29 09:15:37,105 | WARNING | inventory-api | GET /api/v1/reports/batch-audit/1 | 401 | Not authenticated
+2026-07-29 09:15:37,105 | INFO | inventory-api | Request finished | GET /api/v1/reports/batch-audit/1 | Status 401 | 0.002s
+2026-07-29 09:15:37,105 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/batch-audit/1 "HTTP/1.1 401 Unauthorized"
+2026-07-29 09:15:39,816 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 09:15:40,024 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.209s
+2026-07-29 09:15:40,025 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 09:15:40,551 | INFO | inventory-api | Request started | GET /api/v1/reports/batch-audit/1
+2026-07-29 09:15:40,553 | WARNING | inventory-api | GET /api/v1/reports/batch-audit/1 | 403 | Only administrators can access reports.
+2026-07-29 09:15:40,553 | INFO | inventory-api | Request finished | GET /api/v1/reports/batch-audit/1 | Status 403 | 0.003s
+2026-07-29 09:15:40,554 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/batch-audit/1 "HTTP/1.1 403 Forbidden"
+2026-07-29 09:15:43,400 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 09:15:43,597 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.196s
+2026-07-29 09:15:43,597 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 09:15:43,599 | INFO | inventory-api | Request started | GET /api/v1/reports/batch-audit/999999
+2026-07-29 09:15:43,605 | WARNING | inventory-api | GET /api/v1/reports/batch-audit/999999 | 404 | Batch not found.
+2026-07-29 09:15:43,605 | INFO | inventory-api | Request finished | GET /api/v1/reports/batch-audit/999999 | Status 404 | 0.006s
+2026-07-29 09:15:43,605 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/batch-audit/999999 "HTTP/1.1 404 Not Found"
+2026-07-29 09:15:46,838 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 09:15:47,045 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-07-29 09:15:47,046 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 09:15:47,585 | INFO | inventory-api | Request started | GET /api/v1/reports/batch-audit/1
+2026-07-29 09:15:47,593 | INFO | inventory-api | Request finished | GET /api/v1/reports/batch-audit/1 | Status 200 | 0.009s
+2026-07-29 09:15:47,594 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/batch-audit/1 "HTTP/1.1 200 OK"
+2026-07-29 09:18:48,730 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 09:18:48,954 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.223s
+2026-07-29 09:18:48,955 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 09:18:49,568 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 09:18:49,615 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 200 | 0.047s
+2026-07-29 09:18:49,616 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 200 OK"
+2026-07-29 09:18:52,203 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 09:18:52,205 | WARNING | inventory-api | GET /api/v1/reports/low-stock | 401 | Not authenticated
+2026-07-29 09:18:52,205 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 401 | 0.002s
+2026-07-29 09:18:52,206 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 401 Unauthorized"
+2026-07-29 09:18:55,065 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 09:18:55,270 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.205s
+2026-07-29 09:18:55,271 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 09:18:55,272 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 09:18:55,276 | WARNING | inventory-api | GET /api/v1/reports/low-stock | 403 | Only administrators can access reports.
+2026-07-29 09:18:55,276 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 403 | 0.004s
+2026-07-29 09:18:55,277 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 403 Forbidden"
+2026-07-29 09:18:58,087 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 09:18:58,291 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.204s
+2026-07-29 09:18:58,292 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 09:18:58,293 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 09:18:58,299 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 200 | 0.006s
+2026-07-29 09:18:58,300 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 200 OK"
+2026-07-29 09:19:01,239 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 09:19:01,443 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.204s
+2026-07-29 09:19:01,443 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 09:19:02,012 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 09:19:02,016 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 200 | 0.004s
+2026-07-29 09:19:02,017 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 200 OK"
+2026-07-29 09:19:05,166 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 09:19:05,376 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.210s
+2026-07-29 09:19:05,377 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 09:19:05,884 | INFO | inventory-api | Request started | GET /api/v1/reports/batch-audit/1
+2026-07-29 09:19:05,893 | INFO | inventory-api | Request finished | GET /api/v1/reports/batch-audit/1 | Status 200 | 0.009s
+2026-07-29 09:19:05,894 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/batch-audit/1 "HTTP/1.1 200 OK"
+2026-07-29 09:19:09,154 | INFO | inventory-api | Request started | GET /api/v1/reports/batch-audit/1
+2026-07-29 09:19:09,155 | WARNING | inventory-api | GET /api/v1/reports/batch-audit/1 | 401 | Not authenticated
+2026-07-29 09:19:09,155 | INFO | inventory-api | Request finished | GET /api/v1/reports/batch-audit/1 | Status 401 | 0.002s
+2026-07-29 09:19:09,156 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/batch-audit/1 "HTTP/1.1 401 Unauthorized"
+2026-07-29 09:19:11,863 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 09:19:12,072 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.209s
+2026-07-29 09:19:12,072 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 09:19:12,597 | INFO | inventory-api | Request started | GET /api/v1/reports/batch-audit/1
+2026-07-29 09:19:12,600 | WARNING | inventory-api | GET /api/v1/reports/batch-audit/1 | 403 | Only administrators can access reports.
+2026-07-29 09:19:12,600 | INFO | inventory-api | Request finished | GET /api/v1/reports/batch-audit/1 | Status 403 | 0.004s
+2026-07-29 09:19:12,601 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/batch-audit/1 "HTTP/1.1 403 Forbidden"
+2026-07-29 09:19:15,723 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 09:19:15,929 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.206s
+2026-07-29 09:19:15,930 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 09:19:15,931 | INFO | inventory-api | Request started | GET /api/v1/reports/batch-audit/999999
+2026-07-29 09:19:15,936 | WARNING | inventory-api | GET /api/v1/reports/batch-audit/999999 | 404 | Batch not found.
+2026-07-29 09:19:15,937 | INFO | inventory-api | Request finished | GET /api/v1/reports/batch-audit/999999 | Status 404 | 0.006s
+2026-07-29 09:19:15,937 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/batch-audit/999999 "HTTP/1.1 404 Not Found"
+2026-07-29 09:19:18,896 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 09:19:19,108 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.212s
+2026-07-29 09:19:19,109 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 09:19:19,632 | INFO | inventory-api | Request started | GET /api/v1/reports/batch-audit/1
+2026-07-29 09:19:19,639 | INFO | inventory-api | Request finished | GET /api/v1/reports/batch-audit/1 | Status 200 | 0.007s
+2026-07-29 09:19:19,640 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/batch-audit/1 "HTTP/1.1 200 OK"
+2026-07-29 09:19:22,561 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 09:19:22,759 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.198s
+2026-07-29 09:19:22,760 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 09:19:23,522 | INFO | inventory-api | Request started | GET /api/v1/reports/sales-performance
+2026-07-29 09:19:23,532 | INFO | inventory-api | Request finished | GET /api/v1/reports/sales-performance | Status 200 | 0.010s
+2026-07-29 09:19:23,533 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/sales-performance?start_date=2026-07-28T13%3A19%3A23.522004&end_date=2026-07-30T13%3A19%3A23.522014 "HTTP/1.1 200 OK"
+2026-07-29 09:19:26,380 | INFO | inventory-api | Request started | GET /api/v1/reports/sales-performance
+2026-07-29 09:19:26,382 | WARNING | inventory-api | GET /api/v1/reports/sales-performance | 401 | Not authenticated
+2026-07-29 09:19:26,382 | INFO | inventory-api | Request finished | GET /api/v1/reports/sales-performance | Status 401 | 0.002s
+2026-07-29 09:19:26,382 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/sales-performance?start_date=2026-07-28T13%3A19%3A26.379512&end_date=2026-07-30T13%3A19%3A26.379522 "HTTP/1.1 401 Unauthorized"
+2026-07-29 09:19:29,210 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 09:19:29,406 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.196s
+2026-07-29 09:19:29,407 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 09:19:29,409 | INFO | inventory-api | Request started | GET /api/v1/reports/sales-performance
+2026-07-29 09:19:29,412 | WARNING | inventory-api | GET /api/v1/reports/sales-performance | 403 | Only administrators can access reports.
+2026-07-29 09:19:29,413 | INFO | inventory-api | Request finished | GET /api/v1/reports/sales-performance | Status 403 | 0.004s
+2026-07-29 09:19:29,413 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/sales-performance?start_date=2026-07-28T13%3A19%3A29.408298&end_date=2026-07-30T13%3A19%3A29.408310 "HTTP/1.1 403 Forbidden"
+2026-07-29 09:19:32,508 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 09:19:32,710 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.202s
+2026-07-29 09:19:32,710 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 09:19:32,712 | INFO | inventory-api | Request started | GET /api/v1/reports/sales-performance
+2026-07-29 09:19:32,716 | WARNING | inventory-api | GET /api/v1/reports/sales-performance | 400 | start_date must be earlier than end_date.
+2026-07-29 09:19:32,717 | INFO | inventory-api | Request finished | GET /api/v1/reports/sales-performance | Status 400 | 0.005s
+2026-07-29 09:19:32,717 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/sales-performance?start_date=2026-08-03T13%3A19%3A32.711520&end_date=2026-07-29T13%3A19%3A32.711527 "HTTP/1.1 400 Bad Request"
+2026-07-29 09:19:35,853 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 09:19:36,058 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.205s
+2026-07-29 09:19:36,059 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 09:19:36,061 | INFO | inventory-api | Request started | GET /api/v1/reports/sales-performance
+2026-07-29 09:19:36,068 | INFO | inventory-api | Request finished | GET /api/v1/reports/sales-performance | Status 200 | 0.007s
+2026-07-29 09:19:36,069 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/sales-performance?start_date=2000-01-01T00%3A00%3A00&end_date=2000-01-02T00%3A00%3A00 "HTTP/1.1 200 OK"
+2026-07-29 10:06:33,852 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 10:06:34,089 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.238s
+2026-07-29 10:06:34,090 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 10:06:34,783 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 10:06:34,837 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 200 | 0.054s
+2026-07-29 10:06:34,838 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 200 OK"
+2026-07-29 10:06:37,510 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 10:06:37,511 | WARNING | inventory-api | GET /api/v1/reports/low-stock | 401 | Not authenticated
+2026-07-29 10:06:37,512 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 401 | 0.002s
+2026-07-29 10:06:37,512 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 401 Unauthorized"
+2026-07-29 10:06:40,300 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 10:06:40,496 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.196s
+2026-07-29 10:06:40,497 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 10:06:40,498 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 10:06:40,502 | WARNING | inventory-api | GET /api/v1/reports/low-stock | 403 | Only administrators can access reports.
+2026-07-29 10:06:40,502 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 403 | 0.004s
+2026-07-29 10:06:40,503 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 403 Forbidden"
+2026-07-29 10:06:43,381 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 10:06:43,578 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.197s
+2026-07-29 10:06:43,579 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 10:06:43,581 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 10:06:43,587 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 200 | 0.006s
+2026-07-29 10:06:43,587 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 200 OK"
+2026-07-29 10:06:46,615 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 10:06:46,824 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.209s
+2026-07-29 10:06:46,825 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 10:06:47,393 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 10:06:47,398 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 200 | 0.005s
+2026-07-29 10:06:47,399 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 200 OK"
+2026-07-29 10:06:50,154 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 10:06:50,368 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.215s
+2026-07-29 10:06:50,369 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 10:06:50,941 | INFO | inventory-api | Request started | GET /api/v1/reports/batch-audit/1
+2026-07-29 10:06:50,951 | INFO | inventory-api | Request finished | GET /api/v1/reports/batch-audit/1 | Status 200 | 0.010s
+2026-07-29 10:06:50,951 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/batch-audit/1 "HTTP/1.1 200 OK"
+2026-07-29 10:06:54,182 | INFO | inventory-api | Request started | GET /api/v1/reports/batch-audit/1
+2026-07-29 10:06:54,183 | WARNING | inventory-api | GET /api/v1/reports/batch-audit/1 | 401 | Not authenticated
+2026-07-29 10:06:54,184 | INFO | inventory-api | Request finished | GET /api/v1/reports/batch-audit/1 | Status 401 | 0.002s
+2026-07-29 10:06:54,184 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/batch-audit/1 "HTTP/1.1 401 Unauthorized"
+2026-07-29 10:06:56,895 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 10:06:57,115 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.221s
+2026-07-29 10:06:57,116 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 10:06:57,675 | INFO | inventory-api | Request started | GET /api/v1/reports/batch-audit/1
+2026-07-29 10:06:57,678 | WARNING | inventory-api | GET /api/v1/reports/batch-audit/1 | 403 | Only administrators can access reports.
+2026-07-29 10:06:57,678 | INFO | inventory-api | Request finished | GET /api/v1/reports/batch-audit/1 | Status 403 | 0.003s
+2026-07-29 10:06:57,679 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/batch-audit/1 "HTTP/1.1 403 Forbidden"
+2026-07-29 10:07:00,399 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 10:07:00,603 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.204s
+2026-07-29 10:07:00,604 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 10:07:00,605 | INFO | inventory-api | Request started | GET /api/v1/reports/batch-audit/999999
+2026-07-29 10:07:00,611 | WARNING | inventory-api | GET /api/v1/reports/batch-audit/999999 | 404 | Batch not found.
+2026-07-29 10:07:00,611 | INFO | inventory-api | Request finished | GET /api/v1/reports/batch-audit/999999 | Status 404 | 0.006s
+2026-07-29 10:07:00,611 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/batch-audit/999999 "HTTP/1.1 404 Not Found"
+2026-07-29 10:07:03,393 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 10:07:03,648 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.255s
+2026-07-29 10:07:03,649 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 10:07:04,186 | INFO | inventory-api | Request started | GET /api/v1/reports/batch-audit/1
+2026-07-29 10:07:04,191 | INFO | inventory-api | Request finished | GET /api/v1/reports/batch-audit/1 | Status 200 | 0.006s
+2026-07-29 10:07:04,192 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/batch-audit/1 "HTTP/1.1 200 OK"
+2026-07-29 10:07:07,103 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 10:07:07,318 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.214s
+2026-07-29 10:07:07,319 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 10:07:08,095 | INFO | inventory-api | Request started | GET /api/v1/reports/sales-performance
+2026-07-29 10:07:08,106 | INFO | inventory-api | Request finished | GET /api/v1/reports/sales-performance | Status 200 | 0.010s
+2026-07-29 10:07:08,106 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/sales-performance?start_date=2026-07-28T14%3A07%3A08.095051&end_date=2026-07-30T14%3A07%3A08.095062 "HTTP/1.1 200 OK"
+2026-07-29 10:07:10,550 | INFO | inventory-api | Request started | GET /api/v1/reports/sales-performance
+2026-07-29 10:07:10,552 | WARNING | inventory-api | GET /api/v1/reports/sales-performance | 401 | Not authenticated
+2026-07-29 10:07:10,552 | INFO | inventory-api | Request finished | GET /api/v1/reports/sales-performance | Status 401 | 0.002s
+2026-07-29 10:07:10,552 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/sales-performance?start_date=2026-07-28T14%3A07%3A10.549450&end_date=2026-07-30T14%3A07%3A10.549460 "HTTP/1.1 401 Unauthorized"
+2026-07-29 10:07:13,244 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 10:07:13,454 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.210s
+2026-07-29 10:07:13,455 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 10:07:13,456 | INFO | inventory-api | Request started | GET /api/v1/reports/sales-performance
+2026-07-29 10:07:13,459 | WARNING | inventory-api | GET /api/v1/reports/sales-performance | 403 | Only administrators can access reports.
+2026-07-29 10:07:13,459 | INFO | inventory-api | Request finished | GET /api/v1/reports/sales-performance | Status 403 | 0.003s
+2026-07-29 10:07:13,460 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/sales-performance?start_date=2026-07-28T14%3A07%3A13.456086&end_date=2026-07-30T14%3A07%3A13.456094 "HTTP/1.1 403 Forbidden"
+2026-07-29 10:07:16,471 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 10:07:16,687 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.215s
+2026-07-29 10:07:16,687 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 10:07:16,688 | INFO | inventory-api | Request started | GET /api/v1/reports/sales-performance
+2026-07-29 10:07:16,692 | WARNING | inventory-api | GET /api/v1/reports/sales-performance | 400 | start_date must be earlier than end_date.
+2026-07-29 10:07:16,692 | INFO | inventory-api | Request finished | GET /api/v1/reports/sales-performance | Status 400 | 0.004s
+2026-07-29 10:07:16,693 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/sales-performance?start_date=2026-08-03T14%3A07%3A16.688415&end_date=2026-07-29T14%3A07%3A16.688423 "HTTP/1.1 400 Bad Request"
+2026-07-29 10:07:19,544 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 10:07:19,752 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-07-29 10:07:19,752 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 10:07:19,754 | INFO | inventory-api | Request started | GET /api/v1/reports/sales-performance
+2026-07-29 10:07:19,758 | INFO | inventory-api | Request finished | GET /api/v1/reports/sales-performance | Status 200 | 0.004s
+2026-07-29 10:07:19,758 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/sales-performance?start_date=2000-01-01T00%3A00%3A00&end_date=2000-01-02T00%3A00%3A00 "HTTP/1.1 200 OK"
+2026-07-29 10:07:22,468 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 10:07:22,678 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.211s
+2026-07-29 10:07:22,679 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 10:07:22,986 | INFO | inventory-api | Request started | GET /api/v1/reports/expiring-soon
+2026-07-29 10:07:22,993 | INFO | inventory-api | Request finished | GET /api/v1/reports/expiring-soon | Status 200 | 0.007s
+2026-07-29 10:07:22,993 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/expiring-soon "HTTP/1.1 200 OK"
+2026-07-29 10:07:25,712 | INFO | inventory-api | Request started | GET /api/v1/reports/expiring-soon
+2026-07-29 10:07:25,713 | WARNING | inventory-api | GET /api/v1/reports/expiring-soon | 401 | Not authenticated
+2026-07-29 10:07:25,714 | INFO | inventory-api | Request finished | GET /api/v1/reports/expiring-soon | Status 401 | 0.002s
+2026-07-29 10:07:25,714 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/expiring-soon "HTTP/1.1 401 Unauthorized"
+2026-07-29 10:07:28,518 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 10:07:28,724 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-07-29 10:07:28,725 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 10:07:28,726 | INFO | inventory-api | Request started | GET /api/v1/reports/expiring-soon
+2026-07-29 10:07:28,729 | WARNING | inventory-api | GET /api/v1/reports/expiring-soon | 403 | Only administrators can access reports.
+2026-07-29 10:07:28,729 | INFO | inventory-api | Request finished | GET /api/v1/reports/expiring-soon | Status 403 | 0.003s
+2026-07-29 10:07:28,729 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/expiring-soon "HTTP/1.1 403 Forbidden"
+2026-07-29 10:07:31,756 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 10:07:31,960 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.204s
+2026-07-29 10:07:31,961 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 10:07:33,127 | INFO | inventory-api | Request started | GET /api/v1/reports/expiring-soon
+2026-07-29 10:07:33,132 | INFO | inventory-api | Request finished | GET /api/v1/reports/expiring-soon | Status 200 | 0.005s
+2026-07-29 10:07:33,132 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/expiring-soon "HTTP/1.1 200 OK"
+2026-07-29 10:07:36,030 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 10:07:36,238 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.209s
+2026-07-29 10:07:36,239 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 10:07:36,521 | INFO | inventory-api | Request started | GET /api/v1/reports/expiring-soon
+2026-07-29 10:07:36,525 | INFO | inventory-api | Request finished | GET /api/v1/reports/expiring-soon | Status 200 | 0.005s
+2026-07-29 10:07:36,526 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/expiring-soon?days=15 "HTTP/1.1 200 OK"
+2026-07-29 10:07:39,331 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 10:07:39,543 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.212s
+2026-07-29 10:07:39,544 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 10:07:39,546 | INFO | inventory-api | Request started | GET /api/v1/reports/expiring-soon
+2026-07-29 10:07:39,550 | WARNING | inventory-api | GET /api/v1/reports/expiring-soon | Validation Error | [{'type': 'greater_than_equal', 'loc': ('query', 'days'), 'msg': 'Input should be greater than or equal to 1', 'input': '0', 'ctx': {'ge': 1}}]
+2026-07-29 10:07:39,551 | INFO | inventory-api | Request finished | GET /api/v1/reports/expiring-soon | Status 422 | 0.005s
+2026-07-29 10:07:39,551 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/expiring-soon?days=0 "HTTP/1.1 422 Unprocessable Entity"
