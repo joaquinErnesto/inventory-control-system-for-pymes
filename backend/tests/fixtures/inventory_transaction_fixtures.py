@@ -1,5 +1,7 @@
 import pytest
 
+from datetime import datetime
+
 from app.models.core import InventoryTransaction
 from app.schemas.core import TransactionType
 
@@ -40,10 +42,11 @@ def inventory_transaction_factory(
         batch=None,
         user=None,
         quantity_changed: int = 100,
-        transaction_type: TransactionType | str = TransactionType.IN.value,
+        transaction_type: str = TransactionType.IN.value,
         sale=None,
         loss=None,
         notes: str = "Test inventory transaction.",
+        performed_at: datetime | None = None
     ) -> InventoryTransaction:
 
         #
@@ -68,6 +71,7 @@ def inventory_transaction_factory(
             sale_id=sale.id if sale else None,
             loss_id=loss.id if loss else None,
             notes=notes,
+            performed_at = performed_at
         )
 
         db.add(transaction)

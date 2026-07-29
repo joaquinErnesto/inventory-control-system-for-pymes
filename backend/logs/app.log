@@ -2506,3 +2506,1570 @@ fastapi.exceptions.ResponseValidationError: 1 validation error:
 2026-07-29 10:07:39,550 | WARNING | inventory-api | GET /api/v1/reports/expiring-soon | Validation Error | [{'type': 'greater_than_equal', 'loc': ('query', 'days'), 'msg': 'Input should be greater than or equal to 1', 'input': '0', 'ctx': {'ge': 1}}]
 2026-07-29 10:07:39,551 | INFO | inventory-api | Request finished | GET /api/v1/reports/expiring-soon | Status 422 | 0.005s
 2026-07-29 10:07:39,551 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/expiring-soon?days=0 "HTTP/1.1 422 Unprocessable Entity"
+2026-07-29 13:05:47,842 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:05:48,111 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.269s
+2026-07-29 13:05:48,113 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:05:49,307 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:05:49,371 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.064s
+2026-07-29 13:05:49,371 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 200 OK"
+2026-07-29 13:05:52,241 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:05:52,441 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.201s
+2026-07-29 13:05:52,442 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:05:53,294 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:05:53,302 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.008s
+2026-07-29 13:05:53,303 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 200 OK"
+2026-07-29 13:05:56,136 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:05:56,137 | WARNING | inventory-api | GET /api/v1/inventory-transactions/ | 401 | Not authenticated
+2026-07-29 13:05:56,138 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 401 | 0.002s
+2026-07-29 13:05:56,138 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 401 Unauthorized"
+2026-07-29 13:05:58,864 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:05:58,866 | WARNING | inventory-api | GET /api/v1/inventory-transactions/ | 401 | Could not validate credentials.
+2026-07-29 13:05:58,866 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 401 | 0.002s
+2026-07-29 13:05:58,866 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 401 Unauthorized"
+2026-07-29 13:06:01,782 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:06:01,988 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.206s
+2026-07-29 13:06:01,988 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:06:04,543 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:06:04,548 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.006s
+2026-07-29 13:06:04,549 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?skip=0&limit=2 "HTTP/1.1 200 OK"
+2026-07-29 13:06:07,418 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:06:07,613 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.195s
+2026-07-29 13:06:07,613 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:06:08,659 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:06:08,668 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.009s
+2026-07-29 13:06:08,669 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?sort=quantity_changed&order=asc "HTTP/1.1 200 OK"
+2026-07-29 13:06:11,597 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:06:11,810 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.212s
+2026-07-29 13:06:11,810 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:06:12,874 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:06:12,883 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.009s
+2026-07-29 13:06:12,884 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?sort=quantity_changed&order=desc "HTTP/1.1 200 OK"
+2026-07-29 13:06:15,659 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:06:15,868 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.209s
+2026-07-29 13:06:15,869 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:06:15,870 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:06:15,875 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.005s
+2026-07-29 13:06:15,875 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 200 OK"
+2026-07-29 13:08:37,083 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:08:37,309 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.226s
+2026-07-29 13:08:37,310 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:08:38,449 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:08:38,504 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.055s
+2026-07-29 13:08:38,505 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 200 OK"
+2026-07-29 13:08:41,301 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:08:41,516 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.216s
+2026-07-29 13:08:41,517 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:08:42,340 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:08:42,348 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.008s
+2026-07-29 13:08:42,348 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 200 OK"
+2026-07-29 13:08:45,048 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:08:45,050 | WARNING | inventory-api | GET /api/v1/inventory-transactions/ | 401 | Not authenticated
+2026-07-29 13:08:45,050 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 401 | 0.002s
+2026-07-29 13:08:45,050 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 401 Unauthorized"
+2026-07-29 13:08:47,684 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:08:47,686 | WARNING | inventory-api | GET /api/v1/inventory-transactions/ | 401 | Could not validate credentials.
+2026-07-29 13:08:47,686 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 401 | 0.002s
+2026-07-29 13:08:47,686 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 401 Unauthorized"
+2026-07-29 13:08:50,465 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:08:50,663 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.197s
+2026-07-29 13:08:50,664 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:08:53,332 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:08:53,338 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.006s
+2026-07-29 13:08:53,339 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?skip=0&limit=2 "HTTP/1.1 200 OK"
+2026-07-29 13:08:56,277 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:08:56,476 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.199s
+2026-07-29 13:08:56,477 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:08:57,531 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:08:57,539 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.008s
+2026-07-29 13:08:57,539 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?sort=quantity_changed&order=asc "HTTP/1.1 200 OK"
+2026-07-29 13:09:00,164 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:09:00,377 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.213s
+2026-07-29 13:09:00,378 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:09:01,471 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:09:01,480 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.008s
+2026-07-29 13:09:01,480 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?sort=quantity_changed&order=desc "HTTP/1.1 200 OK"
+2026-07-29 13:09:04,221 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:09:04,428 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-07-29 13:09:04,428 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:09:04,430 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:09:04,435 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.005s
+2026-07-29 13:09:04,435 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 200 OK"
+2026-07-29 13:09:07,460 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:09:07,677 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.217s
+2026-07-29 13:09:07,678 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:09:08,725 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:09:08,731 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.007s
+2026-07-29 13:09:08,732 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?product_id=1 "HTTP/1.1 200 OK"
+2026-07-29 13:09:11,585 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:09:11,795 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.210s
+2026-07-29 13:09:11,795 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:09:12,867 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:09:12,875 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.008s
+2026-07-29 13:09:12,876 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?batch_id=1 "HTTP/1.1 200 OK"
+2026-07-29 13:09:15,784 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:09:15,992 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.208s
+2026-07-29 13:09:15,993 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:09:17,060 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:09:17,069 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.009s
+2026-07-29 13:09:17,069 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?transaction_type=OUT "HTTP/1.1 200 OK"
+2026-07-29 13:09:19,930 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:09:20,137 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-07-29 13:09:20,137 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:09:21,164 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:09:21,170 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.006s
+2026-07-29 13:09:21,170 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?user_id=2 "HTTP/1.1 200 OK"
+2026-07-29 13:09:23,974 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:09:24,186 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.212s
+2026-07-29 13:09:24,187 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:09:25,009 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:09:25,015 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.006s
+2026-07-29 13:09:25,015 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?user_id=3 "HTTP/1.1 200 OK"
+2026-07-29 13:09:27,953 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:09:28,166 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.213s
+2026-07-29 13:09:28,167 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:09:29,730 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:09:29,737 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.007s
+2026-07-29 13:09:29,738 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?sale_id=1 "HTTP/1.1 200 OK"
+2026-07-29 13:09:32,838 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:09:33,045 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.206s
+2026-07-29 13:09:33,046 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:09:35,111 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:09:35,118 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.007s
+2026-07-29 13:09:35,118 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?loss_id=1 "HTTP/1.1 200 OK"
+2026-07-29 13:09:38,134 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:09:38,342 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.208s
+2026-07-29 13:09:38,343 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:09:39,119 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:09:39,127 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.009s
+2026-07-29 13:09:39,128 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?product_id=1&batch_id=1&transaction_type=OUT "HTTP/1.1 200 OK"
+2026-07-29 13:15:39,934 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:15:40,165 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.231s
+2026-07-29 13:15:40,166 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:15:41,741 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:15:41,802 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.061s
+2026-07-29 13:15:41,802 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 200 OK"
+2026-07-29 13:15:45,274 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:15:45,499 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.226s
+2026-07-29 13:15:45,500 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:15:46,756 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:15:46,767 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.011s
+2026-07-29 13:15:46,768 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 200 OK"
+2026-07-29 13:15:50,401 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:15:50,403 | WARNING | inventory-api | GET /api/v1/inventory-transactions/ | 401 | Not authenticated
+2026-07-29 13:15:50,403 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 401 | 0.003s
+2026-07-29 13:15:50,404 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 401 Unauthorized"
+2026-07-29 13:15:53,784 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:15:53,787 | WARNING | inventory-api | GET /api/v1/inventory-transactions/ | 401 | Could not validate credentials.
+2026-07-29 13:15:53,787 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 401 | 0.003s
+2026-07-29 13:15:53,788 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 401 Unauthorized"
+2026-07-29 13:15:57,654 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:15:57,897 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.242s
+2026-07-29 13:15:57,897 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:16:01,505 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:16:01,512 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.007s
+2026-07-29 13:16:01,512 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?skip=0&limit=2 "HTTP/1.1 200 OK"
+2026-07-29 13:16:05,338 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:16:05,562 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.224s
+2026-07-29 13:16:05,563 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:16:07,024 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:16:07,035 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.012s
+2026-07-29 13:16:07,036 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?sort=quantity_changed&order=asc "HTTP/1.1 200 OK"
+2026-07-29 13:16:10,911 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:16:11,136 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.225s
+2026-07-29 13:16:11,136 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:16:12,655 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:16:12,671 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.015s
+2026-07-29 13:16:12,671 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?sort=quantity_changed&order=desc "HTTP/1.1 200 OK"
+2026-07-29 13:16:16,419 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:16:16,639 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.220s
+2026-07-29 13:16:16,640 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:16:16,641 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:16:16,648 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.007s
+2026-07-29 13:16:16,649 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 200 OK"
+2026-07-29 13:16:20,297 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:16:20,579 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.282s
+2026-07-29 13:16:20,580 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:16:21,970 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:16:21,982 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.012s
+2026-07-29 13:16:21,983 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?product_id=1 "HTTP/1.1 200 OK"
+2026-07-29 13:16:25,613 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:16:25,837 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.225s
+2026-07-29 13:16:25,838 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:16:27,321 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:16:27,330 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.009s
+2026-07-29 13:16:27,331 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?batch_id=1 "HTTP/1.1 200 OK"
+2026-07-29 13:16:31,171 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:16:31,410 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.239s
+2026-07-29 13:16:31,411 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:16:32,987 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:16:32,996 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.008s
+2026-07-29 13:16:32,996 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?transaction_type=OUT "HTTP/1.1 200 OK"
+2026-07-29 13:16:36,533 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:16:36,754 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.221s
+2026-07-29 13:16:36,755 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:16:38,059 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:16:38,066 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.007s
+2026-07-29 13:16:38,066 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?user_id=2 "HTTP/1.1 200 OK"
+2026-07-29 13:16:41,886 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:16:42,108 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.222s
+2026-07-29 13:16:42,109 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:16:43,366 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:16:43,374 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.009s
+2026-07-29 13:16:43,375 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?user_id=3 "HTTP/1.1 200 OK"
+2026-07-29 13:16:47,345 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:16:47,568 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.224s
+2026-07-29 13:16:47,569 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:16:49,659 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:16:49,670 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.010s
+2026-07-29 13:16:49,671 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?sale_id=1 "HTTP/1.1 200 OK"
+2026-07-29 13:16:53,255 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:16:53,484 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.229s
+2026-07-29 13:16:53,485 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:16:56,506 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:16:56,516 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.010s
+2026-07-29 13:16:56,516 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?loss_id=1 "HTTP/1.1 200 OK"
+2026-07-29 13:17:00,472 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:17:00,695 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.223s
+2026-07-29 13:17:00,696 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:17:01,763 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:17:01,773 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.009s
+2026-07-29 13:17:01,773 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?product_id=1&batch_id=1&transaction_type=OUT "HTTP/1.1 200 OK"
+2026-07-29 13:17:05,424 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:17:05,649 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.225s
+2026-07-29 13:17:05,651 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:17:07,119 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:17:07,130 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.011s
+2026-07-29 13:17:07,132 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?start_date=2026-07-28T17:17:07.118789 "HTTP/1.1 200 OK"
+2026-07-29 13:17:10,739 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:17:10,983 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.244s
+2026-07-29 13:17:10,984 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:17:12,473 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:17:12,484 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.011s
+2026-07-29 13:17:12,485 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?end_date=2026-07-24T17:17:12.472079 "HTTP/1.1 200 OK"
+2026-07-29 13:17:16,348 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:17:16,578 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.231s
+2026-07-29 13:17:16,579 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:17:18,848 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:17:18,862 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.014s
+2026-07-29 13:17:18,863 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?start_date=2026-07-23T17:17:18.812496&end_date=2026-07-27T17:17:18.812496 "HTTP/1.1 200 OK"
+2026-07-29 13:17:22,576 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:17:22,804 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.228s
+2026-07-29 13:17:22,805 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:17:22,806 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:17:22,812 | WARNING | inventory-api | GET /api/v1/inventory-transactions/ | 400 | start_date must be earlier than or equal to end_date.
+2026-07-29 13:17:22,813 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 400 | 0.007s
+2026-07-29 13:17:22,813 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?start_date=2026-07-29T17:17:22.805598&end_date=2026-07-19T17:17:22.805604 "HTTP/1.1 400 Bad Request"
+2026-07-29 13:17:26,594 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:17:26,814 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.220s
+2026-07-29 13:17:26,815 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:17:27,688 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:17:27,699 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.011s
+2026-07-29 13:17:27,700 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?start_date=2026-07-19T17:17:27.687154&end_date=2026-07-29T17:17:27.687169 "HTTP/1.1 200 OK"
+2026-07-29 13:50:34,176 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:50:34,388 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.211s
+2026-07-29 13:50:34,389 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:50:35,440 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:50:35,492 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.052s
+2026-07-29 13:50:35,492 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 200 OK"
+2026-07-29 13:50:38,164 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:50:38,369 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.205s
+2026-07-29 13:50:38,370 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:50:39,208 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:50:39,215 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.007s
+2026-07-29 13:50:39,216 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 200 OK"
+2026-07-29 13:50:41,743 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:50:41,744 | WARNING | inventory-api | GET /api/v1/inventory-transactions/ | 401 | Not authenticated
+2026-07-29 13:50:41,744 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 401 | 0.002s
+2026-07-29 13:50:41,745 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 401 Unauthorized"
+2026-07-29 13:50:44,348 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:50:44,350 | WARNING | inventory-api | GET /api/v1/inventory-transactions/ | 401 | Could not validate credentials.
+2026-07-29 13:50:44,350 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 401 | 0.002s
+2026-07-29 13:50:44,351 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 401 Unauthorized"
+2026-07-29 13:50:47,048 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:50:47,257 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.209s
+2026-07-29 13:50:47,258 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:50:49,878 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:50:49,886 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.008s
+2026-07-29 13:50:49,887 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?skip=0&limit=2 "HTTP/1.1 200 OK"
+2026-07-29 13:50:52,595 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:50:52,790 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.195s
+2026-07-29 13:50:52,791 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:50:53,842 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:50:53,849 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.007s
+2026-07-29 13:50:53,850 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?sort=quantity_changed&order=asc "HTTP/1.1 200 OK"
+2026-07-29 13:50:56,651 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:50:56,845 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.194s
+2026-07-29 13:50:56,846 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:50:57,904 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:50:57,913 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.009s
+2026-07-29 13:50:57,914 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?sort=quantity_changed&order=desc "HTTP/1.1 200 OK"
+2026-07-29 13:51:00,425 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:51:00,625 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.200s
+2026-07-29 13:51:00,626 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:51:00,627 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:51:00,632 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.005s
+2026-07-29 13:51:00,633 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 200 OK"
+2026-07-29 13:51:03,290 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:51:03,579 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.290s
+2026-07-29 13:51:03,580 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:51:04,686 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:51:04,694 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.007s
+2026-07-29 13:51:04,694 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?product_id=1 "HTTP/1.1 200 OK"
+2026-07-29 13:51:07,505 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:51:07,725 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.220s
+2026-07-29 13:51:07,726 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:51:08,825 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:51:08,835 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.010s
+2026-07-29 13:51:08,836 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?batch_id=1 "HTTP/1.1 200 OK"
+2026-07-29 13:51:11,491 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:51:11,697 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.206s
+2026-07-29 13:51:11,698 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:51:12,732 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:51:12,740 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.008s
+2026-07-29 13:51:12,741 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?transaction_type=OUT "HTTP/1.1 200 OK"
+2026-07-29 13:51:15,446 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:51:15,670 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.224s
+2026-07-29 13:51:15,670 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:51:16,774 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:51:16,779 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.006s
+2026-07-29 13:51:16,780 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?user_id=2 "HTTP/1.1 200 OK"
+2026-07-29 13:51:19,526 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:51:19,735 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.210s
+2026-07-29 13:51:19,736 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:51:20,578 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:51:20,584 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.006s
+2026-07-29 13:51:20,585 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?user_id=3 "HTTP/1.1 200 OK"
+2026-07-29 13:51:23,140 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:51:23,364 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.224s
+2026-07-29 13:51:23,365 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:51:24,990 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:51:24,999 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.009s
+2026-07-29 13:51:25,001 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?sale_id=1 "HTTP/1.1 200 OK"
+2026-07-29 13:51:27,829 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:51:28,030 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.201s
+2026-07-29 13:51:28,031 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:51:30,135 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:51:30,142 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.007s
+2026-07-29 13:51:30,142 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?loss_id=1 "HTTP/1.1 200 OK"
+2026-07-29 13:51:32,843 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:51:33,052 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.209s
+2026-07-29 13:51:33,053 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:51:33,839 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:51:33,846 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.008s
+2026-07-29 13:51:33,847 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?product_id=1&batch_id=1&transaction_type=OUT "HTTP/1.1 200 OK"
+2026-07-29 13:51:36,552 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:51:36,756 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.204s
+2026-07-29 13:51:36,757 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:51:37,824 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:51:37,832 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.008s
+2026-07-29 13:51:37,833 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?start_date=2026-07-28T17:51:37.823427 "HTTP/1.1 200 OK"
+2026-07-29 13:51:40,567 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:51:40,776 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.209s
+2026-07-29 13:51:40,777 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:51:41,840 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:51:41,849 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.009s
+2026-07-29 13:51:41,850 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?end_date=2026-07-24T17:51:40.778230 "HTTP/1.1 200 OK"
+2026-07-29 13:51:44,497 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:51:44,708 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.211s
+2026-07-29 13:51:44,709 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:51:46,287 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:51:46,295 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.008s
+2026-07-29 13:51:46,295 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?start_date=2026-07-23T17:51:44.709986&end_date=2026-07-27T17:51:44.709986 "HTTP/1.1 200 OK"
+2026-07-29 13:51:49,147 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:51:49,354 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-07-29 13:51:49,355 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:51:49,356 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:51:49,359 | WARNING | inventory-api | GET /api/v1/inventory-transactions/ | 400 | start_date must be earlier than or equal to end_date.
+2026-07-29 13:51:49,360 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 400 | 0.004s
+2026-07-29 13:51:49,360 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?start_date=2026-07-29T17:51:49.355847&end_date=2026-07-19T17:51:49.355852 "HTTP/1.1 400 Bad Request"
+2026-07-29 13:51:52,257 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 13:51:52,466 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.209s
+2026-07-29 13:51:52,467 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 13:51:52,995 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 13:51:53,002 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.006s
+2026-07-29 13:51:53,002 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?start_date=2026-07-19T17:51:52.468038&end_date=2026-07-29T17:51:52.468038 "HTTP/1.1 200 OK"
+2026-07-29 15:19:47,285 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:19:47,535 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.250s
+2026-07-29 15:19:47,536 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:19:48,888 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:19:48,955 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.067s
+2026-07-29 15:19:48,955 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 200 OK"
+2026-07-29 15:19:51,902 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:19:52,117 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.215s
+2026-07-29 15:19:52,118 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:19:53,001 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:19:53,010 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.008s
+2026-07-29 15:19:53,010 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 200 OK"
+2026-07-29 15:19:55,310 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:19:55,311 | WARNING | inventory-api | GET /api/v1/inventory-transactions/ | 401 | Not authenticated
+2026-07-29 15:19:55,312 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 401 | 0.002s
+2026-07-29 15:19:55,312 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 401 Unauthorized"
+2026-07-29 15:19:57,866 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:19:57,868 | WARNING | inventory-api | GET /api/v1/inventory-transactions/ | 401 | Could not validate credentials.
+2026-07-29 15:19:57,868 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 401 | 0.002s
+2026-07-29 15:19:57,868 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 401 Unauthorized"
+2026-07-29 15:20:00,505 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:20:00,712 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-07-29 15:20:00,713 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:20:03,345 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:20:03,353 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.008s
+2026-07-29 15:20:03,353 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?skip=0&limit=2 "HTTP/1.1 200 OK"
+2026-07-29 15:20:05,982 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:20:06,205 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.222s
+2026-07-29 15:20:06,205 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:20:07,323 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:20:07,335 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.012s
+2026-07-29 15:20:07,336 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?sort=quantity_changed&order=asc "HTTP/1.1 200 OK"
+2026-07-29 15:20:10,165 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:20:10,371 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.206s
+2026-07-29 15:20:10,371 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:20:11,483 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:20:11,492 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.009s
+2026-07-29 15:20:11,492 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?sort=quantity_changed&order=desc "HTTP/1.1 200 OK"
+2026-07-29 15:20:14,138 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:20:14,353 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.215s
+2026-07-29 15:20:14,354 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:20:14,355 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:20:14,362 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.007s
+2026-07-29 15:20:14,362 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 200 OK"
+2026-07-29 15:20:17,060 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:20:17,269 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.209s
+2026-07-29 15:20:17,270 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:20:18,380 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:20:18,388 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.007s
+2026-07-29 15:20:18,388 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?product_id=1 "HTTP/1.1 200 OK"
+2026-07-29 15:20:21,303 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:20:21,523 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.220s
+2026-07-29 15:20:21,524 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:20:22,683 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:20:22,693 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.009s
+2026-07-29 15:20:22,693 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?batch_id=1 "HTTP/1.1 200 OK"
+2026-07-29 15:20:25,418 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:20:25,634 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.217s
+2026-07-29 15:20:25,635 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:20:26,767 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:20:26,774 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.007s
+2026-07-29 15:20:26,775 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?transaction_type=OUT "HTTP/1.1 200 OK"
+2026-07-29 15:20:29,397 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:20:29,617 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.220s
+2026-07-29 15:20:29,617 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:20:30,731 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:20:30,736 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.006s
+2026-07-29 15:20:30,737 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?user_id=2 "HTTP/1.1 200 OK"
+2026-07-29 15:20:33,485 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:20:33,696 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.211s
+2026-07-29 15:20:33,697 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:20:34,581 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:20:34,587 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.006s
+2026-07-29 15:20:34,588 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?user_id=3 "HTTP/1.1 200 OK"
+2026-07-29 15:20:37,255 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:20:37,519 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.264s
+2026-07-29 15:20:37,520 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:20:39,109 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:20:39,117 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.008s
+2026-07-29 15:20:39,118 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?sale_id=1 "HTTP/1.1 200 OK"
+2026-07-29 15:20:41,756 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:20:41,980 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.225s
+2026-07-29 15:20:41,981 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:20:44,155 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:20:44,164 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.009s
+2026-07-29 15:20:44,165 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?loss_id=1 "HTTP/1.1 200 OK"
+2026-07-29 15:20:46,980 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:20:47,190 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.210s
+2026-07-29 15:20:47,191 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:20:47,972 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:20:47,981 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.009s
+2026-07-29 15:20:47,982 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?product_id=1&batch_id=1&transaction_type=OUT "HTTP/1.1 200 OK"
+2026-07-29 15:20:50,606 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:20:50,833 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.227s
+2026-07-29 15:20:50,834 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:20:51,919 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:20:51,926 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.007s
+2026-07-29 15:20:51,927 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?start_date=2026-07-28T19:20:51.918465 "HTTP/1.1 200 OK"
+2026-07-29 15:20:54,596 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:20:54,801 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.205s
+2026-07-29 15:20:54,802 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:20:55,877 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:20:55,884 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.007s
+2026-07-29 15:20:55,884 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?end_date=2026-07-24T19:20:54.802947 "HTTP/1.1 200 OK"
+2026-07-29 15:20:58,552 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:20:58,772 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.220s
+2026-07-29 15:20:58,772 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:21:00,380 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:21:00,390 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.010s
+2026-07-29 15:21:00,391 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?start_date=2026-07-23T19:20:58.773748&end_date=2026-07-27T19:20:58.773748 "HTTP/1.1 200 OK"
+2026-07-29 15:21:03,102 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:21:03,312 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.211s
+2026-07-29 15:21:03,313 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:21:03,314 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:21:03,318 | WARNING | inventory-api | GET /api/v1/inventory-transactions/ | 400 | start_date must be earlier than or equal to end_date.
+2026-07-29 15:21:03,318 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 400 | 0.004s
+2026-07-29 15:21:03,319 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?start_date=2026-07-29T19:21:03.314182&end_date=2026-07-19T19:21:03.314187 "HTTP/1.1 400 Bad Request"
+2026-07-29 15:21:06,234 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:21:06,444 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.210s
+2026-07-29 15:21:06,445 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:21:06,991 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:21:06,996 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.005s
+2026-07-29 15:21:06,997 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?start_date=2026-07-19T19:21:06.445986&end_date=2026-07-29T19:21:06.445986 "HTTP/1.1 200 OK"
+2026-07-29 15:21:49,403 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:21:49,634 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.231s
+2026-07-29 15:21:49,635 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:21:50,733 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:21:50,784 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.052s
+2026-07-29 15:21:50,785 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 200 OK"
+2026-07-29 15:21:53,469 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:21:53,678 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.209s
+2026-07-29 15:21:53,679 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:21:54,500 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:21:54,507 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.007s
+2026-07-29 15:21:54,508 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 200 OK"
+2026-07-29 15:21:57,040 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:21:57,042 | WARNING | inventory-api | GET /api/v1/inventory-transactions/ | 401 | Not authenticated
+2026-07-29 15:21:57,042 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 401 | 0.002s
+2026-07-29 15:21:57,042 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 401 Unauthorized"
+2026-07-29 15:21:59,786 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:21:59,788 | WARNING | inventory-api | GET /api/v1/inventory-transactions/ | 401 | Could not validate credentials.
+2026-07-29 15:21:59,788 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 401 | 0.002s
+2026-07-29 15:21:59,788 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 401 Unauthorized"
+2026-07-29 15:22:02,477 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:22:02,692 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.215s
+2026-07-29 15:22:02,693 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:22:05,457 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:22:05,463 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.006s
+2026-07-29 15:22:05,464 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?skip=0&limit=2 "HTTP/1.1 200 OK"
+2026-07-29 15:22:08,417 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:22:08,632 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.214s
+2026-07-29 15:22:08,632 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:22:09,747 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:22:09,754 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.008s
+2026-07-29 15:22:09,755 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?sort=quantity_changed&order=asc "HTTP/1.1 200 OK"
+2026-07-29 15:22:12,607 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:22:12,817 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.210s
+2026-07-29 15:22:12,818 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:22:13,869 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:22:13,876 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.007s
+2026-07-29 15:22:13,877 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?sort=quantity_changed&order=desc "HTTP/1.1 200 OK"
+2026-07-29 15:22:16,480 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:22:16,690 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.210s
+2026-07-29 15:22:16,691 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:22:16,692 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:22:16,698 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.006s
+2026-07-29 15:22:16,699 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 200 OK"
+2026-07-29 15:22:19,366 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:22:19,578 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.212s
+2026-07-29 15:22:19,578 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:22:20,665 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:22:20,671 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.007s
+2026-07-29 15:22:20,672 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?product_id=1 "HTTP/1.1 200 OK"
+2026-07-29 15:22:23,463 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:22:23,667 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.204s
+2026-07-29 15:22:23,667 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:22:24,736 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:22:24,745 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.009s
+2026-07-29 15:22:24,745 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?batch_id=1 "HTTP/1.1 200 OK"
+2026-07-29 15:22:27,482 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:22:27,698 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.216s
+2026-07-29 15:22:27,698 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:22:28,805 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:22:28,813 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.008s
+2026-07-29 15:22:28,814 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?transaction_type=OUT "HTTP/1.1 200 OK"
+2026-07-29 15:22:31,585 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:22:31,792 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.206s
+2026-07-29 15:22:31,792 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:22:32,878 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:22:32,883 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.005s
+2026-07-29 15:22:32,883 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?user_id=2 "HTTP/1.1 200 OK"
+2026-07-29 15:22:35,501 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:22:35,708 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-07-29 15:22:35,709 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:22:36,531 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:22:36,537 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.005s
+2026-07-29 15:22:36,537 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?user_id=3 "HTTP/1.1 200 OK"
+2026-07-29 15:22:39,235 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:22:39,434 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.198s
+2026-07-29 15:22:39,434 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:22:41,025 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:22:41,033 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.008s
+2026-07-29 15:22:41,033 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?sale_id=1 "HTTP/1.1 200 OK"
+2026-07-29 15:22:43,927 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:22:44,129 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.202s
+2026-07-29 15:22:44,129 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:22:46,351 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:22:46,359 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.008s
+2026-07-29 15:22:46,360 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?loss_id=1 "HTTP/1.1 200 OK"
+2026-07-29 15:22:49,135 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:22:49,347 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.212s
+2026-07-29 15:22:49,348 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:22:50,130 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:22:50,138 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.008s
+2026-07-29 15:22:50,138 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?product_id=1&batch_id=1&transaction_type=OUT "HTTP/1.1 200 OK"
+2026-07-29 15:22:52,838 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:22:53,049 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.210s
+2026-07-29 15:22:53,049 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:22:54,143 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:22:54,152 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.009s
+2026-07-29 15:22:54,154 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?start_date=2026-07-28T19:22:54.142410 "HTTP/1.1 200 OK"
+2026-07-29 15:22:56,942 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:22:57,147 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.205s
+2026-07-29 15:22:57,148 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:22:58,198 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:22:58,206 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.008s
+2026-07-29 15:22:58,207 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?end_date=2026-07-24T19:22:57.148841 "HTTP/1.1 200 OK"
+2026-07-29 15:23:00,841 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:23:01,041 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.200s
+2026-07-29 15:23:01,041 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:23:02,642 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:23:02,650 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.008s
+2026-07-29 15:23:02,651 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?start_date=2026-07-23T19:23:01.042651&end_date=2026-07-27T19:23:01.042651 "HTTP/1.1 200 OK"
+2026-07-29 15:23:05,561 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:23:05,785 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.224s
+2026-07-29 15:23:05,786 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:23:05,788 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:23:05,793 | WARNING | inventory-api | GET /api/v1/inventory-transactions/ | 400 | start_date must be earlier than or equal to end_date.
+2026-07-29 15:23:05,793 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 400 | 0.006s
+2026-07-29 15:23:05,794 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?start_date=2026-07-29T19:23:05.787001&end_date=2026-07-19T19:23:05.787010 "HTTP/1.1 400 Bad Request"
+2026-07-29 15:23:08,581 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:23:08,785 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.204s
+2026-07-29 15:23:08,786 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:23:09,316 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:23:09,321 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.005s
+2026-07-29 15:23:09,322 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?start_date=2026-07-19T19:23:08.787319&end_date=2026-07-29T19:23:08.787319 "HTTP/1.1 200 OK"
+2026-07-29 15:23:12,016 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:23:12,228 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.212s
+2026-07-29 15:23:12,229 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:23:12,758 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/1
+2026-07-29 15:23:12,763 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/1 | Status 200 | 0.005s
+2026-07-29 15:23:12,763 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/1 "HTTP/1.1 200 OK"
+2026-07-29 15:23:15,618 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:23:15,820 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.202s
+2026-07-29 15:23:15,821 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:23:16,130 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/1
+2026-07-29 15:23:16,134 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/1 | Status 200 | 0.004s
+2026-07-29 15:23:16,134 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/1 "HTTP/1.1 200 OK"
+2026-07-29 15:23:18,732 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:23:18,938 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-07-29 15:23:18,939 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:23:19,477 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/1
+2026-07-29 15:23:19,482 | WARNING | inventory-api | GET /api/v1/inventory-transactions/1 | 403 | You are not authorized to view this transaction.
+2026-07-29 15:23:19,482 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/1 | Status 403 | 0.004s
+2026-07-29 15:23:19,482 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/1 "HTTP/1.1 403 Forbidden"
+2026-07-29 15:23:22,111 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:23:22,313 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.203s
+2026-07-29 15:23:22,314 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:23:22,315 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/999999
+2026-07-29 15:23:22,320 | WARNING | inventory-api | GET /api/v1/inventory-transactions/999999 | 404 | Inventory transaction not found.
+2026-07-29 15:23:22,320 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/999999 | Status 404 | 0.005s
+2026-07-29 15:23:22,321 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/999999 "HTTP/1.1 404 Not Found"
+2026-07-29 15:23:25,473 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/1
+2026-07-29 15:23:25,475 | WARNING | inventory-api | GET /api/v1/inventory-transactions/1 | 401 | Not authenticated
+2026-07-29 15:23:25,475 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/1 | Status 401 | 0.002s
+2026-07-29 15:23:25,475 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/1 "HTTP/1.1 401 Unauthorized"
+2026-07-29 15:23:28,549 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/1
+2026-07-29 15:23:28,552 | WARNING | inventory-api | GET /api/v1/inventory-transactions/1 | 401 | Could not validate credentials.
+2026-07-29 15:23:28,553 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/1 | Status 401 | 0.003s
+2026-07-29 15:23:28,553 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/1 "HTTP/1.1 401 Unauthorized"
+2026-07-29 15:23:31,373 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:23:31,595 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.222s
+2026-07-29 15:23:31,596 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:23:31,597 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/0
+2026-07-29 15:23:31,603 | WARNING | inventory-api | GET /api/v1/inventory-transactions/0 | Validation Error | [{'type': 'greater_than', 'loc': ('path', 'transaction_id'), 'msg': 'Input should be greater than 0', 'input': '0', 'ctx': {'gt': 0}}]
+2026-07-29 15:23:31,603 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/0 | Status 422 | 0.006s
+2026-07-29 15:23:31,604 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/0 "HTTP/1.1 422 Unprocessable Entity"
+2026-07-29 15:32:28,398 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:32:28,626 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.228s
+2026-07-29 15:32:28,626 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:32:29,828 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:32:29,906 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.078s
+2026-07-29 15:32:29,907 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 200 OK"
+2026-07-29 15:32:32,705 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:32:32,919 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.213s
+2026-07-29 15:32:32,919 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:32:33,787 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:32:33,795 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.008s
+2026-07-29 15:32:33,795 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 200 OK"
+2026-07-29 15:32:36,355 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:32:36,357 | WARNING | inventory-api | GET /api/v1/inventory-transactions/ | 401 | Not authenticated
+2026-07-29 15:32:36,357 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 401 | 0.002s
+2026-07-29 15:32:36,357 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 401 Unauthorized"
+2026-07-29 15:32:38,851 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:32:38,853 | WARNING | inventory-api | GET /api/v1/inventory-transactions/ | 401 | Could not validate credentials.
+2026-07-29 15:32:38,854 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 401 | 0.002s
+2026-07-29 15:32:38,854 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 401 Unauthorized"
+2026-07-29 15:32:41,548 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:32:41,749 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.202s
+2026-07-29 15:32:41,750 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:32:44,333 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:32:44,342 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.009s
+2026-07-29 15:32:44,343 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?skip=0&limit=2 "HTTP/1.1 200 OK"
+2026-07-29 15:32:47,126 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:32:47,370 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.244s
+2026-07-29 15:32:47,371 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:32:48,425 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:32:48,435 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.009s
+2026-07-29 15:32:48,435 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?sort=quantity_changed&order=asc "HTTP/1.1 200 OK"
+2026-07-29 15:32:51,180 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:32:51,385 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.206s
+2026-07-29 15:32:51,386 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:32:52,440 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:32:52,448 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.008s
+2026-07-29 15:32:52,448 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?sort=quantity_changed&order=desc "HTTP/1.1 200 OK"
+2026-07-29 15:32:55,368 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:32:55,573 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.205s
+2026-07-29 15:32:55,573 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:32:55,574 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:32:55,580 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.005s
+2026-07-29 15:32:55,580 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 200 OK"
+2026-07-29 15:32:58,567 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:32:58,776 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.210s
+2026-07-29 15:32:58,777 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:32:59,799 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:32:59,805 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.007s
+2026-07-29 15:32:59,806 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?product_id=1 "HTTP/1.1 200 OK"
+2026-07-29 15:33:02,298 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:33:02,496 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.198s
+2026-07-29 15:33:02,496 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:33:03,525 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:33:03,533 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.008s
+2026-07-29 15:33:03,533 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?batch_id=1 "HTTP/1.1 200 OK"
+2026-07-29 15:33:06,184 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:33:06,381 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.197s
+2026-07-29 15:33:06,382 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:33:07,439 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:33:07,448 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.009s
+2026-07-29 15:33:07,448 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?transaction_type=OUT "HTTP/1.1 200 OK"
+2026-07-29 15:33:10,326 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:33:10,525 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.199s
+2026-07-29 15:33:10,525 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:33:11,555 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:33:11,559 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.005s
+2026-07-29 15:33:11,560 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?user_id=2 "HTTP/1.1 200 OK"
+2026-07-29 15:33:14,236 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:33:14,447 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.211s
+2026-07-29 15:33:14,448 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:33:15,301 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:33:15,306 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.005s
+2026-07-29 15:33:15,307 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?user_id=3 "HTTP/1.1 200 OK"
+2026-07-29 15:33:18,068 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:33:18,281 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.213s
+2026-07-29 15:33:18,281 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:33:19,925 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:33:19,933 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.008s
+2026-07-29 15:33:19,934 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?sale_id=1 "HTTP/1.1 200 OK"
+2026-07-29 15:33:22,646 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:33:22,852 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-07-29 15:33:22,853 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:33:24,901 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:33:24,908 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.007s
+2026-07-29 15:33:24,909 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?loss_id=1 "HTTP/1.1 200 OK"
+2026-07-29 15:33:27,669 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:33:27,881 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.213s
+2026-07-29 15:33:27,882 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:33:28,623 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:33:28,631 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.009s
+2026-07-29 15:33:28,632 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?product_id=1&batch_id=1&transaction_type=OUT "HTTP/1.1 200 OK"
+2026-07-29 15:33:31,468 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:33:31,675 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-07-29 15:33:31,675 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:33:32,760 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:33:32,770 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.010s
+2026-07-29 15:33:32,771 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?start_date=2026-07-28T19:33:32.758708 "HTTP/1.1 200 OK"
+2026-07-29 15:33:35,529 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:33:35,738 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.209s
+2026-07-29 15:33:35,739 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:33:36,801 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:33:36,809 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.008s
+2026-07-29 15:33:36,809 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?end_date=2026-07-24T19:33:35.740106 "HTTP/1.1 200 OK"
+2026-07-29 15:33:39,482 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:33:39,679 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.197s
+2026-07-29 15:33:39,680 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:33:41,327 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:33:41,337 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.009s
+2026-07-29 15:33:41,338 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?start_date=2026-07-23T19:33:39.681046&end_date=2026-07-27T19:33:39.681046 "HTTP/1.1 200 OK"
+2026-07-29 15:33:44,263 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:33:44,469 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.206s
+2026-07-29 15:33:44,469 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:33:44,470 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:33:44,474 | WARNING | inventory-api | GET /api/v1/inventory-transactions/ | 400 | start_date must be earlier than or equal to end_date.
+2026-07-29 15:33:44,474 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 400 | 0.003s
+2026-07-29 15:33:44,474 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?start_date=2026-07-29T19:33:44.470349&end_date=2026-07-19T19:33:44.470354 "HTTP/1.1 400 Bad Request"
+2026-07-29 15:33:47,212 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:33:47,414 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.202s
+2026-07-29 15:33:47,414 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:33:47,928 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 15:33:47,933 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.005s
+2026-07-29 15:33:47,933 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?start_date=2026-07-19T19:33:47.415610&end_date=2026-07-29T19:33:47.415610 "HTTP/1.1 200 OK"
+2026-07-29 15:33:50,570 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:33:50,771 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.201s
+2026-07-29 15:33:50,772 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:33:51,300 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/1
+2026-07-29 15:33:51,307 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/1 | Status 200 | 0.007s
+2026-07-29 15:33:51,308 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/1 "HTTP/1.1 200 OK"
+2026-07-29 15:33:54,140 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:33:54,348 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.208s
+2026-07-29 15:33:54,349 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:33:54,661 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/1
+2026-07-29 15:33:54,667 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/1 | Status 200 | 0.006s
+2026-07-29 15:33:54,668 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/1 "HTTP/1.1 200 OK"
+2026-07-29 15:33:57,371 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:33:57,566 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.194s
+2026-07-29 15:33:57,566 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:33:58,098 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/1
+2026-07-29 15:33:58,104 | WARNING | inventory-api | GET /api/v1/inventory-transactions/1 | 403 | You are not authorized to view this transaction.
+2026-07-29 15:33:58,104 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/1 | Status 403 | 0.006s
+2026-07-29 15:33:58,104 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/1 "HTTP/1.1 403 Forbidden"
+2026-07-29 15:34:00,916 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:34:01,125 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.209s
+2026-07-29 15:34:01,126 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:34:01,127 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/999999
+2026-07-29 15:34:01,131 | WARNING | inventory-api | GET /api/v1/inventory-transactions/999999 | 404 | Inventory transaction not found.
+2026-07-29 15:34:01,131 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/999999 | Status 404 | 0.004s
+2026-07-29 15:34:01,131 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/999999 "HTTP/1.1 404 Not Found"
+2026-07-29 15:34:04,208 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/1
+2026-07-29 15:34:04,210 | WARNING | inventory-api | GET /api/v1/inventory-transactions/1 | 401 | Not authenticated
+2026-07-29 15:34:04,210 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/1 | Status 401 | 0.002s
+2026-07-29 15:34:04,210 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/1 "HTTP/1.1 401 Unauthorized"
+2026-07-29 15:34:07,130 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/1
+2026-07-29 15:34:07,133 | WARNING | inventory-api | GET /api/v1/inventory-transactions/1 | 401 | Could not validate credentials.
+2026-07-29 15:34:07,133 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/1 | Status 401 | 0.004s
+2026-07-29 15:34:07,133 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/1 "HTTP/1.1 401 Unauthorized"
+2026-07-29 15:34:09,909 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:34:10,115 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-07-29 15:34:10,116 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:34:10,117 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/0
+2026-07-29 15:34:10,121 | WARNING | inventory-api | GET /api/v1/inventory-transactions/0 | Validation Error | [{'type': 'greater_than', 'loc': ('path', 'transaction_id'), 'msg': 'Input should be greater than 0', 'input': '0', 'ctx': {'gt': 0}}]
+2026-07-29 15:34:10,122 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/0 | Status 422 | 0.004s
+2026-07-29 15:34:10,122 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/0 "HTTP/1.1 422 Unprocessable Entity"
+2026-07-29 15:34:12,891 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:34:13,094 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.203s
+2026-07-29 15:34:13,094 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:34:15,160 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/summary/overview
+2026-07-29 15:34:15,171 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/summary/overview | Status 200 | 0.011s
+2026-07-29 15:34:15,172 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/summary/overview "HTTP/1.1 200 OK"
+2026-07-29 15:34:17,916 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:34:18,118 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.202s
+2026-07-29 15:34:18,119 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:34:19,814 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/summary/overview
+2026-07-29 15:34:19,824 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/summary/overview | Status 200 | 0.011s
+2026-07-29 15:34:19,825 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/summary/overview "HTTP/1.1 200 OK"
+2026-07-29 15:34:22,632 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 15:34:22,839 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-07-29 15:34:22,840 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 15:34:22,841 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/summary/overview
+2026-07-29 15:34:22,849 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/summary/overview | Status 200 | 0.009s
+2026-07-29 15:34:22,850 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/summary/overview "HTTP/1.1 200 OK"
+2026-07-29 15:34:25,376 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/summary/overview
+2026-07-29 15:34:25,378 | WARNING | inventory-api | GET /api/v1/inventory-transactions/summary/overview | 401 | Not authenticated
+2026-07-29 15:34:25,378 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/summary/overview | Status 401 | 0.002s
+2026-07-29 15:34:25,378 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/summary/overview "HTTP/1.1 401 Unauthorized"
+2026-07-29 15:34:28,025 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/summary/overview
+2026-07-29 15:34:28,026 | WARNING | inventory-api | GET /api/v1/inventory-transactions/summary/overview | 401 | Could not validate credentials.
+2026-07-29 15:34:28,027 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/summary/overview | Status 401 | 0.002s
+2026-07-29 15:34:28,027 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/summary/overview "HTTP/1.1 401 Unauthorized"
+2026-07-29 16:12:26,560 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:12:26,801 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.241s
+2026-07-29 16:12:26,803 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:12:26,806 | INFO | inventory-api | Request started | GET /
+2026-07-29 16:12:26,824 | INFO | inventory-api | Request finished | GET / | Status 200 | 0.019s
+2026-07-29 16:12:26,825 | INFO | httpx | HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-07-29 16:12:29,623 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:12:29,836 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.214s
+2026-07-29 16:12:29,838 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:12:29,895 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-29 16:12:29,991 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 201 | 0.095s
+2026-07-29 16:12:29,992 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 201 Created"
+2026-07-29 16:12:32,770 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:12:32,968 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.199s
+2026-07-29 16:12:32,970 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:12:33,031 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-29 16:12:33,057 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 201 | 0.027s
+2026-07-29 16:12:33,058 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 201 Created"
+2026-07-29 16:12:35,726 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-29 16:12:35,729 | WARNING | inventory-api | POST /api/v1/batches/ | 401 | Not authenticated
+2026-07-29 16:12:35,729 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 401 | 0.003s
+2026-07-29 16:12:35,729 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 401 Unauthorized"
+2026-07-29 16:12:38,548 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:12:38,756 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.208s
+2026-07-29 16:12:38,757 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:12:38,813 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-29 16:12:38,819 | WARNING | inventory-api | POST /api/v1/batches/ | 403 | Administrator privileges required.
+2026-07-29 16:12:38,820 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 403 | 0.006s
+2026-07-29 16:12:38,820 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 403 Forbidden"
+2026-07-29 16:12:41,560 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:12:41,769 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.209s
+2026-07-29 16:12:41,770 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:12:41,790 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-29 16:12:41,799 | WARNING | inventory-api | POST /api/v1/batches/ | 400 | Product with ID 999999 does not exist.
+2026-07-29 16:12:41,800 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 400 | 0.010s
+2026-07-29 16:12:41,800 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 400 Bad Request"
+2026-07-29 16:12:44,531 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:12:44,746 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.215s
+2026-07-29 16:12:44,747 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:12:44,782 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-29 16:12:44,792 | WARNING | inventory-api | POST /api/v1/batches/ | 400 | Supplier with ID 999999 does not exist.
+2026-07-29 16:12:44,793 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 400 | 0.010s
+2026-07-29 16:12:44,793 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 400 Bad Request"
+2026-07-29 16:12:47,607 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:12:47,812 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.205s
+2026-07-29 16:12:47,814 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:12:47,856 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-29 16:12:47,864 | WARNING | inventory-api | POST /api/v1/batches/ | Validation Error | [{'type': 'greater_than', 'loc': ('body', 'initial_quantity'), 'msg': 'Input should be greater than 0', 'input': -5, 'ctx': {'gt': 0}}, {'type': 'greater_than', 'loc': ('body', 'cost_price'), 'msg': 'Input should be greater than 0', 'input': '-1.00', 'ctx': {'gt': Decimal('0')}}]
+2026-07-29 16:12:47,865 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 422 | 0.009s
+2026-07-29 16:12:47,866 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 422 Unprocessable Entity"
+2026-07-29 16:12:50,591 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:12:50,862 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.271s
+2026-07-29 16:12:50,863 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:12:51,756 | INFO | inventory-api | Request started | GET /api/v1/batches/
+2026-07-29 16:12:51,773 | INFO | inventory-api | Request finished | GET /api/v1/batches/ | Status 200 | 0.016s
+2026-07-29 16:12:51,774 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/ "HTTP/1.1 200 OK"
+2026-07-29 16:12:54,431 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:12:54,647 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.216s
+2026-07-29 16:12:54,649 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:12:56,115 | INFO | inventory-api | Request started | GET /api/v1/batches/
+2026-07-29 16:12:56,125 | INFO | inventory-api | Request finished | GET /api/v1/batches/ | Status 200 | 0.010s
+2026-07-29 16:12:56,126 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/?skip=2&limit=2 "HTTP/1.1 200 OK"
+2026-07-29 16:12:58,746 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:12:58,962 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.215s
+2026-07-29 16:12:58,963 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:12:59,864 | INFO | inventory-api | Request started | GET /api/v1/batches/
+2026-07-29 16:12:59,876 | INFO | inventory-api | Request finished | GET /api/v1/batches/ | Status 200 | 0.012s
+2026-07-29 16:12:59,877 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/?sort=cost_price&order=asc "HTTP/1.1 200 OK"
+2026-07-29 16:13:02,659 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:13:02,876 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.217s
+2026-07-29 16:13:02,877 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:13:02,879 | INFO | inventory-api | Request started | GET /api/v1/batches/
+2026-07-29 16:13:02,883 | WARNING | inventory-api | GET /api/v1/batches/ | 400 | Invalid sort field. Allowed values: received_date, expiration_date, current_quantity, cost_price, selling_price
+2026-07-29 16:13:02,883 | INFO | inventory-api | Request finished | GET /api/v1/batches/ | Status 400 | 0.005s
+2026-07-29 16:13:02,884 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/?sort=invalid_field "HTTP/1.1 400 Bad Request"
+2026-07-29 16:13:05,319 | INFO | inventory-api | Request started | GET /api/v1/batches/
+2026-07-29 16:13:05,323 | WARNING | inventory-api | GET /api/v1/batches/ | 401 | Not authenticated
+2026-07-29 16:13:05,324 | INFO | inventory-api | Request finished | GET /api/v1/batches/ | Status 401 | 0.004s
+2026-07-29 16:13:05,324 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/ "HTTP/1.1 401 Unauthorized"
+2026-07-29 16:13:08,181 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:13:08,419 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.238s
+2026-07-29 16:13:08,420 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:13:08,750 | INFO | inventory-api | Request started | GET /api/v1/batches/1
+2026-07-29 16:13:08,765 | INFO | inventory-api | Request finished | GET /api/v1/batches/1 | Status 200 | 0.015s
+2026-07-29 16:13:08,766 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/1 "HTTP/1.1 200 OK"
+2026-07-29 16:13:11,399 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:13:11,637 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.239s
+2026-07-29 16:13:11,639 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:13:11,643 | INFO | inventory-api | Request started | GET /api/v1/batches/999999
+2026-07-29 16:13:11,652 | WARNING | inventory-api | GET /api/v1/batches/999999 | 404 | Inventory batch not found.
+2026-07-29 16:13:11,652 | INFO | inventory-api | Request finished | GET /api/v1/batches/999999 | Status 404 | 0.010s
+2026-07-29 16:13:11,653 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/999999 "HTTP/1.1 404 Not Found"
+2026-07-29 16:13:14,522 | INFO | inventory-api | Request started | GET /api/v1/batches/1
+2026-07-29 16:13:14,526 | WARNING | inventory-api | GET /api/v1/batches/1 | 401 | Not authenticated
+2026-07-29 16:13:14,527 | INFO | inventory-api | Request finished | GET /api/v1/batches/1 | Status 401 | 0.005s
+2026-07-29 16:13:14,527 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/batches/1 "HTTP/1.1 401 Unauthorized"
+2026-07-29 16:13:17,196 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:13:17,440 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.244s
+2026-07-29 16:13:17,442 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:13:17,496 | INFO | inventory-api | Request started | POST /api/v1/batches/
+2026-07-29 16:13:17,532 | INFO | inventory-api | Request finished | POST /api/v1/batches/ | Status 201 | 0.036s
+2026-07-29 16:13:17,533 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/batches/ "HTTP/1.1 201 Created"
+2026-07-29 16:13:17,535 | INFO | inventory-api | Request started | DELETE /api/v1/batches/1
+2026-07-29 16:13:17,579 | INFO | inventory-api | Request finished | DELETE /api/v1/batches/1 | Status 200 | 0.044s
+2026-07-29 16:13:17,580 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/batches/1 "HTTP/1.1 200 OK"
+2026-07-29 16:13:19,976 | INFO | inventory-api | Request started | DELETE /api/v1/batches/1
+2026-07-29 16:13:19,980 | WARNING | inventory-api | DELETE /api/v1/batches/1 | 401 | Not authenticated
+2026-07-29 16:13:19,980 | INFO | inventory-api | Request finished | DELETE /api/v1/batches/1 | Status 401 | 0.005s
+2026-07-29 16:13:19,981 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/batches/1 "HTTP/1.1 401 Unauthorized"
+2026-07-29 16:13:22,537 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:13:22,776 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.238s
+2026-07-29 16:13:22,777 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:13:22,780 | INFO | inventory-api | Request started | DELETE /api/v1/batches/1
+2026-07-29 16:13:22,788 | WARNING | inventory-api | DELETE /api/v1/batches/1 | 403 | Administrator privileges required.
+2026-07-29 16:13:22,788 | INFO | inventory-api | Request finished | DELETE /api/v1/batches/1 | Status 403 | 0.008s
+2026-07-29 16:13:22,789 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/batches/1 "HTTP/1.1 403 Forbidden"
+2026-07-29 16:13:25,733 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:13:25,971 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.238s
+2026-07-29 16:13:25,973 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:13:25,976 | INFO | inventory-api | Request started | DELETE /api/v1/batches/999999
+2026-07-29 16:13:25,987 | WARNING | inventory-api | DELETE /api/v1/batches/999999 | 404 | Inventory batch not found.
+2026-07-29 16:13:25,988 | INFO | inventory-api | Request finished | DELETE /api/v1/batches/999999 | Status 404 | 0.012s
+2026-07-29 16:13:25,988 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/batches/999999 "HTTP/1.1 404 Not Found"
+2026-07-29 16:13:28,700 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:13:28,938 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.238s
+2026-07-29 16:13:28,940 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:13:28,943 | INFO | inventory-api | Request started | DELETE /api/v1/batches/0
+2026-07-29 16:13:28,951 | WARNING | inventory-api | DELETE /api/v1/batches/0 | Validation Error | [{'type': 'greater_than', 'loc': ('path', 'batch_id'), 'msg': 'Input should be greater than 0', 'input': '0', 'ctx': {'gt': 0}}]
+2026-07-29 16:13:28,952 | INFO | inventory-api | Request finished | DELETE /api/v1/batches/0 | Status 422 | 0.009s
+2026-07-29 16:13:28,953 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/batches/0 "HTTP/1.1 422 Unprocessable Entity"
+2026-07-29 16:13:31,649 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:13:31,888 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.239s
+2026-07-29 16:13:31,889 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:13:33,105 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 16:13:33,186 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.081s
+2026-07-29 16:13:33,187 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 200 OK"
+2026-07-29 16:13:35,980 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:13:36,217 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.237s
+2026-07-29 16:13:36,219 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:13:37,172 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 16:13:37,197 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.025s
+2026-07-29 16:13:37,198 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 200 OK"
+2026-07-29 16:13:39,553 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 16:13:39,557 | WARNING | inventory-api | GET /api/v1/inventory-transactions/ | 401 | Not authenticated
+2026-07-29 16:13:39,558 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 401 | 0.005s
+2026-07-29 16:13:39,558 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 401 Unauthorized"
+2026-07-29 16:13:41,873 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 16:13:41,878 | WARNING | inventory-api | GET /api/v1/inventory-transactions/ | 401 | Could not validate credentials.
+2026-07-29 16:13:41,878 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 401 | 0.005s
+2026-07-29 16:13:41,879 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 401 Unauthorized"
+2026-07-29 16:13:44,590 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:13:44,827 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.238s
+2026-07-29 16:13:44,829 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:13:47,846 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 16:13:47,860 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.014s
+2026-07-29 16:13:47,861 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?skip=0&limit=2 "HTTP/1.1 200 OK"
+2026-07-29 16:13:50,484 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:13:50,722 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.238s
+2026-07-29 16:13:50,724 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:13:51,921 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 16:13:51,943 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.022s
+2026-07-29 16:13:51,944 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?sort=quantity_changed&order=asc "HTTP/1.1 200 OK"
+2026-07-29 16:13:54,677 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:13:54,915 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.238s
+2026-07-29 16:13:54,916 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:13:56,126 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 16:13:56,146 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.020s
+2026-07-29 16:13:56,147 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?sort=quantity_changed&order=desc "HTTP/1.1 200 OK"
+2026-07-29 16:13:59,013 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:13:59,250 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.237s
+2026-07-29 16:13:59,251 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:13:59,254 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 16:13:59,266 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.013s
+2026-07-29 16:13:59,268 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/ "HTTP/1.1 200 OK"
+2026-07-29 16:14:01,927 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:14:02,166 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.240s
+2026-07-29 16:14:02,167 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:14:03,365 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 16:14:03,390 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.025s
+2026-07-29 16:14:03,391 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?product_id=1 "HTTP/1.1 200 OK"
+2026-07-29 16:14:06,118 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:14:06,356 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.239s
+2026-07-29 16:14:06,357 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:14:07,571 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 16:14:07,592 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.022s
+2026-07-29 16:14:07,594 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?batch_id=1 "HTTP/1.1 200 OK"
+2026-07-29 16:14:10,379 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:14:10,617 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.238s
+2026-07-29 16:14:10,619 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:14:11,823 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 16:14:11,840 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.017s
+2026-07-29 16:14:11,842 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?transaction_type=OUT "HTTP/1.1 200 OK"
+2026-07-29 16:14:14,548 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:14:14,786 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.238s
+2026-07-29 16:14:14,787 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:14:15,977 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 16:14:15,989 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.012s
+2026-07-29 16:14:15,991 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?user_id=2 "HTTP/1.1 200 OK"
+2026-07-29 16:14:19,023 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:14:19,260 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.237s
+2026-07-29 16:14:19,262 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:14:20,255 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 16:14:20,267 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.012s
+2026-07-29 16:14:20,269 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?user_id=3 "HTTP/1.1 200 OK"
+2026-07-29 16:14:23,181 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:14:23,416 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.235s
+2026-07-29 16:14:23,418 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:14:25,444 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 16:14:25,458 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.014s
+2026-07-29 16:14:25,459 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?sale_id=1 "HTTP/1.1 200 OK"
+2026-07-29 16:14:28,928 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:14:29,158 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.230s
+2026-07-29 16:14:29,159 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:14:31,372 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 16:14:31,384 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.013s
+2026-07-29 16:14:31,385 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?loss_id=1 "HTTP/1.1 200 OK"
+2026-07-29 16:14:34,519 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:14:34,734 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.215s
+2026-07-29 16:14:34,735 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:14:35,516 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 16:14:35,529 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.013s
+2026-07-29 16:14:35,530 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?product_id=1&batch_id=1&transaction_type=OUT "HTTP/1.1 200 OK"
+2026-07-29 16:14:38,095 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:14:38,304 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.210s
+2026-07-29 16:14:38,305 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:14:39,420 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 16:14:39,433 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.013s
+2026-07-29 16:14:39,435 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?start_date=2026-07-28T20:14:39.419627 "HTTP/1.1 200 OK"
+2026-07-29 16:14:42,115 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:14:42,324 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.210s
+2026-07-29 16:14:42,325 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:14:43,436 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 16:14:43,447 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.012s
+2026-07-29 16:14:43,448 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?end_date=2026-07-24T20:14:42.327085 "HTTP/1.1 200 OK"
+2026-07-29 16:14:46,034 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:14:46,249 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.214s
+2026-07-29 16:14:46,249 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:14:47,912 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 16:14:47,924 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.012s
+2026-07-29 16:14:47,925 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?start_date=2026-07-23T20:14:46.251077&end_date=2026-07-27T20:14:46.251077 "HTTP/1.1 200 OK"
+2026-07-29 16:14:50,585 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:14:50,802 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.217s
+2026-07-29 16:14:50,803 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:14:50,805 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 16:14:50,812 | WARNING | inventory-api | GET /api/v1/inventory-transactions/ | 400 | start_date must be earlier than or equal to end_date.
+2026-07-29 16:14:50,813 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 400 | 0.007s
+2026-07-29 16:14:50,813 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?start_date=2026-07-29T20:14:50.804864&end_date=2026-07-19T20:14:50.804871 "HTTP/1.1 400 Bad Request"
+2026-07-29 16:14:53,775 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:14:53,986 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.212s
+2026-07-29 16:14:53,987 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:14:54,530 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/
+2026-07-29 16:14:54,538 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/ | Status 200 | 0.008s
+2026-07-29 16:14:54,539 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/?start_date=2026-07-19T20:14:53.990261&end_date=2026-07-29T20:14:53.990261 "HTTP/1.1 200 OK"
+2026-07-29 16:14:57,169 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:14:57,402 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.232s
+2026-07-29 16:14:57,402 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:14:57,979 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/1
+2026-07-29 16:14:57,988 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/1 | Status 200 | 0.009s
+2026-07-29 16:14:57,989 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/1 "HTTP/1.1 200 OK"
+2026-07-29 16:15:00,772 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:15:00,982 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.210s
+2026-07-29 16:15:00,983 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:15:01,322 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/1
+2026-07-29 16:15:01,328 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/1 | Status 200 | 0.006s
+2026-07-29 16:15:01,329 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/1 "HTTP/1.1 200 OK"
+2026-07-29 16:15:03,969 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:15:04,188 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.219s
+2026-07-29 16:15:04,189 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:15:04,747 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/1
+2026-07-29 16:15:04,754 | WARNING | inventory-api | GET /api/v1/inventory-transactions/1 | 403 | You are not authorized to view this transaction.
+2026-07-29 16:15:04,754 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/1 | Status 403 | 0.007s
+2026-07-29 16:15:04,755 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/1 "HTTP/1.1 403 Forbidden"
+2026-07-29 16:15:07,469 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:15:07,685 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.216s
+2026-07-29 16:15:07,686 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:15:07,688 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/999999
+2026-07-29 16:15:07,694 | WARNING | inventory-api | GET /api/v1/inventory-transactions/999999 | 404 | Inventory transaction not found.
+2026-07-29 16:15:07,694 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/999999 | Status 404 | 0.006s
+2026-07-29 16:15:07,694 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/999999 "HTTP/1.1 404 Not Found"
+2026-07-29 16:15:10,696 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/1
+2026-07-29 16:15:10,701 | WARNING | inventory-api | GET /api/v1/inventory-transactions/1 | 401 | Not authenticated
+2026-07-29 16:15:10,701 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/1 | Status 401 | 0.005s
+2026-07-29 16:15:10,702 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/1 "HTTP/1.1 401 Unauthorized"
+2026-07-29 16:15:13,754 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/1
+2026-07-29 16:15:13,758 | WARNING | inventory-api | GET /api/v1/inventory-transactions/1 | 401 | Could not validate credentials.
+2026-07-29 16:15:13,758 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/1 | Status 401 | 0.004s
+2026-07-29 16:15:13,758 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/1 "HTTP/1.1 401 Unauthorized"
+2026-07-29 16:15:16,415 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:15:16,629 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.214s
+2026-07-29 16:15:16,630 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:15:16,633 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/0
+2026-07-29 16:15:16,638 | WARNING | inventory-api | GET /api/v1/inventory-transactions/0 | Validation Error | [{'type': 'greater_than', 'loc': ('path', 'transaction_id'), 'msg': 'Input should be greater than 0', 'input': '0', 'ctx': {'gt': 0}}]
+2026-07-29 16:15:16,639 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/0 | Status 422 | 0.006s
+2026-07-29 16:15:16,639 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/0 "HTTP/1.1 422 Unprocessable Entity"
+2026-07-29 16:15:19,300 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:15:19,515 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.214s
+2026-07-29 16:15:19,515 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:15:21,731 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/summary/overview
+2026-07-29 16:15:21,748 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/summary/overview | Status 200 | 0.017s
+2026-07-29 16:15:21,749 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/summary/overview "HTTP/1.1 200 OK"
+2026-07-29 16:15:24,524 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:15:24,737 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.213s
+2026-07-29 16:15:24,738 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:15:26,465 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/summary/overview
+2026-07-29 16:15:26,483 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/summary/overview | Status 200 | 0.018s
+2026-07-29 16:15:26,484 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/summary/overview "HTTP/1.1 200 OK"
+2026-07-29 16:15:29,268 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:15:29,487 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.218s
+2026-07-29 16:15:29,488 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:15:29,490 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/summary/overview
+2026-07-29 16:15:29,502 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/summary/overview | Status 200 | 0.012s
+2026-07-29 16:15:29,503 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/summary/overview "HTTP/1.1 200 OK"
+2026-07-29 16:15:31,960 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/summary/overview
+2026-07-29 16:15:31,962 | WARNING | inventory-api | GET /api/v1/inventory-transactions/summary/overview | 401 | Not authenticated
+2026-07-29 16:15:31,963 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/summary/overview | Status 401 | 0.003s
+2026-07-29 16:15:31,963 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/summary/overview "HTTP/1.1 401 Unauthorized"
+2026-07-29 16:15:34,458 | INFO | inventory-api | Request started | GET /api/v1/inventory-transactions/summary/overview
+2026-07-29 16:15:34,461 | WARNING | inventory-api | GET /api/v1/inventory-transactions/summary/overview | 401 | Could not validate credentials.
+2026-07-29 16:15:34,462 | INFO | inventory-api | Request finished | GET /api/v1/inventory-transactions/summary/overview | Status 401 | 0.003s
+2026-07-29 16:15:34,462 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/inventory-transactions/summary/overview "HTTP/1.1 401 Unauthorized"
+2026-07-29 16:15:37,090 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:15:37,311 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.221s
+2026-07-29 16:15:37,312 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:15:37,392 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-29 16:15:37,444 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=5 | User ID=1
+2026-07-29 16:15:37,445 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 201 | 0.052s
+2026-07-29 16:15:37,446 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 201 Created"
+2026-07-29 16:15:40,113 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:15:40,327 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.214s
+2026-07-29 16:15:40,328 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:15:40,407 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-29 16:15:40,450 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=4 | User ID=1
+2026-07-29 16:15:40,452 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 201 | 0.045s
+2026-07-29 16:15:40,452 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 201 Created"
+2026-07-29 16:15:43,294 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:15:43,511 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.217s
+2026-07-29 16:15:43,513 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:15:43,593 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-29 16:15:43,623 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=2 | User ID=1
+2026-07-29 16:15:43,624 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 201 | 0.032s
+2026-07-29 16:15:43,625 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 201 Created"
+2026-07-29 16:15:45,994 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-29 16:15:45,997 | WARNING | inventory-api | POST /api/v1/losses/ | 401 | Not authenticated
+2026-07-29 16:15:45,997 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 401 | 0.003s
+2026-07-29 16:15:45,997 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 401 Unauthorized"
+2026-07-29 16:15:48,461 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-29 16:15:48,465 | WARNING | inventory-api | POST /api/v1/losses/ | 401 | Could not validate credentials.
+2026-07-29 16:15:48,465 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 401 | 0.004s
+2026-07-29 16:15:48,465 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 401 Unauthorized"
+2026-07-29 16:15:51,169 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:15:51,381 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.212s
+2026-07-29 16:15:51,382 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:15:51,384 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-29 16:15:51,393 | WARNING | inventory-api | POST /api/v1/losses/ | 404 | Batch not found.
+2026-07-29 16:15:51,393 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 404 | 0.009s
+2026-07-29 16:15:51,394 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 404 Not Found"
+2026-07-29 16:15:54,075 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:15:54,295 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.220s
+2026-07-29 16:15:54,297 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:15:54,391 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-29 16:15:54,402 | WARNING | inventory-api | POST /api/v1/losses/ | 400 | Insufficient stock to log this loss.
+2026-07-29 16:15:54,402 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 400 | 0.012s
+2026-07-29 16:15:54,403 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 400 Bad Request"
+2026-07-29 16:15:57,007 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:15:57,222 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.214s
+2026-07-29 16:15:57,223 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:15:57,322 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-29 16:15:57,335 | WARNING | inventory-api | POST /api/v1/losses/ | 400 | Cannot register losses for an inactive product.
+2026-07-29 16:15:57,336 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 400 | 0.014s
+2026-07-29 16:15:57,336 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 400 Bad Request"
+2026-07-29 16:16:00,033 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:16:00,252 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.219s
+2026-07-29 16:16:00,253 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:16:01,350 | INFO | inventory-api | Request started | GET /api/v1/losses/
+2026-07-29 16:16:01,361 | INFO | inventory-api | Request finished | GET /api/v1/losses/ | Status 200 | 0.012s
+2026-07-29 16:16:01,362 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/ "HTTP/1.1 200 OK"
+2026-07-29 16:16:04,063 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:16:04,279 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.216s
+2026-07-29 16:16:04,280 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:16:05,452 | INFO | inventory-api | Request started | GET /api/v1/losses/
+2026-07-29 16:16:05,464 | INFO | inventory-api | Request finished | GET /api/v1/losses/ | Status 200 | 0.012s
+2026-07-29 16:16:05,465 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/ "HTTP/1.1 200 OK"
+2026-07-29 16:16:08,360 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:16:08,577 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.218s
+2026-07-29 16:16:08,578 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:16:11,308 | INFO | inventory-api | Request started | GET /api/v1/losses/
+2026-07-29 16:16:11,316 | INFO | inventory-api | Request finished | GET /api/v1/losses/ | Status 200 | 0.008s
+2026-07-29 16:16:11,317 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/?skip=0&limit=2 "HTTP/1.1 200 OK"
+2026-07-29 16:16:13,874 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:16:14,092 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.217s
+2026-07-29 16:16:14,092 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:16:15,163 | INFO | inventory-api | Request started | GET /api/v1/losses/
+2026-07-29 16:16:15,175 | INFO | inventory-api | Request finished | GET /api/v1/losses/ | Status 200 | 0.012s
+2026-07-29 16:16:15,176 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/?sort=quantity_lost&order=asc "HTTP/1.1 200 OK"
+2026-07-29 16:16:17,873 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:16:18,100 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.226s
+2026-07-29 16:16:18,101 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:16:19,194 | INFO | inventory-api | Request started | GET /api/v1/losses/
+2026-07-29 16:16:19,207 | INFO | inventory-api | Request finished | GET /api/v1/losses/ | Status 200 | 0.013s
+2026-07-29 16:16:19,208 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/?sort=quantity_lost&order=desc "HTTP/1.1 200 OK"
+2026-07-29 16:16:21,883 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:16:22,097 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.214s
+2026-07-29 16:16:22,098 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:16:22,677 | INFO | inventory-api | Request started | GET /api/v1/losses/1
+2026-07-29 16:16:22,686 | INFO | inventory-api | Request finished | GET /api/v1/losses/1 | Status 200 | 0.009s
+2026-07-29 16:16:22,687 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/1 "HTTP/1.1 200 OK"
+2026-07-29 16:16:25,728 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:16:25,941 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.213s
+2026-07-29 16:16:25,942 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:16:25,945 | INFO | inventory-api | Request started | GET /api/v1/losses/999999
+2026-07-29 16:16:25,952 | WARNING | inventory-api | GET /api/v1/losses/999999 | 404 | Loss log not found.
+2026-07-29 16:16:25,952 | INFO | inventory-api | Request finished | GET /api/v1/losses/999999 | Status 404 | 0.007s
+2026-07-29 16:16:25,952 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/999999 "HTTP/1.1 404 Not Found"
+2026-07-29 16:16:28,707 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:16:28,930 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.222s
+2026-07-29 16:16:28,930 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:16:29,258 | INFO | inventory-api | Request started | GET /api/v1/losses/1
+2026-07-29 16:16:29,265 | INFO | inventory-api | Request finished | GET /api/v1/losses/1 | Status 200 | 0.007s
+2026-07-29 16:16:29,266 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/1 "HTTP/1.1 200 OK"
+2026-07-29 16:16:32,005 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:16:32,225 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.220s
+2026-07-29 16:16:32,226 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:16:32,765 | INFO | inventory-api | Request started | GET /api/v1/losses/1
+2026-07-29 16:16:32,772 | WARNING | inventory-api | GET /api/v1/losses/1 | 403 | You are not authorized to view this loss log.
+2026-07-29 16:16:32,772 | INFO | inventory-api | Request finished | GET /api/v1/losses/1 | Status 403 | 0.007s
+2026-07-29 16:16:32,772 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/1 "HTTP/1.1 403 Forbidden"
+2026-07-29 16:16:35,488 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:16:35,712 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.224s
+2026-07-29 16:16:35,713 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:16:36,263 | INFO | inventory-api | Request started | GET /api/v1/losses/1
+2026-07-29 16:16:36,270 | INFO | inventory-api | Request finished | GET /api/v1/losses/1 | Status 200 | 0.007s
+2026-07-29 16:16:36,271 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/1 "HTTP/1.1 200 OK"
+2026-07-29 16:16:39,379 | INFO | inventory-api | Request started | GET /api/v1/losses/1
+2026-07-29 16:16:39,384 | WARNING | inventory-api | GET /api/v1/losses/1 | 401 | Not authenticated
+2026-07-29 16:16:39,384 | INFO | inventory-api | Request finished | GET /api/v1/losses/1 | Status 401 | 0.005s
+2026-07-29 16:16:39,385 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/1 "HTTP/1.1 401 Unauthorized"
+2026-07-29 16:16:42,344 | INFO | inventory-api | Request started | GET /api/v1/losses/1
+2026-07-29 16:16:42,347 | WARNING | inventory-api | GET /api/v1/losses/1 | 401 | Could not validate credentials.
+2026-07-29 16:16:42,347 | INFO | inventory-api | Request finished | GET /api/v1/losses/1 | Status 401 | 0.004s
+2026-07-29 16:16:42,348 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/1 "HTTP/1.1 401 Unauthorized"
+2026-07-29 16:16:44,977 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:16:45,205 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.229s
+2026-07-29 16:16:45,206 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:16:45,208 | INFO | inventory-api | Request started | GET /api/v1/losses/0
+2026-07-29 16:16:45,213 | WARNING | inventory-api | GET /api/v1/losses/0 | Validation Error | [{'type': 'greater_than', 'loc': ('path', 'loss_id'), 'msg': 'Input should be greater than 0', 'input': '0', 'ctx': {'gt': 0}}]
+2026-07-29 16:16:45,214 | INFO | inventory-api | Request finished | GET /api/v1/losses/0 | Status 422 | 0.005s
+2026-07-29 16:16:45,214 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/0 "HTTP/1.1 422 Unprocessable Entity"
+2026-07-29 16:16:47,939 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:16:48,159 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.220s
+2026-07-29 16:16:48,161 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:16:48,801 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 16:16:48,814 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 200 | 0.013s
+2026-07-29 16:16:48,815 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 200 OK"
+2026-07-29 16:16:51,430 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 16:16:51,433 | WARNING | inventory-api | GET /api/v1/reports/low-stock | 401 | Not authenticated
+2026-07-29 16:16:51,433 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 401 | 0.003s
+2026-07-29 16:16:51,434 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 401 Unauthorized"
+2026-07-29 16:16:54,017 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:16:54,224 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-07-29 16:16:54,224 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:16:54,226 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 16:16:54,231 | WARNING | inventory-api | GET /api/v1/reports/low-stock | 403 | Only administrators can access reports.
+2026-07-29 16:16:54,231 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 403 | 0.005s
+2026-07-29 16:16:54,232 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 403 Forbidden"
+2026-07-29 16:16:57,119 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:16:57,346 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.226s
+2026-07-29 16:16:57,347 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:16:57,350 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 16:16:57,367 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 200 | 0.017s
+2026-07-29 16:16:57,369 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 200 OK"
+2026-07-29 16:17:00,158 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:17:00,375 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.217s
+2026-07-29 16:17:00,377 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:17:00,964 | INFO | inventory-api | Request started | GET /api/v1/reports/low-stock
+2026-07-29 16:17:00,971 | INFO | inventory-api | Request finished | GET /api/v1/reports/low-stock | Status 200 | 0.007s
+2026-07-29 16:17:00,973 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/low-stock "HTTP/1.1 200 OK"
+2026-07-29 16:17:03,740 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:17:03,972 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.232s
+2026-07-29 16:17:03,973 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:17:04,507 | INFO | inventory-api | Request started | GET /api/v1/reports/batch-audit/1
+2026-07-29 16:17:04,519 | INFO | inventory-api | Request finished | GET /api/v1/reports/batch-audit/1 | Status 200 | 0.012s
+2026-07-29 16:17:04,520 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/batch-audit/1 "HTTP/1.1 200 OK"
+2026-07-29 16:17:07,780 | INFO | inventory-api | Request started | GET /api/v1/reports/batch-audit/1
+2026-07-29 16:17:07,783 | WARNING | inventory-api | GET /api/v1/reports/batch-audit/1 | 401 | Not authenticated
+2026-07-29 16:17:07,783 | INFO | inventory-api | Request finished | GET /api/v1/reports/batch-audit/1 | Status 401 | 0.003s
+2026-07-29 16:17:07,783 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/batch-audit/1 "HTTP/1.1 401 Unauthorized"
+2026-07-29 16:17:10,589 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:17:10,798 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.208s
+2026-07-29 16:17:10,799 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:17:11,353 | INFO | inventory-api | Request started | GET /api/v1/reports/batch-audit/1
+2026-07-29 16:17:11,360 | WARNING | inventory-api | GET /api/v1/reports/batch-audit/1 | 403 | Only administrators can access reports.
+2026-07-29 16:17:11,360 | INFO | inventory-api | Request finished | GET /api/v1/reports/batch-audit/1 | Status 403 | 0.007s
+2026-07-29 16:17:11,361 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/batch-audit/1 "HTTP/1.1 403 Forbidden"
+2026-07-29 16:17:13,973 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:17:14,188 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.215s
+2026-07-29 16:17:14,189 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:17:14,191 | INFO | inventory-api | Request started | GET /api/v1/reports/batch-audit/999999
+2026-07-29 16:17:14,198 | WARNING | inventory-api | GET /api/v1/reports/batch-audit/999999 | 404 | Batch not found.
+2026-07-29 16:17:14,198 | INFO | inventory-api | Request finished | GET /api/v1/reports/batch-audit/999999 | Status 404 | 0.007s
+2026-07-29 16:17:14,199 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/batch-audit/999999 "HTTP/1.1 404 Not Found"
+2026-07-29 16:17:16,963 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:17:17,189 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.227s
+2026-07-29 16:17:17,190 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:17:17,799 | INFO | inventory-api | Request started | GET /api/v1/reports/batch-audit/1
+2026-07-29 16:17:17,815 | INFO | inventory-api | Request finished | GET /api/v1/reports/batch-audit/1 | Status 200 | 0.016s
+2026-07-29 16:17:17,816 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/batch-audit/1 "HTTP/1.1 200 OK"
+2026-07-29 16:17:20,599 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:17:20,815 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.216s
+2026-07-29 16:17:20,816 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:17:21,600 | INFO | inventory-api | Request started | GET /api/v1/reports/sales-performance
+2026-07-29 16:17:21,614 | INFO | inventory-api | Request finished | GET /api/v1/reports/sales-performance | Status 200 | 0.013s
+2026-07-29 16:17:21,615 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/sales-performance?start_date=2026-07-28T20%3A17%3A21.599608&end_date=2026-07-30T20%3A17%3A21.599618 "HTTP/1.1 200 OK"
+2026-07-29 16:17:24,030 | INFO | inventory-api | Request started | GET /api/v1/reports/sales-performance
+2026-07-29 16:17:24,033 | WARNING | inventory-api | GET /api/v1/reports/sales-performance | 401 | Not authenticated
+2026-07-29 16:17:24,033 | INFO | inventory-api | Request finished | GET /api/v1/reports/sales-performance | Status 401 | 0.003s
+2026-07-29 16:17:24,034 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/sales-performance?start_date=2026-07-28T20%3A17%3A24.029749&end_date=2026-07-30T20%3A17%3A24.029758 "HTTP/1.1 401 Unauthorized"
+2026-07-29 16:17:26,799 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:17:27,016 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.217s
+2026-07-29 16:17:27,017 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:17:27,019 | INFO | inventory-api | Request started | GET /api/v1/reports/sales-performance
+2026-07-29 16:17:27,024 | WARNING | inventory-api | GET /api/v1/reports/sales-performance | 403 | Only administrators can access reports.
+2026-07-29 16:17:27,024 | INFO | inventory-api | Request finished | GET /api/v1/reports/sales-performance | Status 403 | 0.005s
+2026-07-29 16:17:27,025 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/sales-performance?start_date=2026-07-28T20%3A17%3A27.018345&end_date=2026-07-30T20%3A17%3A27.018353 "HTTP/1.1 403 Forbidden"
+2026-07-29 16:17:29,717 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:17:29,932 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.215s
+2026-07-29 16:17:29,932 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:17:29,934 | INFO | inventory-api | Request started | GET /api/v1/reports/sales-performance
+2026-07-29 16:17:29,940 | WARNING | inventory-api | GET /api/v1/reports/sales-performance | 400 | start_date must be earlier than end_date.
+2026-07-29 16:17:29,940 | INFO | inventory-api | Request finished | GET /api/v1/reports/sales-performance | Status 400 | 0.006s
+2026-07-29 16:17:29,940 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/sales-performance?start_date=2026-08-03T20%3A17%3A29.933907&end_date=2026-07-29T20%3A17%3A29.933915 "HTTP/1.1 400 Bad Request"
+2026-07-29 16:17:32,690 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:17:32,905 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.215s
+2026-07-29 16:17:32,906 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:17:32,908 | INFO | inventory-api | Request started | GET /api/v1/reports/sales-performance
+2026-07-29 16:17:32,917 | INFO | inventory-api | Request finished | GET /api/v1/reports/sales-performance | Status 200 | 0.009s
+2026-07-29 16:17:32,918 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/sales-performance?start_date=2000-01-01T00%3A00%3A00&end_date=2000-01-02T00%3A00%3A00 "HTTP/1.1 200 OK"
+2026-07-29 16:17:35,740 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:17:35,956 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.216s
+2026-07-29 16:17:35,957 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:17:36,263 | INFO | inventory-api | Request started | GET /api/v1/reports/expiring-soon
+2026-07-29 16:17:36,275 | INFO | inventory-api | Request finished | GET /api/v1/reports/expiring-soon | Status 200 | 0.012s
+2026-07-29 16:17:36,276 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/expiring-soon "HTTP/1.1 200 OK"
+2026-07-29 16:17:38,839 | INFO | inventory-api | Request started | GET /api/v1/reports/expiring-soon
+2026-07-29 16:17:38,842 | WARNING | inventory-api | GET /api/v1/reports/expiring-soon | 401 | Not authenticated
+2026-07-29 16:17:38,842 | INFO | inventory-api | Request finished | GET /api/v1/reports/expiring-soon | Status 401 | 0.003s
+2026-07-29 16:17:38,843 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/expiring-soon "HTTP/1.1 401 Unauthorized"
+2026-07-29 16:17:41,521 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:17:41,735 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.214s
+2026-07-29 16:17:41,736 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:17:41,738 | INFO | inventory-api | Request started | GET /api/v1/reports/expiring-soon
+2026-07-29 16:17:41,745 | WARNING | inventory-api | GET /api/v1/reports/expiring-soon | 403 | Only administrators can access reports.
+2026-07-29 16:17:41,745 | INFO | inventory-api | Request finished | GET /api/v1/reports/expiring-soon | Status 403 | 0.007s
+2026-07-29 16:17:41,746 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/expiring-soon "HTTP/1.1 403 Forbidden"
+2026-07-29 16:17:44,460 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:17:44,671 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.211s
+2026-07-29 16:17:44,672 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:17:45,866 | INFO | inventory-api | Request started | GET /api/v1/reports/expiring-soon
+2026-07-29 16:17:45,876 | INFO | inventory-api | Request finished | GET /api/v1/reports/expiring-soon | Status 200 | 0.010s
+2026-07-29 16:17:45,877 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/expiring-soon "HTTP/1.1 200 OK"
+2026-07-29 16:17:48,614 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:17:48,826 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.211s
+2026-07-29 16:17:48,827 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:17:49,132 | INFO | inventory-api | Request started | GET /api/v1/reports/expiring-soon
+2026-07-29 16:17:49,141 | INFO | inventory-api | Request finished | GET /api/v1/reports/expiring-soon | Status 200 | 0.010s
+2026-07-29 16:17:49,142 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/expiring-soon?days=15 "HTTP/1.1 200 OK"
+2026-07-29 16:17:51,751 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:17:51,968 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.216s
+2026-07-29 16:17:51,969 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:17:51,971 | INFO | inventory-api | Request started | GET /api/v1/reports/expiring-soon
+2026-07-29 16:17:51,975 | WARNING | inventory-api | GET /api/v1/reports/expiring-soon | Validation Error | [{'type': 'greater_than_equal', 'loc': ('query', 'days'), 'msg': 'Input should be greater than or equal to 1', 'input': '0', 'ctx': {'ge': 1}}]
+2026-07-29 16:17:51,976 | INFO | inventory-api | Request finished | GET /api/v1/reports/expiring-soon | Status 422 | 0.005s
+2026-07-29 16:17:51,976 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/reports/expiring-soon?days=0 "HTTP/1.1 422 Unprocessable Entity"
+2026-07-29 16:17:54,710 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:17:54,926 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.215s
+2026-07-29 16:17:54,927 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:17:55,273 | INFO | inventory-api | Request started | POST /api/v1/sales/
+2026-07-29 16:17:55,327 | INFO | inventory-api | Request finished | POST /api/v1/sales/ | Status 201 | 0.054s
+2026-07-29 16:17:55,328 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/sales/ "HTTP/1.1 201 Created"
+2026-07-29 16:17:58,125 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:17:58,341 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.216s
+2026-07-29 16:17:58,341 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:17:58,644 | INFO | inventory-api | Request started | POST /api/v1/sales/
+2026-07-29 16:17:58,681 | INFO | inventory-api | Request finished | POST /api/v1/sales/ | Status 201 | 0.038s
+2026-07-29 16:17:58,682 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/sales/ "HTTP/1.1 201 Created"
+2026-07-29 16:18:01,365 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:18:01,577 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.212s
+2026-07-29 16:18:01,579 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:18:01,880 | INFO | inventory-api | Request started | POST /api/v1/sales/
+2026-07-29 16:18:01,910 | INFO | inventory-api | Request finished | POST /api/v1/sales/ | Status 201 | 0.030s
+2026-07-29 16:18:01,911 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/sales/ "HTTP/1.1 201 Created"
+2026-07-29 16:18:04,772 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:18:04,990 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.218s
+2026-07-29 16:18:04,991 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:18:05,299 | INFO | inventory-api | Request started | POST /api/v1/sales/
+2026-07-29 16:18:05,334 | INFO | inventory-api | Request finished | POST /api/v1/sales/ | Status 201 | 0.035s
+2026-07-29 16:18:05,335 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/sales/ "HTTP/1.1 201 Created"
+2026-07-29 16:18:07,689 | INFO | inventory-api | Request started | POST /api/v1/sales/
+2026-07-29 16:18:07,692 | WARNING | inventory-api | POST /api/v1/sales/ | 401 | Not authenticated
+2026-07-29 16:18:07,693 | INFO | inventory-api | Request finished | POST /api/v1/sales/ | Status 401 | 0.004s
+2026-07-29 16:18:07,693 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/sales/ "HTTP/1.1 401 Unauthorized"
+2026-07-29 16:18:10,252 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:18:10,472 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.220s
+2026-07-29 16:18:10,472 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:18:10,778 | INFO | inventory-api | Request started | POST /api/v1/sales/
+2026-07-29 16:18:10,787 | WARNING | inventory-api | POST /api/v1/sales/ | 400 | Invalid customer_id.
+2026-07-29 16:18:10,788 | INFO | inventory-api | Request finished | POST /api/v1/sales/ | Status 400 | 0.010s
+2026-07-29 16:18:10,788 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/sales/ "HTTP/1.1 400 Bad Request"
+2026-07-29 16:18:13,595 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:18:13,811 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.216s
+2026-07-29 16:18:13,812 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:18:14,142 | INFO | inventory-api | Request started | POST /api/v1/sales/
+2026-07-29 16:18:14,165 | WARNING | inventory-api | POST /api/v1/sales/ | 400 | Insufficient total stock for Product ID 1. Requested: 20, Available: 5.
+2026-07-29 16:18:14,166 | INFO | inventory-api | Request finished | POST /api/v1/sales/ | Status 400 | 0.023s
+2026-07-29 16:18:14,166 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/sales/ "HTTP/1.1 400 Bad Request"
+2026-07-29 16:18:16,797 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:18:17,011 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.214s
+2026-07-29 16:18:17,012 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:18:17,013 | INFO | inventory-api | Request started | POST /api/v1/sales/
+2026-07-29 16:18:17,018 | WARNING | inventory-api | POST /api/v1/sales/ | Validation Error | [{'type': 'missing', 'loc': ('body', 'payment_method'), 'msg': 'Field required', 'input': {}}, {'type': 'missing', 'loc': ('body', 'payment_status'), 'msg': 'Field required', 'input': {}}, {'type': 'missing', 'loc': ('body', 'items'), 'msg': 'Field required', 'input': {}}]
+2026-07-29 16:18:17,018 | INFO | inventory-api | Request finished | POST /api/v1/sales/ | Status 422 | 0.005s
+2026-07-29 16:18:17,019 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/sales/ "HTTP/1.1 422 Unprocessable Entity"
+2026-07-29 16:18:19,675 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:18:19,895 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.220s
+2026-07-29 16:18:19,896 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:18:20,692 | INFO | inventory-api | Request started | GET /api/v1/sales/
+2026-07-29 16:18:20,707 | INFO | inventory-api | Request finished | GET /api/v1/sales/ | Status 200 | 0.015s
+2026-07-29 16:18:20,708 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/sales/ "HTTP/1.1 200 OK"
+2026-07-29 16:18:23,250 | INFO | inventory-api | Request started | GET /api/v1/sales/
+2026-07-29 16:18:23,254 | WARNING | inventory-api | GET /api/v1/sales/ | 401 | Not authenticated
+2026-07-29 16:18:23,254 | INFO | inventory-api | Request finished | GET /api/v1/sales/ | Status 401 | 0.004s
+2026-07-29 16:18:23,255 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/sales/ "HTTP/1.1 401 Unauthorized"
+2026-07-29 16:18:25,958 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:18:26,176 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.218s
+2026-07-29 16:18:26,177 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:18:26,178 | INFO | inventory-api | Request started | GET /api/v1/sales/
+2026-07-29 16:18:26,187 | INFO | inventory-api | Request finished | GET /api/v1/sales/ | Status 200 | 0.009s
+2026-07-29 16:18:26,188 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/sales/ "HTTP/1.1 200 OK"
+2026-07-29 16:18:28,823 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:18:29,036 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.213s
+2026-07-29 16:18:29,037 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:18:29,815 | INFO | inventory-api | Request started | GET /api/v1/sales/
+2026-07-29 16:18:29,830 | INFO | inventory-api | Request finished | GET /api/v1/sales/ | Status 200 | 0.015s
+2026-07-29 16:18:29,831 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/sales/?sort=total_amount&order=asc "HTTP/1.1 200 OK"
+2026-07-29 16:18:32,687 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:18:32,896 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.208s
+2026-07-29 16:18:32,898 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:18:33,710 | INFO | inventory-api | Request started | GET /api/v1/sales/
+2026-07-29 16:18:33,725 | INFO | inventory-api | Request finished | GET /api/v1/sales/ | Status 200 | 0.015s
+2026-07-29 16:18:33,726 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/sales/?sort=sold_at&order=desc "HTTP/1.1 200 OK"
+2026-07-29 16:18:36,268 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:18:36,478 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.210s
+2026-07-29 16:18:36,479 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:18:37,074 | INFO | inventory-api | Request started | GET /api/v1/sales/1
+2026-07-29 16:18:37,089 | INFO | inventory-api | Request finished | GET /api/v1/sales/1 | Status 200 | 0.015s
+2026-07-29 16:18:37,089 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/sales/1 "HTTP/1.1 200 OK"
+2026-07-29 16:18:39,728 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:18:39,944 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.216s
+2026-07-29 16:18:39,944 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:18:39,946 | INFO | inventory-api | Request started | GET /api/v1/sales/999999
+2026-07-29 16:18:39,952 | WARNING | inventory-api | GET /api/v1/sales/999999 | 404 | Sale not found.
+2026-07-29 16:18:39,952 | INFO | inventory-api | Request finished | GET /api/v1/sales/999999 | Status 404 | 0.007s
+2026-07-29 16:18:39,953 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/sales/999999 "HTTP/1.1 404 Not Found"
+2026-07-29 16:18:42,653 | INFO | inventory-api | Request started | GET /api/v1/sales/1
+2026-07-29 16:18:42,656 | WARNING | inventory-api | GET /api/v1/sales/1 | 401 | Not authenticated
+2026-07-29 16:18:42,656 | INFO | inventory-api | Request finished | GET /api/v1/sales/1 | Status 401 | 0.003s
+2026-07-29 16:18:42,657 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/sales/1 "HTTP/1.1 401 Unauthorized"
+2026-07-29 16:18:45,213 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:18:45,419 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-07-29 16:18:45,420 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:18:45,989 | INFO | inventory-api | Request started | GET /api/v1/sales/1
+2026-07-29 16:18:46,000 | INFO | inventory-api | Request finished | GET /api/v1/sales/1 | Status 200 | 0.011s
+2026-07-29 16:18:46,001 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/sales/1 "HTTP/1.1 200 OK"
+2026-07-29 16:18:49,039 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:18:49,257 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.218s
+2026-07-29 16:18:49,258 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:18:49,863 | INFO | inventory-api | Request started | GET /api/v1/sales/1
+2026-07-29 16:18:49,875 | INFO | inventory-api | Request finished | GET /api/v1/sales/1 | Status 200 | 0.012s
+2026-07-29 16:18:49,877 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/sales/1 "HTTP/1.1 200 OK"
+2026-07-29 16:18:52,684 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:18:52,899 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.215s
+2026-07-29 16:18:52,900 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:18:54,234 | INFO | inventory-api | Request started | GET /api/v1/sales/
+2026-07-29 16:18:54,244 | INFO | inventory-api | Request finished | GET /api/v1/sales/ | Status 200 | 0.010s
+2026-07-29 16:18:54,245 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/sales/?limit=2 "HTTP/1.1 200 OK"
+2026-07-29 16:18:56,898 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:18:57,119 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.222s
+2026-07-29 16:18:57,120 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:18:58,456 | INFO | inventory-api | Request started | GET /api/v1/sales/
+2026-07-29 16:18:58,466 | INFO | inventory-api | Request finished | GET /api/v1/sales/ | Status 200 | 0.010s
+2026-07-29 16:18:58,467 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/sales/?skip=2&limit=2 "HTTP/1.1 200 OK"
+2026-07-29 16:19:01,184 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-29 16:19:01,400 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.216s
+2026-07-29 16:19:01,401 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-29 16:19:02,204 | INFO | inventory-api | Request started | GET /api/v1/sales/
+2026-07-29 16:19:02,215 | INFO | inventory-api | Request finished | GET /api/v1/sales/ | Status 200 | 0.011s
+2026-07-29 16:19:02,216 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/sales/?limit=2 "HTTP/1.1 200 OK"
+2026-07-29 16:19:52,983 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=5 | User ID=1
+2026-07-29 16:19:55,850 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=12 | User ID=1
+2026-07-29 16:19:58,704 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=7 | User ID=1
+2026-07-29 16:20:01,376 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=3 | User ID=1
+2026-07-29 16:20:15,321 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=8 | User ID=1
+2026-07-29 16:20:18,110 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=4 | User ID=1
+2026-07-29 16:20:21,043 | WARNING | inventory-api | LOW STOCK ALERT | Product='Test Product' | Product ID=1 | Current Stock=5 | Minimum=5
+2026-07-29 16:20:21,066 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=5 | User ID=1
+2026-07-29 16:20:23,833 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=5 | User ID=1
+2026-07-29 16:20:26,866 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=8 | User ID=1
+2026-07-29 16:20:26,892 | INFO | inventory-api | Loss registered | Loss ID=2 | Product ID=1 | Batch ID=1 | Quantity=7 | User ID=1
+2026-07-29 16:20:29,776 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=2 | User ID=1
