@@ -1649,3 +1649,505 @@ fastapi.exceptions.ResponseValidationError: 1 validation error:
 2026-07-28 08:00:56,537 | INFO | inventory-api | Request started | GET /api/v1/sales/
 2026-07-28 08:00:56,545 | INFO | inventory-api | Request finished | GET /api/v1/sales/ | Status 200 | 0.007s
 2026-07-28 08:00:56,545 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/sales/?limit=2 "HTTP/1.1 200 OK"
+2026-07-28 13:12:31,566 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=5 | User ID=1
+2026-07-28 13:12:34,407 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=12 | User ID=1
+2026-07-28 13:12:37,323 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=7 | User ID=1
+2026-07-28 13:12:40,142 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=3 | User ID=1
+2026-07-28 13:14:42,354 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=5 | User ID=1
+2026-07-28 13:14:45,048 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=12 | User ID=1
+2026-07-28 13:14:47,906 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=7 | User ID=1
+2026-07-28 13:14:50,637 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=3 | User ID=1
+2026-07-28 13:19:23,499 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=5 | User ID=1
+2026-07-28 13:19:26,367 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=12 | User ID=1
+2026-07-28 13:19:29,135 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=7 | User ID=1
+2026-07-28 13:19:31,980 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=3 | User ID=1
+2026-07-28 13:19:45,991 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=8 | User ID=1
+2026-07-28 13:19:48,846 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=4 | User ID=1
+2026-07-28 13:19:51,827 | WARNING | inventory-api | LOW STOCK ALERT | Product='Test Product' | Product ID=1 | Current Stock=5 | Minimum=5
+2026-07-28 13:19:51,846 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=5 | User ID=1
+2026-07-28 20:45:11,855 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=5 | User ID=1
+2026-07-28 20:45:14,992 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=12 | User ID=1
+2026-07-28 20:45:17,699 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=7 | User ID=1
+2026-07-28 20:45:20,419 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=3 | User ID=1
+2026-07-28 20:45:34,179 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=8 | User ID=1
+2026-07-28 20:45:37,150 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=4 | User ID=1
+2026-07-28 20:45:40,135 | WARNING | inventory-api | LOW STOCK ALERT | Product='Test Product' | Product ID=1 | Current Stock=5 | Minimum=5
+2026-07-28 20:45:40,156 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=5 | User ID=1
+2026-07-28 20:45:43,056 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=5 | User ID=1
+2026-07-28 20:45:45,687 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=8 | User ID=1
+2026-07-28 20:45:45,708 | INFO | inventory-api | Loss registered | Loss ID=2 | Product ID=1 | Batch ID=1 | Quantity=7 | User ID=1
+2026-07-28 20:54:25,434 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=5 | User ID=1
+2026-07-28 20:54:28,253 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=12 | User ID=1
+2026-07-28 20:54:31,045 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=7 | User ID=1
+2026-07-28 20:54:33,867 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=3 | User ID=1
+2026-07-28 20:54:48,361 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=8 | User ID=1
+2026-07-28 20:54:51,189 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=4 | User ID=1
+2026-07-28 20:54:54,071 | WARNING | inventory-api | LOW STOCK ALERT | Product='Test Product' | Product ID=1 | Current Stock=5 | Minimum=5
+2026-07-28 20:54:54,089 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=5 | User ID=1
+2026-07-28 20:54:56,972 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=5 | User ID=1
+2026-07-28 20:54:59,788 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=8 | User ID=1
+2026-07-28 20:54:59,810 | INFO | inventory-api | Loss registered | Loss ID=2 | Product ID=1 | Batch ID=1 | Quantity=7 | User ID=1
+2026-07-28 20:55:02,555 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=2 | User ID=1
+2026-07-28 21:04:29,926 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:04:30,183 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.257s
+2026-07-28 21:04:30,184 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:04:30,254 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:04:30,322 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=5 | User ID=1
+2026-07-28 21:04:30,326 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 201 | 0.071s
+2026-07-28 21:04:30,326 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 201 Created"
+2026-07-28 21:04:33,018 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:04:33,219 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.201s
+2026-07-28 21:04:33,220 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:04:33,290 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:04:33,321 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=4 | User ID=1
+2026-07-28 21:04:33,322 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 201 | 0.032s
+2026-07-28 21:04:33,322 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 201 Created"
+2026-07-28 21:04:36,134 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:04:36,337 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.202s
+2026-07-28 21:04:36,338 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:04:36,437 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:04:36,470 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=2 | User ID=1
+2026-07-28 21:04:36,471 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 201 | 0.034s
+2026-07-28 21:04:36,472 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 201 Created"
+2026-07-28 21:04:39,026 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:04:39,028 | WARNING | inventory-api | POST /api/v1/losses/ | 401 | Not authenticated
+2026-07-28 21:04:39,028 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 401 | 0.002s
+2026-07-28 21:04:39,028 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 401 Unauthorized"
+2026-07-28 21:04:41,525 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:04:41,527 | WARNING | inventory-api | POST /api/v1/losses/ | 401 | Could not validate credentials.
+2026-07-28 21:04:41,527 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 401 | 0.003s
+2026-07-28 21:04:41,528 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 401 Unauthorized"
+2026-07-28 21:04:44,340 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:04:44,545 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.206s
+2026-07-28 21:04:44,546 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:04:44,548 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:04:44,554 | WARNING | inventory-api | POST /api/v1/losses/ | 404 | Batch not found.
+2026-07-28 21:04:44,554 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 404 | 0.007s
+2026-07-28 21:04:44,554 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 404 Not Found"
+2026-07-28 21:04:47,347 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:04:47,553 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.205s
+2026-07-28 21:04:47,554 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:04:47,630 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:04:47,636 | WARNING | inventory-api | POST /api/v1/losses/ | 400 | Insufficient stock to log this loss.
+2026-07-28 21:04:47,636 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 400 | 0.006s
+2026-07-28 21:04:47,637 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 400 Bad Request"
+2026-07-28 21:04:50,291 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:04:50,488 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.197s
+2026-07-28 21:04:50,488 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:04:50,569 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:04:50,575 | WARNING | inventory-api | POST /api/v1/losses/ | 400 | Cannot register losses for an inactive product.
+2026-07-28 21:04:50,575 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 400 | 0.007s
+2026-07-28 21:04:50,576 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 400 Bad Request"
+2026-07-28 21:07:24,220 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:07:24,443 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.223s
+2026-07-28 21:07:24,444 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:07:24,528 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:07:24,606 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=5 | User ID=1
+2026-07-28 21:07:24,607 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 201 | 0.079s
+2026-07-28 21:07:24,608 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 201 Created"
+2026-07-28 21:07:27,604 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:07:27,804 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.200s
+2026-07-28 21:07:27,805 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:07:27,864 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:07:27,889 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=4 | User ID=1
+2026-07-28 21:07:27,889 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 201 | 0.025s
+2026-07-28 21:07:27,890 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 201 Created"
+2026-07-28 21:07:30,449 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:07:30,656 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-07-28 21:07:30,656 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:07:30,731 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:07:30,760 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=2 | User ID=1
+2026-07-28 21:07:30,761 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 201 | 0.030s
+2026-07-28 21:07:30,761 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 201 Created"
+2026-07-28 21:07:33,192 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:07:33,194 | WARNING | inventory-api | POST /api/v1/losses/ | 401 | Not authenticated
+2026-07-28 21:07:33,195 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 401 | 0.002s
+2026-07-28 21:07:33,195 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 401 Unauthorized"
+2026-07-28 21:07:35,872 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:07:35,874 | WARNING | inventory-api | POST /api/v1/losses/ | 401 | Could not validate credentials.
+2026-07-28 21:07:35,874 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 401 | 0.002s
+2026-07-28 21:07:35,875 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 401 Unauthorized"
+2026-07-28 21:07:38,788 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:07:38,994 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-07-28 21:07:38,995 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:07:38,997 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:07:39,004 | WARNING | inventory-api | POST /api/v1/losses/ | 404 | Batch not found.
+2026-07-28 21:07:39,004 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 404 | 0.007s
+2026-07-28 21:07:39,004 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 404 Not Found"
+2026-07-28 21:07:41,859 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:07:42,057 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.198s
+2026-07-28 21:07:42,058 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:07:42,141 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:07:42,148 | WARNING | inventory-api | POST /api/v1/losses/ | 400 | Insufficient stock to log this loss.
+2026-07-28 21:07:42,148 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 400 | 0.007s
+2026-07-28 21:07:42,148 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 400 Bad Request"
+2026-07-28 21:07:44,923 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:07:45,127 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.204s
+2026-07-28 21:07:45,128 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:07:45,219 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:07:45,226 | WARNING | inventory-api | POST /api/v1/losses/ | 400 | Cannot register losses for an inactive product.
+2026-07-28 21:07:45,226 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 400 | 0.008s
+2026-07-28 21:07:45,227 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 400 Bad Request"
+2026-07-28 21:07:48,141 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:07:48,336 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.196s
+2026-07-28 21:07:48,337 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:07:49,369 | INFO | inventory-api | Request started | GET /api/v1/losses/
+2026-07-28 21:07:49,385 | INFO | inventory-api | Request finished | GET /api/v1/losses/ | Status 200 | 0.016s
+2026-07-28 21:07:49,386 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/ "HTTP/1.1 200 OK"
+2026-07-28 21:07:52,265 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:07:52,467 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.202s
+2026-07-28 21:07:52,468 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:07:53,607 | INFO | inventory-api | Request started | GET /api/v1/losses/
+2026-07-28 21:07:53,614 | INFO | inventory-api | Request finished | GET /api/v1/losses/ | Status 200 | 0.006s
+2026-07-28 21:07:53,614 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/ "HTTP/1.1 200 OK"
+2026-07-28 21:07:56,689 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:07:56,899 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.210s
+2026-07-28 21:07:56,900 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:07:59,498 | INFO | inventory-api | Request started | GET /api/v1/losses/
+2026-07-28 21:07:59,514 | INFO | inventory-api | Request finished | GET /api/v1/losses/ | Status 200 | 0.016s
+2026-07-28 21:07:59,515 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/?skip=0&limit=2 "HTTP/1.1 200 OK"
+2026-07-28 21:08:02,329 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:08:02,526 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.197s
+2026-07-28 21:08:02,527 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:08:03,570 | INFO | inventory-api | Request started | GET /api/v1/losses/
+2026-07-28 21:08:03,578 | INFO | inventory-api | Request finished | GET /api/v1/losses/ | Status 200 | 0.007s
+2026-07-28 21:08:03,578 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/?sort=quantity_lost&order=asc "HTTP/1.1 200 OK"
+2026-07-28 21:08:06,276 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:08:06,472 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.195s
+2026-07-28 21:08:06,472 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:08:07,516 | INFO | inventory-api | Request started | GET /api/v1/losses/
+2026-07-28 21:08:07,523 | INFO | inventory-api | Request finished | GET /api/v1/losses/ | Status 200 | 0.007s
+2026-07-28 21:08:07,524 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/?sort=quantity_lost&order=desc "HTTP/1.1 200 OK"
+2026-07-28 21:19:20,231 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:19:20,446 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.215s
+2026-07-28 21:19:20,447 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:19:21,517 | INFO | inventory-api | Request started | GET /api/v1/losses/
+2026-07-28 21:19:21,563 | INFO | inventory-api | Request finished | GET /api/v1/losses/ | Status 200 | 0.045s
+2026-07-28 21:19:21,564 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/ "HTTP/1.1 200 OK"
+2026-07-28 21:25:42,652 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:25:42,890 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.238s
+2026-07-28 21:25:42,891 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:25:42,964 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:25:43,036 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=5 | User ID=1
+2026-07-28 21:25:43,037 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 201 | 0.074s
+2026-07-28 21:25:43,038 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 201 Created"
+2026-07-28 21:25:45,555 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:25:45,751 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.197s
+2026-07-28 21:25:45,752 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:25:45,834 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:25:45,860 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=4 | User ID=1
+2026-07-28 21:25:45,861 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 201 | 0.027s
+2026-07-28 21:25:45,861 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 201 Created"
+2026-07-28 21:25:48,722 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:25:48,919 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.197s
+2026-07-28 21:25:48,920 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:25:49,026 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:25:49,052 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=2 | User ID=1
+2026-07-28 21:25:49,053 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 201 | 0.027s
+2026-07-28 21:25:49,053 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 201 Created"
+2026-07-28 21:25:51,643 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:25:51,645 | WARNING | inventory-api | POST /api/v1/losses/ | 401 | Not authenticated
+2026-07-28 21:25:51,645 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 401 | 0.002s
+2026-07-28 21:25:51,645 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 401 Unauthorized"
+2026-07-28 21:25:54,098 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:25:54,100 | WARNING | inventory-api | POST /api/v1/losses/ | 401 | Could not validate credentials.
+2026-07-28 21:25:54,100 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 401 | 0.002s
+2026-07-28 21:25:54,100 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 401 Unauthorized"
+2026-07-28 21:25:56,808 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:25:57,009 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.201s
+2026-07-28 21:25:57,009 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:25:57,010 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:25:57,015 | WARNING | inventory-api | POST /api/v1/losses/ | 404 | Batch not found.
+2026-07-28 21:25:57,015 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 404 | 0.005s
+2026-07-28 21:25:57,015 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 404 Not Found"
+2026-07-28 21:25:59,899 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:26:00,106 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.206s
+2026-07-28 21:26:00,106 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:26:00,176 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:26:00,181 | WARNING | inventory-api | POST /api/v1/losses/ | 400 | Insufficient stock to log this loss.
+2026-07-28 21:26:00,181 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 400 | 0.005s
+2026-07-28 21:26:00,182 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 400 Bad Request"
+2026-07-28 21:26:02,987 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:26:03,198 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.211s
+2026-07-28 21:26:03,199 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:26:03,282 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:26:03,288 | WARNING | inventory-api | POST /api/v1/losses/ | 400 | Cannot register losses for an inactive product.
+2026-07-28 21:26:03,288 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 400 | 0.006s
+2026-07-28 21:26:03,288 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 400 Bad Request"
+2026-07-28 21:26:05,983 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:26:06,195 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.212s
+2026-07-28 21:26:06,196 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:26:07,242 | INFO | inventory-api | Request started | GET /api/v1/losses/
+2026-07-28 21:26:07,252 | INFO | inventory-api | Request finished | GET /api/v1/losses/ | Status 200 | 0.010s
+2026-07-28 21:26:07,252 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/ "HTTP/1.1 200 OK"
+2026-07-28 21:26:10,234 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:26:10,438 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.204s
+2026-07-28 21:26:10,439 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:26:11,599 | INFO | inventory-api | Request started | GET /api/v1/losses/
+2026-07-28 21:26:11,608 | INFO | inventory-api | Request finished | GET /api/v1/losses/ | Status 200 | 0.008s
+2026-07-28 21:26:11,608 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/ "HTTP/1.1 200 OK"
+2026-07-28 21:26:14,309 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:26:14,505 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.196s
+2026-07-28 21:26:14,506 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:26:17,059 | INFO | inventory-api | Request started | GET /api/v1/losses/
+2026-07-28 21:26:17,065 | INFO | inventory-api | Request finished | GET /api/v1/losses/ | Status 200 | 0.006s
+2026-07-28 21:26:17,066 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/?skip=0&limit=2 "HTTP/1.1 200 OK"
+2026-07-28 21:26:19,947 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:26:20,154 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-07-28 21:26:20,155 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:26:21,188 | INFO | inventory-api | Request started | GET /api/v1/losses/
+2026-07-28 21:26:21,196 | INFO | inventory-api | Request finished | GET /api/v1/losses/ | Status 200 | 0.008s
+2026-07-28 21:26:21,197 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/?sort=quantity_lost&order=asc "HTTP/1.1 200 OK"
+2026-07-28 21:26:23,962 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:26:24,208 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.247s
+2026-07-28 21:26:24,210 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:26:25,265 | INFO | inventory-api | Request started | GET /api/v1/losses/
+2026-07-28 21:26:25,274 | INFO | inventory-api | Request finished | GET /api/v1/losses/ | Status 200 | 0.009s
+2026-07-28 21:26:25,275 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/?sort=quantity_lost&order=desc "HTTP/1.1 200 OK"
+2026-07-28 21:33:17,159 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:33:17,377 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.219s
+2026-07-28 21:33:17,378 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:33:17,465 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:33:17,532 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=5 | User ID=1
+2026-07-28 21:33:17,533 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 201 | 0.068s
+2026-07-28 21:33:17,534 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 201 Created"
+2026-07-28 21:33:20,314 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:33:20,511 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.196s
+2026-07-28 21:33:20,512 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:33:20,584 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:33:20,610 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=4 | User ID=1
+2026-07-28 21:33:20,610 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 201 | 0.026s
+2026-07-28 21:33:20,611 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 201 Created"
+2026-07-28 21:33:23,394 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:33:23,591 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.197s
+2026-07-28 21:33:23,592 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:33:23,666 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:33:23,692 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=2 | User ID=1
+2026-07-28 21:33:23,693 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 201 | 0.027s
+2026-07-28 21:33:23,693 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 201 Created"
+2026-07-28 21:33:26,220 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:33:26,222 | WARNING | inventory-api | POST /api/v1/losses/ | 401 | Not authenticated
+2026-07-28 21:33:26,222 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 401 | 0.002s
+2026-07-28 21:33:26,223 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 401 Unauthorized"
+2026-07-28 21:33:28,784 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:33:28,786 | WARNING | inventory-api | POST /api/v1/losses/ | 401 | Could not validate credentials.
+2026-07-28 21:33:28,786 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 401 | 0.002s
+2026-07-28 21:33:28,787 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 401 Unauthorized"
+2026-07-28 21:33:31,384 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:33:31,588 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.203s
+2026-07-28 21:33:31,589 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:33:31,590 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:33:31,596 | WARNING | inventory-api | POST /api/v1/losses/ | 404 | Batch not found.
+2026-07-28 21:33:31,597 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 404 | 0.006s
+2026-07-28 21:33:31,597 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 404 Not Found"
+2026-07-28 21:33:34,219 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:33:34,427 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.208s
+2026-07-28 21:33:34,428 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:33:34,496 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:33:34,501 | WARNING | inventory-api | POST /api/v1/losses/ | 400 | Insufficient stock to log this loss.
+2026-07-28 21:33:34,501 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 400 | 0.005s
+2026-07-28 21:33:34,502 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 400 Bad Request"
+2026-07-28 21:33:37,366 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:33:37,564 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.199s
+2026-07-28 21:33:37,565 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:33:37,656 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:33:37,663 | WARNING | inventory-api | POST /api/v1/losses/ | 400 | Cannot register losses for an inactive product.
+2026-07-28 21:33:37,663 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 400 | 0.007s
+2026-07-28 21:33:37,664 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 400 Bad Request"
+2026-07-28 21:33:40,468 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:33:40,665 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.198s
+2026-07-28 21:33:40,666 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:33:41,690 | INFO | inventory-api | Request started | GET /api/v1/losses/
+2026-07-28 21:33:41,700 | INFO | inventory-api | Request finished | GET /api/v1/losses/ | Status 200 | 0.010s
+2026-07-28 21:33:41,700 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/ "HTTP/1.1 200 OK"
+2026-07-28 21:33:44,349 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:33:44,558 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.208s
+2026-07-28 21:33:44,558 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:33:45,702 | INFO | inventory-api | Request started | GET /api/v1/losses/
+2026-07-28 21:33:45,708 | INFO | inventory-api | Request finished | GET /api/v1/losses/ | Status 200 | 0.006s
+2026-07-28 21:33:45,708 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/ "HTTP/1.1 200 OK"
+2026-07-28 21:33:48,664 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:33:48,870 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.206s
+2026-07-28 21:33:48,871 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:33:51,426 | INFO | inventory-api | Request started | GET /api/v1/losses/
+2026-07-28 21:33:51,433 | INFO | inventory-api | Request finished | GET /api/v1/losses/ | Status 200 | 0.007s
+2026-07-28 21:33:51,433 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/?skip=0&limit=2 "HTTP/1.1 200 OK"
+2026-07-28 21:33:54,081 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:33:54,286 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.205s
+2026-07-28 21:33:54,287 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:33:55,345 | INFO | inventory-api | Request started | GET /api/v1/losses/
+2026-07-28 21:33:55,353 | INFO | inventory-api | Request finished | GET /api/v1/losses/ | Status 200 | 0.008s
+2026-07-28 21:33:55,354 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/?sort=quantity_lost&order=asc "HTTP/1.1 200 OK"
+2026-07-28 21:33:58,179 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:33:58,389 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.209s
+2026-07-28 21:33:58,389 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:33:59,431 | INFO | inventory-api | Request started | GET /api/v1/losses/
+2026-07-28 21:33:59,438 | INFO | inventory-api | Request finished | GET /api/v1/losses/ | Status 200 | 0.007s
+2026-07-28 21:33:59,438 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/?sort=quantity_lost&order=desc "HTTP/1.1 200 OK"
+2026-07-28 21:34:02,218 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:34:02,414 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.196s
+2026-07-28 21:34:02,415 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:34:02,952 | INFO | inventory-api | Request started | GET /api/v1/losses/1
+2026-07-28 21:34:02,957 | INFO | inventory-api | Request finished | GET /api/v1/losses/1 | Status 200 | 0.004s
+2026-07-28 21:34:02,957 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/1 "HTTP/1.1 200 OK"
+2026-07-28 21:34:05,696 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:34:05,895 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.199s
+2026-07-28 21:34:05,896 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:34:05,897 | INFO | inventory-api | Request started | GET /api/v1/losses/999999
+2026-07-28 21:34:05,903 | WARNING | inventory-api | GET /api/v1/losses/999999 | 404 | Loss log not found.
+2026-07-28 21:34:05,903 | INFO | inventory-api | Request finished | GET /api/v1/losses/999999 | Status 404 | 0.006s
+2026-07-28 21:34:05,904 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/999999 "HTTP/1.1 404 Not Found"
+2026-07-28 21:34:08,694 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:34:08,891 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.198s
+2026-07-28 21:34:08,892 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:34:09,198 | INFO | inventory-api | Request started | GET /api/v1/losses/1
+2026-07-28 21:34:09,203 | INFO | inventory-api | Request finished | GET /api/v1/losses/1 | Status 200 | 0.004s
+2026-07-28 21:34:09,203 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/1 "HTTP/1.1 200 OK"
+2026-07-28 21:34:13,488 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:34:13,696 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.208s
+2026-07-28 21:34:13,697 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:34:14,221 | INFO | inventory-api | Request started | GET /api/v1/losses/1
+2026-07-28 21:34:14,225 | WARNING | inventory-api | GET /api/v1/losses/1 | 403 | You are not authorized to view this loss log.
+2026-07-28 21:34:14,225 | INFO | inventory-api | Request finished | GET /api/v1/losses/1 | Status 403 | 0.005s
+2026-07-28 21:34:14,226 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/1 "HTTP/1.1 403 Forbidden"
+2026-07-28 21:34:17,099 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:34:17,303 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.205s
+2026-07-28 21:34:17,304 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:34:17,826 | INFO | inventory-api | Request started | GET /api/v1/losses/1
+2026-07-28 21:34:17,830 | INFO | inventory-api | Request finished | GET /api/v1/losses/1 | Status 200 | 0.004s
+2026-07-28 21:34:17,831 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/1 "HTTP/1.1 200 OK"
+2026-07-28 21:37:46,490 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:37:46,713 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.223s
+2026-07-28 21:37:46,714 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:37:46,800 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:37:46,876 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=5 | User ID=1
+2026-07-28 21:37:46,877 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 201 | 0.077s
+2026-07-28 21:37:46,878 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 201 Created"
+2026-07-28 21:37:49,763 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:37:49,979 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.216s
+2026-07-28 21:37:49,980 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:37:50,050 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:37:50,080 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=4 | User ID=1
+2026-07-28 21:37:50,081 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 201 | 0.031s
+2026-07-28 21:37:50,081 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 201 Created"
+2026-07-28 21:37:52,770 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:37:53,007 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.237s
+2026-07-28 21:37:53,008 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:37:53,110 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:37:53,142 | INFO | inventory-api | Loss registered | Loss ID=1 | Product ID=1 | Batch ID=1 | Quantity=2 | User ID=1
+2026-07-28 21:37:53,143 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 201 | 0.033s
+2026-07-28 21:37:53,143 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 201 Created"
+2026-07-28 21:37:55,851 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:37:55,853 | WARNING | inventory-api | POST /api/v1/losses/ | 401 | Not authenticated
+2026-07-28 21:37:55,853 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 401 | 0.002s
+2026-07-28 21:37:55,853 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 401 Unauthorized"
+2026-07-28 21:37:58,659 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:37:58,661 | WARNING | inventory-api | POST /api/v1/losses/ | 401 | Could not validate credentials.
+2026-07-28 21:37:58,661 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 401 | 0.003s
+2026-07-28 21:37:58,662 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 401 Unauthorized"
+2026-07-28 21:38:01,474 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:38:01,670 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.197s
+2026-07-28 21:38:01,671 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:38:01,673 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:38:01,680 | WARNING | inventory-api | POST /api/v1/losses/ | 404 | Batch not found.
+2026-07-28 21:38:01,680 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 404 | 0.007s
+2026-07-28 21:38:01,680 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 404 Not Found"
+2026-07-28 21:38:04,407 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:38:04,608 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.200s
+2026-07-28 21:38:04,608 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:38:04,674 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:38:04,679 | WARNING | inventory-api | POST /api/v1/losses/ | 400 | Insufficient stock to log this loss.
+2026-07-28 21:38:04,680 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 400 | 0.005s
+2026-07-28 21:38:04,680 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 400 Bad Request"
+2026-07-28 21:38:07,595 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:38:07,798 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.203s
+2026-07-28 21:38:07,799 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:38:07,886 | INFO | inventory-api | Request started | POST /api/v1/losses/
+2026-07-28 21:38:07,891 | WARNING | inventory-api | POST /api/v1/losses/ | 400 | Cannot register losses for an inactive product.
+2026-07-28 21:38:07,892 | INFO | inventory-api | Request finished | POST /api/v1/losses/ | Status 400 | 0.006s
+2026-07-28 21:38:07,892 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/losses/ "HTTP/1.1 400 Bad Request"
+2026-07-28 21:38:10,615 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:38:10,855 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.240s
+2026-07-28 21:38:10,856 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:38:11,887 | INFO | inventory-api | Request started | GET /api/v1/losses/
+2026-07-28 21:38:11,897 | INFO | inventory-api | Request finished | GET /api/v1/losses/ | Status 200 | 0.010s
+2026-07-28 21:38:11,898 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/ "HTTP/1.1 200 OK"
+2026-07-28 21:38:14,590 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:38:14,792 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.202s
+2026-07-28 21:38:14,793 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:38:15,927 | INFO | inventory-api | Request started | GET /api/v1/losses/
+2026-07-28 21:38:15,934 | INFO | inventory-api | Request finished | GET /api/v1/losses/ | Status 200 | 0.007s
+2026-07-28 21:38:15,935 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/ "HTTP/1.1 200 OK"
+2026-07-28 21:38:18,892 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:38:19,096 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.204s
+2026-07-28 21:38:19,097 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:38:21,652 | INFO | inventory-api | Request started | GET /api/v1/losses/
+2026-07-28 21:38:21,660 | INFO | inventory-api | Request finished | GET /api/v1/losses/ | Status 200 | 0.008s
+2026-07-28 21:38:21,661 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/?skip=0&limit=2 "HTTP/1.1 200 OK"
+2026-07-28 21:38:24,485 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:38:24,691 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.206s
+2026-07-28 21:38:24,691 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:38:25,735 | INFO | inventory-api | Request started | GET /api/v1/losses/
+2026-07-28 21:38:25,744 | INFO | inventory-api | Request finished | GET /api/v1/losses/ | Status 200 | 0.009s
+2026-07-28 21:38:25,745 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/?sort=quantity_lost&order=asc "HTTP/1.1 200 OK"
+2026-07-28 21:38:28,541 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:38:28,738 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.197s
+2026-07-28 21:38:28,739 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:38:29,787 | INFO | inventory-api | Request started | GET /api/v1/losses/
+2026-07-28 21:38:29,795 | INFO | inventory-api | Request finished | GET /api/v1/losses/ | Status 200 | 0.007s
+2026-07-28 21:38:29,795 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/?sort=quantity_lost&order=desc "HTTP/1.1 200 OK"
+2026-07-28 21:38:32,812 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:38:33,020 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.208s
+2026-07-28 21:38:33,021 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:38:33,553 | INFO | inventory-api | Request started | GET /api/v1/losses/1
+2026-07-28 21:38:33,557 | INFO | inventory-api | Request finished | GET /api/v1/losses/1 | Status 200 | 0.004s
+2026-07-28 21:38:33,558 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/1 "HTTP/1.1 200 OK"
+2026-07-28 21:38:36,162 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:38:36,370 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.208s
+2026-07-28 21:38:36,370 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:38:36,372 | INFO | inventory-api | Request started | GET /api/v1/losses/999999
+2026-07-28 21:38:36,378 | WARNING | inventory-api | GET /api/v1/losses/999999 | 404 | Loss log not found.
+2026-07-28 21:38:36,379 | INFO | inventory-api | Request finished | GET /api/v1/losses/999999 | Status 404 | 0.007s
+2026-07-28 21:38:36,380 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/999999 "HTTP/1.1 404 Not Found"
+2026-07-28 21:38:39,201 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:38:39,404 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.203s
+2026-07-28 21:38:39,405 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:38:39,707 | INFO | inventory-api | Request started | GET /api/v1/losses/1
+2026-07-28 21:38:39,711 | INFO | inventory-api | Request finished | GET /api/v1/losses/1 | Status 200 | 0.004s
+2026-07-28 21:38:39,712 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/1 "HTTP/1.1 200 OK"
+2026-07-28 21:38:42,666 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:38:42,870 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.204s
+2026-07-28 21:38:42,871 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:38:43,438 | INFO | inventory-api | Request started | GET /api/v1/losses/1
+2026-07-28 21:38:43,443 | WARNING | inventory-api | GET /api/v1/losses/1 | 403 | You are not authorized to view this loss log.
+2026-07-28 21:38:43,443 | INFO | inventory-api | Request finished | GET /api/v1/losses/1 | Status 403 | 0.005s
+2026-07-28 21:38:43,443 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/1 "HTTP/1.1 403 Forbidden"
+2026-07-28 21:38:46,220 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:38:46,420 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.200s
+2026-07-28 21:38:46,421 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:38:46,947 | INFO | inventory-api | Request started | GET /api/v1/losses/1
+2026-07-28 21:38:46,952 | INFO | inventory-api | Request finished | GET /api/v1/losses/1 | Status 200 | 0.005s
+2026-07-28 21:38:46,953 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/1 "HTTP/1.1 200 OK"
+2026-07-28 21:38:50,082 | INFO | inventory-api | Request started | GET /api/v1/losses/1
+2026-07-28 21:38:50,084 | WARNING | inventory-api | GET /api/v1/losses/1 | 401 | Not authenticated
+2026-07-28 21:38:50,084 | INFO | inventory-api | Request finished | GET /api/v1/losses/1 | Status 401 | 0.002s
+2026-07-28 21:38:50,084 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/1 "HTTP/1.1 401 Unauthorized"
+2026-07-28 21:38:53,311 | INFO | inventory-api | Request started | GET /api/v1/losses/1
+2026-07-28 21:38:53,313 | WARNING | inventory-api | GET /api/v1/losses/1 | 401 | Could not validate credentials.
+2026-07-28 21:38:53,314 | INFO | inventory-api | Request finished | GET /api/v1/losses/1 | Status 401 | 0.002s
+2026-07-28 21:38:53,314 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/1 "HTTP/1.1 401 Unauthorized"
+2026-07-28 21:38:56,030 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-28 21:38:56,240 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.210s
+2026-07-28 21:38:56,241 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-28 21:38:56,242 | INFO | inventory-api | Request started | GET /api/v1/losses/0
+2026-07-28 21:38:56,246 | WARNING | inventory-api | GET /api/v1/losses/0 | Validation Error | [{'type': 'greater_than', 'loc': ('path', 'loss_id'), 'msg': 'Input should be greater than 0', 'input': '0', 'ctx': {'gt': 0}}]
+2026-07-28 21:38:56,246 | INFO | inventory-api | Request finished | GET /api/v1/losses/0 | Status 422 | 0.004s
+2026-07-28 21:38:56,246 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/0 "HTTP/1.1 422 Unprocessable Entity"
+2026-07-28 21:44:23,910 | INFO | inventory-api | Request started | GET /api/v1/losses/1
+2026-07-28 21:44:23,956 | WARNING | inventory-api | GET /api/v1/losses/1 | 401 | Could not validate credentials.
+2026-07-28 21:44:23,956 | INFO | inventory-api | Request finished | GET /api/v1/losses/1 | Status 401 | 0.047s
+2026-07-28 21:44:23,957 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/1 "HTTP/1.1 401 Unauthorized"
+2026-07-28 21:44:43,073 | INFO | inventory-api | Request started | GET /api/v1/losses/1
+2026-07-28 21:44:43,114 | WARNING | inventory-api | GET /api/v1/losses/1 | 401 | Could not validate credentials.
+2026-07-28 21:44:43,114 | INFO | inventory-api | Request finished | GET /api/v1/losses/1 | Status 401 | 0.041s
+2026-07-28 21:44:43,115 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/losses/1 "HTTP/1.1 401 Unauthorized"
