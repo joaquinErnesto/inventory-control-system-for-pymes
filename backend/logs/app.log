@@ -4814,3 +4814,841 @@ fastapi.exceptions.ResponseValidationError: 1 validation error:
 2026-07-30 09:12:57,024 | WARNING | inventory-api | DELETE /api/v1/categories/1 | 404 | Category not found.
 2026-07-30 09:12:57,024 | INFO | inventory-api | Request finished | DELETE /api/v1/categories/1 | Status 404 | 0.004s
 2026-07-30 09:12:57,024 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/categories/1 "HTTP/1.1 404 Not Found"
+2026-07-30 09:41:11,528 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 09:41:11,771 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.243s
+2026-07-30 09:41:11,773 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 09:41:11,775 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:41:11,849 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 201 | 0.074s
+2026-07-30 09:41:11,850 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 201 Created"
+2026-07-30 09:41:14,593 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 09:41:14,804 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.211s
+2026-07-30 09:41:14,804 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 09:41:14,822 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:41:14,826 | WARNING | inventory-api | POST /api/v1/suppliers/ | 400 | A supplier with this name already exists.
+2026-07-30 09:41:14,827 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 400 | 0.005s
+2026-07-30 09:41:14,827 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 400 Bad Request"
+2026-07-30 09:41:17,294 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:41:17,296 | WARNING | inventory-api | POST /api/v1/suppliers/ | 401 | Not authenticated
+2026-07-30 09:41:17,296 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 401 | 0.002s
+2026-07-30 09:41:17,296 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 401 Unauthorized"
+2026-07-30 09:41:19,703 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:41:19,705 | WARNING | inventory-api | POST /api/v1/suppliers/ | 401 | Could not validate credentials.
+2026-07-30 09:41:19,705 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 401 | 0.002s
+2026-07-30 09:41:19,705 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 401 Unauthorized"
+2026-07-30 09:41:22,290 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 09:41:22,502 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.212s
+2026-07-30 09:41:22,503 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 09:41:22,504 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:41:22,507 | WARNING | inventory-api | POST /api/v1/suppliers/ | 403 | Administrator privileges required.
+2026-07-30 09:41:22,507 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 403 | 0.003s
+2026-07-30 09:41:22,507 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 403 Forbidden"
+2026-07-30 09:45:24,893 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 09:45:25,109 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.216s
+2026-07-30 09:45:25,110 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 09:45:25,127 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:45:25,151 | WARNING | inventory-api | POST /api/v1/suppliers/ | 400 | A supplier with this name already exists.
+2026-07-30 09:45:25,151 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 400 | 0.025s
+2026-07-30 09:45:25,152 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 400 Bad Request"
+2026-07-30 09:45:27,530 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:45:27,532 | WARNING | inventory-api | POST /api/v1/suppliers/ | 401 | Not authenticated
+2026-07-30 09:45:27,532 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 401 | 0.002s
+2026-07-30 09:45:27,532 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 401 Unauthorized"
+2026-07-30 09:45:30,047 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:45:30,048 | WARNING | inventory-api | POST /api/v1/suppliers/ | 401 | Could not validate credentials.
+2026-07-30 09:45:30,048 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 401 | 0.002s
+2026-07-30 09:45:30,049 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 401 Unauthorized"
+2026-07-30 09:45:32,479 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 09:45:32,690 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.211s
+2026-07-30 09:45:32,691 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 09:45:32,692 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:45:32,697 | WARNING | inventory-api | POST /api/v1/suppliers/ | 403 | Administrator privileges required.
+2026-07-30 09:45:32,697 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 403 | 0.005s
+2026-07-30 09:45:32,698 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 403 Forbidden"
+2026-07-30 09:45:35,120 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 09:45:35,325 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.205s
+2026-07-30 09:45:35,326 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 09:45:35,327 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:45:35,332 | WARNING | inventory-api | POST /api/v1/suppliers/ | Validation Error | [{'type': 'string_too_short', 'loc': ('body', 'name'), 'msg': 'String should have at least 3 characters', 'input': 'AB', 'ctx': {'min_length': 3}}]
+2026-07-30 09:45:35,332 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 422 | 0.004s
+2026-07-30 09:45:35,332 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 422 Unprocessable Entity"
+2026-07-30 09:45:38,071 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 09:45:38,279 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.208s
+2026-07-30 09:45:38,280 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 09:45:38,281 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:45:38,285 | WARNING | inventory-api | POST /api/v1/suppliers/ | Validation Error | [{'type': 'value_error', 'loc': ('body', 'email'), 'msg': 'value is not a valid email address: An email address must have an @-sign.', 'input': 'not-an-email', 'ctx': {'reason': 'An email address must have an @-sign.'}}]
+2026-07-30 09:45:38,285 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 422 | 0.004s
+2026-07-30 09:45:38,285 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 422 Unprocessable Entity"
+2026-07-30 09:46:25,769 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 09:46:25,983 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.214s
+2026-07-30 09:46:25,984 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 09:46:26,002 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:46:26,026 | WARNING | inventory-api | POST /api/v1/suppliers/ | 400 | A supplier with this name already exists.
+2026-07-30 09:46:26,026 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 400 | 0.024s
+2026-07-30 09:46:26,026 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 400 Bad Request"
+2026-07-30 09:46:28,359 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:46:28,361 | WARNING | inventory-api | POST /api/v1/suppliers/ | 401 | Not authenticated
+2026-07-30 09:46:28,361 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 401 | 0.002s
+2026-07-30 09:46:28,361 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 401 Unauthorized"
+2026-07-30 09:46:30,686 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:46:30,688 | WARNING | inventory-api | POST /api/v1/suppliers/ | 401 | Could not validate credentials.
+2026-07-30 09:46:30,688 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 401 | 0.002s
+2026-07-30 09:46:30,688 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 401 Unauthorized"
+2026-07-30 09:46:33,328 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 09:46:33,542 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.214s
+2026-07-30 09:46:33,543 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 09:46:33,544 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:46:33,548 | WARNING | inventory-api | POST /api/v1/suppliers/ | 403 | Administrator privileges required.
+2026-07-30 09:46:33,549 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 403 | 0.004s
+2026-07-30 09:46:33,549 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 403 Forbidden"
+2026-07-30 09:46:36,267 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 09:46:36,480 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.214s
+2026-07-30 09:46:36,481 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 09:46:36,482 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:46:36,485 | WARNING | inventory-api | POST /api/v1/suppliers/ | Validation Error | [{'type': 'string_too_short', 'loc': ('body', 'name'), 'msg': 'String should have at least 3 characters', 'input': 'AB', 'ctx': {'min_length': 3}}]
+2026-07-30 09:46:36,486 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 422 | 0.004s
+2026-07-30 09:46:36,486 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 422 Unprocessable Entity"
+2026-07-30 09:46:39,157 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 09:46:39,380 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.222s
+2026-07-30 09:46:39,380 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 09:46:39,382 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:46:39,387 | WARNING | inventory-api | POST /api/v1/suppliers/ | Validation Error | [{'type': 'value_error', 'loc': ('body', 'email'), 'msg': 'value is not a valid email address: An email address must have an @-sign.', 'input': 'not-an-email', 'ctx': {'reason': 'An email address must have an @-sign.'}}]
+2026-07-30 09:46:39,387 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 422 | 0.006s
+2026-07-30 09:46:39,388 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 422 Unprocessable Entity"
+2026-07-30 09:46:52,623 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 09:46:52,836 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.214s
+2026-07-30 09:46:52,837 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 09:46:52,838 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:46:52,878 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 201 | 0.040s
+2026-07-30 09:46:52,879 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 201 Created"
+2026-07-30 09:46:55,496 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 09:46:55,708 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.213s
+2026-07-30 09:46:55,709 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 09:46:55,725 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:46:55,731 | WARNING | inventory-api | POST /api/v1/suppliers/ | 400 | A supplier with this name already exists.
+2026-07-30 09:46:55,731 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 400 | 0.006s
+2026-07-30 09:46:55,731 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 400 Bad Request"
+2026-07-30 09:46:58,246 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:46:58,248 | WARNING | inventory-api | POST /api/v1/suppliers/ | 401 | Not authenticated
+2026-07-30 09:46:58,248 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 401 | 0.002s
+2026-07-30 09:46:58,248 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 401 Unauthorized"
+2026-07-30 09:47:00,771 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:47:00,773 | WARNING | inventory-api | POST /api/v1/suppliers/ | 401 | Could not validate credentials.
+2026-07-30 09:47:00,773 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 401 | 0.002s
+2026-07-30 09:47:00,773 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 401 Unauthorized"
+2026-07-30 09:47:03,403 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 09:47:03,615 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.212s
+2026-07-30 09:47:03,616 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 09:47:03,617 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:47:03,620 | WARNING | inventory-api | POST /api/v1/suppliers/ | 403 | Administrator privileges required.
+2026-07-30 09:47:03,620 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 403 | 0.003s
+2026-07-30 09:47:03,621 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 403 Forbidden"
+2026-07-30 09:47:06,247 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 09:47:06,461 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.214s
+2026-07-30 09:47:06,462 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 09:47:06,463 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:47:06,468 | WARNING | inventory-api | POST /api/v1/suppliers/ | Validation Error | [{'type': 'string_too_short', 'loc': ('body', 'name'), 'msg': 'String should have at least 3 characters', 'input': 'AB', 'ctx': {'min_length': 3}}]
+2026-07-30 09:47:06,468 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 422 | 0.005s
+2026-07-30 09:47:06,468 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 422 Unprocessable Entity"
+2026-07-30 09:47:09,241 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 09:47:09,467 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.225s
+2026-07-30 09:47:09,468 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 09:47:09,470 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:47:09,478 | WARNING | inventory-api | POST /api/v1/suppliers/ | Validation Error | [{'type': 'value_error', 'loc': ('body', 'email'), 'msg': 'value is not a valid email address: An email address must have an @-sign.', 'input': 'not-an-email', 'ctx': {'reason': 'An email address must have an @-sign.'}}]
+2026-07-30 09:47:09,478 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 422 | 0.008s
+2026-07-30 09:47:09,479 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 422 Unprocessable Entity"
+2026-07-30 09:58:59,537 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 09:58:59,751 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.214s
+2026-07-30 09:58:59,752 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 09:58:59,753 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:58:59,796 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 201 | 0.043s
+2026-07-30 09:58:59,797 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 201 Created"
+2026-07-30 09:59:02,564 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 09:59:02,801 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.238s
+2026-07-30 09:59:02,802 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 09:59:02,820 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:59:02,825 | WARNING | inventory-api | POST /api/v1/suppliers/ | 400 | A supplier with this name already exists.
+2026-07-30 09:59:02,826 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 400 | 0.006s
+2026-07-30 09:59:02,826 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 400 Bad Request"
+2026-07-30 09:59:05,169 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:59:05,171 | WARNING | inventory-api | POST /api/v1/suppliers/ | 401 | Not authenticated
+2026-07-30 09:59:05,171 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 401 | 0.002s
+2026-07-30 09:59:05,171 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 401 Unauthorized"
+2026-07-30 09:59:07,420 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:59:07,422 | WARNING | inventory-api | POST /api/v1/suppliers/ | 401 | Could not validate credentials.
+2026-07-30 09:59:07,422 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 401 | 0.002s
+2026-07-30 09:59:07,423 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 401 Unauthorized"
+2026-07-30 09:59:10,131 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 09:59:10,347 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.216s
+2026-07-30 09:59:10,347 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 09:59:10,348 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:59:10,354 | WARNING | inventory-api | POST /api/v1/suppliers/ | 403 | Administrator privileges required.
+2026-07-30 09:59:10,354 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 403 | 0.006s
+2026-07-30 09:59:10,355 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 403 Forbidden"
+2026-07-30 09:59:12,922 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 09:59:13,132 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.210s
+2026-07-30 09:59:13,133 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 09:59:13,134 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:59:13,138 | WARNING | inventory-api | POST /api/v1/suppliers/ | Validation Error | [{'type': 'string_too_short', 'loc': ('body', 'name'), 'msg': 'String should have at least 3 characters', 'input': 'AB', 'ctx': {'min_length': 3}}]
+2026-07-30 09:59:13,139 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 422 | 0.004s
+2026-07-30 09:59:13,139 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 422 Unprocessable Entity"
+2026-07-30 09:59:15,742 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 09:59:15,954 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.212s
+2026-07-30 09:59:15,955 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 09:59:15,956 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 09:59:15,960 | WARNING | inventory-api | POST /api/v1/suppliers/ | Validation Error | [{'type': 'value_error', 'loc': ('body', 'email'), 'msg': 'value is not a valid email address: An email address must have an @-sign.', 'input': 'not-an-email', 'ctx': {'reason': 'An email address must have an @-sign.'}}]
+2026-07-30 09:59:15,960 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 422 | 0.004s
+2026-07-30 09:59:15,960 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 422 Unprocessable Entity"
+2026-07-30 10:07:34,314 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 10:07:34,543 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.229s
+2026-07-30 10:07:34,544 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 10:07:34,545 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 10:07:34,593 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 201 | 0.048s
+2026-07-30 10:07:34,594 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 201 Created"
+2026-07-30 10:07:37,170 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 10:07:37,379 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.209s
+2026-07-30 10:07:37,379 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 10:07:37,399 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 10:07:37,405 | WARNING | inventory-api | POST /api/v1/suppliers/ | 400 | A supplier with this name already exists.
+2026-07-30 10:07:37,405 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 400 | 0.006s
+2026-07-30 10:07:37,405 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 400 Bad Request"
+2026-07-30 10:07:39,674 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 10:07:39,675 | WARNING | inventory-api | POST /api/v1/suppliers/ | 401 | Not authenticated
+2026-07-30 10:07:39,676 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 401 | 0.002s
+2026-07-30 10:07:39,676 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 401 Unauthorized"
+2026-07-30 10:07:42,214 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 10:07:42,216 | WARNING | inventory-api | POST /api/v1/suppliers/ | 401 | Could not validate credentials.
+2026-07-30 10:07:42,216 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 401 | 0.002s
+2026-07-30 10:07:42,216 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 401 Unauthorized"
+2026-07-30 10:07:44,830 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 10:07:45,042 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.212s
+2026-07-30 10:07:45,043 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 10:07:45,044 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 10:07:45,048 | WARNING | inventory-api | POST /api/v1/suppliers/ | 403 | Administrator privileges required.
+2026-07-30 10:07:45,048 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 403 | 0.004s
+2026-07-30 10:07:45,048 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 403 Forbidden"
+2026-07-30 10:07:47,499 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 10:07:47,711 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.212s
+2026-07-30 10:07:47,712 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 10:07:47,713 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 10:07:47,718 | WARNING | inventory-api | POST /api/v1/suppliers/ | Validation Error | [{'type': 'string_too_short', 'loc': ('body', 'name'), 'msg': 'String should have at least 3 characters', 'input': 'AB', 'ctx': {'min_length': 3}}]
+2026-07-30 10:07:47,718 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 422 | 0.005s
+2026-07-30 10:07:47,718 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 422 Unprocessable Entity"
+2026-07-30 10:07:50,422 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 10:07:50,629 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.206s
+2026-07-30 10:07:50,629 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 10:07:50,631 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 10:07:50,634 | WARNING | inventory-api | POST /api/v1/suppliers/ | Validation Error | [{'type': 'value_error', 'loc': ('body', 'email'), 'msg': 'value is not a valid email address: An email address must have an @-sign.', 'input': 'not-an-email', 'ctx': {'reason': 'An email address must have an @-sign.'}}]
+2026-07-30 10:07:50,634 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 422 | 0.004s
+2026-07-30 10:07:50,634 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 422 Unprocessable Entity"
+2026-07-30 10:07:53,233 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 10:07:53,445 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.212s
+2026-07-30 10:07:53,446 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 10:07:53,484 | INFO | inventory-api | Request started | GET /api/v1/suppliers/
+2026-07-30 10:07:53,495 | ERROR | inventory-api | GET /api/v1/suppliers/ | Unexpected Error
+Traceback (most recent call last):
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\app\main.py", line 63, in log_requests
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 2531, in app
+    await route.handle(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 2586, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 2586, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 711, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 316, in serialize_response
+    raise ResponseValidationError(
+    ...<3 lines>...
+    )
+fastapi.exceptions.ResponseValidationError: 2 validation errors:
+  {'type': 'value_error', 'loc': ('response', 'data', 0, 'email'), 'msg': 'value is not a valid email address: The part after the @-sign is a special-use or reserved name that cannot be used with email.', 'input': '5ce597e1@supplier.test', 'ctx': {'reason': 'The part after the @-sign is a special-use or reserved name that cannot be used with email.'}}
+  {'type': 'value_error', 'loc': ('response', 'data', 1, 'email'), 'msg': 'value is not a valid email address: The part after the @-sign is a special-use or reserved name that cannot be used with email.', 'input': 'ba931b9a@supplier.test', 'ctx': {'reason': 'The part after the @-sign is a special-use or reserved name that cannot be used with email.'}}
+
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\app\routers\suppliers.py", line 90, in get_all_suppliers
+    GET /api/v1/suppliers/
+2026-07-30 10:07:56,617 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 10:07:56,829 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.211s
+2026-07-30 10:07:56,829 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 10:07:56,853 | INFO | inventory-api | Request started | GET /api/v1/suppliers/
+2026-07-30 10:07:56,858 | ERROR | inventory-api | GET /api/v1/suppliers/ | Unexpected Error
+Traceback (most recent call last):
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\app\main.py", line 63, in log_requests
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 2531, in app
+    await route.handle(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 2586, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 2586, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 711, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\venv\Lib\site-packages\fastapi\routing.py", line 316, in serialize_response
+    raise ResponseValidationError(
+    ...<3 lines>...
+    )
+fastapi.exceptions.ResponseValidationError: 1 validation error:
+  {'type': 'value_error', 'loc': ('response', 'data', 0, 'email'), 'msg': 'value is not a valid email address: The part after the @-sign is a special-use or reserved name that cannot be used with email.', 'input': '643748c6@supplier.test', 'ctx': {'reason': 'The part after the @-sign is a special-use or reserved name that cannot be used with email.'}}
+
+  File "D:\Programación\Freelance Work\Inventory Control\application\backend\app\routers\suppliers.py", line 90, in get_all_suppliers
+    GET /api/v1/suppliers/
+2026-07-30 10:07:59,746 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 10:07:59,960 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.214s
+2026-07-30 10:07:59,961 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 10:07:59,962 | INFO | inventory-api | Request started | GET /api/v1/suppliers/
+2026-07-30 10:07:59,967 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/ | Status 200 | 0.005s
+2026-07-30 10:07:59,967 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/ "HTTP/1.1 200 OK"
+2026-07-30 10:08:02,524 | INFO | inventory-api | Request started | GET /api/v1/suppliers/
+2026-07-30 10:08:02,526 | WARNING | inventory-api | GET /api/v1/suppliers/ | 401 | Not authenticated
+2026-07-30 10:08:02,526 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/ | Status 401 | 0.002s
+2026-07-30 10:08:02,527 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/ "HTTP/1.1 401 Unauthorized"
+2026-07-30 10:08:04,888 | INFO | inventory-api | Request started | GET /api/v1/suppliers/
+2026-07-30 10:08:04,889 | WARNING | inventory-api | GET /api/v1/suppliers/ | 401 | Could not validate credentials.
+2026-07-30 10:08:04,890 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/ | Status 401 | 0.002s
+2026-07-30 10:08:04,890 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/ "HTTP/1.1 401 Unauthorized"
+2026-07-30 10:23:01,789 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 10:23:02,001 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.212s
+2026-07-30 10:23:02,002 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 10:23:02,034 | INFO | inventory-api | Request started | GET /api/v1/suppliers/
+2026-07-30 10:23:02,060 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/ | Status 200 | 0.026s
+2026-07-30 10:23:02,060 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/ "HTTP/1.1 200 OK"
+2026-07-30 10:23:04,614 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 10:23:04,815 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.201s
+2026-07-30 10:23:04,815 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 10:23:04,831 | INFO | inventory-api | Request started | GET /api/v1/suppliers/
+2026-07-30 10:23:04,838 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/ | Status 200 | 0.007s
+2026-07-30 10:23:04,838 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/ "HTTP/1.1 200 OK"
+2026-07-30 10:23:07,539 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 10:23:07,739 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.199s
+2026-07-30 10:23:07,739 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 10:23:07,741 | INFO | inventory-api | Request started | GET /api/v1/suppliers/
+2026-07-30 10:23:07,746 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/ | Status 200 | 0.006s
+2026-07-30 10:23:07,747 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/ "HTTP/1.1 200 OK"
+2026-07-30 10:23:10,204 | INFO | inventory-api | Request started | GET /api/v1/suppliers/
+2026-07-30 10:23:10,206 | WARNING | inventory-api | GET /api/v1/suppliers/ | 401 | Not authenticated
+2026-07-30 10:23:10,206 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/ | Status 401 | 0.002s
+2026-07-30 10:23:10,206 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/ "HTTP/1.1 401 Unauthorized"
+2026-07-30 10:23:12,595 | INFO | inventory-api | Request started | GET /api/v1/suppliers/
+2026-07-30 10:23:12,597 | WARNING | inventory-api | GET /api/v1/suppliers/ | 401 | Could not validate credentials.
+2026-07-30 10:23:12,597 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/ | Status 401 | 0.002s
+2026-07-30 10:23:12,597 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/ "HTTP/1.1 401 Unauthorized"
+2026-07-30 12:14:59,210 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:14:59,517 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.307s
+2026-07-30 12:14:59,518 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:14:59,520 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 12:14:59,596 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 201 | 0.076s
+2026-07-30 12:14:59,597 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 201 Created"
+2026-07-30 12:15:02,991 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:15:03,215 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.224s
+2026-07-30 12:15:03,216 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:15:03,237 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 12:15:03,243 | WARNING | inventory-api | POST /api/v1/suppliers/ | 400 | A supplier with this name already exists.
+2026-07-30 12:15:03,244 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 400 | 0.006s
+2026-07-30 12:15:03,244 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 400 Bad Request"
+2026-07-30 12:15:06,374 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 12:15:06,376 | WARNING | inventory-api | POST /api/v1/suppliers/ | 401 | Not authenticated
+2026-07-30 12:15:06,376 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 401 | 0.002s
+2026-07-30 12:15:06,376 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 401 Unauthorized"
+2026-07-30 12:15:09,564 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 12:15:09,567 | WARNING | inventory-api | POST /api/v1/suppliers/ | 401 | Could not validate credentials.
+2026-07-30 12:15:09,567 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 401 | 0.003s
+2026-07-30 12:15:09,567 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 401 Unauthorized"
+2026-07-30 12:15:13,018 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:15:13,247 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.229s
+2026-07-30 12:15:13,248 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:15:13,250 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 12:15:13,255 | WARNING | inventory-api | POST /api/v1/suppliers/ | 403 | Administrator privileges required.
+2026-07-30 12:15:13,256 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 403 | 0.006s
+2026-07-30 12:15:13,256 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 403 Forbidden"
+2026-07-30 12:15:16,932 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:15:17,157 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.225s
+2026-07-30 12:15:17,158 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:15:17,160 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 12:15:17,167 | WARNING | inventory-api | POST /api/v1/suppliers/ | Validation Error | [{'type': 'string_too_short', 'loc': ('body', 'name'), 'msg': 'String should have at least 3 characters', 'input': 'AB', 'ctx': {'min_length': 3}}]
+2026-07-30 12:15:17,168 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 422 | 0.008s
+2026-07-30 12:15:17,168 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 422 Unprocessable Entity"
+2026-07-30 12:15:20,719 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:15:20,942 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.223s
+2026-07-30 12:15:20,943 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:15:20,944 | INFO | inventory-api | Request started | POST /api/v1/suppliers/
+2026-07-30 12:15:21,016 | WARNING | inventory-api | POST /api/v1/suppliers/ | Validation Error | [{'type': 'value_error', 'loc': ('body', 'email'), 'msg': 'value is not a valid email address: An email address must have an @-sign.', 'input': 'not-an-email', 'ctx': {'reason': 'An email address must have an @-sign.'}}]
+2026-07-30 12:15:21,017 | INFO | inventory-api | Request finished | POST /api/v1/suppliers/ | Status 422 | 0.073s
+2026-07-30 12:15:21,018 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/suppliers/ "HTTP/1.1 422 Unprocessable Entity"
+2026-07-30 12:15:24,688 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:15:24,914 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.226s
+2026-07-30 12:15:24,915 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:15:25,040 | INFO | inventory-api | Request started | GET /api/v1/suppliers/
+2026-07-30 12:15:25,053 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/ | Status 200 | 0.013s
+2026-07-30 12:15:25,053 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/ "HTTP/1.1 200 OK"
+2026-07-30 12:15:28,779 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:15:29,047 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.268s
+2026-07-30 12:15:29,048 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:15:29,142 | INFO | inventory-api | Request started | GET /api/v1/suppliers/
+2026-07-30 12:15:29,151 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/ | Status 200 | 0.009s
+2026-07-30 12:15:29,152 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/ "HTTP/1.1 200 OK"
+2026-07-30 12:15:33,071 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:15:33,299 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.228s
+2026-07-30 12:15:33,300 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:15:33,302 | INFO | inventory-api | Request started | GET /api/v1/suppliers/
+2026-07-30 12:15:33,311 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/ | Status 200 | 0.009s
+2026-07-30 12:15:33,311 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/ "HTTP/1.1 200 OK"
+2026-07-30 12:15:36,571 | INFO | inventory-api | Request started | GET /api/v1/suppliers/
+2026-07-30 12:15:36,573 | WARNING | inventory-api | GET /api/v1/suppliers/ | 401 | Not authenticated
+2026-07-30 12:15:36,574 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/ | Status 401 | 0.003s
+2026-07-30 12:15:36,574 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/ "HTTP/1.1 401 Unauthorized"
+2026-07-30 12:15:39,786 | INFO | inventory-api | Request started | GET /api/v1/suppliers/
+2026-07-30 12:15:39,788 | WARNING | inventory-api | GET /api/v1/suppliers/ | 401 | Could not validate credentials.
+2026-07-30 12:15:39,788 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/ | Status 401 | 0.003s
+2026-07-30 12:15:39,789 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/ "HTTP/1.1 401 Unauthorized"
+2026-07-30 12:15:43,677 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:15:43,903 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.226s
+2026-07-30 12:15:43,904 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:15:43,949 | INFO | inventory-api | Request started | GET /api/v1/suppliers/search/
+2026-07-30 12:15:43,962 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/search/ | Status 200 | 0.014s
+2026-07-30 12:15:43,963 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/search/?q=Coca "HTTP/1.1 200 OK"
+2026-07-30 12:15:47,620 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:15:47,847 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.227s
+2026-07-30 12:15:47,848 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:15:47,969 | INFO | inventory-api | Request started | GET /api/v1/suppliers/search/
+2026-07-30 12:15:47,979 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/search/ | Status 200 | 0.010s
+2026-07-30 12:15:47,979 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/search/?q=Carlos "HTTP/1.1 200 OK"
+2026-07-30 12:15:51,703 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:15:51,983 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.279s
+2026-07-30 12:15:51,983 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:15:52,031 | INFO | inventory-api | Request started | GET /api/v1/suppliers/search/
+2026-07-30 12:15:52,038 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/search/ | Status 200 | 0.007s
+2026-07-30 12:15:52,038 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/search/?q=1111 "HTTP/1.1 200 OK"
+2026-07-30 12:15:55,822 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:15:56,049 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.227s
+2026-07-30 12:15:56,050 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:15:56,188 | INFO | inventory-api | Request started | GET /api/v1/suppliers/search/
+2026-07-30 12:15:56,209 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/search/ | Status 200 | 0.020s
+2026-07-30 12:15:56,211 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/search/?q=cocacola "HTTP/1.1 200 OK"
+2026-07-30 12:15:59,659 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:15:59,884 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.225s
+2026-07-30 12:15:59,884 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:15:59,906 | INFO | inventory-api | Request started | GET /api/v1/suppliers/search/
+2026-07-30 12:15:59,912 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/search/ | Status 200 | 0.006s
+2026-07-30 12:15:59,913 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/search/?q=NothingHere "HTTP/1.1 200 OK"
+2026-07-30 12:16:03,570 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:16:03,797 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.227s
+2026-07-30 12:16:03,798 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:16:03,891 | INFO | inventory-api | Request started | GET /api/v1/suppliers/search/
+2026-07-30 12:16:03,904 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/search/ | Status 200 | 0.013s
+2026-07-30 12:16:03,905 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/search/?q=Pepsi "HTTP/1.1 200 OK"
+2026-07-30 12:16:07,312 | INFO | inventory-api | Request started | GET /api/v1/suppliers/search/
+2026-07-30 12:16:07,317 | WARNING | inventory-api | GET /api/v1/suppliers/search/ | 401 | Not authenticated
+2026-07-30 12:16:07,318 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/search/ | Status 401 | 0.006s
+2026-07-30 12:16:07,318 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/search/?q=test "HTTP/1.1 401 Unauthorized"
+2026-07-30 12:16:10,566 | INFO | inventory-api | Request started | GET /api/v1/suppliers/search/
+2026-07-30 12:16:10,569 | WARNING | inventory-api | GET /api/v1/suppliers/search/ | 401 | Could not validate credentials.
+2026-07-30 12:16:10,569 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/search/ | Status 401 | 0.003s
+2026-07-30 12:16:10,569 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/search/?q=test "HTTP/1.1 401 Unauthorized"
+2026-07-30 12:16:14,178 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:16:14,405 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.227s
+2026-07-30 12:16:14,406 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:16:14,408 | INFO | inventory-api | Request started | GET /api/v1/suppliers/search/
+2026-07-30 12:16:14,412 | WARNING | inventory-api | GET /api/v1/suppliers/search/ | Validation Error | [{'type': 'string_too_short', 'loc': ('query', 'q'), 'msg': 'String should have at least 1 character', 'input': '', 'ctx': {'min_length': 1}}]
+2026-07-30 12:16:14,412 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/search/ | Status 422 | 0.004s
+2026-07-30 12:16:14,412 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/search/?q= "HTTP/1.1 422 Unprocessable Entity"
+2026-07-30 12:16:18,485 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:16:18,712 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.228s
+2026-07-30 12:16:18,713 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:16:18,715 | INFO | inventory-api | Request started | GET /api/v1/suppliers/search/
+2026-07-30 12:16:18,720 | WARNING | inventory-api | GET /api/v1/suppliers/search/ | Validation Error | [{'type': 'string_too_long', 'loc': ('query', 'q'), 'msg': 'String should have at most 100 characters', 'input': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'ctx': {'max_length': 100}}]
+2026-07-30 12:16:18,720 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/search/ | Status 422 | 0.006s
+2026-07-30 12:16:18,721 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/search/?q=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa "HTTP/1.1 422 Unprocessable Entity"
+2026-07-30 12:18:38,796 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:18:39,036 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.240s
+2026-07-30 12:18:39,037 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:18:39,123 | INFO | inventory-api | Request started | GET /api/v1/suppliers/1
+2026-07-30 12:18:39,151 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/1 | Status 200 | 0.027s
+2026-07-30 12:18:39,151 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/1 "HTTP/1.1 200 OK"
+2026-07-30 12:18:42,918 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:18:43,140 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.223s
+2026-07-30 12:18:43,141 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:18:43,243 | INFO | inventory-api | Request started | GET /api/v1/suppliers/1
+2026-07-30 12:18:43,254 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/1 | Status 200 | 0.012s
+2026-07-30 12:18:43,255 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/1 "HTTP/1.1 200 OK"
+2026-07-30 12:18:47,185 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:18:47,405 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.220s
+2026-07-30 12:18:47,406 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:18:47,407 | INFO | inventory-api | Request started | GET /api/v1/suppliers/999999
+2026-07-30 12:18:47,414 | WARNING | inventory-api | GET /api/v1/suppliers/999999 | 404 | Supplier not found.
+2026-07-30 12:18:47,414 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/999999 | Status 404 | 0.007s
+2026-07-30 12:18:47,415 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/999999 "HTTP/1.1 404 Not Found"
+2026-07-30 12:18:50,814 | INFO | inventory-api | Request started | GET /api/v1/suppliers/1
+2026-07-30 12:18:50,816 | WARNING | inventory-api | GET /api/v1/suppliers/1 | 401 | Not authenticated
+2026-07-30 12:18:50,816 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/1 | Status 401 | 0.002s
+2026-07-30 12:18:50,817 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/1 "HTTP/1.1 401 Unauthorized"
+2026-07-30 12:18:54,420 | INFO | inventory-api | Request started | GET /api/v1/suppliers/1
+2026-07-30 12:18:54,425 | WARNING | inventory-api | GET /api/v1/suppliers/1 | 401 | Could not validate credentials.
+2026-07-30 12:18:54,425 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/1 | Status 401 | 0.004s
+2026-07-30 12:18:54,425 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/1 "HTTP/1.1 401 Unauthorized"
+2026-07-30 12:18:58,218 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:18:58,501 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.284s
+2026-07-30 12:18:58,502 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:18:58,503 | INFO | inventory-api | Request started | GET /api/v1/suppliers/0
+2026-07-30 12:18:58,507 | WARNING | inventory-api | GET /api/v1/suppliers/0 | Validation Error | [{'type': 'greater_than', 'loc': ('path', 'supplier_id'), 'msg': 'Input should be greater than 0', 'input': '0', 'ctx': {'gt': 0}}]
+2026-07-30 12:18:58,507 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/0 | Status 422 | 0.004s
+2026-07-30 12:18:58,507 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/0 "HTTP/1.1 422 Unprocessable Entity"
+2026-07-30 12:21:31,262 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:21:31,494 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.233s
+2026-07-30 12:21:31,495 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:21:31,514 | INFO | inventory-api | Request started | GET /api/v1/suppliers/1
+2026-07-30 12:21:31,538 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/1 | Status 200 | 0.024s
+2026-07-30 12:21:31,539 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/1 "HTTP/1.1 200 OK"
+2026-07-30 12:21:35,123 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:21:35,352 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.229s
+2026-07-30 12:21:35,353 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:21:35,447 | INFO | inventory-api | Request started | GET /api/v1/suppliers/1
+2026-07-30 12:21:35,455 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/1 | Status 200 | 0.008s
+2026-07-30 12:21:35,455 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/1 "HTTP/1.1 200 OK"
+2026-07-30 12:21:39,056 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:21:39,280 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.225s
+2026-07-30 12:21:39,281 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:21:39,283 | INFO | inventory-api | Request started | GET /api/v1/suppliers/999999
+2026-07-30 12:21:39,289 | WARNING | inventory-api | GET /api/v1/suppliers/999999 | 404 | Supplier not found.
+2026-07-30 12:21:39,290 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/999999 | Status 404 | 0.007s
+2026-07-30 12:21:39,290 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/999999 "HTTP/1.1 404 Not Found"
+2026-07-30 12:21:42,824 | INFO | inventory-api | Request started | GET /api/v1/suppliers/1
+2026-07-30 12:21:42,826 | WARNING | inventory-api | GET /api/v1/suppliers/1 | 401 | Not authenticated
+2026-07-30 12:21:42,826 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/1 | Status 401 | 0.002s
+2026-07-30 12:21:42,827 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/1 "HTTP/1.1 401 Unauthorized"
+2026-07-30 12:21:45,754 | INFO | inventory-api | Request started | GET /api/v1/suppliers/1
+2026-07-30 12:21:45,756 | WARNING | inventory-api | GET /api/v1/suppliers/1 | 401 | Could not validate credentials.
+2026-07-30 12:21:45,756 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/1 | Status 401 | 0.003s
+2026-07-30 12:21:45,757 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/1 "HTTP/1.1 401 Unauthorized"
+2026-07-30 12:21:49,189 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:21:49,423 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.234s
+2026-07-30 12:21:49,424 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:21:49,426 | INFO | inventory-api | Request started | GET /api/v1/suppliers/0
+2026-07-30 12:21:49,431 | WARNING | inventory-api | GET /api/v1/suppliers/0 | Validation Error | [{'type': 'greater_than', 'loc': ('path', 'supplier_id'), 'msg': 'Input should be greater than 0', 'input': '0', 'ctx': {'gt': 0}}]
+2026-07-30 12:21:49,432 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/0 | Status 422 | 0.006s
+2026-07-30 12:21:49,432 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/0 "HTTP/1.1 422 Unprocessable Entity"
+2026-07-30 12:21:52,925 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:21:53,156 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.231s
+2026-07-30 12:21:53,156 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:21:53,323 | INFO | inventory-api | Request started | GET /api/v1/suppliers/2
+2026-07-30 12:21:53,331 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/2 | Status 200 | 0.008s
+2026-07-30 12:21:53,332 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/2 "HTTP/1.1 200 OK"
+2026-07-30 12:21:57,036 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:21:57,260 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.224s
+2026-07-30 12:21:57,261 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:21:57,289 | INFO | inventory-api | Request started | GET /api/v1/suppliers/1
+2026-07-30 12:21:57,294 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/1 | Status 200 | 0.005s
+2026-07-30 12:21:57,295 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/1 "HTTP/1.1 200 OK"
+2026-07-30 12:22:01,053 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:22:01,279 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.226s
+2026-07-30 12:22:01,280 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:22:01,281 | INFO | inventory-api | Request started | GET /api/v1/suppliers/999999999
+2026-07-30 12:22:01,286 | WARNING | inventory-api | GET /api/v1/suppliers/999999999 | 404 | Supplier not found.
+2026-07-30 12:22:01,286 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/999999999 | Status 404 | 0.005s
+2026-07-30 12:22:01,287 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/999999999 "HTTP/1.1 404 Not Found"
+2026-07-30 12:22:04,964 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:22:05,230 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.266s
+2026-07-30 12:22:05,231 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:22:05,232 | INFO | inventory-api | Request started | GET /api/v1/suppliers/-1
+2026-07-30 12:22:05,235 | WARNING | inventory-api | GET /api/v1/suppliers/-1 | Validation Error | [{'type': 'greater_than', 'loc': ('path', 'supplier_id'), 'msg': 'Input should be greater than 0', 'input': '-1', 'ctx': {'gt': 0}}]
+2026-07-30 12:22:05,235 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/-1 | Status 422 | 0.004s
+2026-07-30 12:22:05,236 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/-1 "HTTP/1.1 422 Unprocessable Entity"
+2026-07-30 12:22:08,842 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:22:09,072 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.230s
+2026-07-30 12:22:09,073 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:22:09,156 | INFO | inventory-api | Request started | GET /api/v1/suppliers/1
+2026-07-30 12:22:09,163 | INFO | inventory-api | Request finished | GET /api/v1/suppliers/1 | Status 200 | 0.007s
+2026-07-30 12:22:09,164 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/suppliers/1 "HTTP/1.1 200 OK"
+2026-07-30 12:26:51,240 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:26:51,485 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.245s
+2026-07-30 12:26:51,486 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:26:51,581 | INFO | inventory-api | Request started | PUT /api/v1/suppliers/1
+2026-07-30 12:26:51,660 | INFO | inventory-api | Request finished | PUT /api/v1/suppliers/1 | Status 200 | 0.079s
+2026-07-30 12:26:51,661 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/suppliers/1 "HTTP/1.1 200 OK"
+2026-07-30 12:26:55,050 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:26:55,281 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.231s
+2026-07-30 12:26:55,282 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:26:55,319 | INFO | inventory-api | Request started | PUT /api/v1/suppliers/1
+2026-07-30 12:26:55,381 | INFO | inventory-api | Request finished | PUT /api/v1/suppliers/1 | Status 200 | 0.062s
+2026-07-30 12:26:55,382 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/suppliers/1 "HTTP/1.1 200 OK"
+2026-07-30 12:26:58,886 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:26:59,120 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.234s
+2026-07-30 12:26:59,120 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:26:59,122 | INFO | inventory-api | Request started | PUT /api/v1/suppliers/999999
+2026-07-30 12:26:59,132 | WARNING | inventory-api | PUT /api/v1/suppliers/999999 | 404 | Supplier not found.
+2026-07-30 12:26:59,132 | INFO | inventory-api | Request finished | PUT /api/v1/suppliers/999999 | Status 404 | 0.010s
+2026-07-30 12:26:59,132 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/suppliers/999999 "HTTP/1.1 404 Not Found"
+2026-07-30 12:27:02,585 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:27:02,824 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.239s
+2026-07-30 12:27:02,825 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:27:02,948 | INFO | inventory-api | Request started | PUT /api/v1/suppliers/1
+2026-07-30 12:27:02,957 | WARNING | inventory-api | PUT /api/v1/suppliers/1 | 400 | A supplier with this name already exists.
+2026-07-30 12:27:02,958 | INFO | inventory-api | Request finished | PUT /api/v1/suppliers/1 | Status 400 | 0.010s
+2026-07-30 12:27:02,958 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/suppliers/1 "HTTP/1.1 400 Bad Request"
+2026-07-30 12:27:06,024 | INFO | inventory-api | Request started | PUT /api/v1/suppliers/1
+2026-07-30 12:27:06,027 | WARNING | inventory-api | PUT /api/v1/suppliers/1 | 401 | Not authenticated
+2026-07-30 12:27:06,027 | INFO | inventory-api | Request finished | PUT /api/v1/suppliers/1 | Status 401 | 0.003s
+2026-07-30 12:27:06,027 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/suppliers/1 "HTTP/1.1 401 Unauthorized"
+2026-07-30 12:27:09,852 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:27:10,081 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.229s
+2026-07-30 12:27:10,082 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:27:10,175 | INFO | inventory-api | Request started | PUT /api/v1/suppliers/1
+2026-07-30 12:27:10,183 | WARNING | inventory-api | PUT /api/v1/suppliers/1 | 403 | Administrator privileges required.
+2026-07-30 12:27:10,184 | INFO | inventory-api | Request finished | PUT /api/v1/suppliers/1 | Status 403 | 0.008s
+2026-07-30 12:27:10,184 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/suppliers/1 "HTTP/1.1 403 Forbidden"
+2026-07-30 12:28:26,347 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:28:26,577 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.231s
+2026-07-30 12:28:26,578 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:28:26,676 | INFO | inventory-api | Request started | PUT /api/v1/suppliers/1
+2026-07-30 12:28:26,734 | INFO | inventory-api | Request finished | PUT /api/v1/suppliers/1 | Status 200 | 0.058s
+2026-07-30 12:28:26,736 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/suppliers/1 "HTTP/1.1 200 OK"
+2026-07-30 12:28:30,391 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:28:30,611 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.220s
+2026-07-30 12:28:30,612 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:28:30,718 | INFO | inventory-api | Request started | PUT /api/v1/suppliers/1
+2026-07-30 12:28:30,758 | INFO | inventory-api | Request finished | PUT /api/v1/suppliers/1 | Status 200 | 0.040s
+2026-07-30 12:28:30,759 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/suppliers/1 "HTTP/1.1 200 OK"
+2026-07-30 12:28:34,369 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:28:34,591 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.222s
+2026-07-30 12:28:34,591 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:28:34,593 | INFO | inventory-api | Request started | PUT /api/v1/suppliers/999999
+2026-07-30 12:28:34,598 | WARNING | inventory-api | PUT /api/v1/suppliers/999999 | 404 | Supplier not found.
+2026-07-30 12:28:34,599 | INFO | inventory-api | Request finished | PUT /api/v1/suppliers/999999 | Status 404 | 0.006s
+2026-07-30 12:28:34,599 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/suppliers/999999 "HTTP/1.1 404 Not Found"
+2026-07-30 12:28:38,407 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:28:38,630 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.223s
+2026-07-30 12:28:38,631 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:28:38,769 | INFO | inventory-api | Request started | PUT /api/v1/suppliers/1
+2026-07-30 12:28:38,777 | WARNING | inventory-api | PUT /api/v1/suppliers/1 | 400 | A supplier with this name already exists.
+2026-07-30 12:28:38,777 | INFO | inventory-api | Request finished | PUT /api/v1/suppliers/1 | Status 400 | 0.008s
+2026-07-30 12:28:38,777 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/suppliers/1 "HTTP/1.1 400 Bad Request"
+2026-07-30 12:28:41,980 | INFO | inventory-api | Request started | PUT /api/v1/suppliers/1
+2026-07-30 12:28:42,029 | WARNING | inventory-api | PUT /api/v1/suppliers/1 | 401 | Not authenticated
+2026-07-30 12:28:42,029 | INFO | inventory-api | Request finished | PUT /api/v1/suppliers/1 | Status 401 | 0.049s
+2026-07-30 12:28:42,029 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/suppliers/1 "HTTP/1.1 401 Unauthorized"
+2026-07-30 12:28:45,608 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:28:45,831 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.223s
+2026-07-30 12:28:45,832 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:28:45,928 | INFO | inventory-api | Request started | PUT /api/v1/suppliers/1
+2026-07-30 12:28:45,935 | WARNING | inventory-api | PUT /api/v1/suppliers/1 | 403 | Administrator privileges required.
+2026-07-30 12:28:45,935 | INFO | inventory-api | Request finished | PUT /api/v1/suppliers/1 | Status 403 | 0.007s
+2026-07-30 12:28:45,936 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/suppliers/1 "HTTP/1.1 403 Forbidden"
+2026-07-30 12:28:49,552 | INFO | inventory-api | Request started | PUT /api/v1/suppliers/1
+2026-07-30 12:28:49,558 | WARNING | inventory-api | PUT /api/v1/suppliers/1 | 401 | Could not validate credentials.
+2026-07-30 12:28:49,558 | INFO | inventory-api | Request finished | PUT /api/v1/suppliers/1 | Status 401 | 0.006s
+2026-07-30 12:28:49,559 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/suppliers/1 "HTTP/1.1 401 Unauthorized"
+2026-07-30 12:28:53,325 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:28:53,549 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.223s
+2026-07-30 12:28:53,549 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:28:53,550 | INFO | inventory-api | Request started | PUT /api/v1/suppliers/0
+2026-07-30 12:28:53,554 | WARNING | inventory-api | PUT /api/v1/suppliers/0 | Validation Error | [{'type': 'greater_than', 'loc': ('path', 'supplier_id'), 'msg': 'Input should be greater than 0', 'input': '0', 'ctx': {'gt': 0}}]
+2026-07-30 12:28:53,555 | INFO | inventory-api | Request finished | PUT /api/v1/suppliers/0 | Status 422 | 0.004s
+2026-07-30 12:28:53,555 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/suppliers/0 "HTTP/1.1 422 Unprocessable Entity"
+2026-07-30 12:28:57,272 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:28:57,496 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.223s
+2026-07-30 12:28:57,497 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:28:57,498 | INFO | inventory-api | Request started | PUT /api/v1/suppliers/-1
+2026-07-30 12:28:57,503 | WARNING | inventory-api | PUT /api/v1/suppliers/-1 | Validation Error | [{'type': 'greater_than', 'loc': ('path', 'supplier_id'), 'msg': 'Input should be greater than 0', 'input': '-1', 'ctx': {'gt': 0}}]
+2026-07-30 12:28:57,503 | INFO | inventory-api | Request finished | PUT /api/v1/suppliers/-1 | Status 422 | 0.005s
+2026-07-30 12:28:57,503 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/suppliers/-1 "HTTP/1.1 422 Unprocessable Entity"
+2026-07-30 12:29:01,365 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:29:01,589 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.224s
+2026-07-30 12:29:01,590 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:29:01,683 | INFO | inventory-api | Request started | PUT /api/v1/suppliers/1
+2026-07-30 12:29:01,689 | WARNING | inventory-api | PUT /api/v1/suppliers/1 | Validation Error | [{'type': 'value_error', 'loc': ('body', 'email'), 'msg': 'value is not a valid email address: An email address must have an @-sign.', 'input': 'not-an-email', 'ctx': {'reason': 'An email address must have an @-sign.'}}]
+2026-07-30 12:29:01,690 | INFO | inventory-api | Request finished | PUT /api/v1/suppliers/1 | Status 422 | 0.007s
+2026-07-30 12:29:01,690 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/suppliers/1 "HTTP/1.1 422 Unprocessable Entity"
+2026-07-30 12:29:05,312 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:29:05,537 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.225s
+2026-07-30 12:29:05,537 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:29:05,633 | INFO | inventory-api | Request started | PUT /api/v1/suppliers/1
+2026-07-30 12:29:05,641 | WARNING | inventory-api | PUT /api/v1/suppliers/1 | Validation Error | [{'type': 'string_too_short', 'loc': ('body', 'name'), 'msg': 'String should have at least 3 characters', 'input': 'AB', 'ctx': {'min_length': 3}}]
+2026-07-30 12:29:05,641 | INFO | inventory-api | Request finished | PUT /api/v1/suppliers/1 | Status 422 | 0.008s
+2026-07-30 12:29:05,642 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/suppliers/1 "HTTP/1.1 422 Unprocessable Entity"
+2026-07-30 12:29:09,312 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:29:09,541 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.229s
+2026-07-30 12:29:09,542 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:29:09,629 | INFO | inventory-api | Request started | PUT /api/v1/suppliers/1
+2026-07-30 12:29:09,638 | WARNING | inventory-api | PUT /api/v1/suppliers/1 | Validation Error | [{'type': 'string_too_short', 'loc': ('body', 'contact_person'), 'msg': 'String should have at least 3 characters', 'input': 'AB', 'ctx': {'min_length': 3}}]
+2026-07-30 12:29:09,638 | INFO | inventory-api | Request finished | PUT /api/v1/suppliers/1 | Status 422 | 0.009s
+2026-07-30 12:29:09,639 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/suppliers/1 "HTTP/1.1 422 Unprocessable Entity"
+2026-07-30 12:31:23,318 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:31:23,550 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.232s
+2026-07-30 12:31:23,551 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:31:23,649 | INFO | inventory-api | Request started | DELETE /api/v1/suppliers/1
+2026-07-30 12:31:23,707 | INFO | inventory-api | Request finished | DELETE /api/v1/suppliers/1 | Status 200 | 0.058s
+2026-07-30 12:31:23,708 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/suppliers/1 "HTTP/1.1 200 OK"
+2026-07-30 12:31:27,384 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:31:27,606 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.222s
+2026-07-30 12:31:27,645 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:31:27,648 | INFO | inventory-api | Request started | DELETE /api/v1/suppliers/999999
+2026-07-30 12:31:27,660 | WARNING | inventory-api | DELETE /api/v1/suppliers/999999 | 404 | Supplier not found.
+2026-07-30 12:31:27,661 | INFO | inventory-api | Request finished | DELETE /api/v1/suppliers/999999 | Status 404 | 0.013s
+2026-07-30 12:31:27,661 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/suppliers/999999 "HTTP/1.1 404 Not Found"
+2026-07-30 12:31:30,909 | INFO | inventory-api | Request started | DELETE /api/v1/suppliers/1
+2026-07-30 12:31:30,912 | WARNING | inventory-api | DELETE /api/v1/suppliers/1 | 401 | Not authenticated
+2026-07-30 12:31:30,912 | INFO | inventory-api | Request finished | DELETE /api/v1/suppliers/1 | Status 401 | 0.003s
+2026-07-30 12:31:30,912 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/suppliers/1 "HTTP/1.1 401 Unauthorized"
+2026-07-30 12:31:34,466 | INFO | inventory-api | Request started | DELETE /api/v1/suppliers/1
+2026-07-30 12:31:34,470 | WARNING | inventory-api | DELETE /api/v1/suppliers/1 | 401 | Could not validate credentials.
+2026-07-30 12:31:34,471 | INFO | inventory-api | Request finished | DELETE /api/v1/suppliers/1 | Status 401 | 0.004s
+2026-07-30 12:31:34,471 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/suppliers/1 "HTTP/1.1 401 Unauthorized"
+2026-07-30 12:31:38,005 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:31:38,225 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.220s
+2026-07-30 12:31:38,226 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:31:38,324 | INFO | inventory-api | Request started | DELETE /api/v1/suppliers/1
+2026-07-30 12:31:38,329 | WARNING | inventory-api | DELETE /api/v1/suppliers/1 | 403 | Administrator privileges required.
+2026-07-30 12:31:38,330 | INFO | inventory-api | Request finished | DELETE /api/v1/suppliers/1 | Status 403 | 0.006s
+2026-07-30 12:31:38,330 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/suppliers/1 "HTTP/1.1 403 Forbidden"
+2026-07-30 12:31:42,116 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:31:42,353 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.237s
+2026-07-30 12:31:42,354 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:31:42,391 | INFO | inventory-api | Request started | DELETE /api/v1/suppliers/1
+2026-07-30 12:31:42,420 | INFO | inventory-api | Request finished | DELETE /api/v1/suppliers/1 | Status 200 | 0.029s
+2026-07-30 12:31:42,421 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/suppliers/1 "HTTP/1.1 200 OK"
+2026-07-30 12:32:43,936 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:32:44,171 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.235s
+2026-07-30 12:32:44,173 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:32:44,270 | INFO | inventory-api | Request started | DELETE /api/v1/suppliers/1
+2026-07-30 12:32:44,334 | INFO | inventory-api | Request finished | DELETE /api/v1/suppliers/1 | Status 200 | 0.064s
+2026-07-30 12:32:44,335 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/suppliers/1 "HTTP/1.1 200 OK"
+2026-07-30 12:32:48,143 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:32:48,412 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.269s
+2026-07-30 12:32:48,412 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:32:48,414 | INFO | inventory-api | Request started | DELETE /api/v1/suppliers/999999
+2026-07-30 12:32:48,419 | WARNING | inventory-api | DELETE /api/v1/suppliers/999999 | 404 | Supplier not found.
+2026-07-30 12:32:48,419 | INFO | inventory-api | Request finished | DELETE /api/v1/suppliers/999999 | Status 404 | 0.005s
+2026-07-30 12:32:48,419 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/suppliers/999999 "HTTP/1.1 404 Not Found"
+2026-07-30 12:32:51,912 | INFO | inventory-api | Request started | DELETE /api/v1/suppliers/1
+2026-07-30 12:32:51,915 | WARNING | inventory-api | DELETE /api/v1/suppliers/1 | 401 | Not authenticated
+2026-07-30 12:32:51,915 | INFO | inventory-api | Request finished | DELETE /api/v1/suppliers/1 | Status 401 | 0.003s
+2026-07-30 12:32:51,916 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/suppliers/1 "HTTP/1.1 401 Unauthorized"
+2026-07-30 12:32:55,151 | INFO | inventory-api | Request started | DELETE /api/v1/suppliers/1
+2026-07-30 12:32:55,153 | WARNING | inventory-api | DELETE /api/v1/suppliers/1 | 401 | Could not validate credentials.
+2026-07-30 12:32:55,153 | INFO | inventory-api | Request finished | DELETE /api/v1/suppliers/1 | Status 401 | 0.003s
+2026-07-30 12:32:55,153 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/suppliers/1 "HTTP/1.1 401 Unauthorized"
+2026-07-30 12:32:58,955 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:32:59,196 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.241s
+2026-07-30 12:32:59,197 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:32:59,291 | INFO | inventory-api | Request started | DELETE /api/v1/suppliers/1
+2026-07-30 12:32:59,298 | WARNING | inventory-api | DELETE /api/v1/suppliers/1 | 403 | Administrator privileges required.
+2026-07-30 12:32:59,298 | INFO | inventory-api | Request finished | DELETE /api/v1/suppliers/1 | Status 403 | 0.007s
+2026-07-30 12:32:59,299 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/suppliers/1 "HTTP/1.1 403 Forbidden"
+2026-07-30 12:33:03,151 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:33:03,375 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.224s
+2026-07-30 12:33:03,376 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:33:03,416 | INFO | inventory-api | Request started | DELETE /api/v1/suppliers/1
+2026-07-30 12:33:03,478 | INFO | inventory-api | Request finished | DELETE /api/v1/suppliers/1 | Status 200 | 0.062s
+2026-07-30 12:33:03,479 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/suppliers/1 "HTTP/1.1 200 OK"
+2026-07-30 12:33:06,967 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:33:07,210 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.243s
+2026-07-30 12:33:07,211 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:33:07,212 | INFO | inventory-api | Request started | DELETE /api/v1/suppliers/0
+2026-07-30 12:33:07,215 | WARNING | inventory-api | DELETE /api/v1/suppliers/0 | Validation Error | [{'type': 'greater_than', 'loc': ('path', 'supplier_id'), 'msg': 'Input should be greater than 0', 'input': '0', 'ctx': {'gt': 0}}]
+2026-07-30 12:33:07,215 | INFO | inventory-api | Request finished | DELETE /api/v1/suppliers/0 | Status 422 | 0.003s
+2026-07-30 12:33:07,216 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/suppliers/0 "HTTP/1.1 422 Unprocessable Entity"
+2026-07-30 12:33:10,871 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:33:11,094 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.224s
+2026-07-30 12:33:11,095 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:33:11,097 | INFO | inventory-api | Request started | DELETE /api/v1/suppliers/-1
+2026-07-30 12:33:11,102 | WARNING | inventory-api | DELETE /api/v1/suppliers/-1 | Validation Error | [{'type': 'greater_than', 'loc': ('path', 'supplier_id'), 'msg': 'Input should be greater than 0', 'input': '-1', 'ctx': {'gt': 0}}]
+2026-07-30 12:33:11,102 | INFO | inventory-api | Request finished | DELETE /api/v1/suppliers/-1 | Status 422 | 0.006s
+2026-07-30 12:33:11,103 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/suppliers/-1 "HTTP/1.1 422 Unprocessable Entity"
+2026-07-30 12:33:15,124 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-07-30 12:33:15,348 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.224s
+2026-07-30 12:33:15,349 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-07-30 12:33:15,423 | INFO | inventory-api | Request started | DELETE /api/v1/suppliers/1
+2026-07-30 12:33:15,473 | INFO | inventory-api | Request finished | DELETE /api/v1/suppliers/1 | Status 200 | 0.051s
+2026-07-30 12:33:15,474 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/suppliers/1 "HTTP/1.1 200 OK"
+2026-07-30 12:33:15,475 | INFO | inventory-api | Request started | DELETE /api/v1/suppliers/1
+2026-07-30 12:33:15,482 | WARNING | inventory-api | DELETE /api/v1/suppliers/1 | 404 | Supplier not found.
+2026-07-30 12:33:15,482 | INFO | inventory-api | Request finished | DELETE /api/v1/suppliers/1 | Status 404 | 0.007s
+2026-07-30 12:33:15,484 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/suppliers/1 "HTTP/1.1 404 Not Found"

@@ -27,9 +27,9 @@ def supplier_factory(db):
     def factory(
         name: str | None = None,
         contact_person: str = "John Supplier",
-        phone: str = "+53 5555 1234",
+        phone: str | None = "+53 5555 1234",
         email: str | None = None,
-        address: str = "Baracoa, Guantánamo, Cuba",
+        address: str | None = "Baracoa, Guantánamo, Cuba",
         is_active: bool = True,
     ) -> Supplier:
 
@@ -42,7 +42,7 @@ def supplier_factory(db):
         supplier_email = (
             email
             if email is not None
-            else f"{uuid.uuid4().hex[:8]}@supplier.test"
+            else f"{uuid.uuid4().hex[:8]}@example.com"
         )
 
         supplier = Supplier(
