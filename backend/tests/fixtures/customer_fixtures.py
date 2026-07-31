@@ -41,7 +41,7 @@ def customer_factory(db):
         customer_email = (
             email
             if email is not None
-            else f"{uuid.uuid4().hex[:8]}@customer.test"
+            else f"{uuid.uuid4().hex[:8]}@example.com"
         )
 
         customer = Customer(
