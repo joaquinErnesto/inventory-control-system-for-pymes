@@ -6623,3 +6623,976 @@ fastapi.exceptions.ResponseValidationError: 1 validation error:
 2026-07-31 15:48:45,043 | WARNING | inventory-api | DELETE /api/v1/products/999999 | 404 | Product not found.
 2026-07-31 15:48:45,043 | INFO | inventory-api | Request finished | DELETE /api/v1/products/999999 | Status 404 | 0.018s
 2026-07-31 15:48:45,043 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/products/999999 "HTTP/1.1 404 Not Found"
+2026-08-03 09:55:38,364 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 09:55:38,588 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.224s
+2026-08-03 09:55:38,589 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 09:55:38,591 | INFO | inventory-api | Request started | POST /api/v1/users/
+2026-08-03 09:55:38,848 | INFO | inventory-api | Request finished | POST /api/v1/users/ | Status 201 | 0.257s
+2026-08-03 09:55:38,849 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/users/ "HTTP/1.1 201 Created"
+2026-08-03 09:55:41,509 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 09:55:41,716 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-08-03 09:55:41,717 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 09:55:41,718 | INFO | inventory-api | Request started | POST /api/v1/users/
+2026-08-03 09:55:41,941 | INFO | inventory-api | Request finished | POST /api/v1/users/ | Status 201 | 0.223s
+2026-08-03 09:55:41,942 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/users/ "HTTP/1.1 201 Created"
+2026-08-03 09:55:45,089 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 09:55:45,291 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.202s
+2026-08-03 09:55:45,292 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 09:55:45,293 | INFO | inventory-api | Request started | POST /api/v1/users/
+2026-08-03 09:55:45,510 | INFO | inventory-api | Request finished | POST /api/v1/users/ | Status 201 | 0.217s
+2026-08-03 09:55:45,511 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/users/ "HTTP/1.1 201 Created"
+2026-08-03 09:55:48,617 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 09:55:48,838 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.221s
+2026-08-03 09:55:48,839 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 09:55:48,840 | INFO | inventory-api | Request started | POST /api/v1/users/
+2026-08-03 09:55:49,072 | INFO | inventory-api | Request finished | POST /api/v1/users/ | Status 201 | 0.232s
+2026-08-03 09:55:49,073 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/users/ "HTTP/1.1 201 Created"
+2026-08-03 09:59:19,693 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 09:59:19,900 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-08-03 09:59:19,901 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 09:59:19,902 | INFO | inventory-api | Request started | POST /api/v1/users/
+2026-08-03 09:59:20,148 | INFO | inventory-api | Request finished | POST /api/v1/users/ | Status 201 | 0.246s
+2026-08-03 09:59:20,149 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/users/ "HTTP/1.1 201 Created"
+2026-08-03 09:59:22,931 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 09:59:23,143 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.212s
+2026-08-03 09:59:23,143 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 09:59:23,145 | INFO | inventory-api | Request started | POST /api/v1/users/
+2026-08-03 09:59:23,369 | INFO | inventory-api | Request finished | POST /api/v1/users/ | Status 201 | 0.224s
+2026-08-03 09:59:23,370 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/users/ "HTTP/1.1 201 Created"
+2026-08-03 09:59:26,353 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 09:59:26,554 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.201s
+2026-08-03 09:59:26,555 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 09:59:26,557 | INFO | inventory-api | Request started | POST /api/v1/users/
+2026-08-03 09:59:26,778 | INFO | inventory-api | Request finished | POST /api/v1/users/ | Status 201 | 0.221s
+2026-08-03 09:59:26,778 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/users/ "HTTP/1.1 201 Created"
+2026-08-03 09:59:29,872 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 09:59:30,074 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.202s
+2026-08-03 09:59:30,075 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 09:59:30,077 | INFO | inventory-api | Request started | POST /api/v1/users/
+2026-08-03 09:59:30,295 | INFO | inventory-api | Request finished | POST /api/v1/users/ | Status 201 | 0.219s
+2026-08-03 09:59:30,296 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/users/ "HTTP/1.1 201 Created"
+2026-08-03 09:59:32,830 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 09:59:33,032 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.202s
+2026-08-03 09:59:33,033 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 09:59:33,244 | INFO | inventory-api | Request started | POST /api/v1/users/
+2026-08-03 09:59:33,249 | WARNING | inventory-api | POST /api/v1/users/ | 400 | Username is already taken.
+2026-08-03 09:59:33,249 | INFO | inventory-api | Request finished | POST /api/v1/users/ | Status 400 | 0.005s
+2026-08-03 09:59:33,250 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/users/ "HTTP/1.1 400 Bad Request"
+2026-08-03 09:59:35,993 | INFO | inventory-api | Request started | POST /api/v1/users/
+2026-08-03 09:59:35,994 | WARNING | inventory-api | POST /api/v1/users/ | 401 | Not authenticated
+2026-08-03 09:59:35,995 | INFO | inventory-api | Request finished | POST /api/v1/users/ | Status 401 | 0.002s
+2026-08-03 09:59:35,995 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/users/ "HTTP/1.1 401 Unauthorized"
+2026-08-03 09:59:38,686 | INFO | inventory-api | Request started | POST /api/v1/users/
+2026-08-03 09:59:38,688 | WARNING | inventory-api | POST /api/v1/users/ | 401 | Could not validate credentials.
+2026-08-03 09:59:38,688 | INFO | inventory-api | Request finished | POST /api/v1/users/ | Status 401 | 0.002s
+2026-08-03 09:59:38,688 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/users/ "HTTP/1.1 401 Unauthorized"
+2026-08-03 09:59:41,470 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 09:59:41,674 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.204s
+2026-08-03 09:59:41,674 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 09:59:41,676 | INFO | inventory-api | Request started | POST /api/v1/users/
+2026-08-03 09:59:41,679 | WARNING | inventory-api | POST /api/v1/users/ | 403 | Administrator privileges required.
+2026-08-03 09:59:41,679 | INFO | inventory-api | Request finished | POST /api/v1/users/ | Status 403 | 0.003s
+2026-08-03 09:59:41,679 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/users/ "HTTP/1.1 403 Forbidden"
+2026-08-03 09:59:44,445 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 09:59:44,642 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.197s
+2026-08-03 09:59:44,642 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 09:59:44,643 | INFO | inventory-api | Request started | POST /api/v1/users/
+2026-08-03 09:59:44,647 | WARNING | inventory-api | POST /api/v1/users/ | Validation Error | [{'type': 'string_too_short', 'loc': ('body', 'username'), 'msg': 'String should have at least 3 characters', 'input': 'ab', 'ctx': {'min_length': 3}}]
+2026-08-03 09:59:44,647 | INFO | inventory-api | Request finished | POST /api/v1/users/ | Status 422 | 0.004s
+2026-08-03 09:59:44,647 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/users/ "HTTP/1.1 422 Unprocessable Entity"
+2026-08-03 09:59:47,736 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 09:59:47,931 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.195s
+2026-08-03 09:59:47,932 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 09:59:47,933 | INFO | inventory-api | Request started | POST /api/v1/users/
+2026-08-03 09:59:47,938 | WARNING | inventory-api | POST /api/v1/users/ | Validation Error | [{'type': 'string_too_short', 'loc': ('body', 'password'), 'msg': 'String should have at least 8 characters', 'input': '1234567', 'ctx': {'min_length': 8}}]
+2026-08-03 09:59:47,938 | INFO | inventory-api | Request finished | POST /api/v1/users/ | Status 422 | 0.005s
+2026-08-03 09:59:47,938 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/users/ "HTTP/1.1 422 Unprocessable Entity"
+2026-08-03 09:59:51,172 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 09:59:51,376 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.203s
+2026-08-03 09:59:51,377 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 09:59:51,378 | INFO | inventory-api | Request started | POST /api/v1/users/
+2026-08-03 09:59:51,383 | WARNING | inventory-api | POST /api/v1/users/ | Validation Error | [{'type': 'enum', 'loc': ('body', 'role'), 'msg': "Input should be 'admin' or 'employee'", 'input': 'manager', 'ctx': {'expected': "'admin' or 'employee'"}}]
+2026-08-03 09:59:51,383 | INFO | inventory-api | Request finished | POST /api/v1/users/ | Status 422 | 0.005s
+2026-08-03 09:59:51,383 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/users/ "HTTP/1.1 422 Unprocessable Entity"
+2026-08-03 10:08:48,564 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 10:08:48,771 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-08-03 10:08:48,772 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 10:08:48,986 | INFO | inventory-api | Request started | POST /api/v1/users/
+2026-08-03 10:08:49,022 | WARNING | inventory-api | POST /api/v1/users/ | 400 | Username is already taken.
+2026-08-03 10:08:49,022 | INFO | inventory-api | Request finished | POST /api/v1/users/ | Status 400 | 0.036s
+2026-08-03 10:08:49,022 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/users/ "HTTP/1.1 400 Bad Request"
+2026-08-03 10:11:09,830 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 10:11:10,083 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.253s
+2026-08-03 10:11:10,084 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 10:11:10,303 | INFO | inventory-api | Request started | POST /api/v1/users/
+2026-08-03 10:11:10,331 | WARNING | inventory-api | POST /api/v1/users/ | 400 | Username is already taken.
+2026-08-03 10:11:10,331 | INFO | inventory-api | Request finished | POST /api/v1/users/ | Status 400 | 0.028s
+2026-08-03 10:11:10,331 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/users/ "HTTP/1.1 400 Bad Request"
+2026-08-03 10:26:51,396 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 10:26:51,601 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.205s
+2026-08-03 10:26:51,601 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 10:26:52,049 | INFO | inventory-api | Request started | GET /api/v1/users/
+2026-08-03 10:26:52,083 | INFO | inventory-api | Request finished | GET /api/v1/users/ | Status 200 | 0.034s
+2026-08-03 10:26:52,083 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/ "HTTP/1.1 200 OK"
+2026-08-03 10:26:54,747 | INFO | inventory-api | Request started | GET /api/v1/users/
+2026-08-03 10:26:54,748 | WARNING | inventory-api | GET /api/v1/users/ | 401 | Not authenticated
+2026-08-03 10:26:54,748 | INFO | inventory-api | Request finished | GET /api/v1/users/ | Status 401 | 0.002s
+2026-08-03 10:26:54,749 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/ "HTTP/1.1 401 Unauthorized"
+2026-08-03 10:26:57,572 | INFO | inventory-api | Request started | GET /api/v1/users/
+2026-08-03 10:26:57,574 | WARNING | inventory-api | GET /api/v1/users/ | 401 | Could not validate credentials.
+2026-08-03 10:26:57,574 | INFO | inventory-api | Request finished | GET /api/v1/users/ | Status 401 | 0.002s
+2026-08-03 10:26:57,574 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/ "HTTP/1.1 401 Unauthorized"
+2026-08-03 10:27:00,303 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 10:27:00,506 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.203s
+2026-08-03 10:27:00,507 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 10:27:00,509 | INFO | inventory-api | Request started | GET /api/v1/users/
+2026-08-03 10:27:00,515 | WARNING | inventory-api | GET /api/v1/users/ | 403 | Administrator privileges required.
+2026-08-03 10:27:00,515 | INFO | inventory-api | Request finished | GET /api/v1/users/ | Status 403 | 0.006s
+2026-08-03 10:27:00,515 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/ "HTTP/1.1 403 Forbidden"
+2026-08-03 10:27:03,231 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 10:27:03,434 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.203s
+2026-08-03 10:27:03,435 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 10:27:04,091 | INFO | inventory-api | Request started | GET /api/v1/users/
+2026-08-03 10:27:04,098 | INFO | inventory-api | Request finished | GET /api/v1/users/ | Status 200 | 0.007s
+2026-08-03 10:27:04,099 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/ "HTTP/1.1 200 OK"
+2026-08-03 10:29:57,767 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 10:29:57,975 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.208s
+2026-08-03 10:29:57,976 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 10:29:58,400 | INFO | inventory-api | Request started | GET /api/v1/users/
+2026-08-03 10:29:58,441 | INFO | inventory-api | Request finished | GET /api/v1/users/ | Status 200 | 0.041s
+2026-08-03 10:29:58,441 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/ "HTTP/1.1 200 OK"
+2026-08-03 10:30:00,871 | INFO | inventory-api | Request started | GET /api/v1/users/
+2026-08-03 10:30:00,873 | WARNING | inventory-api | GET /api/v1/users/ | 401 | Not authenticated
+2026-08-03 10:30:00,873 | INFO | inventory-api | Request finished | GET /api/v1/users/ | Status 401 | 0.002s
+2026-08-03 10:30:00,873 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/ "HTTP/1.1 401 Unauthorized"
+2026-08-03 10:30:03,378 | INFO | inventory-api | Request started | GET /api/v1/users/
+2026-08-03 10:30:03,380 | WARNING | inventory-api | GET /api/v1/users/ | 401 | Could not validate credentials.
+2026-08-03 10:30:03,381 | INFO | inventory-api | Request finished | GET /api/v1/users/ | Status 401 | 0.002s
+2026-08-03 10:30:03,381 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/ "HTTP/1.1 401 Unauthorized"
+2026-08-03 10:30:06,155 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 10:30:06,363 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-08-03 10:30:06,364 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 10:30:06,365 | INFO | inventory-api | Request started | GET /api/v1/users/
+2026-08-03 10:30:06,369 | WARNING | inventory-api | GET /api/v1/users/ | 403 | Administrator privileges required.
+2026-08-03 10:30:06,369 | INFO | inventory-api | Request finished | GET /api/v1/users/ | Status 403 | 0.004s
+2026-08-03 10:30:06,370 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/ "HTTP/1.1 403 Forbidden"
+2026-08-03 10:30:09,225 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 10:30:09,441 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.216s
+2026-08-03 10:30:09,442 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 10:30:10,146 | INFO | inventory-api | Request started | GET /api/v1/users/
+2026-08-03 10:30:10,154 | INFO | inventory-api | Request finished | GET /api/v1/users/ | Status 200 | 0.008s
+2026-08-03 10:30:10,155 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/ "HTTP/1.1 200 OK"
+2026-08-03 10:30:12,862 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 10:30:13,075 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.214s
+2026-08-03 10:30:13,076 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 10:30:14,199 | INFO | inventory-api | Request started | GET /api/v1/users/
+2026-08-03 10:30:14,205 | INFO | inventory-api | Request finished | GET /api/v1/users/ | Status 200 | 0.007s
+2026-08-03 10:30:14,206 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/?skip=1&limit=2 "HTTP/1.1 200 OK"
+2026-08-03 10:30:17,022 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 10:30:17,233 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.211s
+2026-08-03 10:30:17,233 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 10:30:17,920 | INFO | inventory-api | Request started | GET /api/v1/users/
+2026-08-03 10:30:17,929 | INFO | inventory-api | Request finished | GET /api/v1/users/ | Status 200 | 0.009s
+2026-08-03 10:30:17,930 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/?sort=username&order=asc "HTTP/1.1 200 OK"
+2026-08-03 10:30:20,732 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 10:30:20,952 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.219s
+2026-08-03 10:30:20,953 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 10:30:21,598 | INFO | inventory-api | Request started | GET /api/v1/users/
+2026-08-03 10:30:21,605 | INFO | inventory-api | Request finished | GET /api/v1/users/ | Status 200 | 0.007s
+2026-08-03 10:30:21,606 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/?sort=username&order=desc "HTTP/1.1 200 OK"
+2026-08-03 10:30:24,339 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 10:30:24,548 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.209s
+2026-08-03 10:30:24,548 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 10:30:25,196 | INFO | inventory-api | Request started | GET /api/v1/users/
+2026-08-03 10:30:25,205 | INFO | inventory-api | Request finished | GET /api/v1/users/ | Status 200 | 0.009s
+2026-08-03 10:30:25,206 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/?sort=created_at&order=asc "HTTP/1.1 200 OK"
+2026-08-03 10:30:28,281 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 10:30:28,478 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.196s
+2026-08-03 10:30:28,479 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 10:30:29,146 | INFO | inventory-api | Request started | GET /api/v1/users/
+2026-08-03 10:30:29,152 | INFO | inventory-api | Request finished | GET /api/v1/users/ | Status 200 | 0.006s
+2026-08-03 10:30:29,152 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/?sort=created_at&order=desc "HTTP/1.1 200 OK"
+2026-08-03 10:30:32,155 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 10:30:32,351 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.195s
+2026-08-03 10:30:32,351 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 10:30:32,353 | INFO | inventory-api | Request started | GET /api/v1/users/
+2026-08-03 10:30:32,357 | WARNING | inventory-api | GET /api/v1/users/ | 400 | Invalid sort field. Allowed values: username, created_at
+2026-08-03 10:30:32,357 | INFO | inventory-api | Request finished | GET /api/v1/users/ | Status 400 | 0.004s
+2026-08-03 10:30:32,357 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/?sort=invalid_field "HTTP/1.1 400 Bad Request"
+2026-08-03 10:38:55,850 | INFO | inventory-api | Request started | GET /api/v1/users/me
+2026-08-03 10:38:55,875 | WARNING | inventory-api | GET /api/v1/users/me | 401 | Not authenticated
+2026-08-03 10:38:55,875 | INFO | inventory-api | Request finished | GET /api/v1/users/me | Status 401 | 0.025s
+2026-08-03 10:38:55,875 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/me "HTTP/1.1 401 Unauthorized"
+2026-08-03 10:38:58,563 | INFO | inventory-api | Request started | GET /api/v1/users/me
+2026-08-03 10:38:58,565 | WARNING | inventory-api | GET /api/v1/users/me | 401 | Could not validate credentials.
+2026-08-03 10:38:58,565 | INFO | inventory-api | Request finished | GET /api/v1/users/me | Status 401 | 0.002s
+2026-08-03 10:38:58,565 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/me "HTTP/1.1 401 Unauthorized"
+2026-08-03 10:39:48,248 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 10:39:48,452 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.204s
+2026-08-03 10:39:48,453 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 10:39:48,455 | INFO | inventory-api | Request started | GET /api/v1/users/me
+2026-08-03 10:39:48,479 | INFO | inventory-api | Request finished | GET /api/v1/users/me | Status 200 | 0.024s
+2026-08-03 10:39:48,480 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/me "HTTP/1.1 200 OK"
+2026-08-03 10:39:51,329 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 10:39:51,524 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.195s
+2026-08-03 10:39:51,525 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 10:39:51,526 | INFO | inventory-api | Request started | GET /api/v1/users/me
+2026-08-03 10:39:51,529 | INFO | inventory-api | Request finished | GET /api/v1/users/me | Status 200 | 0.003s
+2026-08-03 10:39:51,530 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/me "HTTP/1.1 200 OK"
+2026-08-03 10:39:54,182 | INFO | inventory-api | Request started | GET /api/v1/users/me
+2026-08-03 10:39:54,183 | WARNING | inventory-api | GET /api/v1/users/me | 401 | Not authenticated
+2026-08-03 10:39:54,183 | INFO | inventory-api | Request finished | GET /api/v1/users/me | Status 401 | 0.001s
+2026-08-03 10:39:54,184 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/me "HTTP/1.1 401 Unauthorized"
+2026-08-03 10:39:56,973 | INFO | inventory-api | Request started | GET /api/v1/users/me
+2026-08-03 10:39:56,974 | WARNING | inventory-api | GET /api/v1/users/me | 401 | Could not validate credentials.
+2026-08-03 10:39:56,975 | INFO | inventory-api | Request finished | GET /api/v1/users/me | Status 401 | 0.002s
+2026-08-03 10:39:56,975 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/me "HTTP/1.1 401 Unauthorized"
+2026-08-03 10:44:50,724 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 10:44:50,928 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.204s
+2026-08-03 10:44:50,929 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 10:44:51,139 | INFO | inventory-api | Request started | GET /api/v1/users/2
+2026-08-03 10:44:51,165 | INFO | inventory-api | Request finished | GET /api/v1/users/2 | Status 200 | 0.026s
+2026-08-03 10:44:51,166 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/2 "HTTP/1.1 200 OK"
+2026-08-03 10:44:53,918 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 10:44:54,122 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.204s
+2026-08-03 10:44:54,123 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 10:44:54,124 | INFO | inventory-api | Request started | GET /api/v1/users/999999
+2026-08-03 10:44:54,131 | WARNING | inventory-api | GET /api/v1/users/999999 | 404 | User not found.
+2026-08-03 10:44:54,131 | INFO | inventory-api | Request finished | GET /api/v1/users/999999 | Status 404 | 0.007s
+2026-08-03 10:44:54,132 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/999999 "HTTP/1.1 404 Not Found"
+2026-08-03 10:44:56,991 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 10:44:57,207 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.216s
+2026-08-03 10:44:57,208 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 10:44:57,209 | INFO | inventory-api | Request started | GET /api/v1/users/0
+2026-08-03 10:44:57,213 | WARNING | inventory-api | GET /api/v1/users/0 | Validation Error | [{'type': 'greater_than', 'loc': ('path', 'user_id'), 'msg': 'Input should be greater than 0', 'input': '0', 'ctx': {'gt': 0}}]
+2026-08-03 10:44:57,214 | INFO | inventory-api | Request finished | GET /api/v1/users/0 | Status 422 | 0.005s
+2026-08-03 10:44:57,214 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/0 "HTTP/1.1 422 Unprocessable Entity"
+2026-08-03 10:44:59,997 | INFO | inventory-api | Request started | GET /api/v1/users/1
+2026-08-03 10:44:59,999 | WARNING | inventory-api | GET /api/v1/users/1 | 401 | Not authenticated
+2026-08-03 10:44:59,999 | INFO | inventory-api | Request finished | GET /api/v1/users/1 | Status 401 | 0.002s
+2026-08-03 10:45:00,000 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/1 "HTTP/1.1 401 Unauthorized"
+2026-08-03 10:45:02,626 | INFO | inventory-api | Request started | GET /api/v1/users/1
+2026-08-03 10:45:02,628 | WARNING | inventory-api | GET /api/v1/users/1 | 401 | Could not validate credentials.
+2026-08-03 10:45:02,629 | INFO | inventory-api | Request finished | GET /api/v1/users/1 | Status 401 | 0.003s
+2026-08-03 10:45:02,629 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/1 "HTTP/1.1 401 Unauthorized"
+2026-08-03 10:45:05,553 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 10:45:05,758 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.205s
+2026-08-03 10:45:05,759 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 10:45:05,979 | INFO | inventory-api | Request started | GET /api/v1/users/2
+2026-08-03 10:45:05,982 | WARNING | inventory-api | GET /api/v1/users/2 | 403 | Administrator privileges required.
+2026-08-03 10:45:05,982 | INFO | inventory-api | Request finished | GET /api/v1/users/2 | Status 403 | 0.003s
+2026-08-03 10:45:05,982 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/2 "HTTP/1.1 403 Forbidden"
+2026-08-03 10:57:43,929 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 10:57:44,141 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.212s
+2026-08-03 10:57:44,142 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 10:57:44,567 | INFO | inventory-api | Request started | GET /api/v1/users/search/
+2026-08-03 10:57:44,600 | INFO | inventory-api | Request finished | GET /api/v1/users/search/ | Status 200 | 0.033s
+2026-08-03 10:57:44,601 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/search/?q=johnsmith "HTTP/1.1 200 OK"
+2026-08-03 10:57:47,388 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 10:57:47,583 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.195s
+2026-08-03 10:57:47,584 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 10:57:48,217 | INFO | inventory-api | Request started | GET /api/v1/users/search/
+2026-08-03 10:57:48,222 | INFO | inventory-api | Request finished | GET /api/v1/users/search/ | Status 200 | 0.005s
+2026-08-03 10:57:48,222 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/search/?q=john "HTTP/1.1 200 OK"
+2026-08-03 10:57:51,175 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 10:57:51,381 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.206s
+2026-08-03 10:57:51,382 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 10:57:51,593 | INFO | inventory-api | Request started | GET /api/v1/users/search/
+2026-08-03 10:57:51,600 | INFO | inventory-api | Request finished | GET /api/v1/users/search/ | Status 200 | 0.007s
+2026-08-03 10:57:51,600 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/search/?q=does_not_exist "HTTP/1.1 200 OK"
+2026-08-03 10:57:54,370 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 10:57:54,567 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.196s
+2026-08-03 10:57:54,567 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 10:57:55,655 | INFO | inventory-api | Request started | GET /api/v1/users/search/
+2026-08-03 10:57:55,660 | INFO | inventory-api | Request finished | GET /api/v1/users/search/ | Status 200 | 0.006s
+2026-08-03 10:57:55,661 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/search/?q=john&skip=1&limit=2 "HTTP/1.1 200 OK"
+2026-08-03 10:57:58,207 | INFO | inventory-api | Request started | GET /api/v1/users/search/
+2026-08-03 10:57:58,208 | WARNING | inventory-api | GET /api/v1/users/search/ | 401 | Not authenticated
+2026-08-03 10:57:58,208 | INFO | inventory-api | Request finished | GET /api/v1/users/search/ | Status 401 | 0.002s
+2026-08-03 10:57:58,209 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/search/?q=john "HTTP/1.1 401 Unauthorized"
+2026-08-03 10:58:01,018 | INFO | inventory-api | Request started | GET /api/v1/users/search/
+2026-08-03 10:58:01,019 | WARNING | inventory-api | GET /api/v1/users/search/ | 401 | Could not validate credentials.
+2026-08-03 10:58:01,020 | INFO | inventory-api | Request finished | GET /api/v1/users/search/ | Status 401 | 0.002s
+2026-08-03 10:58:01,020 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/search/?q=john "HTTP/1.1 401 Unauthorized"
+2026-08-03 10:58:03,838 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 10:58:04,044 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.206s
+2026-08-03 10:58:04,045 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 10:58:04,046 | INFO | inventory-api | Request started | GET /api/v1/users/search/
+2026-08-03 10:58:04,050 | WARNING | inventory-api | GET /api/v1/users/search/ | 403 | Administrator privileges required.
+2026-08-03 10:58:04,050 | INFO | inventory-api | Request finished | GET /api/v1/users/search/ | Status 403 | 0.004s
+2026-08-03 10:58:04,050 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/search/?q=john "HTTP/1.1 403 Forbidden"
+2026-08-03 10:58:06,944 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 10:58:07,178 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.233s
+2026-08-03 10:58:07,178 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 10:58:07,179 | INFO | inventory-api | Request started | GET /api/v1/users/search/
+2026-08-03 10:58:07,183 | WARNING | inventory-api | GET /api/v1/users/search/ | Validation Error | [{'type': 'string_too_short', 'loc': ('query', 'q'), 'msg': 'String should have at least 1 character', 'input': '', 'ctx': {'min_length': 1}}]
+2026-08-03 10:58:07,183 | INFO | inventory-api | Request finished | GET /api/v1/users/search/ | Status 422 | 0.004s
+2026-08-03 10:58:07,183 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/search/?q= "HTTP/1.1 422 Unprocessable Entity"
+2026-08-03 10:58:10,308 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 10:58:10,514 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.206s
+2026-08-03 10:58:10,515 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 10:58:10,516 | INFO | inventory-api | Request started | GET /api/v1/users/search/
+2026-08-03 10:58:10,521 | WARNING | inventory-api | GET /api/v1/users/search/ | Validation Error | [{'type': 'string_too_long', 'loc': ('query', 'q'), 'msg': 'String should have at most 100 characters', 'input': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'ctx': {'max_length': 100}}]
+2026-08-03 10:58:10,521 | INFO | inventory-api | Request finished | GET /api/v1/users/search/ | Status 422 | 0.005s
+2026-08-03 10:58:10,522 | INFO | httpx | HTTP Request: GET http://testserver/api/v1/users/search/?q=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa "HTTP/1.1 422 Unprocessable Entity"
+2026-08-03 11:02:07,770 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:02:08,004 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.234s
+2026-08-03 11:02:08,005 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:02:08,239 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:02:08,290 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 200 | 0.051s
+2026-08-03 11:02:08,291 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 200 OK"
+2026-08-03 11:02:19,767 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:02:19,975 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.208s
+2026-08-03 11:02:19,976 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:02:20,200 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:02:20,241 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 200 | 0.041s
+2026-08-03 11:02:20,242 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 200 OK"
+2026-08-03 11:02:23,026 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:02:23,231 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.205s
+2026-08-03 11:02:23,231 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:02:23,452 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:02:23,474 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 200 | 0.021s
+2026-08-03 11:02:23,474 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 200 OK"
+2026-08-03 11:02:26,376 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:02:26,577 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.201s
+2026-08-03 11:02:26,578 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:02:26,795 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:02:26,814 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 200 | 0.020s
+2026-08-03 11:02:26,815 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 200 OK"
+2026-08-03 11:02:29,853 | INFO | inventory-api | Request started | PUT /api/v1/users/1
+2026-08-03 11:02:29,855 | WARNING | inventory-api | PUT /api/v1/users/1 | 401 | Not authenticated
+2026-08-03 11:02:29,855 | INFO | inventory-api | Request finished | PUT /api/v1/users/1 | Status 401 | 0.002s
+2026-08-03 11:02:29,855 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/1 "HTTP/1.1 401 Unauthorized"
+2026-08-03 11:02:32,708 | INFO | inventory-api | Request started | PUT /api/v1/users/1
+2026-08-03 11:02:32,711 | WARNING | inventory-api | PUT /api/v1/users/1 | 401 | Could not validate credentials.
+2026-08-03 11:02:32,711 | INFO | inventory-api | Request finished | PUT /api/v1/users/1 | Status 401 | 0.002s
+2026-08-03 11:02:32,711 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/1 "HTTP/1.1 401 Unauthorized"
+2026-08-03 11:02:35,699 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:02:35,939 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.241s
+2026-08-03 11:02:35,940 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:02:36,153 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:02:36,156 | WARNING | inventory-api | PUT /api/v1/users/2 | 403 | Administrator privileges required.
+2026-08-03 11:02:36,156 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 403 | 0.003s
+2026-08-03 11:02:36,156 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 403 Forbidden"
+2026-08-03 11:13:47,096 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:13:47,300 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.204s
+2026-08-03 11:13:47,300 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:13:47,513 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:13:47,560 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 200 | 0.047s
+2026-08-03 11:13:47,561 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 200 OK"
+2026-08-03 11:13:50,392 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:13:50,605 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.213s
+2026-08-03 11:13:50,606 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:13:50,824 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:13:50,843 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 200 | 0.019s
+2026-08-03 11:13:50,844 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 200 OK"
+2026-08-03 11:13:53,857 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:13:54,064 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-08-03 11:13:54,064 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:13:54,293 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:13:54,315 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 200 | 0.022s
+2026-08-03 11:13:54,315 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 200 OK"
+2026-08-03 11:13:57,061 | INFO | inventory-api | Request started | PUT /api/v1/users/1
+2026-08-03 11:13:57,063 | WARNING | inventory-api | PUT /api/v1/users/1 | 401 | Not authenticated
+2026-08-03 11:13:57,063 | INFO | inventory-api | Request finished | PUT /api/v1/users/1 | Status 401 | 0.003s
+2026-08-03 11:13:57,064 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/1 "HTTP/1.1 401 Unauthorized"
+2026-08-03 11:13:59,833 | INFO | inventory-api | Request started | PUT /api/v1/users/1
+2026-08-03 11:13:59,835 | WARNING | inventory-api | PUT /api/v1/users/1 | 401 | Could not validate credentials.
+2026-08-03 11:13:59,836 | INFO | inventory-api | Request finished | PUT /api/v1/users/1 | Status 401 | 0.002s
+2026-08-03 11:13:59,836 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/1 "HTTP/1.1 401 Unauthorized"
+2026-08-03 11:14:02,991 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:14:03,222 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.231s
+2026-08-03 11:14:03,223 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:14:03,446 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:14:03,450 | WARNING | inventory-api | PUT /api/v1/users/2 | 403 | Administrator privileges required.
+2026-08-03 11:14:03,450 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 403 | 0.004s
+2026-08-03 11:14:03,450 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 403 Forbidden"
+2026-08-03 11:14:25,286 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:14:25,503 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.218s
+2026-08-03 11:14:25,504 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:14:25,719 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:14:25,766 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 200 | 0.047s
+2026-08-03 11:14:25,767 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 200 OK"
+2026-08-03 11:14:28,572 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:14:28,789 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.217s
+2026-08-03 11:14:28,789 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:14:29,027 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:14:29,054 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 200 | 0.027s
+2026-08-03 11:14:29,054 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 200 OK"
+2026-08-03 11:14:31,955 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:14:32,150 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.196s
+2026-08-03 11:14:32,151 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:14:32,365 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:14:32,386 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 200 | 0.021s
+2026-08-03 11:14:32,386 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 200 OK"
+2026-08-03 11:14:35,303 | INFO | inventory-api | Request started | PUT /api/v1/users/1
+2026-08-03 11:14:35,305 | WARNING | inventory-api | PUT /api/v1/users/1 | 401 | Not authenticated
+2026-08-03 11:14:35,305 | INFO | inventory-api | Request finished | PUT /api/v1/users/1 | Status 401 | 0.002s
+2026-08-03 11:14:35,305 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/1 "HTTP/1.1 401 Unauthorized"
+2026-08-03 11:14:38,215 | INFO | inventory-api | Request started | PUT /api/v1/users/1
+2026-08-03 11:14:38,218 | WARNING | inventory-api | PUT /api/v1/users/1 | 401 | Could not validate credentials.
+2026-08-03 11:14:38,218 | INFO | inventory-api | Request finished | PUT /api/v1/users/1 | Status 401 | 0.003s
+2026-08-03 11:14:38,218 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/1 "HTTP/1.1 401 Unauthorized"
+2026-08-03 11:14:41,016 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:14:41,235 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.219s
+2026-08-03 11:14:41,236 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:14:41,463 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:14:41,466 | WARNING | inventory-api | PUT /api/v1/users/2 | 403 | Administrator privileges required.
+2026-08-03 11:14:41,467 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 403 | 0.004s
+2026-08-03 11:14:41,467 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 403 Forbidden"
+2026-08-03 11:17:43,787 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:17:43,998 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.211s
+2026-08-03 11:17:43,999 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:17:44,224 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:17:44,267 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 200 | 0.043s
+2026-08-03 11:17:44,268 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 200 OK"
+2026-08-03 11:17:47,366 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:17:47,574 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.209s
+2026-08-03 11:17:47,575 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:17:47,790 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:17:47,809 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 200 | 0.018s
+2026-08-03 11:17:47,809 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 200 OK"
+2026-08-03 11:17:50,578 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:17:50,780 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.202s
+2026-08-03 11:17:50,780 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:17:50,999 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:17:51,021 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 200 | 0.023s
+2026-08-03 11:17:51,022 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 200 OK"
+2026-08-03 11:17:53,905 | INFO | inventory-api | Request started | PUT /api/v1/users/1
+2026-08-03 11:17:53,907 | WARNING | inventory-api | PUT /api/v1/users/1 | 401 | Not authenticated
+2026-08-03 11:17:53,907 | INFO | inventory-api | Request finished | PUT /api/v1/users/1 | Status 401 | 0.002s
+2026-08-03 11:17:53,908 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/1 "HTTP/1.1 401 Unauthorized"
+2026-08-03 11:17:56,751 | INFO | inventory-api | Request started | PUT /api/v1/users/1
+2026-08-03 11:17:56,753 | WARNING | inventory-api | PUT /api/v1/users/1 | 401 | Could not validate credentials.
+2026-08-03 11:17:56,753 | INFO | inventory-api | Request finished | PUT /api/v1/users/1 | Status 401 | 0.002s
+2026-08-03 11:17:56,754 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/1 "HTTP/1.1 401 Unauthorized"
+2026-08-03 11:17:59,377 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:17:59,586 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.208s
+2026-08-03 11:17:59,586 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:17:59,799 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:17:59,802 | WARNING | inventory-api | PUT /api/v1/users/2 | 403 | Administrator privileges required.
+2026-08-03 11:17:59,802 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 403 | 0.003s
+2026-08-03 11:17:59,803 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 403 Forbidden"
+2026-08-03 11:18:32,596 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:18:32,806 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.210s
+2026-08-03 11:18:32,807 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:18:33,020 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:18:33,065 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 200 | 0.045s
+2026-08-03 11:18:33,066 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 200 OK"
+2026-08-03 11:18:35,825 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:18:36,034 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.209s
+2026-08-03 11:18:36,035 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:18:36,256 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:18:36,277 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 200 | 0.020s
+2026-08-03 11:18:36,277 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 200 OK"
+2026-08-03 11:18:39,124 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:18:39,320 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.195s
+2026-08-03 11:18:39,320 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:18:39,532 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:18:39,554 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 200 | 0.022s
+2026-08-03 11:18:39,555 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 200 OK"
+2026-08-03 11:18:42,202 | INFO | inventory-api | Request started | PUT /api/v1/users/1
+2026-08-03 11:18:42,204 | WARNING | inventory-api | PUT /api/v1/users/1 | 401 | Not authenticated
+2026-08-03 11:18:42,204 | INFO | inventory-api | Request finished | PUT /api/v1/users/1 | Status 401 | 0.002s
+2026-08-03 11:18:42,205 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/1 "HTTP/1.1 401 Unauthorized"
+2026-08-03 11:18:44,867 | INFO | inventory-api | Request started | PUT /api/v1/users/1
+2026-08-03 11:18:44,869 | WARNING | inventory-api | PUT /api/v1/users/1 | 401 | Could not validate credentials.
+2026-08-03 11:18:44,869 | INFO | inventory-api | Request finished | PUT /api/v1/users/1 | Status 401 | 0.002s
+2026-08-03 11:18:44,869 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/1 "HTTP/1.1 401 Unauthorized"
+2026-08-03 11:18:47,771 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:18:47,967 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.196s
+2026-08-03 11:18:47,968 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:18:48,188 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:18:48,192 | WARNING | inventory-api | PUT /api/v1/users/2 | 403 | Administrator privileges required.
+2026-08-03 11:18:48,192 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 403 | 0.004s
+2026-08-03 11:18:48,193 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 403 Forbidden"
+2026-08-03 11:26:53,727 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:26:53,943 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.217s
+2026-08-03 11:26:53,944 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:26:54,161 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:26:54,208 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 200 | 0.047s
+2026-08-03 11:26:54,209 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 200 OK"
+2026-08-03 11:26:56,870 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:26:57,084 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.214s
+2026-08-03 11:26:57,085 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:26:57,318 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:26:57,342 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 200 | 0.023s
+2026-08-03 11:26:57,342 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 200 OK"
+2026-08-03 11:27:00,080 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:27:00,288 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.209s
+2026-08-03 11:27:00,290 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:27:00,500 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:27:00,520 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 200 | 0.020s
+2026-08-03 11:27:00,521 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 200 OK"
+2026-08-03 11:27:03,177 | INFO | inventory-api | Request started | PUT /api/v1/users/1
+2026-08-03 11:27:03,179 | WARNING | inventory-api | PUT /api/v1/users/1 | 401 | Not authenticated
+2026-08-03 11:27:03,179 | INFO | inventory-api | Request finished | PUT /api/v1/users/1 | Status 401 | 0.002s
+2026-08-03 11:27:03,180 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/1 "HTTP/1.1 401 Unauthorized"
+2026-08-03 11:27:05,833 | INFO | inventory-api | Request started | PUT /api/v1/users/1
+2026-08-03 11:27:05,835 | WARNING | inventory-api | PUT /api/v1/users/1 | 401 | Could not validate credentials.
+2026-08-03 11:27:05,835 | INFO | inventory-api | Request finished | PUT /api/v1/users/1 | Status 401 | 0.002s
+2026-08-03 11:27:05,835 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/1 "HTTP/1.1 401 Unauthorized"
+2026-08-03 11:27:08,625 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:27:08,837 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.213s
+2026-08-03 11:27:08,838 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:27:09,055 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:27:09,058 | WARNING | inventory-api | PUT /api/v1/users/2 | 403 | Administrator privileges required.
+2026-08-03 11:27:09,058 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 403 | 0.003s
+2026-08-03 11:27:09,058 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 403 Forbidden"
+2026-08-03 11:27:11,946 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:27:12,146 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.200s
+2026-08-03 11:27:12,147 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:27:12,148 | INFO | inventory-api | Request started | PUT /api/v1/users/999999
+2026-08-03 11:27:12,154 | WARNING | inventory-api | PUT /api/v1/users/999999 | 404 | User not found.
+2026-08-03 11:27:12,154 | INFO | inventory-api | Request finished | PUT /api/v1/users/999999 | Status 404 | 0.006s
+2026-08-03 11:27:12,155 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/999999 "HTTP/1.1 404 Not Found"
+2026-08-03 11:27:14,866 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:27:15,083 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.217s
+2026-08-03 11:27:15,083 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:27:15,547 | INFO | inventory-api | Request started | PUT /api/v1/users/3
+2026-08-03 11:27:15,552 | WARNING | inventory-api | PUT /api/v1/users/3 | 400 | Username already exists.
+2026-08-03 11:27:15,553 | INFO | inventory-api | Request finished | PUT /api/v1/users/3 | Status 400 | 0.006s
+2026-08-03 11:27:15,553 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/3 "HTTP/1.1 400 Bad Request"
+2026-08-03 11:27:18,213 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:27:18,408 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.196s
+2026-08-03 11:27:18,409 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:27:18,410 | INFO | inventory-api | Request started | PUT /api/v1/users/0
+2026-08-03 11:27:18,414 | WARNING | inventory-api | PUT /api/v1/users/0 | Validation Error | [{'type': 'greater_than', 'loc': ('path', 'user_id'), 'msg': 'Input should be greater than 0', 'input': '0', 'ctx': {'gt': 0}}]
+2026-08-03 11:27:18,414 | INFO | inventory-api | Request finished | PUT /api/v1/users/0 | Status 422 | 0.004s
+2026-08-03 11:27:18,415 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/0 "HTTP/1.1 422 Unprocessable Entity"
+2026-08-03 11:27:21,225 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:27:21,433 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.208s
+2026-08-03 11:27:21,434 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:27:21,663 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:27:21,666 | WARNING | inventory-api | PUT /api/v1/users/2 | Validation Error | [{'type': 'string_too_short', 'loc': ('body', 'username'), 'msg': 'String should have at least 3 characters', 'input': 'ab', 'ctx': {'min_length': 3}}]
+2026-08-03 11:27:21,667 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 422 | 0.004s
+2026-08-03 11:27:21,667 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 422 Unprocessable Entity"
+2026-08-03 11:27:24,493 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:27:24,708 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.215s
+2026-08-03 11:27:24,709 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:27:24,939 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:27:24,942 | WARNING | inventory-api | PUT /api/v1/users/2 | Validation Error | [{'type': 'enum', 'loc': ('body', 'role'), 'msg': "Input should be 'admin' or 'employee'", 'input': 'manager', 'ctx': {'expected': "'admin' or 'employee'"}}]
+2026-08-03 11:27:24,943 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 422 | 0.004s
+2026-08-03 11:27:24,943 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 422 Unprocessable Entity"
+2026-08-03 11:28:20,609 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:28:20,842 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.233s
+2026-08-03 11:28:20,843 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:28:21,056 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:28:21,104 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 200 | 0.049s
+2026-08-03 11:28:21,105 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 200 OK"
+2026-08-03 11:28:23,714 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:28:23,946 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.231s
+2026-08-03 11:28:23,947 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:28:24,172 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:28:24,197 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 200 | 0.025s
+2026-08-03 11:28:24,198 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 200 OK"
+2026-08-03 11:28:27,004 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:28:27,208 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.204s
+2026-08-03 11:28:27,209 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:28:27,421 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:28:27,448 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 200 | 0.027s
+2026-08-03 11:28:27,449 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 200 OK"
+2026-08-03 11:28:30,357 | INFO | inventory-api | Request started | PUT /api/v1/users/1
+2026-08-03 11:28:30,359 | WARNING | inventory-api | PUT /api/v1/users/1 | 401 | Not authenticated
+2026-08-03 11:28:30,359 | INFO | inventory-api | Request finished | PUT /api/v1/users/1 | Status 401 | 0.002s
+2026-08-03 11:28:30,359 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/1 "HTTP/1.1 401 Unauthorized"
+2026-08-03 11:28:33,299 | INFO | inventory-api | Request started | PUT /api/v1/users/1
+2026-08-03 11:28:33,302 | WARNING | inventory-api | PUT /api/v1/users/1 | 401 | Could not validate credentials.
+2026-08-03 11:28:33,302 | INFO | inventory-api | Request finished | PUT /api/v1/users/1 | Status 401 | 0.003s
+2026-08-03 11:28:33,302 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/1 "HTTP/1.1 401 Unauthorized"
+2026-08-03 11:28:36,256 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:28:36,452 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.196s
+2026-08-03 11:28:36,453 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:28:36,693 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:28:36,696 | WARNING | inventory-api | PUT /api/v1/users/2 | 403 | Administrator privileges required.
+2026-08-03 11:28:36,697 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 403 | 0.004s
+2026-08-03 11:28:36,697 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 403 Forbidden"
+2026-08-03 11:28:39,412 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:28:39,607 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.195s
+2026-08-03 11:28:39,608 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:28:39,609 | INFO | inventory-api | Request started | PUT /api/v1/users/999999
+2026-08-03 11:28:39,614 | WARNING | inventory-api | PUT /api/v1/users/999999 | 404 | User not found.
+2026-08-03 11:28:39,615 | INFO | inventory-api | Request finished | PUT /api/v1/users/999999 | Status 404 | 0.006s
+2026-08-03 11:28:39,615 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/999999 "HTTP/1.1 404 Not Found"
+2026-08-03 11:28:42,289 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:28:42,483 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.195s
+2026-08-03 11:28:42,484 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:28:42,926 | INFO | inventory-api | Request started | PUT /api/v1/users/3
+2026-08-03 11:28:42,932 | WARNING | inventory-api | PUT /api/v1/users/3 | 400 | Username already exists.
+2026-08-03 11:28:42,932 | INFO | inventory-api | Request finished | PUT /api/v1/users/3 | Status 400 | 0.007s
+2026-08-03 11:28:42,933 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/3 "HTTP/1.1 400 Bad Request"
+2026-08-03 11:28:45,801 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:28:46,001 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.199s
+2026-08-03 11:28:46,001 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:28:46,002 | INFO | inventory-api | Request started | PUT /api/v1/users/0
+2026-08-03 11:28:46,006 | WARNING | inventory-api | PUT /api/v1/users/0 | Validation Error | [{'type': 'greater_than', 'loc': ('path', 'user_id'), 'msg': 'Input should be greater than 0', 'input': '0', 'ctx': {'gt': 0}}]
+2026-08-03 11:28:46,006 | INFO | inventory-api | Request finished | PUT /api/v1/users/0 | Status 422 | 0.004s
+2026-08-03 11:28:46,007 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/0 "HTTP/1.1 422 Unprocessable Entity"
+2026-08-03 11:28:48,799 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:28:48,999 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.200s
+2026-08-03 11:28:49,000 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:28:49,216 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:28:49,220 | WARNING | inventory-api | PUT /api/v1/users/2 | Validation Error | [{'type': 'string_too_short', 'loc': ('body', 'username'), 'msg': 'String should have at least 3 characters', 'input': 'ab', 'ctx': {'min_length': 3}}]
+2026-08-03 11:28:49,220 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 422 | 0.004s
+2026-08-03 11:28:49,220 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 422 Unprocessable Entity"
+2026-08-03 11:28:51,851 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:28:52,071 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.219s
+2026-08-03 11:28:52,071 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:28:52,307 | INFO | inventory-api | Request started | PUT /api/v1/users/2
+2026-08-03 11:28:52,311 | WARNING | inventory-api | PUT /api/v1/users/2 | Validation Error | [{'type': 'enum', 'loc': ('body', 'role'), 'msg': "Input should be 'admin' or 'employee'", 'input': 'manager', 'ctx': {'expected': "'admin' or 'employee'"}}]
+2026-08-03 11:28:52,311 | INFO | inventory-api | Request finished | PUT /api/v1/users/2 | Status 422 | 0.004s
+2026-08-03 11:28:52,312 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2 "HTTP/1.1 422 Unprocessable Entity"
+2026-08-03 11:41:42,024 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:41:42,230 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.206s
+2026-08-03 11:41:42,231 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:41:42,440 | INFO | inventory-api | Request started | PUT /api/v1/users/2/password
+2026-08-03 11:41:42,689 | INFO | inventory-api | Request finished | PUT /api/v1/users/2/password | Status 200 | 0.249s
+2026-08-03 11:41:42,690 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2/password "HTTP/1.1 200 OK"
+2026-08-03 11:41:45,562 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:41:45,785 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.223s
+2026-08-03 11:41:45,786 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:41:46,009 | INFO | inventory-api | Request started | PUT /api/v1/users/2/password
+2026-08-03 11:41:46,233 | INFO | inventory-api | Request finished | PUT /api/v1/users/2/password | Status 200 | 0.224s
+2026-08-03 11:41:46,234 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2/password "HTTP/1.1 200 OK"
+2026-08-03 11:41:48,832 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:41:49,071 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.239s
+2026-08-03 11:41:49,072 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:41:49,295 | INFO | inventory-api | Request started | PUT /api/v1/users/2/password
+2026-08-03 11:41:49,511 | INFO | inventory-api | Request finished | PUT /api/v1/users/2/password | Status 200 | 0.217s
+2026-08-03 11:41:49,512 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2/password "HTTP/1.1 200 OK"
+2026-08-03 11:41:52,433 | INFO | inventory-api | Request started | PUT /api/v1/users/1/password
+2026-08-03 11:41:52,435 | WARNING | inventory-api | PUT /api/v1/users/1/password | 401 | Not authenticated
+2026-08-03 11:41:52,436 | INFO | inventory-api | Request finished | PUT /api/v1/users/1/password | Status 401 | 0.002s
+2026-08-03 11:41:52,436 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/1/password "HTTP/1.1 401 Unauthorized"
+2026-08-03 11:41:55,195 | INFO | inventory-api | Request started | PUT /api/v1/users/1/password
+2026-08-03 11:41:55,197 | WARNING | inventory-api | PUT /api/v1/users/1/password | 401 | Could not validate credentials.
+2026-08-03 11:41:55,197 | INFO | inventory-api | Request finished | PUT /api/v1/users/1/password | Status 401 | 0.002s
+2026-08-03 11:41:55,197 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/1/password "HTTP/1.1 401 Unauthorized"
+2026-08-03 11:41:57,962 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:41:58,169 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.208s
+2026-08-03 11:41:58,170 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:41:58,388 | INFO | inventory-api | Request started | PUT /api/v1/users/2/password
+2026-08-03 11:41:58,392 | WARNING | inventory-api | PUT /api/v1/users/2/password | 403 | Administrator privileges required.
+2026-08-03 11:41:58,392 | INFO | inventory-api | Request finished | PUT /api/v1/users/2/password | Status 403 | 0.004s
+2026-08-03 11:41:58,392 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2/password "HTTP/1.1 403 Forbidden"
+2026-08-03 11:42:01,054 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:42:01,273 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.219s
+2026-08-03 11:42:01,273 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:42:01,274 | INFO | inventory-api | Request started | PUT /api/v1/users/999999/password
+2026-08-03 11:42:01,280 | WARNING | inventory-api | PUT /api/v1/users/999999/password | 404 | User not found.
+2026-08-03 11:42:01,280 | INFO | inventory-api | Request finished | PUT /api/v1/users/999999/password | Status 404 | 0.005s
+2026-08-03 11:42:01,280 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/999999/password "HTTP/1.1 404 Not Found"
+2026-08-03 11:42:04,174 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:42:04,375 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.201s
+2026-08-03 11:42:04,376 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:42:04,597 | INFO | inventory-api | Request started | PUT /api/v1/users/2/password
+2026-08-03 11:42:04,601 | WARNING | inventory-api | PUT /api/v1/users/2/password | Validation Error | [{'type': 'string_too_short', 'loc': ('body', 'password'), 'msg': 'String should have at least 8 characters', 'input': '123', 'ctx': {'min_length': 8}}]
+2026-08-03 11:42:04,601 | INFO | inventory-api | Request finished | PUT /api/v1/users/2/password | Status 422 | 0.004s
+2026-08-03 11:42:04,601 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2/password "HTTP/1.1 422 Unprocessable Entity"
+2026-08-03 11:42:07,402 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:42:07,607 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.204s
+2026-08-03 11:42:07,608 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:42:07,609 | INFO | inventory-api | Request started | PUT /api/v1/users/0/password
+2026-08-03 11:42:07,614 | WARNING | inventory-api | PUT /api/v1/users/0/password | Validation Error | [{'type': 'greater_than', 'loc': ('path', 'user_id'), 'msg': 'Input should be greater than 0', 'input': '0', 'ctx': {'gt': 0}}]
+2026-08-03 11:42:07,615 | INFO | inventory-api | Request finished | PUT /api/v1/users/0/password | Status 422 | 0.006s
+2026-08-03 11:42:07,615 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/0/password "HTTP/1.1 422 Unprocessable Entity"
+2026-08-03 11:44:50,783 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:44:50,988 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.206s
+2026-08-03 11:44:50,989 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:44:51,205 | INFO | inventory-api | Request started | PUT /api/v1/users/2/password
+2026-08-03 11:44:51,444 | INFO | inventory-api | Request finished | PUT /api/v1/users/2/password | Status 200 | 0.238s
+2026-08-03 11:44:51,444 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2/password "HTTP/1.1 200 OK"
+2026-08-03 11:44:54,342 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:44:54,538 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.195s
+2026-08-03 11:44:54,539 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:44:54,751 | INFO | inventory-api | Request started | PUT /api/v1/users/2/password
+2026-08-03 11:44:54,974 | INFO | inventory-api | Request finished | PUT /api/v1/users/2/password | Status 200 | 0.223s
+2026-08-03 11:44:54,974 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2/password "HTTP/1.1 200 OK"
+2026-08-03 11:44:57,834 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:44:58,040 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-08-03 11:44:58,041 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:44:58,263 | INFO | inventory-api | Request started | PUT /api/v1/users/2/password
+2026-08-03 11:44:58,482 | INFO | inventory-api | Request finished | PUT /api/v1/users/2/password | Status 200 | 0.219s
+2026-08-03 11:44:58,483 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2/password "HTTP/1.1 200 OK"
+2026-08-03 11:45:01,267 | INFO | inventory-api | Request started | PUT /api/v1/users/1/password
+2026-08-03 11:45:01,268 | WARNING | inventory-api | PUT /api/v1/users/1/password | 401 | Not authenticated
+2026-08-03 11:45:01,269 | INFO | inventory-api | Request finished | PUT /api/v1/users/1/password | Status 401 | 0.002s
+2026-08-03 11:45:01,269 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/1/password "HTTP/1.1 401 Unauthorized"
+2026-08-03 11:45:04,079 | INFO | inventory-api | Request started | PUT /api/v1/users/1/password
+2026-08-03 11:45:04,082 | WARNING | inventory-api | PUT /api/v1/users/1/password | 401 | Could not validate credentials.
+2026-08-03 11:45:04,082 | INFO | inventory-api | Request finished | PUT /api/v1/users/1/password | Status 401 | 0.003s
+2026-08-03 11:45:04,082 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/1/password "HTTP/1.1 401 Unauthorized"
+2026-08-03 11:45:06,852 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:45:07,061 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.210s
+2026-08-03 11:45:07,062 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:45:07,288 | INFO | inventory-api | Request started | PUT /api/v1/users/2/password
+2026-08-03 11:45:07,292 | WARNING | inventory-api | PUT /api/v1/users/2/password | 403 | Administrator privileges required.
+2026-08-03 11:45:07,292 | INFO | inventory-api | Request finished | PUT /api/v1/users/2/password | Status 403 | 0.004s
+2026-08-03 11:45:07,292 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2/password "HTTP/1.1 403 Forbidden"
+2026-08-03 11:45:10,186 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:45:10,394 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.209s
+2026-08-03 11:45:10,395 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:45:10,396 | INFO | inventory-api | Request started | PUT /api/v1/users/999999/password
+2026-08-03 11:45:10,401 | WARNING | inventory-api | PUT /api/v1/users/999999/password | 404 | User not found.
+2026-08-03 11:45:10,402 | INFO | inventory-api | Request finished | PUT /api/v1/users/999999/password | Status 404 | 0.005s
+2026-08-03 11:45:10,402 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/999999/password "HTTP/1.1 404 Not Found"
+2026-08-03 11:45:13,083 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:45:13,297 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.214s
+2026-08-03 11:45:13,297 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:45:13,534 | INFO | inventory-api | Request started | PUT /api/v1/users/2/password
+2026-08-03 11:45:13,537 | WARNING | inventory-api | PUT /api/v1/users/2/password | Validation Error | [{'type': 'string_too_short', 'loc': ('body', 'password'), 'msg': 'String should have at least 8 characters', 'input': '123', 'ctx': {'min_length': 8}}]
+2026-08-03 11:45:13,538 | INFO | inventory-api | Request finished | PUT /api/v1/users/2/password | Status 422 | 0.003s
+2026-08-03 11:45:13,538 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2/password "HTTP/1.1 422 Unprocessable Entity"
+2026-08-03 11:45:16,446 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-03 11:45:16,662 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.216s
+2026-08-03 11:45:16,664 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-03 11:45:16,665 | INFO | inventory-api | Request started | PUT /api/v1/users/0/password
+2026-08-03 11:45:16,668 | WARNING | inventory-api | PUT /api/v1/users/0/password | Validation Error | [{'type': 'greater_than', 'loc': ('path', 'user_id'), 'msg': 'Input should be greater than 0', 'input': '0', 'ctx': {'gt': 0}}]
+2026-08-03 11:45:16,668 | INFO | inventory-api | Request finished | PUT /api/v1/users/0/password | Status 422 | 0.003s
+2026-08-03 11:45:16,668 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/0/password "HTTP/1.1 422 Unprocessable Entity"
+2026-08-05 08:06:51,275 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-05 08:06:51,584 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.309s
+2026-08-05 08:06:51,586 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-05 08:06:51,887 | INFO | inventory-api | Request started | PUT /api/v1/users/2/password
+2026-08-05 08:06:52,242 | INFO | inventory-api | Request finished | PUT /api/v1/users/2/password | Status 200 | 0.356s
+2026-08-05 08:06:52,244 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2/password "HTTP/1.1 200 OK"
+2026-08-05 08:06:56,406 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-05 08:06:56,628 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.222s
+2026-08-05 08:06:56,629 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-05 08:06:56,963 | INFO | inventory-api | Request started | PUT /api/v1/users/2/password
+2026-08-05 08:06:57,284 | INFO | inventory-api | Request finished | PUT /api/v1/users/2/password | Status 200 | 0.321s
+2026-08-05 08:06:57,285 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2/password "HTTP/1.1 200 OK"
+2026-08-05 08:07:01,281 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-05 08:07:01,504 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.223s
+2026-08-05 08:07:01,505 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-05 08:07:01,819 | INFO | inventory-api | Request started | PUT /api/v1/users/2/password
+2026-08-05 08:07:02,138 | INFO | inventory-api | Request finished | PUT /api/v1/users/2/password | Status 200 | 0.319s
+2026-08-05 08:07:02,139 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2/password "HTTP/1.1 200 OK"
+2026-08-05 08:07:06,334 | INFO | inventory-api | Request started | PUT /api/v1/users/1/password
+2026-08-05 08:07:06,337 | WARNING | inventory-api | PUT /api/v1/users/1/password | 401 | Not authenticated
+2026-08-05 08:07:06,337 | INFO | inventory-api | Request finished | PUT /api/v1/users/1/password | Status 401 | 0.004s
+2026-08-05 08:07:06,338 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/1/password "HTTP/1.1 401 Unauthorized"
+2026-08-05 08:07:10,392 | INFO | inventory-api | Request started | PUT /api/v1/users/1/password
+2026-08-05 08:07:10,395 | WARNING | inventory-api | PUT /api/v1/users/1/password | 401 | Could not validate credentials.
+2026-08-05 08:07:10,395 | INFO | inventory-api | Request finished | PUT /api/v1/users/1/password | Status 401 | 0.003s
+2026-08-05 08:07:10,396 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/1/password "HTTP/1.1 401 Unauthorized"
+2026-08-05 08:07:14,290 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-05 08:07:14,532 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.241s
+2026-08-05 08:07:14,533 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-05 08:07:14,849 | INFO | inventory-api | Request started | PUT /api/v1/users/2/password
+2026-08-05 08:07:14,856 | WARNING | inventory-api | PUT /api/v1/users/2/password | 403 | Administrator privileges required.
+2026-08-05 08:07:14,856 | INFO | inventory-api | Request finished | PUT /api/v1/users/2/password | Status 403 | 0.007s
+2026-08-05 08:07:14,857 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2/password "HTTP/1.1 403 Forbidden"
+2026-08-05 08:07:18,714 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-05 08:07:18,934 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.220s
+2026-08-05 08:07:18,935 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-05 08:07:18,936 | INFO | inventory-api | Request started | PUT /api/v1/users/999999/password
+2026-08-05 08:07:18,943 | WARNING | inventory-api | PUT /api/v1/users/999999/password | 404 | User not found.
+2026-08-05 08:07:18,943 | INFO | inventory-api | Request finished | PUT /api/v1/users/999999/password | Status 404 | 0.007s
+2026-08-05 08:07:18,944 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/999999/password "HTTP/1.1 404 Not Found"
+2026-08-05 08:07:22,897 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-05 08:07:23,121 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.224s
+2026-08-05 08:07:23,122 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-05 08:07:23,364 | INFO | inventory-api | Request started | PUT /api/v1/users/2/password
+2026-08-05 08:07:23,368 | WARNING | inventory-api | PUT /api/v1/users/2/password | Validation Error | [{'type': 'string_too_short', 'loc': ('body', 'password'), 'msg': 'String should have at least 8 characters', 'input': '123', 'ctx': {'min_length': 8}}]
+2026-08-05 08:07:23,368 | INFO | inventory-api | Request finished | PUT /api/v1/users/2/password | Status 422 | 0.004s
+2026-08-05 08:07:23,368 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2/password "HTTP/1.1 422 Unprocessable Entity"
+2026-08-05 08:07:27,338 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-05 08:07:27,568 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.230s
+2026-08-05 08:07:27,569 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-05 08:07:27,570 | INFO | inventory-api | Request started | PUT /api/v1/users/0/password
+2026-08-05 08:07:27,576 | WARNING | inventory-api | PUT /api/v1/users/0/password | Validation Error | [{'type': 'greater_than', 'loc': ('path', 'user_id'), 'msg': 'Input should be greater than 0', 'input': '0', 'ctx': {'gt': 0}}]
+2026-08-05 08:07:27,577 | INFO | inventory-api | Request finished | PUT /api/v1/users/0/password | Status 422 | 0.006s
+2026-08-05 08:07:27,577 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/0/password "HTTP/1.1 422 Unprocessable Entity"
+2026-08-05 08:19:47,530 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-05 08:19:47,764 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.234s
+2026-08-05 08:19:47,765 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-05 08:19:48,087 | INFO | inventory-api | Request started | PUT /api/v1/users/2/password
+2026-08-05 08:19:48,429 | INFO | inventory-api | Request finished | PUT /api/v1/users/2/password | Status 200 | 0.342s
+2026-08-05 08:19:48,431 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2/password "HTTP/1.1 200 OK"
+2026-08-05 08:19:52,410 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-05 08:19:52,630 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.220s
+2026-08-05 08:19:52,632 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-05 08:19:52,868 | INFO | inventory-api | Request started | PUT /api/v1/users/2/password
+2026-08-05 08:19:53,178 | INFO | inventory-api | Request finished | PUT /api/v1/users/2/password | Status 200 | 0.311s
+2026-08-05 08:19:53,180 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2/password "HTTP/1.1 200 OK"
+2026-08-05 08:19:57,215 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-05 08:19:57,454 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.238s
+2026-08-05 08:19:57,455 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-05 08:19:57,698 | INFO | inventory-api | Request started | PUT /api/v1/users/2/password
+2026-08-05 08:19:58,003 | INFO | inventory-api | Request finished | PUT /api/v1/users/2/password | Status 200 | 0.305s
+2026-08-05 08:19:58,003 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2/password "HTTP/1.1 200 OK"
+2026-08-05 08:20:02,220 | INFO | inventory-api | Request started | PUT /api/v1/users/1/password
+2026-08-05 08:20:02,223 | WARNING | inventory-api | PUT /api/v1/users/1/password | 401 | Not authenticated
+2026-08-05 08:20:02,224 | INFO | inventory-api | Request finished | PUT /api/v1/users/1/password | Status 401 | 0.004s
+2026-08-05 08:20:02,224 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/1/password "HTTP/1.1 401 Unauthorized"
+2026-08-05 08:20:06,295 | INFO | inventory-api | Request started | PUT /api/v1/users/1/password
+2026-08-05 08:20:06,299 | WARNING | inventory-api | PUT /api/v1/users/1/password | 401 | Could not validate credentials.
+2026-08-05 08:20:06,299 | INFO | inventory-api | Request finished | PUT /api/v1/users/1/password | Status 401 | 0.004s
+2026-08-05 08:20:06,299 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/1/password "HTTP/1.1 401 Unauthorized"
+2026-08-05 08:20:10,466 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-05 08:20:10,702 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.237s
+2026-08-05 08:20:10,704 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-05 08:20:10,945 | INFO | inventory-api | Request started | PUT /api/v1/users/2/password
+2026-08-05 08:20:10,951 | WARNING | inventory-api | PUT /api/v1/users/2/password | 403 | Administrator privileges required.
+2026-08-05 08:20:10,951 | INFO | inventory-api | Request finished | PUT /api/v1/users/2/password | Status 403 | 0.006s
+2026-08-05 08:20:10,951 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2/password "HTTP/1.1 403 Forbidden"
+2026-08-05 08:20:14,980 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-05 08:20:15,217 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.237s
+2026-08-05 08:20:15,219 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-05 08:20:15,221 | INFO | inventory-api | Request started | PUT /api/v1/users/999999/password
+2026-08-05 08:20:15,230 | WARNING | inventory-api | PUT /api/v1/users/999999/password | 404 | User not found.
+2026-08-05 08:20:15,231 | INFO | inventory-api | Request finished | PUT /api/v1/users/999999/password | Status 404 | 0.010s
+2026-08-05 08:20:15,231 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/999999/password "HTTP/1.1 404 Not Found"
+2026-08-05 08:20:19,763 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-05 08:20:19,986 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.223s
+2026-08-05 08:20:19,988 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-05 08:20:20,229 | INFO | inventory-api | Request started | PUT /api/v1/users/2/password
+2026-08-05 08:20:20,234 | WARNING | inventory-api | PUT /api/v1/users/2/password | Validation Error | [{'type': 'string_too_short', 'loc': ('body', 'password'), 'msg': 'String should have at least 8 characters', 'input': '123', 'ctx': {'min_length': 8}}]
+2026-08-05 08:20:20,234 | INFO | inventory-api | Request finished | PUT /api/v1/users/2/password | Status 422 | 0.005s
+2026-08-05 08:20:20,235 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2/password "HTTP/1.1 422 Unprocessable Entity"
+2026-08-05 08:20:24,291 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-05 08:20:24,513 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.221s
+2026-08-05 08:20:24,514 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-05 08:20:24,516 | INFO | inventory-api | Request started | PUT /api/v1/users/0/password
+2026-08-05 08:20:24,522 | WARNING | inventory-api | PUT /api/v1/users/0/password | Validation Error | [{'type': 'greater_than', 'loc': ('path', 'user_id'), 'msg': 'Input should be greater than 0', 'input': '0', 'ctx': {'gt': 0}}]
+2026-08-05 08:20:24,522 | INFO | inventory-api | Request finished | PUT /api/v1/users/0/password | Status 422 | 0.006s
+2026-08-05 08:20:24,523 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/0/password "HTTP/1.1 422 Unprocessable Entity"
+2026-08-05 08:26:09,752 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-05 08:26:10,003 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.251s
+2026-08-05 08:26:10,004 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-05 08:26:10,007 | INFO | inventory-api | Request started | PUT /api/v1/users/999999/password
+2026-08-05 08:26:10,042 | WARNING | inventory-api | PUT /api/v1/users/999999/password | 404 | User not found.
+2026-08-05 08:26:10,042 | INFO | inventory-api | Request finished | PUT /api/v1/users/999999/password | Status 404 | 0.036s
+2026-08-05 08:26:10,043 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/999999/password "HTTP/1.1 404 Not Found"
+2026-08-05 08:29:37,885 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-05 08:29:38,148 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.263s
+2026-08-05 08:29:38,149 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-05 08:29:38,151 | INFO | inventory-api | Request started | PUT /api/v1/users/999999/password
+2026-08-05 08:29:38,183 | WARNING | inventory-api | PUT /api/v1/users/999999/password | 404 | User not found.
+2026-08-05 08:29:38,184 | INFO | inventory-api | Request finished | PUT /api/v1/users/999999/password | Status 404 | 0.033s
+2026-08-05 08:29:38,184 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/999999/password "HTTP/1.1 404 Not Found"
+2026-08-05 08:30:58,179 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-05 08:30:58,413 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.234s
+2026-08-05 08:30:58,415 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-05 08:30:58,416 | INFO | inventory-api | Request started | PUT /api/v1/users/999999/password
+2026-08-05 08:30:58,451 | WARNING | inventory-api | PUT /api/v1/users/999999/password | 404 | User not found.
+2026-08-05 08:30:58,451 | INFO | inventory-api | Request finished | PUT /api/v1/users/999999/password | Status 404 | 0.035s
+2026-08-05 08:30:58,452 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/999999/password "HTTP/1.1 404 Not Found"
+2026-08-06 11:58:01,720 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-06 11:58:01,941 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.221s
+2026-08-06 11:58:01,942 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-06 11:58:02,175 | INFO | inventory-api | Request started | PUT /api/v1/users/2/password
+2026-08-06 11:58:02,426 | INFO | inventory-api | Request finished | PUT /api/v1/users/2/password | Status 200 | 0.251s
+2026-08-06 11:58:02,427 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2/password "HTTP/1.1 200 OK"
+2026-08-06 11:58:04,846 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-06 11:58:05,053 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-08-06 11:58:05,054 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-06 11:58:05,274 | INFO | inventory-api | Request started | PUT /api/v1/users/2/password
+2026-08-06 11:58:05,490 | INFO | inventory-api | Request finished | PUT /api/v1/users/2/password | Status 200 | 0.217s
+2026-08-06 11:58:05,491 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2/password "HTTP/1.1 200 OK"
+2026-08-06 11:58:08,111 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-06 11:58:08,318 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-08-06 11:58:08,319 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-06 11:58:08,538 | INFO | inventory-api | Request started | PUT /api/v1/users/2/password
+2026-08-06 11:58:08,764 | INFO | inventory-api | Request finished | PUT /api/v1/users/2/password | Status 200 | 0.226s
+2026-08-06 11:58:08,765 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2/password "HTTP/1.1 200 OK"
+2026-08-06 11:58:11,730 | INFO | inventory-api | Request started | PUT /api/v1/users/1/password
+2026-08-06 11:58:11,733 | WARNING | inventory-api | PUT /api/v1/users/1/password | 401 | Not authenticated
+2026-08-06 11:58:11,734 | INFO | inventory-api | Request finished | PUT /api/v1/users/1/password | Status 401 | 0.004s
+2026-08-06 11:58:11,734 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/1/password "HTTP/1.1 401 Unauthorized"
+2026-08-06 11:58:14,317 | INFO | inventory-api | Request started | PUT /api/v1/users/1/password
+2026-08-06 11:58:14,320 | WARNING | inventory-api | PUT /api/v1/users/1/password | 401 | Could not validate credentials.
+2026-08-06 11:58:14,320 | INFO | inventory-api | Request finished | PUT /api/v1/users/1/password | Status 401 | 0.003s
+2026-08-06 11:58:14,321 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/1/password "HTTP/1.1 401 Unauthorized"
+2026-08-06 11:58:16,774 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-06 11:58:16,981 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.207s
+2026-08-06 11:58:16,982 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-06 11:58:17,209 | INFO | inventory-api | Request started | PUT /api/v1/users/2/password
+2026-08-06 11:58:17,213 | WARNING | inventory-api | PUT /api/v1/users/2/password | 403 | Administrator privileges required.
+2026-08-06 11:58:17,214 | INFO | inventory-api | Request finished | PUT /api/v1/users/2/password | Status 403 | 0.005s
+2026-08-06 11:58:17,214 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2/password "HTTP/1.1 403 Forbidden"
+2026-08-06 11:58:19,761 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-06 11:58:19,961 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.200s
+2026-08-06 11:58:19,961 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-06 11:58:19,963 | INFO | inventory-api | Request started | PUT /api/v1/users/999999/password
+2026-08-06 11:58:19,970 | WARNING | inventory-api | PUT /api/v1/users/999999/password | 404 | User not found.
+2026-08-06 11:58:19,970 | INFO | inventory-api | Request finished | PUT /api/v1/users/999999/password | Status 404 | 0.007s
+2026-08-06 11:58:19,971 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/999999/password "HTTP/1.1 404 Not Found"
+2026-08-06 11:58:22,819 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-06 11:58:23,025 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.206s
+2026-08-06 11:58:23,027 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-06 11:58:23,253 | INFO | inventory-api | Request started | PUT /api/v1/users/2/password
+2026-08-06 11:58:23,256 | WARNING | inventory-api | PUT /api/v1/users/2/password | Validation Error | [{'type': 'string_too_short', 'loc': ('body', 'password'), 'msg': 'String should have at least 8 characters', 'input': '123', 'ctx': {'min_length': 8}}]
+2026-08-06 11:58:23,257 | INFO | inventory-api | Request finished | PUT /api/v1/users/2/password | Status 422 | 0.004s
+2026-08-06 11:58:23,257 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/2/password "HTTP/1.1 422 Unprocessable Entity"
+2026-08-06 11:58:26,028 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-06 11:58:26,236 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.208s
+2026-08-06 11:58:26,237 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-06 11:58:26,239 | INFO | inventory-api | Request started | PUT /api/v1/users/0/password
+2026-08-06 11:58:26,243 | WARNING | inventory-api | PUT /api/v1/users/0/password | Validation Error | [{'type': 'greater_than', 'loc': ('path', 'user_id'), 'msg': 'Input should be greater than 0', 'input': '0', 'ctx': {'gt': 0}}]
+2026-08-06 11:58:26,244 | INFO | inventory-api | Request finished | PUT /api/v1/users/0/password | Status 422 | 0.005s
+2026-08-06 11:58:26,244 | INFO | httpx | HTTP Request: PUT http://testserver/api/v1/users/0/password "HTTP/1.1 422 Unprocessable Entity"
+2026-08-06 12:25:01,019 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-06 12:25:01,264 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.245s
+2026-08-06 12:25:01,265 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-06 12:25:01,489 | INFO | inventory-api | Request started | DELETE /api/v1/users/2
+2026-08-06 12:25:01,544 | INFO | inventory-api | Request finished | DELETE /api/v1/users/2 | Status 200 | 0.056s
+2026-08-06 12:25:01,545 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/users/2 "HTTP/1.1 200 OK"
+2026-08-06 12:25:04,342 | INFO | inventory-api | Request started | DELETE /api/v1/users/1
+2026-08-06 12:25:04,344 | WARNING | inventory-api | DELETE /api/v1/users/1 | 401 | Not authenticated
+2026-08-06 12:25:04,344 | INFO | inventory-api | Request finished | DELETE /api/v1/users/1 | Status 401 | 0.002s
+2026-08-06 12:25:04,344 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/users/1 "HTTP/1.1 401 Unauthorized"
+2026-08-06 12:25:07,005 | INFO | inventory-api | Request started | DELETE /api/v1/users/1
+2026-08-06 12:25:07,008 | WARNING | inventory-api | DELETE /api/v1/users/1 | 401 | Could not validate credentials.
+2026-08-06 12:25:07,008 | INFO | inventory-api | Request finished | DELETE /api/v1/users/1 | Status 401 | 0.003s
+2026-08-06 12:25:07,008 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/users/1 "HTTP/1.1 401 Unauthorized"
+2026-08-06 12:25:09,789 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-06 12:25:09,998 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.209s
+2026-08-06 12:25:09,998 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-06 12:25:10,217 | INFO | inventory-api | Request started | DELETE /api/v1/users/2
+2026-08-06 12:25:10,221 | WARNING | inventory-api | DELETE /api/v1/users/2 | 403 | Administrator privileges required.
+2026-08-06 12:25:10,221 | INFO | inventory-api | Request finished | DELETE /api/v1/users/2 | Status 403 | 0.004s
+2026-08-06 12:25:10,221 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/users/2 "HTTP/1.1 403 Forbidden"
+2026-08-06 12:25:13,090 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-06 12:25:13,286 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.196s
+2026-08-06 12:25:13,287 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-06 12:25:13,288 | INFO | inventory-api | Request started | DELETE /api/v1/users/999999
+2026-08-06 12:25:13,293 | WARNING | inventory-api | DELETE /api/v1/users/999999 | 404 | User not found.
+2026-08-06 12:25:13,294 | INFO | inventory-api | Request finished | DELETE /api/v1/users/999999 | Status 404 | 0.006s
+2026-08-06 12:25:13,294 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/users/999999 "HTTP/1.1 404 Not Found"
+2026-08-06 12:25:15,919 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-06 12:25:16,123 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.204s
+2026-08-06 12:25:16,124 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-06 12:25:16,125 | INFO | inventory-api | Request started | DELETE /api/v1/users/0
+2026-08-06 12:25:16,128 | WARNING | inventory-api | DELETE /api/v1/users/0 | Validation Error | [{'type': 'greater_than', 'loc': ('path', 'user_id'), 'msg': 'Input should be greater than 0', 'input': '0', 'ctx': {'gt': 0}}]
+2026-08-06 12:25:16,128 | INFO | inventory-api | Request finished | DELETE /api/v1/users/0 | Status 422 | 0.003s
+2026-08-06 12:25:16,128 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/users/0 "HTTP/1.1 422 Unprocessable Entity"
+2026-08-06 12:25:18,899 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-06 12:25:19,094 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.195s
+2026-08-06 12:25:19,095 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-06 12:25:19,347 | INFO | inventory-api | Request started | DELETE /api/v1/users/2
+2026-08-06 12:25:19,352 | WARNING | inventory-api | DELETE /api/v1/users/2 | 400 | Cannot delete a user with registered sales.
+2026-08-06 12:25:19,352 | INFO | inventory-api | Request finished | DELETE /api/v1/users/2 | Status 400 | 0.005s
+2026-08-06 12:25:19,353 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/users/2 "HTTP/1.1 400 Bad Request"
+2026-08-06 12:25:22,234 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-06 12:25:22,435 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.201s
+2026-08-06 12:25:22,435 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-06 12:25:22,710 | INFO | inventory-api | Request started | DELETE /api/v1/users/2
+2026-08-06 12:25:22,716 | WARNING | inventory-api | DELETE /api/v1/users/2 | 400 | Cannot delete a user that created inventory batches.
+2026-08-06 12:25:22,716 | INFO | inventory-api | Request finished | DELETE /api/v1/users/2 | Status 400 | 0.007s
+2026-08-06 12:25:22,717 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/users/2 "HTTP/1.1 400 Bad Request"
+2026-08-06 12:25:25,382 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-06 12:25:25,581 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.199s
+2026-08-06 12:25:25,582 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-06 12:25:26,093 | INFO | inventory-api | Request started | DELETE /api/v1/users/2
+2026-08-06 12:25:26,102 | WARNING | inventory-api | DELETE /api/v1/users/2 | 400 | Cannot delete a user with registered losses.
+2026-08-06 12:25:26,102 | INFO | inventory-api | Request finished | DELETE /api/v1/users/2 | Status 400 | 0.008s
+2026-08-06 12:25:26,102 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/users/2 "HTTP/1.1 400 Bad Request"
+2026-08-06 12:25:28,904 | INFO | inventory-api | Request started | POST /api/v1/token
+2026-08-06 12:25:29,121 | INFO | inventory-api | Request finished | POST /api/v1/token | Status 200 | 0.217s
+2026-08-06 12:25:29,121 | INFO | httpx | HTTP Request: POST http://testserver/api/v1/token "HTTP/1.1 200 OK"
+2026-08-06 12:25:29,639 | INFO | inventory-api | Request started | DELETE /api/v1/users/2
+2026-08-06 12:25:29,647 | WARNING | inventory-api | DELETE /api/v1/users/2 | 400 | Cannot delete a user with inventory transactions.
+2026-08-06 12:25:29,647 | INFO | inventory-api | Request finished | DELETE /api/v1/users/2 | Status 400 | 0.009s
+2026-08-06 12:25:29,648 | INFO | httpx | HTTP Request: DELETE http://testserver/api/v1/users/2 "HTTP/1.1 400 Bad Request"
