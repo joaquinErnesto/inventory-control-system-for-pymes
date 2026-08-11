@@ -25,11 +25,24 @@ from app.logging.logger import logger
 from app.schemas import responses
 from app.config import settings
 
+from contextlib import asynccontextmanager
+
 # ==================================================
 # CREATE DATABASE TABLES
 # ==================================================
 
-Base.metadata.create_all(bind=engine)
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    Base.metadata.create_all(bind=engine)
+    yield
+
+app = FastAPI(
+    title="Inventory Control MVP API",
+    description="Backend API for the Baracoa Inventory Control System",
+    version="1.0.0",
+    lifespan=lifespan,
+)
+
 
 # ==================================================
 # FASTAPI APPLICATION

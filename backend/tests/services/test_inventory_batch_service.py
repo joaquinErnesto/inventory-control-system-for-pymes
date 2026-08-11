@@ -537,3 +537,75 @@ def test_list_inventory_batches_default_order(
     assert pagination.total_pages == 1
     assert pagination.has_previous is False
     assert pagination.has_next is False
+
+
+# ==================================================
+# RECIEVE INVENTORY BATCH ZERO QUANTITY REJECTED
+# ==================================================
+
+def test_receive_inventory_batch_zero_quantity_rejected(
+    db,
+    admin_user,
+    inventory_batch_request,
+):
+    inventory_batch_request.initial_quantity = 0
+
+    with pytest.raises(HTTPException) as exc_info:
+        receive_inventory_batch(
+            db,
+            admin_user,
+            inventory_batch_request,
+        )
+
+    assert exc_info.value.status_code == 400
+    assert exc_info.value.detail == (
+        "Initial quantity must be greater than zero."
+    )
+    
+
+# ==================================================
+# RECIEVE INVENTORY BATCH NEGATIVE PRICE REJECTED
+# ==================================================
+
+def test_receive_inventory_batch_negative_cost_price_rejected(
+    db,
+    admin_user,
+    inventory_batch_request,
+):
+    inventory_batch_request.cost_price = Decimal("-1.00")
+
+    with pytest.raises(HTTPException) as exc_info:
+        receive_inventory_batch(
+            db,
+            admin_user,
+            inventory_batch_request,
+        )
+
+    assert exc_info.value.status_code == 400
+    assert exc_info.value.detail == (
+        "Cost price cannot be negative."
+    )
+
+
+# ==================================================
+# RECIEVE INVENTORY BATCH NEGATIVE SELLING PRICE REJECTED
+# ==================================================
+
+def test_receive_inventory_batch_negative_selling_price_rejected(
+    db,
+    admin_user,
+    inventory_batch_request,
+):
+    inventory_batch_request.selling_price = Decimal("-1.00")
+
+    with pytest.raises(HTTPException) as exc_info:
+        receive_inventory_batch(
+            db,
+            admin_user,
+            inventory_batch_request,
+        )
+
+    assert exc_info.value.status_code == 400
+    assert exc_info.value.detail == (
+        "Selling price cannot be negative."
+    )

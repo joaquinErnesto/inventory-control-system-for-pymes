@@ -62,6 +62,9 @@ def inventory_transaction_factory(
         if user is None:
             user = user_factory()
 
+        if performed_at is None :
+            performed_at = datetime.now()
+            
         transaction = InventoryTransaction(
             product_id=product.id,
             batch_id=batch.id,

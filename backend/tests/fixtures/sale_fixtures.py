@@ -82,3 +82,34 @@ def sale(
     """
 
     return sale_factory()
+
+
+# ==================================================
+# DEFAULT SALE REQUEST
+# ==================================================
+
+@pytest.fixture
+def sale_request(
+    product,
+):
+    """
+    Creates a valid SaleCreate request for service tests.
+
+    This represents the payload that would normally be
+    received by the sales endpoint.
+    """
+
+    from app.schemas.core import SaleCreate, SaleItemCreate
+
+    return SaleCreate(
+        customer_id=None,
+        payment_method=PaymentMethod.CASH,
+        payment_status=PaymentStatus.PAID,
+        items=[
+            SaleItemCreate(
+                product_id=product.id,
+                quantity_sold=5,
+                unit_price=Decimal("10.00"),
+            )
+        ],
+    )

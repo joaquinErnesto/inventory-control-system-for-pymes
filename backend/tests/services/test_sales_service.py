@@ -1128,3 +1128,51 @@ def test_create_sale_decimal_total(
     )
 
     assert sale.total_amount == expected_total
+
+
+# ==================================================
+# CREATE SALE - ZERO QUANTITY REJECTED
+# ==================================================
+
+def test_create_sale_zero_quantity_rejected(
+    db,
+    admin_user,
+    sale_request,
+):
+    sale_request.items[0].quantity_sold = 0
+
+    with pytest.raises(HTTPException) as exc_info:
+        create_sale(
+            db,
+            sale_request,
+            admin_user,
+        )
+    
+    assert exc_info.value.status_code == 400
+    assert exc_info.value.detail == (
+        "Quantity sold must be greater than zero."
+    )
+
+
+# ==================================================
+# CREATE SALE - NEGATIVE PRICE REJECTED
+# ==================================================
+
+def test_create_sale_negative_price_rejected(
+    db,
+    admin_user,
+    sale_request,
+):
+    sale_request.items[0].unit_price = Decimal("-1")
+
+    with pytest.raises(HTTPException) as exc_info:
+        create_sale(
+            db,
+            sale_request,
+            admin_user,
+        )
+    
+    assert exc_info.value.status_code == 400
+    assert exc_info.value.detail == (
+        "Unit price cannot be negative."
+    )

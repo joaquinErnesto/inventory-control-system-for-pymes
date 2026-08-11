@@ -123,3 +123,31 @@ def inventory_batch(inventory_batch_factory):
     """
 
     return inventory_batch_factory()
+
+
+# ==================================================
+# DEFAULT INVENTORY BATCH REQUEST
+# ==================================================
+
+@pytest.fixture
+def inventory_batch_request(
+    product,
+    supplier,
+):
+    """
+    Creates a valid InventoryBatchCreate request
+    for service-layer tests.
+    """
+
+    from app.schemas.core import InventoryBatchCreate
+
+    return InventoryBatchCreate(
+        product_id=product.id,
+        supplier_id=supplier.id,
+        batch_number="TEST-BATCH-001",
+        initial_quantity=100,
+        cost_price=Decimal("10.00"),
+        selling_price=Decimal("15.00"),
+        expiration_date=None,
+        notes="Test inventory batch request.",
+    )

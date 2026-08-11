@@ -232,6 +232,7 @@ class SaleResponse(SaleBase):
 
     model_config = ConfigDict(from_attributes=True)
 
+
 # ==========================================
 # SALE DETAILS (Receipt View)
 # ==========================================
@@ -265,6 +266,7 @@ class SaleDetailResponse(BaseModel):
     employee_username: str = Field(min_length=3, max_length=50)
 
     items: List[SaleItemDetailResponse]
+
 
 # ==========================================
 # 9. LOSS LOGS
@@ -350,6 +352,7 @@ class Token(BaseModel):
 class TokenData(BaseModel):
     username: str
     user_id: int
+    role: UserRole
     
 
 # ==========================================
